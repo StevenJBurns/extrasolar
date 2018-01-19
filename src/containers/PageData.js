@@ -5,6 +5,7 @@ class PageData extends Component {
     return (
       <main>
         <h1>Data</h1>
+        <audio autoplay loop id="audioBackground">Your browser does not support the <code>audio</code> element.</audio> 
       </main>
     );
   }

@@ -9,6 +9,27 @@ import PageVisualization from './containers/PageVisualization';
 import './App.css';
 
 class App extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentWillMount() {
+
+  }
+
+  toggleSound() {
+    let buttonAudio = document.getElementById("buttonAudio");
+    let audioBackground = document.getElementById("audioBackground");
+
+    console.log(buttonAudio, audioBackground);
+
+    //audioBackground.muted ? audioBackground.muted = false : audioBackground.muted = true;
+    //$("#buttonAudio").toggleClass("button-success button-warning")
+    //audioBackground.muted ? localStorage.setItem("sound", "off") : localStorage.setItem("sound", "on");
+  }
+
   render() {
     return (
       <div className="App">
@@ -18,7 +39,7 @@ class App extends Component {
             <h1 id="h1-header">ExtraSolar</h1>
             <h3 id="h2-header">Visualization of distant solar systems and their exoplanets</h3>
           </div>
-          <button type="button" id="button-audio" name="buttonAudio"> //onClick=toggleSound()
+          <button type="button" id="button-audio" name="buttonAudio" onClick={this.toggleSound()}>
             <span className="fas fa-volume-up fa-2x" aria-hidden="true"></span>
           </button>
         </header>
