@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import AudioHome from '../audio/home.ogg';
 
 class PageHome extends Component {
   render() {
+    console.log(this.props);
+
     return (
       <main>
         <h1>Home</h1>
-        <audio autoplay loop id="audioBackground" >Your browser does not support the <code>audio</code> element.</audio> 
+        <audio autoPlay loop id="audioBackground" src={AudioHome} muted={this.props.isMuted}>
+          <span>Your browser does not support the <code>audio</code> element.</span> 
+        </audio>
       </main>
     );
   }

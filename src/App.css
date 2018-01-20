@@ -1,11 +1,12 @@
 * {
-  margin :0;
+  margin: 0;
   padding: 0;
+  color:#D0D0D0
 }
 
 .App {
-  text-align: center;
   min-height: 100vh;
+  text-align: center;
   flex-direction: column;
   display: flex;
 }
@@ -17,21 +18,10 @@
   animation: app-logo-spin infinite 20s linear;
 }
 
-.App-header {
-  background-color: #2F2F2F;
-  height: 150px;
-  padding: 20px;
-  color: #F0F0F0
-}
-
-.App-intro {
-  font-size: large;
-}
-
 #app-header {
   width: 100%;
   color: #F0F0F0;
-  background-color: #3F3F3F;
+  background-color: #4F4F4F;
   align-items: center;
   display: flex
 }
@@ -42,10 +32,12 @@
 }
 
 #button-audio {
-  padding: 2px
+  padding: 2px;
+  background-color: #0F0F0F
 }
 
 nav {
+  padding: 16px;
   background-color: #2F2F2F
 }
 
@@ -60,6 +52,7 @@ nav li {
 
 nav a {
   margin: auto;
+  padding: 4px;
   width: 144px;
   color: #F0F0F0;
   text-decoration: none;
@@ -68,7 +61,7 @@ nav a {
 
 nav a:hover {
   color: #F0F0F0;
-  background-color: #6b6e93;
+  background-color: #4F4F4F;
   text-decoration: none
 }
 
@@ -82,8 +75,7 @@ main {
 
 #app-footer {
   width: 100%;
-  color: #F0F0F0;
-  background-color: #0F0F0F;
+  background-color: #4F4F4F;
   text-align: center
 }
 
