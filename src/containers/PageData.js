@@ -3,8 +3,6 @@ import AudioData from '../audio/data.ogg';
 
 class PageData extends Component {
   render() {
-    console.log(this.props);
-
     return (
       <main>
         <h1>Data</h1>
