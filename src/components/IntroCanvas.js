@@ -5,7 +5,9 @@ class CanvasHome extends Component {
     super(props);
 
     this.ctx;
-    this.starfield = [];    
+    this.starfield = [];
+
+    console.log(this.props);
   }
 
   componentWillMount() {
