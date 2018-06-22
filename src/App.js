@@ -6,6 +6,7 @@ import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
 import AudioButton from "./components/AudioButton";
+import AudioBlock from "./components/AudioBlock";
 
 import './App.css';
 
@@ -34,9 +35,7 @@ class App extends Component {
             <h3 id="h2-header">Visualization of distant solar systems and their exoplanets</h3>
           </div>
           <AudioButton />
-          <button type="button" id="button-audio" name="buttonAudio" onClick={this.toggleSound}>
-            <span className="fas fa-volume-up fa-2x" aria-hidden="true"></span>
-          </button>
+          <AudioBlock />
         </header>
         <nav>
           <ul>
