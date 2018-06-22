@@ -5,6 +5,7 @@ import AppLogo from './images/extrasolar.png';
 import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
+import AudioButton from "./components/AudioButton";
 
 import './App.css';
 
@@ -32,6 +33,7 @@ class App extends Component {
             <h1 id="h1-header">ExtraSolar</h1>
             <h3 id="h2-header">Visualization of distant solar systems and their exoplanets</h3>
           </div>
+          <AudioButton />
           <button type="button" id="button-audio" name="buttonAudio" onClick={this.toggleSound}>
             <span className="fas fa-volume-up fa-2x" aria-hidden="true"></span>
           </button>
