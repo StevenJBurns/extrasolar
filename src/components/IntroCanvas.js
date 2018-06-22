@@ -4,10 +4,8 @@ class CanvasHome extends Component {
   constructor(props) {
     super(props);
 
-    this.ctx;
+    this.ctx = null;
     this.starfield = [];
-
-    console.log(this.props);
   }
 
   componentWillMount() {
@@ -19,7 +17,7 @@ class CanvasHome extends Component {
 
     //build a starfield for the canvas
     for (let i = 0; i < 512; i++) {
-      // An array for aech star [x, y, o] -- x and y are randomized coords based on canvas size -- o is a random opacity from 0 to 1
+      // An array for each star [x, y, o] -- x and y are randomized coords based on canvas size -- o is a random opacity from 0 to 1
       let s = [Math.floor(Math.random() * this.ctx.canvas.width), Math.floor(Math.random() * this.ctx.canvas.height), Math.random()];
       this.starfield.push(s);
     }

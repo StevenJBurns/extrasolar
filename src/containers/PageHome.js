@@ -34,10 +34,7 @@ class PageHome extends Component {
     this.setState({
       windowHeight: document.getElementById('main-home').clientHeight,
       windowWidth: document.getElementById('main-home').clientWidth
-    });
-
-    console.log(this.state.windowHeight, this.state.windowWidth);
-    
+    });    
   }
 }
 
