@@ -1,14 +1,14 @@
 const initialState = {
     appPages: ["Home", "Data", "Visualization", "About"],
-    audioMuteState: true,
-    audioSources: ["home.ogg", "data.ogg", "visualization.ogg" , "about.ogg"]
+    audioSources: ["home.ogg", "data.ogg", "visualization.ogg" , "about.ogg"],
+    isAudioMuted: true
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case "TOGGLE_AUDIO":
-      state.audioMuteState = !state.audioMuteState;
-      return state;
+      console.log(this.state.audioMuted);
+      return { ...state, isAudioMuted: !state.isAudioMuted};
     default:
       return state;
   }

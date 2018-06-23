@@ -6,7 +6,6 @@ import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
 import AudioButton from "./components/AudioButton";
-import AudioBlock from "./components/AudioBlock";
 
 import './App.css';
 
@@ -14,13 +13,6 @@ class App extends Component {
   
   constructor(props) {
     super(props);
-    this.state = { audioMuted : false };
-
-    this.toggleSound = this.toggleSound.bind(this);
-  }
-
-  toggleSound() {
-    this.setState({ audioMuted : !this.state.audioMuted });
   }
 
   render() {
@@ -35,7 +27,6 @@ class App extends Component {
             <h3 id="h2-header">Visualization of distant solar systems and their exoplanets</h3>
           </div>
           <AudioButton />
-          <AudioBlock />
         </header>
         <nav>
           <ul>
@@ -45,9 +36,9 @@ class App extends Component {
           </ul>
         </nav>
         <Switch>
-          <Route path='/' exact render={() => <PageHome isMuted={this.state.audioMuted} />} />
-          <Route path='/data' exact render={() => <PageData isMuted={this.state.audioMuted} />} />
-          <Route path='/visualization' exact render={() => <PageVisualization isMuted={this.state.audioMuted} />} />
+          <Route path='/' exact render={() => <PageHome />} />
+          <Route path='/data' exact render={() => <PageData />} />
+          <Route path='/visualization' exact render={() => <PageVisualization />} />
         </Switch>
 
         <footer id="app-footer">
