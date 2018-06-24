@@ -1,3 +1,4 @@
+/* React and Redux imports */
 import React from "react";
 import { connect } from "react-redux";
 
@@ -22,7 +23,7 @@ const mapDispatchToProps = dispatch => {
 
 const ConnectedAudioButton = ({ isAudioMuted, audioSource}) => (
   <div>
-    <button style={{ 'height': '48px', 'width': '48px', 'background': '#4F4F4F' }} onClick={ toggleAudio }>
+    <button type="button" style={{ 'height': '48px', 'width': '48px', 'background': '#4F4F4F' }} onClick={ toggleAudio }>
       <FontAwesomeIcon icon={ isAudioMuted ? faVolumeOff : faVolumeUp } size="3x" />
     </button>
     <audio autoPlay loop src={ audioSource } muted={ isAudioMuted }>

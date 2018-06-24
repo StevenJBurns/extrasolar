@@ -1,6 +1,7 @@
 const initialState = {
     appPages: ["Home", "Data", "Visualization", "About"],
     audioSources: ["home.ogg", "data.ogg", "visualization.ogg" , "about.ogg"],
+    currentPage: "",
     isAudioMuted: true
 };
 
