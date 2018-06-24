@@ -1,0 +1,29 @@
+#app-header {
+  width: 100%;
+  color: #F0F0F0;
+  background-color: #4F4F4F;
+  align-items: center;
+  display: flex
+}
+
+#app-logo {
+  margin: 16px;
+  height: 96px;
+  width: 96px;
+  animation: app-logo-spin infinite 20s linear;
+}
+
+#divAppTaglines {
+  flex: 1 100%;
+  text-align: left
+}
+  
+#button-audio {
+  padding: 4px;
+  background-color: #0F0F0F
+}
+
+@keyframes app-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

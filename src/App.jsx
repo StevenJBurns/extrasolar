@@ -1,13 +1,20 @@
+/* React & Router imports */
 import React, { Component } from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
-import AppLogo from './images/extrasolar.png';
+/* app specific imports */
 import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
 import AudioButton from "./components/AudioButton";
+import AppLogo from './images/extrasolar.png';
 
-import './App.css';
+/* stylesheet imports */
+import './styles/App.css';
+import './styles/AppHeader.css';
+import './styles/AppFooter.css';
+import './styles/AppNav.css';
+
 
 class App extends Component {
   
@@ -22,11 +29,11 @@ class App extends Component {
       <div className="App">
         <header id="app-header">
           <img id="app-logo" src={AppLogo} alt="ExtraSolar Logo" />
-          <div>
+          <div id="divAppTaglines">
             <h1 id="h1-header">ExtraSolar</h1>
             <h3 id="h2-header">Visualization of distant solar systems and their exoplanets</h3>
           </div>
-          <AudioButton />
+          <AudioButton isAudioMuted={this.props.isAudioMuted} />
         </header>
         <nav>
           <ul>

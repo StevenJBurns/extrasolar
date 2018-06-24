@@ -13,7 +13,7 @@ class CanvasHome extends Component {
   }
 
   componentDidMount() {
-    this.ctx.fillRect(0, 0, 1080, 600);
+    this.ctx.fillRect(0, 0, 1080, 480);
 
     //build a starfield for the canvas
     for (let i = 0; i < 512; i++) {
@@ -38,7 +38,7 @@ class CanvasHome extends Component {
   render() {
     return (
       <div>
-        <canvas ref={c => {if (c!== null) this.ctx = c.getContext('2d')}} width={1080} height={600}/>
+        <canvas ref={c => {if (c!== null) this.ctx = c.getContext('2d')}} width={1080} height={480}/>
       </div>
     );
   }
