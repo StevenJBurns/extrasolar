@@ -50,7 +50,7 @@ class App extends Component {
 
         <footer id="app-footer">
           <h4 id="footer-h4">Steven J Burns &#8226; Galvanize Boulder &#8226; WDI g62</h4>
-          <h5 id="footer-h5">&copy; 2018</h5>
+          <h4>&copy;2018 &bull; Steven J Burns</h4>
         </footer>
       </div>
     );
