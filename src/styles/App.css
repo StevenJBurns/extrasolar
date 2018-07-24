@@ -6,6 +6,10 @@ html {
   
 }
 
+body {
+  
+}
+
 .App {
   display: flex;
   flex-direction: column;
