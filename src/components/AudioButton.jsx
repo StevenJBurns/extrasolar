@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
-/* Bring the toggleAudio Redux Action */
+/* Bring in the toggleAudio Redux Action */
 import { toggleAudio } from "../redux/actions/index";  
 
 
@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
 
 const ConnectedAudioButton = ({ isAudioMuted, audioSource}) => (
   <div>
-    <button type="button" style={{ 'height': '48px', 'width': '48px', 'background': '#4F4F4F' }} onClick={ toggleAudio }>
+    <button type="button" style={{ 'height': '48px', 'width': '48px', 'background': '#007700' }} onClick={ toggleAudio }>
       <FontAwesomeIcon icon={ isAudioMuted ? faVolumeOff : faVolumeUp } size="3x" />
     </button>
     <audio autoPlay loop src={ audioSource } muted={ isAudioMuted }>

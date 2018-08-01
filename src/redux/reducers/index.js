@@ -8,7 +8,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case "TOGGLE_AUDIO":
-      console.log(this.state.audioMuted);
+      console.log("Audio State: ", state.isAudioMuted);
       return { ...state, isAudioMuted: !state.isAudioMuted};
     default:
       return state;

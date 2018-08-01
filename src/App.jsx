@@ -1,5 +1,5 @@
 /* React & Router imports */
-import React, { Component } from 'react';
+import React from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 /* app specific imports */
@@ -16,7 +16,7 @@ import './styles/AppFooter.css';
 import './styles/AppNav.css';
 
 
-class App extends Component {
+class App extends React.Component {
   
   constructor(props) {
     super(props);
@@ -43,9 +43,9 @@ class App extends Component {
           </ul>
         </nav>
         <Switch>
-          <Route path='/' exact render={() => <PageHome />} />
-          <Route path='/data' exact render={() => <PageData />} />
-          <Route path='/visualization' exact render={() => <PageVisualization />} />
+          <Route exact path='/' render={() => <PageHome />} />
+          <Route exact path='/data' render={() => <PageData />} />
+          <Route exact path='/visualization' render={() => <PageVisualization />} />
         </Switch>
 
         <footer id="app-footer">

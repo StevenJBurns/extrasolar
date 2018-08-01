@@ -1,4 +1,4 @@
-export const toggleAudio = () => ({
+export const toggleAudio = audioState => ({
     type: "TOGGLE_AUDIO",
-    payload: null
+    payload: { audioState: !audioState }
 })
