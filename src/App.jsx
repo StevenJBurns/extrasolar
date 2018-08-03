@@ -1,16 +1,16 @@
-/* React, Router and Redux imports */
+/* React, Router and Redux Imports */
 import React from 'react';
-import { Switch, Route, NavLink } from 'react-router-dom';
 import store from "./redux/store";
+import { Switch, Route, NavLink } from 'react-router-dom';
 
-/* app specific imports */
+/* App specific Imports */
 import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
 import AudioButton from "./components/AudioButton";
 import AppLogo from './images/extrasolar.png';
 
-/* stylesheet imports */
+/* Stylesheet Imports */
 import './styles/App.css';
 import './styles/AppHeader.css';
 import './styles/AppFooter.css';
@@ -18,11 +18,6 @@ import './styles/AppNav.css';
 
 
 class App extends React.Component {
-  
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { isAudioMuted, currentAudioSource } = store.getState();
     const activeStyle = { backgroundColor : '#8F8F8F' };

@@ -1,6 +1,8 @@
+import AudioHome from "../../audio/home.ogg";
+
 const initialState = {
     isAudioMuted: false,
-    currentAudioSource: null
+    currentAudioSource: AudioHome
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -8,7 +10,6 @@ const rootReducer = (state = initialState, action) => {
     case "TOGGLE_AUDIO":
       return { ...state, isAudioMuted: !action.payload };
     case "CHANGE_AUDIO_SOURCE":
-      console.log(action.payload);
       return { ...state, currentAudioSource: action.payload };
     default:
       return state;
