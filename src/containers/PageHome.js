@@ -1,6 +1,12 @@
+/* React and Redux imports */
 import React, { Component } from 'react';
+import store from "../redux/store";
+import { changeAudioSource } from "../redux/actions";
+
+/* Page specific imports */
+import AudioHome from '../audio/home.ogg';
 import CanvasHome from '../components/IntroCanvas';
-//import AudioHome from '../audio/home.ogg';
+
 
 class PageHome extends Component {
   constructor(props) {
@@ -17,10 +23,14 @@ class PageHome extends Component {
     );
   }
 
+  componentWillMount() {
+    store.dispatch(changeAudioSource(AudioHome));
+  }
+
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
     const height = document.getElementById('main-home').clientHeight;
-    const width = document.getElementById('main-home').clientWidth;    
+    const width = document.getElementById('main-home').clientWidth;
   }
 
   componentWillUnmount() {

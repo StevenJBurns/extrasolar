@@ -1,6 +1,7 @@
-/* React & Router imports */
+/* React, Router and Redux imports */
 import React from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
+import store from "./redux/store";
 
 /* app specific imports */
 import PageHome from './containers/PageHome';
@@ -23,17 +24,18 @@ class App extends React.Component {
   }
 
   render() {
-    let activeStyle = { backgroundColor : '#8F8F8F' };
+    const { isAudioMuted, currentAudioSource } = store.getState();
+    const activeStyle = { backgroundColor : '#8F8F8F' };
 
     return (
       <div className="App">
         <header id="app-header">
-          <img id="app-logo" src={AppLogo} alt="ExtraSolar Logo" />
+          <img id="app-logo" src={ AppLogo } alt="ExtraSolar Logo" />
           <div id="divAppTaglines">
             <h1 id="h1-header">ExtraSolar</h1>
             <h3 id="h2-header">Visualization of distant solar systems and their exoplanets</h3>
           </div>
-          <AudioButton isAudioMuted={this.props.isAudioMuted} />
+          <AudioButton isAudioMuted={ isAudioMuted } audioSource={ currentAudioSource } />
         </header>
         <nav>
           <ul>
