@@ -1,8 +1,6 @@
 const initialState = {
-    appPages: ["Home", "Data", "Visualization", "About"],
-    audioSources: ["home.ogg", "data.ogg", "visualization.ogg" , "about.ogg"],
-    currentAudioSource: null,
-    isAudioMuted: false
+    isAudioMuted: false,
+    currentAudioSource: null
 };
 
 const rootReducer = (state = initialState, action) => {
