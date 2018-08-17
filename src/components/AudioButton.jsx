@@ -26,7 +26,7 @@ const AudioButton = ({ isAudioMuted, audioSource }) => {
       <button type="button" style={ buttonStyle } onClick={ handleAudioButtonClick.bind(null, isAudioMuted) }>
         <FontAwesomeIcon icon={ isAudioMuted ? faVolumeOff : faVolumeUp } size="2x" />
       </button>
-      <audio autoPlay loop controls src={ audioSource } muted={ isAudioMuted }>
+      <audio autoPlay loop src={ audioSource } muted={ isAudioMuted }>
         <span>Your browser does not support the <code>audio</code> element.</span> 
       </audio>
     </div>
