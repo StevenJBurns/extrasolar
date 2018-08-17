@@ -37,12 +37,14 @@ class App extends React.Component {
             <li><NavLink to="/" exact activeStyle={activeStyle}>HOME</NavLink></li>
             <li><NavLink to="/data" activeStyle={activeStyle}>DATA</NavLink></li>
             <li><NavLink to="/visualization" activeStyle={activeStyle}>VISUALIZATION</NavLink></li>
+            <li><NavLink to="/about" activeStyle={activeStyle}>ABOUT</NavLink></li>
           </ul>
         </nav>
         <Switch>
           <Route exact path='/' render={() => <PageHome />} />
           <Route exact path='/data' render={() => <PageData />} />
           <Route exact path='/visualization' render={() => <PageVisualization />} />
+          <Route exact path='/about' render={() => <PageAbout />} />
         </Switch>
 
         <footer id="app-footer">
