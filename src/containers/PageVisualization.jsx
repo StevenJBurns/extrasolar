@@ -1,5 +1,5 @@
 /* React and Redux imports */
-import React, { Component } from 'react';
+import React from 'react';
 import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
@@ -7,7 +7,7 @@ import { changeAudioSource } from "../redux/actions";
 import AudioVisualization from '../audio/visualization.ogg';
 
 
-class PageVisualization extends Component {
+class PageVisualization extends React.Component {
   render() {
     return (
       <main>
