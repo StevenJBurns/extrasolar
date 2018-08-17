@@ -47,7 +47,6 @@ class App extends React.Component {
           <Route exact path='/visualization' render={() => <PageVisualization />} />
           <Route exact path='/about' render={() => <PageAbout />} />
         </Switch>
-
         <footer id="app-footer">
           {/* <h4 id="footer-h4">Steven J Burns &#8226; Galvanize Boulder &#8226; WDI g62</h4> */}
           <h4>&copy;2018 &bull; Steven J Burns</h4>
