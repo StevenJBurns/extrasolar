@@ -12,6 +12,7 @@ const AudioButton = ({ isAudioMuted, audioSource }) => {
   const handleAudioButtonClick = () => store.dispatch(toggleAudioMute(isAudioMuted));
 
   const buttonColor = isAudioMuted ? "red" : "green";
+  
   const buttonStyle = {
     width: '48px',
     height: '48px',

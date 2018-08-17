@@ -1,10 +1,16 @@
 /* React imports */
 import React from "react";
 
+/* Redux imports */
+import store from "../redux/store";
+
 /* App specific imports */
-import AudioButton from "./AudioButton";
+import AppLogo from "../assets/logo/extrasolar.png";
+import AudioButton from "./AudioButton.jsx";
 
 export const AppHeader = (props) => {
+  const { isAudioMuted, currentAudioSource } = store.getState();
+
   return (
     <header id="app-header">
       <img id="app-logo" src={ AppLogo } alt="ExtraSolar Logo" />
