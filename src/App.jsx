@@ -42,10 +42,10 @@ class App extends React.Component {
           </ul>
         </nav>
         <Switch>
-          <Route exact path='/' render={() => <PageHome />} />
-          <Route exact path='/data' render={() => <PageData />} />
-          <Route exact path='/visualization' render={() => <PageVisualization />} />
-          <Route exact path='/about' render={() => <PageAbout />} />
+          <Route exact path='${process.env.PUBLIC_URL}/' render={() => <PageHome />} />
+          <Route exact path='${process.env.PUBLIC_URL}/data' render={() => <PageData />} />
+          <Route exact path='${process.env.PUBLIC_URL}/visualization' render={() => <PageVisualization />} />
+          <Route exact path='${process.env.PUBLIC_URL}/about' render={() => <PageAbout />} />
         </Switch>
 
         <footer id="app-footer">
