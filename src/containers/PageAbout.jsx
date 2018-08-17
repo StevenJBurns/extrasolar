@@ -4,7 +4,7 @@ class PageAbout extends React.Component {
   render() {
     return (
       <main id="main-about">
-        <h1>Data</h1>
+        <h1>About</h1>
       </main>
     );
   }
