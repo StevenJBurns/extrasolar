@@ -8,7 +8,7 @@ import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
 import AudioButton from "./components/AudioButton";
-import AppLogo from './images/extrasolar.png';
+import AppLogo from './assets/logo/extrasolar.png';
 
 /* Stylesheet Imports */
 import './styles/App.css';

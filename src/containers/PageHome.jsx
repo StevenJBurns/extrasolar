@@ -4,7 +4,7 @@ import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
 /* Page specific imports */
-import AudioHome from '../audio/home.ogg';
+import AudioHome from '../assets/audio/home.ogg';
 import CanvasHome from '../components/IntroCanvas';
 
 

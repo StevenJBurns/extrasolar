@@ -4,7 +4,7 @@ import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
 /* Page specific imports */
-import AudioData from '../audio/data.ogg';
+import AudioData from '../assets/audio/data.ogg';
 
 
 class PageData extends Component {

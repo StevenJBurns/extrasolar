@@ -4,7 +4,7 @@ import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
 /* Page specific imports */
-import AudioVisualization from '../audio/visualization.ogg';
+import AudioVisualization from '../assets/audio/visualization.ogg';
 
 
 class PageVisualization extends React.Component {

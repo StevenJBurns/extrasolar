@@ -1,4 +1,4 @@
-import AudioHome from "../../audio/home.ogg";
+import AudioHome from "../../assets/audio/home.ogg";
 
 const initialState = {
     isAudioMuted: false,
