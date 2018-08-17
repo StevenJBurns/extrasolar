@@ -1,6 +1,6 @@
 {
   "name": "extrasolar",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
@@ -21,5 +21,6 @@
   "devDependencies": {
     "react-redux": "^5.0.7",
     "redux": "^4.0.0"
-  }
+  },
+  "homepage": "https://stevenjburns.github.io/extrasolar"
 }
