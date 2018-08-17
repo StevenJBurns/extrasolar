@@ -5,3 +5,5 @@ class PageAbout extends React.Component {
     return (<main id="main-about"></main>);
   }
 }
+
+export default PageAbout;
