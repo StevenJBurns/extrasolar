@@ -5,7 +5,7 @@ import React from "react";
 // import AudioButton from "./AudioButton";
 
 
-export const AppNav = () => {
+export const AppNav = (props) => {
   return (
     <nav>
       <ul>

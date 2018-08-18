@@ -1,10 +1,12 @@
 /* React, Router and Redux Imports */
 import React from 'react';
-import store from "./redux/store";
+// import store from "./redux/store";
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 /* App specific Imports */
-import { AppHeader } from "./components/AppHeader";
+import { AppHeader } from "./components/AppHeader.jsx";
+import { AppFooter } from "./components/AppFooter.jsx";
+
 import PageHome from './containers/PageHome';
 import PageData from './containers/PageData';
 import PageVisualization from './containers/PageVisualization';
@@ -47,10 +49,7 @@ class App extends React.Component {
           <Route exact path='/visualization' render={() => <PageVisualization />} />
           <Route exact path='/about' render={() => <PageAbout />} />
         </Switch>
-        <footer id="app-footer">
-          {/* <h4 id="footer-h4">Steven J Burns &#8226; Galvanize Boulder &#8226; WDI g62</h4> */}
-          <h4>&copy;2018 &bull; Steven J Burns</h4>
-        </footer>
+        <AppFooter />
       </div>
     );
   }

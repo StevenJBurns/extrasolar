@@ -1,7 +1,16 @@
 #app-footer {
-    width: 100%;
-    padding: 12px;
-    color: #DFDFDF;
-    text-align: center;
-    background-color: #4F4F4F;
-  }
+  width: 100%;
+  padding: 12px;
+  color: #DFDFDF;
+  text-align: center;
+  background-color: #4F4F4F
+}
+
+#div-logo-wrapper {
+  display: flex;
+  justify-content: center
+}
+
+.fa-logo {
+  margin: 8px
+}
