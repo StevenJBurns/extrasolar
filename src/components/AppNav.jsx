@@ -1,11 +1,12 @@
 /* React imports */
 import React from "react";
+import { Switch, Route, NavLink } from 'react-router-dom';
 
 /* App specific imports */
 // import AudioButton from "./AudioButton";
 
 
-export const AppNav = (props) => {
+export const AppNav = ({ activeStyle }) => {
   return (
     <nav>
       <ul>
