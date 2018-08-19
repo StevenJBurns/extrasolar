@@ -1,9 +1,13 @@
 #app-footer {
   width: 100%;
-  padding: 24px 0;
+  padding: 12px 0;
   color: #DFDFDF;
   text-align: center;
   background-color: #4F4F4F
+}
+
+#app-footer h4 {
+  margin: 8px
 }
 
 #div-logo-wrapper {
