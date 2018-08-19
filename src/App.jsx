@@ -8,10 +8,11 @@ import { AppHeader } from "./components/AppHeader.jsx";
 import { AppNav } from "./components/AppNav.jsx";
 import { AppFooter } from "./components/AppFooter.jsx";
 
-import PageHome from './containers/PageHome';
-import PageData from './containers/PageData';
-import PageVisualization from './containers/PageVisualization';
-import PageAbout from "./containers/PageAbout"
+import PageHome from './containers/PageHome.jsx';
+import PageData from './containers/PageData.jsx';
+import PageVisualization from './containers/PageVisualization.jsx';
+import PageAbout from "./containers/PageAbout.jsx";
+import { Page404 } from "./containers/Page404.jsx"
 
 /* Stylesheet Imports */
 import './styles/App.css';
@@ -33,6 +34,7 @@ class App extends React.Component {
           <Route exact path='/data' render={() => <PageData />} />
           <Route exact path='/visualization' render={() => <PageVisualization />} />
           <Route exact path='/about' render={() => <PageAbout />} />
+          <Route component={ Page404 } />
         </Switch>
         <AppFooter />
       </div>
