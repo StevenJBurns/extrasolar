@@ -30,7 +30,21 @@
 
 @media screen and (max-width: 480px) {
   #app-header {
-    flex-direction: column
+    flex-direction: row;
+    flex-wrap: wrap
+  }
+
+  #app-logo {
+    height: 60px;
+    width: 60px
+  }
+
+  #app-header h1 {
+    font-size: 1.25em
+  }
+
+  #app-header h4 {
+    font-size: 0.75em
   }
 
 }
