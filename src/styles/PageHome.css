@@ -1,6 +1,5 @@
 #main-home {
   flex: 1 0 auto;
-  padding: 96px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,12 +11,28 @@
 }
 
 #div-content-wrapper {
-  color: #0F0F0F;
   width: 75%;
   padding: 24px;
+  font-weight: bold;
+  color: #0F0F0F;
   background: #BFBFBF;
   border-radius: 8px;
-  max-width: 720px;
   text-align: justify;
+  max-width: 720px;
   opacity: 0.75;
+}
+
+#main-home p {
+  margin: 16px 0;
+}
+
+#main-home a:link,
+#main-home a:visited {
+  color: #2F2F2F;
+  transition: color 0.5s
+}
+
+#main-home a:hover,
+#main-home a:active {
+  color: #6F6F6F
 }
