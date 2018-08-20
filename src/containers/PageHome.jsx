@@ -7,6 +7,9 @@ import { changeAudioSource } from "../redux/actions";
 import AudioHome from '../assets/audio/home.ogg';
 import { CanvasComponent } from '../components/CanvasComponent.jsx';
 
+/* Style Imports */
+import "../styles/PageHome.css";
+
 
 export class PageHome extends React.Component {
   constructor(props) {

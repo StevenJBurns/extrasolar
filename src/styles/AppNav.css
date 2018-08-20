@@ -19,7 +19,7 @@
 #app-nav a {
   margin: auto;
   width: 144px;
-  font-size: 14px;
+  font-size: 16px;
   color: #F0F0F0;
   text-decoration: none;
   display: table-cell;
@@ -41,11 +41,11 @@
 
 @media screen and (max-width: 480px) {
   #app-nav li {
-    height: 24px;
+    height: 32px;
   }
 
   #app-nav a {
     width: 72px;
-    font-size: 8px
+    font-size: 10px
   }
 }

@@ -1,4 +1,5 @@
 #main-about {
+  flex: 1 0 auto;
   color: red;
   display: flex;
   flex-direction: column;
@@ -8,4 +9,19 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../assets/images/superearth.jpg");
+}
+
+#main-about p {
+  padding: 12px;
+  color: #2F2F2F;
+  background: azure;
+  border-radius: 8px;
+  max-width: 720px;
+  text-align: justify
+}
+
+#main-about a:link,
+#main-about a:visited {
+  color: #2F2F2F;
+  text-decoration: none
 }
