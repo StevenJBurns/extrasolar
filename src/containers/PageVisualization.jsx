@@ -7,7 +7,7 @@ import { changeAudioSource } from "../redux/actions";
 import AudioVisualization from '../assets/audio/visualization.ogg';
 
 
-class PageVisualization extends React.Component {
+export class PageVisualization extends React.Component {
   render() {
     return (
       <main>
@@ -20,5 +20,3 @@ class PageVisualization extends React.Component {
     store.dispatch(changeAudioSource(AudioVisualization));
   }
 }
-
-export default PageVisualization;

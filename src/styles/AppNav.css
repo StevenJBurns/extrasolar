@@ -1,34 +1,51 @@
-nav {
-  padding: 16px;
+#app-nav {
+  padding: 8px;
   background-color: #2F2F2F
 }
 
-nav ul {
+#app-nav ul {
+  display: flex;
+  justify-content: center;
   list-style: none
 }
 
-nav li {
-  margin: 8px;
-  display: inline-block
+#app-nav li {
+  margin: 2px;
+  height: 32px;
+  background: #4F4F4F;
+  display: table
 }
 
-nav a {
+#app-nav a {
   margin: auto;
-  padding: 4px;
   width: 144px;
+  font-size: 14px;
   color: #F0F0F0;
   text-decoration: none;
-  display: inline-block
+  display: table-cell;
+  vertical-align: middle
 }
 
-nav a:hover,
-nav a:active {
+#app-nav a:hover,
+#app-nav a:active {
   color: #F0F0F0;
   background-color: #4F4F4F;
   text-decoration: none
 }
 
-nav a:link,
-nav a:visited {
+#app-nav a:link,
+#app-nav a:visited {
+  height: 20px;
   color: #F0F0F0
+}
+
+@media screen and (max-width: 480px) {
+  #app-nav li {
+    height: 24px;
+  }
+
+  #app-nav a {
+    width: 72px;
+    font-size: 8px
+  }
 }

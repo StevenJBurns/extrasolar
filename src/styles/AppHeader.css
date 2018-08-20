@@ -28,15 +28,14 @@
   to { transform: rotate(360deg); }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   #app-header {
-    flex-direction: row;
     flex-wrap: wrap
   }
 
   #app-logo {
-    height: 60px;
-    width: 60px
+    height: 64px;
+    width: 64px
   }
 
   #app-header h1 {

@@ -1,17 +1,17 @@
 /* React, Router and Redux Imports */
 import React from 'react';
 // import store from "./redux/store";
-import { Switch, Route, NavLink } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 /* App specific Imports */
 import { AppHeader } from "./components/AppHeader.jsx";
 import { AppNav } from "./components/AppNav.jsx";
 import { AppFooter } from "./components/AppFooter.jsx";
 
-import PageHome from './containers/PageHome.jsx';
-import PageData from './containers/PageData.jsx';
-import PageVisualization from './containers/PageVisualization.jsx';
-import PageAbout from "./containers/PageAbout.jsx";
+import { PageHome } from './containers/PageHome.jsx';
+import { PageData } from './containers/PageData.jsx';
+import { PageVisualization } from './containers/PageVisualization.jsx';
+import { PageAbout } from "./containers/PageAbout.jsx";
 import { Page404 } from "./containers/Page404.jsx"
 
 /* Stylesheet Imports */
@@ -21,7 +21,7 @@ import './styles/AppFooter.css';
 import './styles/AppNav.css';
 
 
-class App extends React.Component {
+export class App extends React.Component {
   render() {
     const activeStyle = { backgroundColor : '#8F8F8F' };
 
@@ -41,5 +41,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;

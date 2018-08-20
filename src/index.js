@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import store from "./redux/store/index";
 
 /* App specific imports */
-import App from './App.jsx';
+import { App } from './App.jsx';
 
 /* stylesheet imports */
 import './styles/index.css';

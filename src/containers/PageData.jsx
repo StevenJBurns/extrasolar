@@ -1,5 +1,5 @@
 /* React and Redux imports */
-import React, { Component } from 'react';
+import React from 'react';
 import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
@@ -7,7 +7,7 @@ import { changeAudioSource } from "../redux/actions";
 import AudioData from '../assets/audio/data.ogg';
 
 
-class PageData extends Component {
+export class PageData extends React.Component {
   render() {
     return (
       <main>
@@ -20,5 +20,3 @@ class PageData extends Component {
     store.dispatch(changeAudioSource(AudioData));
   }
 }
-
-export default PageData;

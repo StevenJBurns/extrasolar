@@ -1,24 +1,23 @@
 /* React and Redux imports */
-import React, { Component } from 'react';
+import React from 'react';
 import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
 /* Page specific imports */
 import AudioHome from '../assets/audio/home.ogg';
-import CanvasHome from '../components/IntroCanvas.jsx';
+import { CanvasComponent } from '../components/CanvasComponent.jsx';
 
 
-class PageHome extends Component {
+export class PageHome extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleResize = this.handleResize.bind(this);
   }
 
   render() {
     return (
       <main id="main-home">
-        <CanvasHome />
+        <CanvasComponent />
       </main>
     );
   }
@@ -29,8 +28,8 @@ class PageHome extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
-    const height = document.getElementById('main-home').clientHeight;
-    const width = document.getElementById('main-home').clientWidth;
+    // const height = document.getElementById('main-home').clientHeight;
+    // const width = document.getElementById('main-home').clientWidth;
   }
 
   componentWillUnmount() {
@@ -44,5 +43,3 @@ class PageHome extends Component {
     });    
   }
 }
-
-export default PageHome;

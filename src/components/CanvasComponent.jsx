@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class CanvasHome extends Component {
+export class CanvasComponent extends React.Component {
   constructor(props) {
     super(props);
-
     this.ctx = null;
     this.starfield = [];
-  }
-
-  componentWillMount() {
-
   }
 
   componentDidMount() {
@@ -43,5 +38,3 @@ class CanvasHome extends Component {
     );
   }
 }
-
-export default CanvasHome;
