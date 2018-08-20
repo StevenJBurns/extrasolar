@@ -9,6 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../assets/images/superearth.jpg");
+  text-shadow: 1px 1px 32px #7F7F7F
 }
 
 #div-content-wrapper {
@@ -20,7 +21,7 @@
   border-radius: 8px;
   text-align: justify;
   max-width: 720px;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 #main-home p {

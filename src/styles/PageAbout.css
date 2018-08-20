@@ -9,6 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../assets/images/alpha-centauri-h.jpg");
+  text-shadow: 1px 1px 32px #7F7F7F
 }
 
 #div-content-wrapper {
@@ -19,7 +20,7 @@
   border-radius: 8px;
   max-width: 720px;
   text-align: justify;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 #main-about p {

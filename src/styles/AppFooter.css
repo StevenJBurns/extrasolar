@@ -3,7 +3,8 @@
   padding: 12px 0;
   color: #DFDFDF;
   text-align: center;
-  background-color: #4F4F4F
+  background-color: #4F4F4F;
+  text-shadow: 2px 2px 8px #0F0F0F
 }
 
 #app-footer h4 {
