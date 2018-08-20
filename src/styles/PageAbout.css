@@ -1,6 +1,5 @@
 #main-about {
   flex: 1 0 auto;
-  color: red;
   padding: 96px 0;
   display: flex;
   flex-direction: column;
@@ -9,18 +8,18 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../assets/images/superearth.jpg");
+  background-image: url("../assets/images/alpha-centauri-h.jpg");
 }
 
 #div-content-wrapper {
   color: #0F0F0F;
   width: 75%;
   padding: 24px;
-  background: azure;
+  background: #BFBFBF;
   border-radius: 8px;
   max-width: 720px;
   text-align: justify;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 #main-about p {
