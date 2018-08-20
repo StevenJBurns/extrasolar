@@ -4,7 +4,7 @@ import store from "../redux/store";
 import { changeAudioSource } from "../redux/actions";
 
 /* Style Imports */
-import "../styles/PageVisualization.css";
+import "../styles/PageSolarSystems.css";
 
 /* Page specific imports */
 import AudioVisualization from '../assets/audio/visualization.ogg';
