@@ -10,7 +10,7 @@ import { AppFooter } from "./components/AppFooter.jsx";
 
 import { PageHome } from './containers/PageHome.jsx';
 import { PageData } from './containers/PageData.jsx';
-import { PageVisualization } from './containers/PageVisualization.jsx';
+import { PageSolarSystems } from './containers/PageSolarSystems';
 import { PageAbout } from "./containers/PageAbout.jsx";
 import { Page404 } from "./containers/Page404.jsx"
 
@@ -32,7 +32,7 @@ export class App extends React.Component {
         <Switch>
           <Route exact path='/' render={() => <PageHome />} />
           <Route exact path='/data' render={() => <PageData />} />
-          <Route exact path='/visualization' render={() => <PageVisualization />} />
+          <Route exact path='/visualization' render={() => <PageSolarSystems />} />
           <Route exact path='/about' render={() => <PageAbout />} />
           <Route component={ Page404 } />
         </Switch>

@@ -10,7 +10,7 @@ import "../styles/PageVisualization.css";
 import AudioVisualization from '../assets/audio/visualization.ogg';
 
 
-export class PageVisualization extends React.Component {
+export class PageSolarSystems extends React.Component {
   render() {
     return (
       <main id="main-visualization">

@@ -25,10 +25,10 @@ export const AppFooter = (props) => {
             <circle cx="128" cy="128" r="96" fill="#D0D0D0" filter="url(#drop-shadow)">
               <animate attributeType="XML" attributeName="r" from="0" to="96" dur="0.75s" fill="freeze" />
             </circle>
-            <circle cx="128" cy="128" r="0" fill="none" stroke="#2F2F2FFF" stroke-width="24">
+            <circle cx="128" cy="128" r="0" fill="none" stroke="#2F2F2FFF" strokeWidth="24">
               <animate attributeType="XML" attributeName="r" begin="0.75s" from="0" to="50" dur="0.75s" fill="freeze" />
             </circle>
-            <polygon opacity="0" points="128,128 16,84 62,62 84,16" stroke="#2F2F2FFF" stroke-width="8" stroke-linejoin="round" fill="#F0F0F0" fill-opacity="1">
+            <polygon opacity="0" points="128,128 16,84 62,62 84,16" stroke="#2F2F2FFF" strokeWidth="8" strokeLinejoin="round" fill="#F0F0F0" fillOpacity="1">
               <animate attributeType="XML" attributeName="opacity" begin="1.5s" from="0" to="1" dur="0.5s" fill="freeze" />
               <animateTransform attributeName="transform" type="translate" from="-24 -24" to="0 0" begin="1.5s" dur="0.5s" fill="freeze" />
             </polygon>
