@@ -1,6 +1,7 @@
 #main-about {
   flex: 1 0 auto;
   color: red;
+  padding: 96px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,17 +12,29 @@
   background-image: url("../assets/images/superearth.jpg");
 }
 
-#main-about p {
-  padding: 12px;
-  color: #2F2F2F;
+#div-content-wrapper {
+  color: #0F0F0F;
+  width: 75%;
+  padding: 24px;
   background: azure;
   border-radius: 8px;
   max-width: 720px;
-  text-align: justify
+  text-align: justify;
+  opacity: 0.5;
+}
+
+#main-about p {
+  margin: 16px 0;
 }
 
 #main-about a:link,
 #main-about a:visited {
   color: #2F2F2F;
-  text-decoration: none
+  transition: color 0.5s
 }
+
+#main-about a:hover,
+#main-about a:active {
+  color: #6F6F6F
+}
+
