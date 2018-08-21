@@ -24,8 +24,6 @@ const render = () => {
 
 render();
 
-console.log(localStorage.getItem("isAudioMuted"));
-
 store.subscribe(render);
   
 registerServiceWorker();

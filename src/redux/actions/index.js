@@ -1,9 +1,12 @@
+import { ACTION_TYPES } from "./actionTypes";
+
+
 export const toggleAudioMute = audioState => ({
-    type: "TOGGLE_AUDIO",
+    type: ACTION_TYPES.TOGGLE_AUDIO_MUTE,
     payload: audioState
 });
 
 export const changeAudioSource = audioSource => ({
-    type: "CHANGE_AUDIO_SOURCE",
+    type: ACTION_TYPES.CHANGE_AUDIO_SOURCE,
     payload: audioSource
 });

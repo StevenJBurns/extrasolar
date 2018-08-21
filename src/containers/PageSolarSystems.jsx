@@ -7,19 +7,19 @@ import { changeAudioSource } from "../redux/actions";
 import "../styles/PageSolarSystems.css";
 
 /* Page specific imports */
-import AudioVisualization from '../assets/audio/visualization.ogg';
+import AudioSolarSystems from '../assets/audio/solarsystems.ogg';
 
 
 export class PageSolarSystems extends React.Component {
   render() {
     return (
-      <main id="main-visualization">
-        <h1>Visualization</h1>
+      <main id="main-solarsystems">
+        <h1>Solar Systems</h1>
       </main>
     );
   }
 
   componentWillMount() {
-    store.dispatch(changeAudioSource(AudioVisualization));
+    store.dispatch(changeAudioSource(AudioSolarSystems));
   }
 }
