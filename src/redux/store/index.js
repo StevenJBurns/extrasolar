@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import { rootReducer } from "../reducers/index";
 
 
-if (localStorage.getItem("isAudioMuted") == null) {
+if (localStorage.getItem("isAudioMuted") === null) {
   localStorage.setItem("isAudioMuted", "false")
 }
 

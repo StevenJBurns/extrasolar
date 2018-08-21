@@ -1,20 +1,21 @@
-import { ACTION_TYPES } from "../actions/actionTypes";
+import { actions } from "../actions/actionTypes";
 
 
 const initialState = {
-    isAudioMuted: localStorage.getItem("isAudioMuted")
+  isAudioMuted: localStorage.getItem("isAudioMuted")
 };
 
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION_TYPES.TOGGLE_AUDIO_MUTE:
+    case actions.TOGGLE_AUDIO_MUTE:
+      console.log("Is Audio Muted:", action.payload)
       return { ...state, isAudioMuted: !action.payload };
-    case ACTION_TYPES.CHANGE_AUDIO_SOURCE:
-      console.log(action.payload)
+    case actions.CHANGE_AUDIO_SOURCE:
+      console.log("Audio Source:", action.payload)
       return { ...state, currentAudioSource: action.payload };
-    case ACTION_TYPES.SELECT_SOLAR_SYSTEM:
+    case actions.SELECT_SOLAR_SYSTEM:
       return state;
-    case ACTION_TYPES.FILTER_SOLAR_SYSTEMS:
+    case actions.FILTER_SOLAR_SYSTEMS:
       return state;
     default:
       return state;
