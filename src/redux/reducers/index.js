@@ -5,11 +5,12 @@ const initialState = {
     isAudioMuted: localStorage.getItem("isAudioMuted")
 };
 
-const rootReducer = (state = initialState, action) => {
+export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.TOGGLE_AUDIO_MUTE:
       return { ...state, isAudioMuted: !action.payload };
     case ACTION_TYPES.CHANGE_AUDIO_SOURCE:
+      console.log(action.payload)
       return { ...state, currentAudioSource: action.payload };
     case ACTION_TYPES.SELECT_SOLAR_SYSTEM:
       return state;
@@ -19,5 +20,3 @@ const rootReducer = (state = initialState, action) => {
       return state;
   }
 }; 
-
-export default rootReducer;

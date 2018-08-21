@@ -1,10 +1,14 @@
 import React from "react";
+import store from "../redux/store";
+import { changeAudioSource } from "../redux/actions"; 
 
 /* Style Imports */
 import "../styles/PageAbout.css"
+import AudioAbout from "../assets/audio/about.ogg";
 
-export const PageAbout = (props) => {
-  return (
+export class PageAbout extends React.Component {
+  render() {
+    return(
     <main id="main-about">
       <div id="div-content-wrapper">
         <h1>About</h1>
@@ -16,5 +20,10 @@ export const PageAbout = (props) => {
         <p>The current source code is <a href="https://github.com/StevenJBurns/extrasolar">here</a> and the live version is hosted straight from Github Pages.</p>
       </div>
     </main>
-  );
+    );
+  };
+
+  componentWillMount() {
+    store.dispatch(changeAudioSource(AudioAbout));
+  }
 };
