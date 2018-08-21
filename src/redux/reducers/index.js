@@ -2,7 +2,10 @@ import { actions } from "../actions/actionTypes";
 
 
 const initialState = {
-  isAudioMuted: localStorage.getItem("isAudioMuted")
+  isAudioMuted: localStorage.getItem("isAudioMuted"),
+  currentAudioSource: null,
+  selectedSolarSystem: null,
+  filteredSolarSystems: null
 };
 
 export const rootReducer = (state = initialState, action) => {
