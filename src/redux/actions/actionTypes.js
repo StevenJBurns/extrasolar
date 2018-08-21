@@ -1,4 +1,7 @@
+import { FETCH_PLANET_DATA } from "../actions/actionTypes";
+
 export const actions = {
+    FETCH_DATA: "FETCH_DATA",
     FETCH_STAR_DATA: "FETCH_STAR_DATA",
     FETCH_PLANET_DATA: "FETCH_STAR_DATA",
     TOGGLE_AUDIO_MUTE: "TOGGLE_AUDIO_MUTE",

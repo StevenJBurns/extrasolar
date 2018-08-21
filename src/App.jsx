@@ -1,7 +1,8 @@
 /* React, Router and Redux Imports */
 import React from 'react';
-import store from "./redux/store";
 import { Switch, Route } from 'react-router-dom';
+import store from "./redux/store";
+import { fetchStarData, fetchPlanetData } from "./redux/actions/index"
 
 /* App specific Imports */
 import { AppHeader } from "./components/AppHeader.jsx";
@@ -20,6 +21,8 @@ import './styles/AppHeader.css';
 import './styles/AppFooter.css';
 import './styles/AppNav.css';
 
+const urlDistinctStars = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname,pl_cbflag,pl_pnum,st_mass,st_rad,st_teff,st_dist&order=pl_hostname&format=json";
+const urlDistinctPlanets = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper&format=json";
 
 export class App extends React.Component {
   render() {
@@ -41,7 +44,8 @@ export class App extends React.Component {
     );
   };
 
-  componentDidMount() {
-
+  componentWillMount() {
+    store.dispatch(fetchStarData(urlDistinctStars));
+    store.dispatch(fetchStarData(urlDistinctPlanets));
   };
 }
