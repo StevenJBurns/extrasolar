@@ -1,6 +1,6 @@
 /* React, Router and Redux Imports */
 import React from 'react';
-// import store from "./redux/store";
+import store from "./redux/store";
 import { Switch, Route } from 'react-router-dom';
 
 /* App specific Imports */
@@ -32,12 +32,16 @@ export class App extends React.Component {
         <Switch>
           <Route exact path='/' render={() => <PageHome />} />
           <Route exact path='/data' render={() => <PageData />} />
-          <Route exact path='/visualization' render={() => <PageSolarSystems />} />
+          <Route exact path='/solarsystems' render={() => <PageSolarSystems />} />
           <Route exact path='/about' render={() => <PageAbout />} />
           <Route component={ Page404 } />
         </Switch>
         <AppFooter />
       </div>
     );
-  }
+  };
+
+  componentDidMount() {
+
+  };
 }
