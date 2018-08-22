@@ -1,6 +1,5 @@
 /* React and Redux imports */
 import React from "react";
-import store from "../redux/store";
 import { toggleAudioMute } from "../redux/actions/index";  
 
 /* FONT AWESOME! */
@@ -8,10 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
 
-const AudioButton = ({ isAudioMuted, audioSource }) => {
-  const buttonColor = isAudioMuted ? "red" : "green";
+const AudioButton = (store) => {
+  console.log(this.context);
+  
+  let { isAudioMuted } = store;
+  let audioSource;
 
-  const handleAudioButtonClick = () => store.dispatch(toggleAudioMute(isAudioMuted));
+  const buttonColor = isAudioMuted ? "darkred" : "darkgreen";
+
+  const handleAudioButtonClick = () => {
+    isAudioMuted = !isAudioMuted;
+    console.log(isAudioMuted);
+  }
+    
   
   const buttonStyle = {
     width: '48px',
@@ -24,7 +32,7 @@ const AudioButton = ({ isAudioMuted, audioSource }) => {
 
   return (
     <div>
-      <button type="button" style={ buttonStyle } onClick={ handleAudioButtonClick.bind(null, isAudioMuted) }>
+      <button type="button" style={ buttonStyle } onClick={ handleAudioButtonClick }>
         <FontAwesomeIcon icon={ isAudioMuted ? faVolumeOff : faVolumeUp } size="2x" />
       </button>
       <audio autoPlay loop src={ audioSource } muted={ isAudioMuted }>

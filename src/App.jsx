@@ -1,8 +1,6 @@
 /* React, Router and Redux Imports */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import store from "./redux/store";
-import { fetchStarData } from "./redux/actions/index"
 
 /* App specific Imports */
 import { AppHeader } from "./components/AppHeader.jsx";
@@ -21,31 +19,24 @@ import './styles/AppHeader.css';
 import './styles/AppFooter.css';
 import './styles/AppNav.css';
 
-const urlDistinctStars = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname,pl_cbflag,pl_pnum,st_mass,st_rad,st_teff,st_dist&order=pl_hostname&format=json";
-const urlDistinctPlanets = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper&format=json";
+// const urlDistinctStars = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname,pl_cbflag,pl_pnum,st_mass,st_rad,st_teff,st_dist&order=pl_hostname&format=json";
+// const urlDistinctPlanets = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper&format=json";
 
-export class App extends React.Component {
-  render() {
-    const activeStyle = { backgroundColor : '#8F8F8F' };
+export const App = () => {
+  const activeStyle = { backgroundColor : '#8F8F8F' };
 
-    return (
-      <div className="App">
-        <AppHeader />
-        <AppNav activeStyle={ activeStyle } />
-        <Switch>
-          <Route exact path='/' render={() => <PageHome />} />
-          <Route exact path='/data' render={() => <PageData />} />
-          <Route exact path='/solarsystems' render={() => <PageSolarSystems />} />
-          <Route exact path='/about' render={() => <PageAbout />} />
-          <Route component={ Page404 } />
-        </Switch>
-        <AppFooter />
-      </div>
-    );
-  };
-
-  componentWillMount() {
-    store.dispatch(fetchStarData(urlDistinctStars));
-    store.dispatch(fetchStarData(urlDistinctPlanets));
-  };
+  return (
+    <div className="App">
+      <AppHeader />
+      <AppNav activeStyle={ activeStyle } />
+      <Switch>
+        <Route exact path='/' render={() => <PageHome />} />
+        <Route exact path='/data' render={() => <PageData />} />
+        <Route exact path='/solarsystems' render={() => <PageSolarSystems />} />
+        <Route exact path='/about' render={() => <PageAbout />} />
+        <Route component={ Page404 } />
+      </Switch>
+      <AppFooter />
+    </div>
+  );
 }

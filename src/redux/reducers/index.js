@@ -1,17 +1,15 @@
 import { combineReducers } from "redux";
 
-import { reducerData } from "./reducerData";
 import { reducerUI } from "./reducerUI";
+import { reducerData } from "./reducerData";
 import { reducerFilter } from "./reducerFilter";
 import { reducerSort } from "./reducerSort";
-
-// import { actions } from "../actions/actionTypes";
 
 
 export const rootReducer = combineReducers(
   {
-    data: reducerData, 
     ui: reducerUI,
+    data: reducerData, 
     filters: reducerFilter,
     sorting: reducerSort
   }
