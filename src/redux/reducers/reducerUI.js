@@ -1,18 +1,27 @@
 import { actions } from "../actions/actionTypes.js";
 
-export const reducerUI = (state = {}, action) => {
-  switch (action) {
-    case actions.TOGGLE_AUDIO_MUTE:
-      console.log("Audio Toggled: ", action);
-      let muted = !action.payload;
-      return {...state, isAudioMuted: muted};
-    case actions.CHANGE_AUDIO_SOURCE:
-      return {...state};
-    default:
-      return {...state};
-  }
-  // if (state === "undefined") return {};
+const initialState =  {
+  ui:
+    {
+    isAudioMuted: JSON.parse(localStorage.getItem("isAudioMuted")),
+    currentAudioSource: null
+    }
+  };
 
-  // if (action === actions.TOGGLE_AUDIO_MUTE)
-  // return { ...state, ui: { isAudioMuted: !action.payload }};
+export const reducerUI = (state = initialState, action) => {
+  switch (action.type) {
+    case actions.TOGGLE_AUDIO_MUTE:
+      let muted = !action.payload
+      // console.log("payload", action.payload);
+      console.log("before:", state);
+      state = {...state, ui: {...state.ui, isAudioMuted: muted}};
+      console.log("after:", state);
+      break;
+    case actions.CHANGE_AUDIO_SOURCE:
+      state = {...state};
+      break;
+    default:
+      state = {...state};
+  }
+  return state;
 }

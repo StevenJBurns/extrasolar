@@ -1,5 +1,5 @@
 import React from "react";
-import store from "../redux/store";
+import { store } from "../redux/store";
 import { changeAudioSource } from "../redux/actions"; 
 
 /* Style Imports */

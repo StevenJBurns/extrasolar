@@ -7,20 +7,8 @@ if (localStorage.getItem("isAudioMuted") === null) {
 };
 
 const initialState = {
-  data: {
-    stars: [],
-    planets: [],
-    selectedSolarSystem: null,
-    filteredSolarSystems: null  
-  },
-  ui: {
-    isAudioMuted: localStorage.getItem("isAudioMuted"),
-    currentAudioSource: null
-  },
   filters: {},
   sorting: {},
 }
 
-const store = createStore(rootReducer, initialState);
-
-export default store;
+export const store = createStore(rootReducer, initialState);

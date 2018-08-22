@@ -15,7 +15,6 @@ export const rootReducer = combineReducers(
   }
 );
 
-
 // export const rootReducer = (state = initialState, action) => {
 //   switch (action.type) {
 //     case actions.FETCH_STAR_DATA:
