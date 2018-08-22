@@ -1,3 +1,3 @@
-export const reducerFetchPlanetData = (state, action) => {
+export const reducerFetchPlanetData = (state = [], action) => {
   return state;
 }

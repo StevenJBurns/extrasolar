@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 /* Redux imports */ 
 import store from "./redux/store/index";
+import { Provider } from "react-redux";
 
 /* App specific imports */
 import { App } from './App.jsx';
@@ -16,9 +17,12 @@ import './styles/index.css';
 
 const render = () => {
   ReactDOM.render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <App />
-    </BrowserRouter>, document.getElementById('root')
+    <Provider store={store}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <App />
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById('root')
   );
 }
 

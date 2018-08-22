@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import store from "./redux/store";
-import { fetchStarData, fetchPlanetData } from "./redux/actions/index"
+import { fetchStarData } from "./redux/actions/index"
 
 /* App specific Imports */
 import { AppHeader } from "./components/AppHeader.jsx";

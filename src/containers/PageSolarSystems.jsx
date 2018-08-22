@@ -15,9 +15,13 @@ export class PageSolarSystems extends React.Component {
     return (
       <main id="main-solarsystems">
         <h1>Solar Systems</h1>
+        <ul>
+
+        </ul>
       </main>
     );
   }
+
 
   componentWillMount() {
     store.dispatch(changeAudioSource(AudioSolarSystems));

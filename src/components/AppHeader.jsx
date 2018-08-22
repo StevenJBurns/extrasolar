@@ -1,14 +1,12 @@
-/* React imports */
+/* React and Redux Imports */
 import React from "react";
-
-/* Redux imports */
 import store from "../redux/store";
 
 /* App specific imports */
 import AppLogo from "../assets/logo/extrasolar.png";
 import AudioButton from "./AudioButton.jsx";
 
-export const AppHeader = (props) => {
+export const AppHeader = () => {
   const { isAudioMuted, currentAudioSource } = store.getState();
 
   return (

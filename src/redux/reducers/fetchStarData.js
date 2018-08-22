@@ -1,5 +1,5 @@
-import { FETCH_STAR_DATA } from "../actions/actionTypes";
+// import { FETCH_STAR_DATA } from "../actions/actionTypes";
 
-export const reducerFetchStarData = (state, action) => {
+export const reducerFetchStarData = (state = [], action) => {
     return state;
 }

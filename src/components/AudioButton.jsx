@@ -9,9 +9,9 @@ import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
 
 const AudioButton = ({ isAudioMuted, audioSource }) => {
-  const handleAudioButtonClick = () => store.dispatch(toggleAudioMute(isAudioMuted));
-
   const buttonColor = isAudioMuted ? "red" : "green";
+
+  const handleAudioButtonClick = () => store.dispatch(toggleAudioMute(isAudioMuted));
   
   const buttonStyle = {
     width: '48px',
