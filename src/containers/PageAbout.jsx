@@ -29,4 +29,10 @@ export class PageAbout extends React.Component {
   }
 };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);
+const mapDispatchToProps = dispatch => {
+  return {
+    // toggleMute: muted => dispatch(toggleAudioMute(muted))
+  }
+}
+
+// export default connect(null, mapDispatchToProps)(AudioButton);

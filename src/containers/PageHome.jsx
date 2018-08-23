@@ -53,5 +53,10 @@ export class PageHome extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    // toggleMute: muted => dispatch(toggleAudioMute(muted))
+  }
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);
+// export default connect(null, mapDispatchToProps)(AudioButton);
