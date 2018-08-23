@@ -3,9 +3,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { changeAudioSource} from "../redux/actions/index";
 
-/* Style Imports */
+/* Assets and Styles Imports */
 import "../styles/PageAbout.css"
 import AudioAbout from "../assets/audio/about.ogg";
+
 
 const PageAbout = ({changeSource}) => {
   changeSource(AudioAbout);

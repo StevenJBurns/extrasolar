@@ -1,34 +1,27 @@
 /* React and Redux imports */
 import React from 'react';
-import { store } from "../redux/store";
 import { connect } from "react-redux";
 import { changeAudioSource } from "../redux/actions";
 
-/* Page specific imports */
+/* Assets and Styles Imports */
 import AudioData from '../assets/audio/data.ogg';
-
-/* Style Imports */
 import "../styles/PageData.css";
 
 
-export class PageData extends React.Component {
-  render() {
-    return (
-      <main id="main-data">
-        <h1>Data</h1>
-      </main>
-    );
-  }
+const PageData = ({changeSource}) => {
+  changeSource(AudioData);
 
-  componentWillMount() {
-    // store.dispatch(changeAudioSource(AudioData));
-  }
+  return (
+    <main id="main-data">
+      <h1>Data</h1>
+    </main>
+  );
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    // toggleMute: muted => dispatch(toggleAudioMute(muted))
+    changeSource: AudioData => dispatch(changeAudioSource(AudioData))
   }
 }
 
-// export default connect(null, mapDispatchToProps)(AudioButton);
+export default connect(null, mapDispatchToProps)(PageData);

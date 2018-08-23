@@ -1,8 +1,7 @@
 /* React and Redux imports */
 import React from "react";
-import { connect } from "react-redux";
-import { actions } from "../redux/actions/actionTypes";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { toggleAudioMute } from "../redux/actions/index.js";
 
 /* FONT AWESOME! */

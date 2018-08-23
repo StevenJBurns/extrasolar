@@ -1,6 +1,5 @@
 /* React and Redux imports */
 import React from 'react';
-import { store } from "../redux/store";
 import { connect } from "react-redux";
 import { changeAudioSource } from "../redux/actions";
 
@@ -47,11 +46,11 @@ const PageHome = ({changeSource}) => {
   //     windowWidth: document.getElementById('main-home').clientWidth
   //   });
   // }
-  
+
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeSource: AudioAbout => dispatch(changeAudioSource(AudioAbout))
+    changeSource: AudioHome => dispatch(changeAudioSource(AudioHome))
   }
 }
 

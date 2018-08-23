@@ -8,8 +8,8 @@ import { AppNav } from "./components/AppNav.jsx";
 import { AppFooter } from "./components/AppFooter.jsx";
 
 import PageHome from './containers/PageHome.jsx';
-import { PageData } from './containers/PageData.jsx';
-import { PageSolarSystems } from './containers/PageSolarSystems';
+import PageData from './containers/PageData.jsx';
+import PageSolarSystems from './containers/PageSolarSystems';
 import PageAbout from "./containers/PageAbout.jsx";
 import { Page404 } from "./containers/Page404.jsx"
 
