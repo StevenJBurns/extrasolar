@@ -16,13 +16,15 @@ const initialState =  {
 export const reducerUI = (state = initialState, action) => {
   switch (action.type) {
     case actions.TOGGLE_AUDIO_MUTE:
-      console.log("before", state.isAudioMuted); 
+      // console.log("before", state.isAudioMuted); 
       let isMuted = !action.payload   
       state = {...state, isAudioMuted: isMuted};
-      console.log("after", state.isAudioMuted);
+      // console.log("after", state.isAudioMuted);
       break;
     case actions.CHANGE_AUDIO_SOURCE:
-      state = {...state};
+      let source = action.payload;
+      state = {...state, currentAudioSource: source};
+      console.log("after: ", state.currentAudioSource);
       break;
     default:
       state = {...state};

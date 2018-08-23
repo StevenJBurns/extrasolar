@@ -21,7 +21,7 @@ export class PageData extends React.Component {
   }
 
   componentWillMount() {
-    store.dispatch(changeAudioSource(AudioData));
+    // store.dispatch(changeAudioSource(AudioData));
   }
 }
 

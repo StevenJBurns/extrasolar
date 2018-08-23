@@ -10,7 +10,7 @@ import { AppFooter } from "./components/AppFooter.jsx";
 import { PageHome } from './containers/PageHome.jsx';
 import { PageData } from './containers/PageData.jsx';
 import { PageSolarSystems } from './containers/PageSolarSystems';
-import { PageAbout } from "./containers/PageAbout.jsx";
+import PageAbout from "./containers/PageAbout.jsx";
 import { Page404 } from "./containers/Page404.jsx"
 
 /* Stylesheet Imports */
@@ -25,7 +25,6 @@ import './styles/AppNav.css';
 const activeStyle = { backgroundColor : '#8F8F8F' };
 
 export class App extends React.Component {
-
   render() {
     return (
       <div className="App">

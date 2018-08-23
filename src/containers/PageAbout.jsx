@@ -1,15 +1,16 @@
+/* React and Redux Imports */
 import React from "react";
-import { store } from "../redux/store";
 import { connect } from "react-redux";
-import { changeAudioSource } from "../redux/actions"; 
+import { changeAudioSource} from "../redux/actions/index";
 
 /* Style Imports */
 import "../styles/PageAbout.css"
 import AudioAbout from "../assets/audio/about.ogg";
 
-export class PageAbout extends React.Component {
-  render() {
-    return(
+const PageAbout = ({changeSource}) => {
+  changeSource(AudioAbout)
+
+  return(
     <main id="main-about">
       <div id="div-content-wrapper">
         <h1>About</h1>
@@ -21,18 +22,13 @@ export class PageAbout extends React.Component {
         <p>The current source code is <a href="https://github.com/StevenJBurns/extrasolar">here</a> and the live version is hosted straight from Github Pages.</p>
       </div>
     </main>
-    );
-  };
-
-  componentWillMount() {
-    store.dispatch(changeAudioSource(AudioAbout));
-  }
+  );
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    // toggleMute: muted => dispatch(toggleAudioMute(muted))
+    changeSource: AudioAbout => dispatch(changeAudioSource(AudioAbout))
   }
 }
 
-// export default connect(null, mapDispatchToProps)(AudioButton);
+export default connect(null, mapDispatchToProps)(PageAbout);

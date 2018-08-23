@@ -32,7 +32,7 @@ export class PageHome extends React.Component {
   }
 
   componentWillMount() {
-    store.dispatch(changeAudioSource(AudioHome));
+    // store.dispatch(changeAudioSource(AudioHome));
   }
 
   componentDidMount() {

@@ -25,7 +25,7 @@ export class PageSolarSystems extends React.Component {
 
 
   componentWillMount() {
-    store.dispatch(changeAudioSource(AudioSolarSystems));
+    // store.dispatch(changeAudioSource(AudioSolarSystems));
   }
 }
 
