@@ -1,11 +1,17 @@
 import { actions } from "../actions/actionTypes.js";
 
+
+if (localStorage.getItem("lastFetch") === null) {
+  localStorage.setItem("lastFetch", Date.now().toString())
+};
+
 const initialState = {
   data: {
     stars: [],
     planets: [],
     selectedSolarSystem: null,
-    filteredSolarSystems: null  
+    filteredSolarSystems: null,
+    lastFetch: JSON.parse(localStorage.getItem("lastFetch"))
   }
 }
 
