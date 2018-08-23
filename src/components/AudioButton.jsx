@@ -44,8 +44,8 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-AudioButton.propTypes = {
-  isMuted: PropTypes.bool
-}
+// AudioButton.propTypes = {
+//   isMuted: PropTypes.bool
+// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);
