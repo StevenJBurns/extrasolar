@@ -10,13 +10,9 @@ import AudioHome from '../assets/audio/home.ogg';
 // import { CanvasComponent } from '../components/CanvasComponent.jsx';
 
 
-export class PageHome extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleResize = this.handleResize.bind(this);
-  }
+const PageHome = ({changeSource}) => {
+  changeSource(AudioHome);
 
-  render() {
     return (
       <main id="main-home">
         <div id="div-content-wrapper">
@@ -31,32 +27,32 @@ export class PageHome extends React.Component {
     );
   }
 
-  componentWillMount() {
-    // store.dispatch(changeAudioSource(AudioHome));
-  }
+  // componentWillMount() {
+  //   // store.dispatch(changeAudioSource(AudioHome));
+  // }
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
-    // const height = document.getElementById('main-home').clientHeight;
-    // const width = document.getElementById('main-home').clientWidth;
-  }
+  // componentDidMount() {
+  //   window.addEventListener('resize', this.handleResize)
+  //   // const height = document.getElementById('main-home').clientHeight;
+  //   // const width = document.getElementById('main-home').clientWidth;
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('resize', this.handleResize);
+  // }
 
-  handleResize() {
-    this.setState({
-      windowHeight: document.getElementById('main-home').clientHeight,
-      windowWidth: document.getElementById('main-home').clientWidth
-    });    
-  }
-}
+  // handleResize() {
+  //   this.setState({
+  //     windowHeight: document.getElementById('main-home').clientHeight,
+  //     windowWidth: document.getElementById('main-home').clientWidth
+  //   });
+  // }
+  
 
 const mapDispatchToProps = dispatch => {
   return {
-    // toggleMute: muted => dispatch(toggleAudioMute(muted))
+    changeSource: AudioAbout => dispatch(changeAudioSource(AudioAbout))
   }
 }
 
-// export default connect(null, mapDispatchToProps)(AudioButton);
+export default connect(null, mapDispatchToProps)(PageHome);

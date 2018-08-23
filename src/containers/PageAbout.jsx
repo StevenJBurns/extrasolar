@@ -8,7 +8,7 @@ import "../styles/PageAbout.css"
 import AudioAbout from "../assets/audio/about.ogg";
 
 const PageAbout = ({changeSource}) => {
-  changeSource(AudioAbout)
+  changeSource(AudioAbout);
 
   return(
     <main id="main-about">
