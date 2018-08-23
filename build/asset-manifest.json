@@ -1,13 +1,14 @@
 {
-  "main.css": "static/css/main.c4c9d774.css",
-  "main.css.map": "static/css/main.c4c9d774.css.map",
-  "main.js": "static/js/main.15bf0a5a.js",
-  "main.js.map": "static/js/main.15bf0a5a.js.map",
+  "main.css": "static/css/main.c1316483.css",
+  "main.css.map": "static/css/main.c1316483.css.map",
+  "main.js": "static/js/main.d9a78d0c.js",
+  "main.js.map": "static/js/main.d9a78d0c.js.map",
+  "static/media/about.ogg": "static/media/about.3a62f567.ogg",
   "static/media/alpha-centauri-h.jpg": "static/media/alpha-centauri-h.b2eed314.jpg",
   "static/media/beta-pictoris-b.jpg": "static/media/beta-pictoris-b.27358291.jpg",
   "static/media/black-hole.jpg": "static/media/black-hole.5e39783f.jpg",
   "static/media/data.ogg": "static/media/data.84362f99.ogg",
   "static/media/home.ogg": "static/media/home.e0ee1969.ogg",
-  "static/media/superearth.jpg": "static/media/superearth.c76d1ff4.jpg",
-  "static/media/visualization.ogg": "static/media/visualization.11ab2215.ogg"
+  "static/media/solarsystems.ogg": "static/media/solarsystems.11ab2215.ogg",
+  "static/media/superearth.jpg": "static/media/superearth.c76d1ff4.jpg"
 }

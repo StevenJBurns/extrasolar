@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-image: url("../assets/images/superearth.jpg");
   text-shadow: 1px 1px 32px #7F7F7F;
-  
+  padding: 12px 0
 }
 
 #div-content-wrapper {
@@ -18,6 +18,7 @@
   font-weight: bold;
   color: #0F0F0F;
   background: #BFBFBF;
+  border: 4px solid #7F7F7F;
   border-radius: 8px;
   text-align: justify;
   max-width: 720px;
