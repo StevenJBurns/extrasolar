@@ -8,7 +8,7 @@ import { reducerSort } from "./reducerSort";
 
 export const rootReducer = combineReducers(
   {
-    ui: reducerUI,
+    reducerUI,
     data: reducerData, 
     filters: reducerFilter,
     sorting: reducerSort

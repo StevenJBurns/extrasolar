@@ -7,6 +7,7 @@ if (localStorage.getItem("isAudioMuted") === null) {
 };
 
 const initialState = {
+  isAudioMuted: false,
   filters: {},
   sorting: {},
 }
