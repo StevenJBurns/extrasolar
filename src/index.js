@@ -9,7 +9,7 @@ import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
 
 /* App specific imports */
-import { App } from './App.jsx';
+import App from './App.jsx';
 
 /* stylesheet imports */
 import './styles/index.css';
@@ -27,6 +27,6 @@ const render = () => {
 
 render();
 
-// store.subscribe(render);
+store.subscribe(render);
   
 registerServiceWorker();

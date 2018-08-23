@@ -1,12 +1,13 @@
 /* React, Router and Redux Imports */
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { connect } from "react-redux";
+import { fetchStarData, fetchPlanetData, getLastFetch } from "./redux/actions/index.js";
 
-/* App specific Imports */
+/* Component Imports */
 import { AppHeader } from "./components/AppHeader.jsx";
 import { AppNav } from "./components/AppNav.jsx";
 import { AppFooter } from "./components/AppFooter.jsx";
-
 import PageHome from './containers/PageHome.jsx';
 import PageData from './containers/PageData.jsx';
 import PageSolarSystems from './containers/PageSolarSystems';
@@ -41,4 +42,27 @@ export class App extends React.Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
+  componentDidUpdate() {
+
+  }
 }
+
+const mapStateToProps = state => {
+  const { lastFetch, stars, planets } = state.reducerData;
+  return { lastFetch, stars, planets };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getLastFetch: () => dispatch(getLastFetch()),
+    fetchStars: urlStars => dispatch(fetchStarData(urlStars)),
+    fetchPlanets: urlPlanets => dispatch(fetchPlanetData(urlPlanets))
+  }
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

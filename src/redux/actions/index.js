@@ -1,6 +1,11 @@
 import { actions } from "./actionTypes";
 
 
+export const getLastFetch = () => ({
+  type: actions.GET_LAST_FETCH,
+  payload: JSON.parse(localStorage.getItem("lastFetch"))
+});
+
 export const fetchStarData = urlStarData => ({
   type: actions.FETCH_STAR_DATA,
   payload: urlStarData

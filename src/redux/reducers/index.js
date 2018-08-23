@@ -9,7 +9,7 @@ import { reducerSort } from "./reducerSort";
 export const rootReducer = combineReducers(
   {
     reducerUI,
-    data: reducerData, 
+    reducerData, 
     filters: reducerFilter,
     sorting: reducerSort
   }

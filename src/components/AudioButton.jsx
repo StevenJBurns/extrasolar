@@ -9,8 +9,6 @@ import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
 
 const AudioButton = ({isMuted, toggleMute, source}) => {
-  // console.log("incoming: ", isMuted, toggleMute, source);
-  
   const buttonStyle = {
     width: '48px',
     height: '48px',
