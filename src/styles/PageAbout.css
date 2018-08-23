@@ -1,6 +1,5 @@
 #main-about {
   flex: 1 0 auto;
-  padding: 64px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +8,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../assets/images/alpha-centauri-h.jpg");
-  text-shadow: 1px 1px 32px #7F7F7F
+  text-shadow: 1px 1px 32px #7F7F7F;
+  overflow: hidden
 }
 
 #div-content-wrapper {
