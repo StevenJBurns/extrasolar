@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
 
-const AudioButton = ({isMuted, toggleMute, audioSource}) => {
+const AudioButton = ({isMuted, toggleMute, audioSource}) => {  
   const buttonStyle = {
     width: '48px',
     height: '48px',
@@ -28,7 +28,7 @@ const AudioButton = ({isMuted, toggleMute, audioSource}) => {
         <span>Your browser does not support the <code>audio</code> element.</span> 
       </audio>
     </div>
-  )
+  )  
 };
 
 const mapStateToProps = state => {
