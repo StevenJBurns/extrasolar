@@ -1,5 +1,6 @@
 import React from "react";
 import { store } from "../redux/store";
+import { connect } from "react-redux";
 import { changeAudioSource } from "../redux/actions"; 
 
 /* Style Imports */
@@ -27,3 +28,5 @@ export class PageAbout extends React.Component {
     store.dispatch(changeAudioSource(AudioAbout));
   }
 };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);
