@@ -41,13 +41,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     toggleMute: muted => dispatch(toggleAudioMute(muted))
-    // { type: actions.TOGGLE_AUDIO_MUTE, payload: muted }
   }
 };
 
 AudioButton.propTypes = {
   isMuted: PropTypes.bool
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);
