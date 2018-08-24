@@ -28,7 +28,7 @@ const PageAbout = ({changeSource}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeSource: AudioAbout => dispatch(changeAudioSource(AudioAbout))
+    changeSource: source => dispatch(changeAudioSource(source))
   }
 }
 

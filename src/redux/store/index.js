@@ -1,5 +1,7 @@
 import { createStore } from "redux";
 import { rootReducer } from "../reducers";
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 
 const initialState = {
@@ -7,4 +9,4 @@ const initialState = {
   sorting: {},
 }
 
-export const store = createStore(rootReducer, initialState);
+export const store = createStore(rootReducer, initialState, composeWithDevTools());

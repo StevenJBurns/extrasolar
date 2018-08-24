@@ -20,7 +20,7 @@ const PageData = ({changeSource}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeSource: AudioData => dispatch(changeAudioSource(AudioData))
+    changeSource: source => dispatch(changeAudioSource(source))
   }
 }
 

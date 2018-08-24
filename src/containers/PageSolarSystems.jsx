@@ -27,7 +27,7 @@ const PageSolarSystems = ({changeSource}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeSource: AudioSolarSystems => dispatch(changeAudioSource(AudioSolarSystems))
+    changeSource: source => dispatch(changeAudioSource(source))
   }
 }
 
