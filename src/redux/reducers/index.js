@@ -4,6 +4,7 @@ import { reducerUI } from "./reducerUI";
 import { reducerData } from "./reducerData";
 import { reducerFilter } from "./reducerFilter";
 import { reducerSort } from "./reducerSort";
+import { reducerStars} from "./reducerStars";
 
 
 export const rootReducer = combineReducers(
@@ -11,7 +12,8 @@ export const rootReducer = combineReducers(
     reducerUI,
     reducerData, 
     filters: reducerFilter,
-    sorting: reducerSort
+    sorting: reducerSort,
+    reducerStars
   }
 );
 

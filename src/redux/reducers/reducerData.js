@@ -7,23 +7,24 @@ if (localStorage.getItem("lastFetch") === null) {
 
 const initialState = {
   stars: [],
-  planets: [],
+  planets: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"],
   selectedSolarSystem: null,
   filteredSolarSystems: null,
   lastFetch: JSON.parse(localStorage.getItem("lastFetch"))
 }
 
 export const reducerData = (state = initialState, action) => {
+  console.log("action type: ", action.type);
+  
   switch (action.type) {
     case actions.GET_LAST_FETCH:
-      state = {...state, lastFetch: JSON.parse(localStorage["lastFetch"])}
+      state = {...state, lastFetch: JSON.parse(localStorage["lastFetch"])};
       break;
     case actions.FETCH_STAR_DATA:
-      state = {...state}
+      state = {...state};
       break;
     case actions.FETCH_PLANET_DATA:
-      state = {...state, planets: ["Mercury", "Venus"]}
-      console.log("state in reducer: ", state);
+      state = {...state};
       break;
     default:
       state = {...state};

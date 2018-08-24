@@ -6,14 +6,28 @@ export const getLastFetch = () => ({
   payload: JSON.parse(localStorage.getItem("lastFetch"))
 });
 
-export const fetchStarData = urlStarData => ({
-  type: actions.FETCH_STAR_DATA,
-  payload: urlStarData
+// export const fetchStarData = urlStarData => ({
+//   type: actions.FETCH_STAR_DATA,
+//   payload: urlStarData
+// });
+
+export const fetchStarsBegin = () => ({
+  type: actions.FETCH_STARS_BEGIN
 });
 
-export const fetchPlanetData = urlPlanetData => ({
+export const fetchStarsSuccess = stars => ({
+  type: actions.FETCH_STARS_SUCCESS,
+  payload: stars
+});
+
+export const fetchStarsFailed = error => ({
+  type: actions.FETCH_STARS_FAILED,
+  payload: error
+});
+
+export const fetchPlanetData = planetData => ({
   type: actions.FETCH_PLANET_DATA,
-  payload: urlPlanetData
+  payload: planetData
 });
 
 export const toggleAudioMute = audioState => ({

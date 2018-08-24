@@ -3,6 +3,7 @@ import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchStarData, fetchPlanetData, getLastFetch } from "./redux/actions/index.js";
+import { fetchStars } from "./redux/actions/action.data.stars.js";
 
 /* Component Imports */
 import { AppHeader } from "./components/AppHeader.jsx";
@@ -20,7 +21,6 @@ import './styles/AppHeader.css';
 import './styles/AppFooter.css';
 import './styles/AppNav.css';
 
-// const urlDistinctStars = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname,pl_cbflag,pl_pnum,st_mass,st_rad,st_teff,st_dist&order=pl_hostname&format=json";
 // const urlDistinctPlanets = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper&format=json";
 
 const activeStyle = { backgroundColor : '#8F8F8F' };
@@ -45,23 +45,22 @@ export class App extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-  }
-
-  componentDidUpdate() {
-
+    
+    this.props.fetchStars();
   }
 }
 
 const mapStateToProps = state => {
-  const { lastFetch, stars, planets } = state.reducerData;
+  const { lastFetch, planets } = state.reducerData;
+  const { stars } = state.reducerStars;
   return { lastFetch, stars, planets };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getLastFetch: () => dispatch(getLastFetch()),
-    fetchStars: urlStars => dispatch(fetchStarData(urlStars)),
-    fetchPlanets: urlPlanets => dispatch(fetchPlanetData(urlPlanets))
+    fetchStars: () => dispatch(fetchStars()),
+    fetchPlanets: () => dispatch(fetchPlanetData())
   }
 };
 
