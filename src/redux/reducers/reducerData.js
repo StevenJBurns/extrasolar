@@ -23,8 +23,7 @@ export const reducerData = (state = initialState, action) => {
       break;
     case actions.FETCH_PLANET_DATA:
       state = {...state, planets: ["Mercury", "Venus"]}
-      console.log(state);
-      
+      console.log("state in reducer: ", state);
       break;
     default:
       state = {...state};
