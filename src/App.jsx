@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
-import { fetchStarData, fetchPlanetData, getLastFetch } from "./redux/actions/index.js";
+import { fetchPlanetData, getLastFetch } from "./redux/actions/index.js";
 import { fetchStars } from "./redux/actions/action.data.stars.js";
 
 /* Component Imports */
@@ -44,8 +44,6 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
-    
     this.props.fetchStars();
   }
 }

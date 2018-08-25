@@ -12,7 +12,7 @@ import "../styles/PageSolarSystems.css";
 import AudioSolarSystems from '../assets/audio/solarsystems.ogg';
 
 
-class PageSolarSystems extends React.Component { // ({changeSource, lastFetch, stars, planets}) => {
+class PageSolarSystems extends React.Component {
 
   componentDidMount() {
     changeAudioSource(AudioSolarSystems);  
@@ -25,7 +25,7 @@ class PageSolarSystems extends React.Component { // ({changeSource, lastFetch, s
       <main id="main-solarsystems" style={{color: '#DFDFDF'}}>
         <h1>Solar Systems</h1>
         <h3>Last Fetch: { new Date(lastFetch).toString() } </h3>
-        <ListStars star={stars} />
+        <ListStars stars={stars} />
         <ListPlanets planets={planets} />
         <ul>
           { planets.map(planet => (<li key={Math.random()}>{planet}</li>)) }
@@ -36,14 +36,14 @@ class PageSolarSystems extends React.Component { // ({changeSource, lastFetch, s
 }
 
 const mapStateToProps = state => {
-  const { lastFetch, stars, planets } = state.reducerData;
+  const { lastFetch, planets } = state.reducerData;
+  const { stars } = state.reducerStars;
   return { lastFetch, stars, planets };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getLastFetch: () => dispatch(getLastFetch()),
-    // fetchStars: urlStars => dispatch(fetchStarData()),
     fetchPlanets: urlPlanets => dispatch(fetchPlanetData(urlPlanets)),
     changeSource: source => dispatch(changeAudioSource(source))
   }

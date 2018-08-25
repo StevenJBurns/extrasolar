@@ -14,8 +14,6 @@ const initialState = {
 }
 
 export const reducerData = (state = initialState, action) => {
-  console.log("action type: ", action.type);
-  
   switch (action.type) {
     case actions.GET_LAST_FETCH:
       state = {...state, lastFetch: JSON.parse(localStorage["lastFetch"])};
