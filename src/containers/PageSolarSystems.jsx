@@ -25,7 +25,7 @@ class PageSolarSystems extends React.Component {
       <main id="main-solarsystems" style={{color: '#DFDFDF'}}>
         <h1>Solar Systems</h1>
         <h3>Last Fetch: { new Date(lastFetch).toString() } </h3>
-        <div id="div-filters">
+        <div id="div-filters" style={{ background: '#7f7f7f', padding: 24 + 'px'}}>
           <div id="div-filter-stars">
             <input type="range" />
           </div>
