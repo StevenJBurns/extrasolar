@@ -26,8 +26,12 @@ class PageSolarSystems extends React.Component {
         <h1>Solar Systems</h1>
         <h3>Last Fetch: { new Date(lastFetch).toString() } </h3>
         <div id="div-filters">
-          <div id="div-filter-stars"></div>
-          <div id="div-filter-planets"></div>
+          <div id="div-filter-stars">
+            <input type="range" />
+          </div>
+          <div id="div-filter-planets">
+            <input type="range" />
+          </div>
         </div>
         <ListStars stars={stars} />
         <ListPlanets planets={planets} />
