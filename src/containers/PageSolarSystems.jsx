@@ -25,6 +25,10 @@ class PageSolarSystems extends React.Component {
       <main id="main-solarsystems" style={{color: '#DFDFDF'}}>
         <h1>Solar Systems</h1>
         <h3>Last Fetch: { new Date(lastFetch).toString() } </h3>
+        <div id="div-filters">
+          <div id="div-filter-stars"></div>
+          <div id="div-filter-planets"></div>
+        </div>
         <ListStars stars={stars} />
         <ListPlanets planets={planets} />
         <ul>
