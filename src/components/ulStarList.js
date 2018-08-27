@@ -7,7 +7,7 @@ import "../styles/ListStars.css";
 
 export const ListStars = (props) => {
   const { stars } = props;
-  console.log(stars);
+  // console.log(stars);
 
 
   return (

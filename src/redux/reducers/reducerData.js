@@ -7,7 +7,7 @@ if (localStorage.getItem("lastFetch") === null) {
 
 const initialState = {
   stars: [],
-  planets: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"],
+  planets: [],
   selectedSolarSystem: null,
   filteredSolarSystems: null,
   lastFetch: JSON.parse(localStorage.getItem("lastFetch"))
