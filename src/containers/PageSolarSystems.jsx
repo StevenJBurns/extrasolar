@@ -19,7 +19,7 @@ class PageSolarSystems extends React.Component {
     super(props);
     this.state={
       sliderValueTeff: 10,
-      sliderMassMinMax: {min: 4, max: 12},
+      sliderMassMinMax: {min: 1, max: 15},
       massLimit: 78,
       filteredPlanets: [],
       planets: [
@@ -27,8 +27,8 @@ class PageSolarSystems extends React.Component {
         { name: "Venus", mass: 0.815 },
         { name: "Earth", mass: 1.000 },
         { name: "Mars", mass: 0.107 },
-        // { name: "Jupiter", mass: 317.8 },
-        // { name: "Saturn", mass: 95.2 },
+        { name: "Jupiter", mass: 317.8 },
+        { name: "Saturn", mass: 95.2 },
         { name: "Uranus", mass: 14.5 },
         { name: "Neptune", mass: 17.1 },
         { name: "Pluto", mass: 0.0025 }
@@ -38,10 +38,11 @@ class PageSolarSystems extends React.Component {
 
   componentDidMount() {
     changeAudioSource(AudioSolarSystems);
-    this.setState({filteredPlanets: this.state.planets})
+    //this.setState({filteredPlanets: this.state.planets})
+    this.filterPlanetsByMass(this.state.sliderMassMinMax)
   }
 
-  filterPlanetsByMass(val) {    
+  filterPlanetsByMass(val) {
     let filteredPlanets = this.state.planets.filter(planet => planet.mass <= val.max && planet.mass >= val.min)
 
     this.setState({filteredPlanets})
@@ -54,17 +55,18 @@ class PageSolarSystems extends React.Component {
       <main id="main-solarsystems" style={{color: '#DFDFDF'}}>
         <h1>Solar Systems</h1>
         <h3>Last Fetch: { new Date(lastFetch).toString() } </h3>
-        <div id="div-filters" style={{ background: '#7f7f7f', padding: 24 + 'px'}}>
-          <div id="div-filter-stars" style={{ width: 50+"%", margin: "0 auto"}}>
-            <InputRange draggableTrack
-              minValue={0}
-              maxValue={20}
-              step={0.1}
+        <div id="div-filters" style={{ display: 'flex', background: '#7f7f7f', padding: 24 + 'px'}}>
+          <div id="div-filter-stars" style={{ minWidth: 288 + 'px', margin: "0 auto"}}>
+            <InputRange draggableTrack minValue={0} maxValue={20} step={0.1}
               value={this.state.sliderMassMinMax}
               onChange={ value => this.setState({sliderMassMinMax: value})}
               onChangeComplete={value => this.filterPlanetsByMass(value)} />
           </div>
-          <div id="div-filter-planets">
+          <div id="div-filter-planets" style={{ minWidth: 288 + 'px', margin: "0 auto"}}>
+            <InputRange draggableTrack minValue={0} maxValue={20} step={0.1}
+                value={this.state.sliderMassMinMax}
+                onChange={ value => this.setState({sliderMassMinMax: value})}
+                onChangeComplete={value => this.filterPlanetsByMass(value)} />
           </div>
         </div>
         <ListStars stars={ [] } />
