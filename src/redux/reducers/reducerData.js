@@ -14,6 +14,15 @@ const initialState = {
 
 export const reducerData = (state = initialState, action) => {
   switch (action.type) {
+    case (actions.FETCH_STARS_BEGIN):
+      state = {...state, loading: true, error: null}
+      break;
+    case (actions.FETCH_STARS_SUCCESS):
+      state = {...state, loading: false, stars: action.payload}
+      break;
+    case (actions.FETCH_STARS_FAILED):
+      state = {...state, loading: false, stars: [], error: action.payload.error}
+      break;
     case actions.GET_LAST_FETCH:
       state = {...state, lastFetch: JSON.parse(localStorage["lastFetch"])};
       break;
