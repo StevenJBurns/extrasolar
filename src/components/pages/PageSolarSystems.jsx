@@ -6,7 +6,7 @@ import { changeAudioSource, setFilters } from "../../redux/actions";
 /* Component Imports */
 import { ListStars } from "../ui/ListStars.jsx";
 // import { ListPlanets } from "../ui/ListPlanets.jsx";
-// import InputRange from 'react-input-range';
+import InputRange from 'react-input-range';
 
 /* Assets and Styles Imports */
 import "../../styles/PageSolarSystems.css";
@@ -21,29 +21,34 @@ export const PageSolarSystems = (props) => {
 
   return (
     <main id="main-solarsystems">
-      <h1>Solar Systems</h1>
       <div id="div-filters">
         <div id="div-filter-stars">
-          <h5 className="slider-label">Stellar Mass</h5>
-          {/* <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
-            value={this.props.starMass}
+          <h5 className="slider-label">Planet Count</h5>
+          <InputRange draggableTrack minValue={1} maxValue={8} step={1}
+            value={{min: 3, max: 6}}
             onChange={this.handleSliderChange}
-            onChangeComplete={value => this.filterStarsByMass(value)} /> */}
+            onChangeComplete={value => this.filterStarsByPlanetCount(value)} />
+          <h5 className="slider-label">Binary Star?</h5>
+          <h5 className="slider-label">Stellar Mass</h5>
+          <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
+            value={{min: 4, max: 17}}
+            onChange={this.handleSliderChange}
+            onChangeComplete={value => this.filterStarsByMass(value)} />
           <h5 className="slider-label">Stellar Radius</h5>
-          {/* <InputRange /> */}
+          <InputRange />
           <h5 className="slider-label">Stellar Temperature</h5>
-          {/* <InputRange /> */}
+          <InputRange />
         </div>
         <div id="div-filter-planets">
           <h5 className="slider-label">Planet Orbital Eccentricity</h5>
-          {/* <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
+          <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
               value={{min: 0.25, max: 0.75}}
-              onChange={ value => this.setState({sliderPlanetEccMinMax: value})}
-              onChangeComplete={value => this.filterPlanetsByEcc(value)} /> */}
+              onChange={this.handleSliderChange}
+              onChangeComplete={value => this.filterPlanetsByEcc(value)} />
           <h5 className="slider-label">Planetary Orbit Semi-Major Axis</h5>
-          {/* <InputRange /> */}
+          <InputRange />
           <h5 className="slider-label">Planetary Orbit Period</h5>
-          {/* <InputRange /> */}
+          <InputRange />
         </div>
       </div>
       <ListStars stars={stars} isloading={isLoading} error={error} />
@@ -53,7 +58,7 @@ export const PageSolarSystems = (props) => {
 
 const mapStateToProps = state => {
   const { stars, planets, isLoading, error } = state.data;
-  
+
   return { stars, planets, isLoading, error };
 };
 
