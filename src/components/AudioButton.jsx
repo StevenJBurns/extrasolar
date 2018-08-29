@@ -31,7 +31,7 @@ const AudioButton = ({isMuted, toggleMute, source}) => {
 };
 
 const mapStateToProps = state => {
-  const { isAudioMuted, currentAudioSource } = state.reducerUI;
+  const { isAudioMuted, currentAudioSource } = state.ui;
   return { isMuted: isAudioMuted, source: currentAudioSource }
 };
 

@@ -25,8 +25,10 @@ import './styles/AppNav.css';
 
 const activeStyle = { backgroundColor : '#8F8F8F' };
 
-export class App extends React.Component {
+export class App extends React.Component {  
   render() {
+    console.log(this.props.stars);
+
     return (
       <div className="App">
         <AppHeader />
@@ -49,8 +51,8 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { lastFetch, planets } = state.reducerData;
-  const { stars } = state.reducerStars;
+  const { lastFetch, planets } = state.data;
+  const { stars } = state.data;
   return { lastFetch, stars, planets };
 };
 

@@ -1,7 +1,7 @@
-/* React and Redux imports */
+/* React and Redux Imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource, getLastFetch, fetchPlanetData } from "../redux/actions";
+import { changeAudioSource, getLastFetch, setFilters } from "../redux/actions";
 
 /* Component Imports */
 import { ListStars } from "../components/ulStarList";
@@ -15,80 +15,84 @@ import "react-input-range/lib/css/index.css";
 
 
 class PageSolarSystems extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state={
-      sliderValueTeff: 10,
-      sliderMassMinMax: {min: 1, max: 15},
-      massLimit: 78,
-      filteredPlanets: [],
-      planets: [
-        { name: "Mercury", mass: 0.0553 },
-        { name: "Venus", mass: 0.815 },
-        { name: "Earth", mass: 1.000 },
-        { name: "Mars", mass: 0.107 },
-        { name: "Jupiter", mass: 317.8 },
-        { name: "Saturn", mass: 95.2 },
-        { name: "Uranus", mass: 14.5 },
-        { name: "Neptune", mass: 17.1 },
-        { name: "Pluto", mass: 0.0025 }
-      ]
-    };
-  }
-
   componentDidMount() {
     changeAudioSource(AudioSolarSystems);
-    //this.setState({filteredPlanets: this.state.planets})
-    this.filterPlanetsByMass(this.state.sliderMassMinMax)
-  }
+    console.log('filters: ',this.props.filters);
+  };
 
-  filterPlanetsByMass(val) {
-    let filteredPlanets = this.state.planets.filter(planet => planet.mass <= val.max && planet.mass >= val.min)
+  componentDidUpdate() {
+    let starRadiusMinMax = this.props.stars.sort((a, b) => a -b);
+    console.log(starRadiusMinMax[0], starRadiusMinMax[starRadiusMinMax.length - 1]);
+    
+  };
 
-    this.setState({filteredPlanets})
-  }
+  filterStarsByMass(val) {
+    let filterMass = this.props.filters.starMass;
+    let filteredstars = this.props.stars.filter(star => star.st_mass <= val.max && star.st_mass >= val.min);
+  };
+
+  filterPlanetsByEcc(val) {
+
+  };
+
+  handleSliderChange(val) {
+    console.log(val);
+  };
 
   render() {
-    const { lastFetch, stars, planets } = this.props;
+    const { stars, planets } = this.props;
+    console.log('stars: ', stars);
+    
+    const style_h5 = { margin: 24 + 'px ' + 0}
 
     return (
       <main id="main-solarsystems" style={{color: '#DFDFDF'}}>
         <h1>Solar Systems</h1>
-        <h3>Last Fetch: { new Date(lastFetch).toString() } </h3>
-        <div id="div-filters" style={{ display: 'flex', background: '#7f7f7f', padding: 24 + 'px'}}>
+        <div id="div-filters" style={{ display: 'flex', background: '#7F7F7F', padding: 24 + 'px'}}>
           <div id="div-filter-stars" style={{ minWidth: 288 + 'px', margin: "0 auto"}}>
-            <InputRange draggableTrack minValue={0} maxValue={20} step={0.1}
-              value={this.state.sliderMassMinMax}
-              onChange={ value => this.setState({sliderMassMinMax: value})}
-              onChangeComplete={value => this.filterPlanetsByMass(value)} />
+            <h5 style={style_h5}>Stellar Mass</h5>
+            <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
+              value={this.props.starMass}
+              onChange={this.handleSliderChange}
+              onChangeComplete={value => this.filterStarsByMass(value)} />
+            <h5 style={style_h5}>Stellar Radius</h5>
+            <InputRange />
+            <h5 style={style_h5}>Stellar Temperature</h5>
+            <InputRange />
+
           </div>
-          <div id="div-filter-planets" style={{ minWidth: 288 + 'px', margin: "0 auto"}}>
-            <InputRange draggableTrack minValue={0} maxValue={20} step={0.1}
-                value={this.state.sliderMassMinMax}
-                onChange={ value => this.setState({sliderMassMinMax: value})}
-                onChangeComplete={value => this.filterPlanetsByMass(value)} />
+          <div id="div-filter-planets" style={{ minWidth: 288 + 'px', margin: "0 auto", display: 'flex', flexDirection: 'column'}}>
+            <h5 style={style_h5}>Planet Orbital Eccentricity</h5>
+            <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
+                value={{min: 0.25, max: 0.75}}
+                onChange={ value => this.setState({sliderPlanetEccMinMax: value})}
+                onChangeComplete={value => this.filterPlanetsByEcc(value)} />
+            <h5 style={style_h5}>Planetary Orbit Semi-Major Axis</h5>
+            <InputRange />
+            <h5 style={style_h5}>Planetary Orbit Period</h5>
+            <InputRange />
+
           </div>
         </div>
-        <ListStars stars={ [] } />
-        {/* <ListPlanets planets={this.state.planets} /> */}
-        <ul>
-          { this.state.filteredPlanets.map(planet => (<li key={Math.random().toString()}>{planet.name} : {planet.mass}</li>)) }
-        </ul>
+        <ListStars stars={stars} />
+        <ListPlanets planets={[]} />
       </main>
     );
   };
 }
 
 const mapStateToProps = state => {
-  const { lastFetch, planets } = state.reducerData;
-  const { stars } = state.reducerStars;
-  return { lastFetch, stars, planets };
+  const { lastFetch } = state.data;
+  const { stars, planets } = state.data;
+  const { starMass } = state.filters;
+
+  return { lastFetch, stars, planets, starMass };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getLastFetch: () => dispatch(getLastFetch()),
-    fetchPlanets: urlPlanets => dispatch(fetchPlanetData(urlPlanets)),
+    setFilters: newFilter => dispatch(setFilters(newFilter)),
     changeSource: source => dispatch(changeAudioSource(source))
   }
 };
