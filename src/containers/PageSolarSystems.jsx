@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { changeAudioSource, getLastFetch, setFilters } from "../redux/actions";
 
 /* Component Imports */
-import { ListStars } from "../components/ulStarList";
-import { ListPlanets } from "../components/ulPlanetList";
+import { ListStars } from "../components/ulStarList.jsx";
+import { ListPlanets } from "../components/ulPlanetList.jsx";
 import InputRange from 'react-input-range';
 
 /* Assets and Styles Imports */
