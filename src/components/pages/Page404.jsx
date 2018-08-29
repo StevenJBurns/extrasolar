@@ -1,8 +1,7 @@
 import React from "react";
 
-import "../styles/Page404.css";
-
-import "../assets/images/black-hole.jpg";
+import "../../styles/Page404.css";
+import "../../assets/images/black-hole.jpg";
 
 
 export const Page404 = (props) => {

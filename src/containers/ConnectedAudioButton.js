@@ -4,7 +4,7 @@ import { actions } from "../redux/actions/actionTypes.js";
 import { toggleAudioMute } from "../redux/actions/index.js";
 
 /* Component Imports */ 
-import { AudioButton } from "../components/AudioButton.jsx";
+import { AudioButton } from "../components/ui/AudioButton.jsx";
 
 
 const getStateUI = (muted) => {

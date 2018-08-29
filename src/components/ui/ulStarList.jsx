@@ -2,7 +2,7 @@
 import React from "react";
 
 /* Assets and Style Imports */
-import "../styles/ListStars.css";
+import "../../styles/ListStars.css";
 
 
 export const ListStars = (props) => {

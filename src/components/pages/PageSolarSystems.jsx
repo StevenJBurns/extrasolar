@@ -1,17 +1,17 @@
 /* React and Redux Imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource, getLastFetch, setFilters } from "../redux/actions";
+import { changeAudioSource, getLastFetch, setFilters } from "../../redux/actions";
 
 /* Component Imports */
-import { ListStars } from "../components/ulStarList.jsx";
-import { ListPlanets } from "../components/ulPlanetList.jsx";
+import { ListStars } from "../ui/ulStarList.jsx";
+import { ListPlanets } from "../ui/ulPlanetList.jsx";
 import InputRange from 'react-input-range';
 
 /* Assets and Styles Imports */
-import "../styles/PageSolarSystems.css";
-import AudioSolarSystems from '../assets/audio/solarsystems.ogg';
+import "../../styles/PageSolarSystems.css";
 import "react-input-range/lib/css/index.css";
+import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
 class PageSolarSystems extends React.Component {

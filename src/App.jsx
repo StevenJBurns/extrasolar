@@ -6,14 +6,14 @@ import { fetchPlanetData, getLastFetch } from "./redux/actions/index.js";
 import { fetchStars } from "./redux/actions/action.data.stars.js";
 
 /* Component Imports */
-import { AppHeader } from "./components/AppHeader.jsx";
-import { AppNav } from "./components/AppNav.jsx";
-import { AppFooter } from "./components/AppFooter.jsx";
-import PageHome from './containers/PageHome.jsx';
-import PageData from './containers/PageData.jsx';
-import PageSolarSystems from './containers/PageSolarSystems';
-import PageAbout from "./containers/PageAbout.jsx";
-import { Page404 } from "./containers/Page404.jsx"
+import { AppHeader } from "./components/app/AppHeader.jsx";
+import { AppNav } from "./components/app/AppNav.jsx";
+import { AppFooter } from "./components/app/AppFooter.jsx";
+import PageHome from './components/pages/PageHome.jsx';
+import PageData from './components/pages/PageData.jsx';
+import PageSolarSystems from './components/pages/PageSolarSystems';
+import PageAbout from "./components/pages/PageAbout.jsx";
+import { Page404 } from "./components/pages/Page404.jsx"
 
 /* Stylesheet Imports */
 import './styles/App.css';

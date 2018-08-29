@@ -1,11 +1,11 @@
 /* React and Redux imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource } from "../redux/actions";
+import { changeAudioSource } from "../../redux/actions";
 
 /* Assets and Styles Imports */
-import AudioData from '../assets/audio/data.ogg';
-import "../styles/PageData.css";
+import AudioData from '../../assets/audio/data.ogg';
+import "../../styles/PageData.css";
 
 
 const PageData = ({changeSource}) => {
