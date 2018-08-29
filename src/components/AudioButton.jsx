@@ -1,14 +1,12 @@
 /* React and Redux imports */
 import React from "react";
-import { connect } from "react-redux";
-import { toggleAudioMute } from "../redux/actions/index.js";
 
 /* FONT AWESOME! */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
 
-const AudioButton = ({isMuted, toggleMute, source}) => {
+export const AudioButton = ({isMuted, toggleMute, source}) => {
   const buttonStyle = {
     width: '48px',
     height: '48px',
@@ -29,16 +27,3 @@ const AudioButton = ({isMuted, toggleMute, source}) => {
     </div>
   )  
 };
-
-const mapStateToProps = state => {
-  const { isAudioMuted, currentAudioSource } = state.ui;
-  return { isMuted: isAudioMuted, source: currentAudioSource }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleMute: muted => dispatch(toggleAudioMute(muted))
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);

@@ -3,7 +3,7 @@ import React from "react";
 
 /* App specific imports */
 import AppLogo from "../assets/logo/extrasolar.png";
-import AudioButton from "./AudioButton.jsx";
+import ConnectedAudioButton from "../containers/ConnectedAudioButton.js";
 
 export const AppHeader = () => {
   return (
@@ -13,7 +13,8 @@ export const AppHeader = () => {
         <h1 id="h1-header">ExtraSolar</h1>
         <h4 id="h2-header">Visualization of exoplanets in distant solar systems</h4>
       </div>
-      <AudioButton />
+      <ConnectedAudioButton />
+      {/* <AudioButton /> */}
     </header>
   );
 }
