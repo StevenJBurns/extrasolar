@@ -7,7 +7,7 @@ import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 
 
 export const AudioButton = ({source, isMuted, toggleMute }) => {
-  const buttonStyle = {
+  const style_button = {
     width: '48px',
     height: '48px',
     margin: '12px',
@@ -15,12 +15,10 @@ export const AudioButton = ({source, isMuted, toggleMute }) => {
     borderRadius: '50%',
     background: `${ isMuted ? "darkred" : "darkgreen" }`
   };
-
-  console.log('audio props: ', source, isMuted);
   
   return (
     <div>
-      <button type="button" style={ buttonStyle } onClick={ () => toggleMute(isMuted) }>
+      <button type="button" style={ style_button } onClick={ () => toggleMute(isMuted) }>
         <FontAwesomeIcon icon={ isMuted ? faVolumeOff : faVolumeUp } size="2x" />
       </button>
       <audio autoPlay loop src={ source } muted={ isMuted }>

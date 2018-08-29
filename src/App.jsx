@@ -2,8 +2,9 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
-import { fetchPlanetData, getLastFetch } from "./redux/actions/index.js";
-import { fetchStars } from "./redux/actions/action.data.stars.js";
+import { getLastFetch } from "./redux/actions/index.js";
+import { fetchStars } from "./redux/actions/actionAsyncFetchStars.js";
+import { fetchPlanets } from "./redux/actions/actionAsyncFetchPlanets.js";
 
 /* Component Imports */
 import { AppHeader } from "./components/app/AppHeader.jsx";
@@ -21,7 +22,6 @@ import './styles/AppHeader.css';
 import './styles/AppFooter.css';
 import './styles/AppNav.css';
 
-// const urlDistinctPlanets = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper&format=json";
 
 const activeStyle = { backgroundColor : '#8F8F8F' };
 
@@ -46,11 +46,14 @@ export class App extends React.Component {
   componentDidMount() {
     this.props.fetchStars();
   }
+
+  componentDidUpdate() {
+
+  }
 }
 
 const mapStateToProps = state => {
-  const { lastFetch, planets } = state.data;
-  const { stars } = state.data;
+  const { lastFetch, stars, planets } = state.data;
   return { lastFetch, stars, planets };
 };
 
@@ -58,7 +61,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getLastFetch: () => dispatch(getLastFetch()),
     fetchStars: () => dispatch(fetchStars()),
-    fetchPlanets: () => dispatch(fetchPlanetData())
+    fetchPlanets: () => dispatch(fetchPlanets())
   }
 };
 

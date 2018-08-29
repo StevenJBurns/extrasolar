@@ -4,9 +4,15 @@ import { rootReducer } from "../reducers";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-
 const initialState = {
-
+  data: {},
+  ui: {},
+  filters: {},
+  sorting: {}
 }
 
-export const store = createStore(rootReducer, initialState, applyMiddleware(thunk), composeWithDevTools());
+export const store = createStore(
+  rootReducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(thunk))
+);

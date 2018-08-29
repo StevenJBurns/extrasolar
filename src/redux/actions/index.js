@@ -20,9 +20,18 @@ export const fetchStarsFailed = error => ({
   payload: error
 });
 
-export const fetchPlanetData = planetData => ({
-  type: actions.FETCH_PLANET_DATA,
-  payload: planetData
+export const fetchPlanetsBegin = () => ({
+  type: actions.FETCH_STARS_BEGIN
+});
+
+export const fetchPlanetsSuccess = stars => ({
+  type: actions.FETCH_STARS_SUCCESS,
+  payload: stars
+});
+
+export const fetchPlanetsFailed = error => ({
+  type: actions.FETCH_STARS_FAILED,
+  payload: error
 });
 
 export const setFilters = newFilters => ({
