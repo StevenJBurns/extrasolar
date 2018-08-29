@@ -14,7 +14,7 @@ import "react-input-range/lib/css/index.css";
 import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
-export const PageSolarSystems = (props) => {
+const PageSolarSystems = (props) => {
   const {changeAudioSource, stars, planets, isLoading, error, changeFilters, planetCount} = props;
 
   changeAudioSource(AudioSolarSystems);
@@ -56,18 +56,18 @@ export const PageSolarSystems = (props) => {
   );
 }
 
-// const mapStateToProps = state => {
-//   const { stars, planets, isLoading, error } = state.data;
-//   const { planetCount } = state.filters;
-//   console.log('filters: ', state);
-//   return { stars, planets, isLoading, error, planetCount };
-// };
+const mapStateToProps = state => {
+  const { stars, planets, isLoading, error } = state.data;
+  const { planetCount } = state.filters;
+  console.log('filters: ', state);
+  return { stars, planets, isLoading, error, planetCount };
+};
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     changeFilters: newFilter => dispatch(changeFilters(newFilter)),
-//     changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
-//   }
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    changeFilters: newFilter => dispatch(changeFilters(newFilter)),
+    changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
+  }
+};
 
-// export default connect(mapStateToProps, mapDispatchToProps)(PageSolarSystems);
+export default connect(mapStateToProps, mapDispatchToProps)(PageSolarSystems);
