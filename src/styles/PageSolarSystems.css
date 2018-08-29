@@ -1,6 +1,28 @@
 #main-solarsystems {
-    flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center
-  }
+  flex: 1 0 auto;
+  color: #DFDFDF
+}
+
+#div-filters {
+  display: flex;
+  background: #7F7F7F;
+  padding: 24px
+}
+
+#div-filter-stars {
+  display: flex;
+  flex-direction: column;
+  min-width: 288px;
+  margin: 0 auto;
+}
+
+#div-filter-planets {
+  display: flex;
+  flex-direction: column;
+  min-width: 288px;
+  margin: 0 auto;
+}
+
+.slider-label {
+  margin: 24px 0
+}

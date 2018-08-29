@@ -4,7 +4,7 @@ import { rootReducer } from "../reducers";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-const ONE_HOUR = 60 * 60 * 1000; // One hour in milliseconds
+const ONE_HOUR = 60 * 60 * 1000; // # of milliseconds in one hour
 
 if (localStorage.getItem("lastFetch") === null) {
   localStorage.setItem("lastFetch",  (Date.now() - ONE_HOUR).toString());
@@ -14,8 +14,11 @@ if (localStorage.getItem("isAudioMuted") === null) {
   localStorage.setItem("isAudioMuted", "false")
 };
 
-console.log("Now: ", Date.now().toLocaleString("en-us"));
-console.log('lastFetch', JSON.parse(localStorage.getItem("lastFetch").toLocaleString("en-us")));
+let now = Date.now();
+let lastFetch = JSON.parse(localStorage.getItem("lastFetch"));
+let diff = now - lastFetch;
+
+// console.log("diff: ", (diff / 1000) / 3600);
 
 const initialState = {
   data: {

@@ -9,6 +9,7 @@ const initialState = {
   data: {
     stars: [],
     planets: [],
+    isLoading: false,
     selectedSolarSystem: null,
     lastFetch: JSON.parse(localStorage.getItem("lastFetch"))
   }
@@ -17,20 +18,20 @@ const initialState = {
 export const reducerData = (state = initialState, action) => {
   switch (action.type) {
     case (actions.FETCH_STARS_BEGIN):
-      state = {...state, ...state.data, loading: true, error: null}
+      state = {...state, ...state.ui, ...state.data, isLoading: true, error: null}
       break;
     case (actions.FETCH_STARS_SUCCESS):
-      state = {...state, ...state.data, loading: false, stars: action.payload}
+      state = {...state, ...state.ui, ...state.data, isLoading: false, stars: action.payload}
       break;
     case (actions.FETCH_STARS_FAILED):
-      state = {...state, ...state.data, loading: false, stars: [], error: action.payload.error}
+      state = {...state, ...state.ui, ...state.data, isLoading: false, stars: [], error: action.payload.error}
       break;
     case actions.GET_LAST_FETCH:
-      state = {...state, ...state.data, lastFetch: JSON.parse(localStorage["lastFetch"])};
+      state = {...state, ...state.ui, ...state.data, lastFetch: JSON.parse(localStorage["lastFetch"])};
       break;
     default:
       state = {...state};
   }
-  // console.log('state.data: ', state.data);
+  console.log('state.data: ', state.data);
   return state;
 }

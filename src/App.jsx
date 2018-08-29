@@ -25,37 +25,29 @@ import './styles/AppNav.css';
 
 const activeStyle = { backgroundColor : '#8F8F8F' };
 
-export class App extends React.Component {  
-  render() {
-    return (
-      <div className="App">
-        <AppHeader />
-        <AppNav activeStyle={ activeStyle } />
-        <Switch>
-          <Route exact path='/' render={() => <PageHome />} />
-          <Route exact path='/data' render={() => <PageData />} />
-          <Route exact path='/solarsystems' render={() => <PageSolarSystems />} />
-          <Route exact path='/about' render={() => <PageAbout />} />
-          <Route component={ Page404 } />
-        </Switch>
-        <AppFooter />
-      </div>
-    );
-  }
+export const App = ({fetchStars}) => {
+  fetchStars();
 
-  componentDidMount() {
-    this.props.fetchStars();
-  }
-
-  componentDidUpdate() {
-
-  }
+  return (
+    <div className="App">
+      <AppHeader />
+      <AppNav activeStyle={ activeStyle } />
+      <Switch>
+        <Route exact path='/' render={() => <PageHome />} />
+        <Route exact path='/data' render={() => <PageData />} />
+        <Route exact path='/solarsystems' render={() => <PageSolarSystems />} />
+        <Route exact path='/about' render={() => <PageAbout />} />
+        <Route component={ Page404 } />
+      </Switch>
+      <AppFooter />
+    </div>
+  )
 }
 
-const mapStateToProps = state => {
-  const { lastFetch, stars, planets } = state.data;
-  return { lastFetch, stars, planets };
-};
+// const mapStateToProps = state => {
+//   const { lastFetch, stars, planets } = state.data;
+//   return { lastFetch, stars, planets };
+// };
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -65,4 +57,4 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(null, mapDispatchToProps)(App));
