@@ -17,13 +17,10 @@ import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 class PageSolarSystems extends React.Component {
   componentDidMount() {
     changeAudioSource(AudioSolarSystems);
-    console.log('filters: ',this.props.filters);
   };
 
   componentDidUpdate() {
-    let starRadiusMinMax = this.props.stars.sort((a, b) => a -b);
-    console.log(starRadiusMinMax[0], starRadiusMinMax[starRadiusMinMax.length - 1]);
-    
+    let starRadiusMinMax = this.props.stars.sort((a, b) => a -b);    
   };
 
   filterStarsByMass(val) {
@@ -36,13 +33,12 @@ class PageSolarSystems extends React.Component {
   };
 
   handleSliderChange(val) {
-    console.log(val);
+
   };
 
   render() {
     const { stars, planets } = this.props;
-    console.log('stars: ', stars);
-    
+
     const style_h5 = { margin: 24 + 'px ' + 0}
 
     return (
@@ -51,27 +47,25 @@ class PageSolarSystems extends React.Component {
         <div id="div-filters" style={{ display: 'flex', background: '#7F7F7F', padding: 24 + 'px'}}>
           <div id="div-filter-stars" style={{ minWidth: 288 + 'px', margin: "0 auto"}}>
             <h5 style={style_h5}>Stellar Mass</h5>
-            <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
+            {/* <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
               value={this.props.starMass}
               onChange={this.handleSliderChange}
-              onChangeComplete={value => this.filterStarsByMass(value)} />
+              onChangeComplete={value => this.filterStarsByMass(value)} /> */}
             <h5 style={style_h5}>Stellar Radius</h5>
-            <InputRange />
+            {/* <InputRange /> */}
             <h5 style={style_h5}>Stellar Temperature</h5>
-            <InputRange />
-
+            {/* <InputRange /> */}
           </div>
           <div id="div-filter-planets" style={{ minWidth: 288 + 'px', margin: "0 auto", display: 'flex', flexDirection: 'column'}}>
             <h5 style={style_h5}>Planet Orbital Eccentricity</h5>
-            <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
+            {/* <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
                 value={{min: 0.25, max: 0.75}}
                 onChange={ value => this.setState({sliderPlanetEccMinMax: value})}
-                onChangeComplete={value => this.filterPlanetsByEcc(value)} />
+                onChangeComplete={value => this.filterPlanetsByEcc(value)} /> */}
             <h5 style={style_h5}>Planetary Orbit Semi-Major Axis</h5>
-            <InputRange />
+            {/* <InputRange /> */}
             <h5 style={style_h5}>Planetary Orbit Period</h5>
-            <InputRange />
-
+            {/* <InputRange /> */}
           </div>
         </div>
         <ListStars stars={stars} />

@@ -7,12 +7,9 @@ import { toggleAudioMute } from "../redux/actions/index.js";
 import { AudioButton } from "../components/ui/AudioButton.jsx";
 
 
-const getStateUI = (muted) => {
-  return muted;
-};
-
 const mapStateToProps = state => ({
-  stateUI: getStateUI(state.ui.isAudioMuted, state.ui.audioSource)
+  isMuted: state.ui.isAudioMuted,
+  source: state.ui.currentAudioSource
 });
 
 const mapDispatchToProps = dispatch => ({

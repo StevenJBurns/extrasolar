@@ -27,8 +27,6 @@ const activeStyle = { backgroundColor : '#8F8F8F' };
 
 export class App extends React.Component {  
   render() {
-    console.log(this.props.stars);
-
     return (
       <div className="App">
         <AppHeader />
