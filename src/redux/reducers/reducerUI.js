@@ -1,10 +1,6 @@
 import { actions } from "../actions/actionTypes.js";
 
 
-if (localStorage.getItem("isAudioMuted") === null) {
-  localStorage.setItem("isAudioMuted", "false")
-};
-
 const initialState =  {
   ui: {
     isAudioMuted: JSON.parse(localStorage.getItem("isAudioMuted")),
