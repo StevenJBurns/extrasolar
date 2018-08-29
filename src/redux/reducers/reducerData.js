@@ -32,6 +32,5 @@ export const reducerData = (state = initialState, action) => {
     default:
       state = {...state};
   }
-  console.log('state.data: ', state.data);
   return state;
 }

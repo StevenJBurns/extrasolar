@@ -1,7 +1,7 @@
 /* React and Redux Imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource, setFilters } from "../../redux/actions";
+import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
 import { ListStars } from "../ui/ListStars.jsx";
@@ -15,7 +15,7 @@ import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
 export const PageSolarSystems = (props) => {
-  const {changeAudioSource, stars, planets, isLoading, error} = props;
+  const {changeAudioSource, stars, planets, isLoading, error, changeFilters, planetCount} = props;
 
   changeAudioSource(AudioSolarSystems);
 
@@ -25,30 +25,30 @@ export const PageSolarSystems = (props) => {
         <div id="div-filter-stars">
           <h5 className="slider-label">Planet Count</h5>
           <InputRange draggableTrack minValue={1} maxValue={8} step={1}
-            value={{min: 3, max: 6}}
-            onChange={this.handleSliderChange}
-            onChangeComplete={value => this.filterStarsByPlanetCount(value)} />
+            value={planetCount}
+            onChange={value => changeFilters({planetCount: value})}
+            onChangeComplete={value => changeFilters(value)} />
           <h5 className="slider-label">Binary Star?</h5>
           <h5 className="slider-label">Stellar Mass</h5>
-          <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
+          {/* <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
             value={{min: 4, max: 17}}
-            onChange={this.handleSliderChange}
-            onChangeComplete={value => this.filterStarsByMass(value)} />
+            onChange={value => changeFilters(value)}
+            onChangeComplete={value => changeFilters(value)} /> */}
           <h5 className="slider-label">Stellar Radius</h5>
-          <InputRange />
+          {/* <InputRange /> */}
           <h5 className="slider-label">Stellar Temperature</h5>
-          <InputRange />
+          {/* <InputRange /> */}
         </div>
         <div id="div-filter-planets">
           <h5 className="slider-label">Planet Orbital Eccentricity</h5>
-          <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
+          {/* <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
               value={{min: 0.25, max: 0.75}}
-              onChange={this.handleSliderChange}
-              onChangeComplete={value => this.filterPlanetsByEcc(value)} />
+              onChange={value => changeFilters(value)}
+              onChangeComplete={value => changeFilters(value)} /> */}
           <h5 className="slider-label">Planetary Orbit Semi-Major Axis</h5>
-          <InputRange />
+          {/* <InputRange /> */}
           <h5 className="slider-label">Planetary Orbit Period</h5>
-          <InputRange />
+          {/* <InputRange /> */}
         </div>
       </div>
       <ListStars stars={stars} isloading={isLoading} error={error} />
@@ -56,17 +56,18 @@ export const PageSolarSystems = (props) => {
   );
 }
 
-const mapStateToProps = state => {
-  const { stars, planets, isLoading, error } = state.data;
+// const mapStateToProps = state => {
+//   const { stars, planets, isLoading, error } = state.data;
+//   const { planetCount } = state.filters;
+//   console.log('filters: ', state);
+//   return { stars, planets, isLoading, error, planetCount };
+// };
 
-  return { stars, planets, isLoading, error };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     changeFilters: newFilter => dispatch(changeFilters(newFilter)),
+//     changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
+//   }
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setFilters: newFilter => dispatch(setFilters(newFilter)),
-    changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PageSolarSystems);
+// export default connect(mapStateToProps, mapDispatchToProps)(PageSolarSystems);

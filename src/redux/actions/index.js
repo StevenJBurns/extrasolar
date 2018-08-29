@@ -34,8 +34,8 @@ export const fetchPlanetsFailed = error => ({
   payload: error
 });
 
-export const setFilters = newFilters => ({
-  type: actions.SET_FILTERS,
+export const changeFilters = newFilters => ({
+  type: actions.CHANGE_FILTERS,
   payload: newFilters
 });
 

@@ -12,7 +12,7 @@ import { AppNav } from "./components/app/AppNav.jsx";
 import { AppFooter } from "./components/app/AppFooter.jsx";
 import PageHome from './components/pages/PageHome.jsx';
 import PageData from './components/pages/PageData.jsx';
-import PageSolarSystems from './components/pages/PageSolarSystems';
+import PageSolarSystems from './containers/ConnectedPage.js';
 import PageAbout from "./components/pages/PageAbout.jsx";
 import { Page404 } from "./components/pages/Page404.jsx"
 
