@@ -16,17 +16,19 @@ import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 const PageSolarSystems = (props) => {
   const {changeAudioSource, stars, planets, isLoading, error, changeFilters, planetCount} = props;
-
   changeAudioSource(AudioSolarSystems);
+
+  let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
 
   return (
     <main id="main-solarsystems">
       <div id="div-filters">
         <div id="div-filter-stars">
           <h5 className="slider-label">Planet Count</h5>
-          <InputRange draggableTrack minValue={1} maxValue={8} step={1}
+          <InputRange draggableTrack allowSameValues
+            minValue={1} maxValue={8} step={1}
             value={planetCount}
-            onChange={value => changeFilters({planetCount: value})}
+            onChange={value => changeFilters(value)}
             onChangeComplete={value => changeFilters(value)} />
           <h5 className="slider-label">Binary Star?</h5>
           <h5 className="slider-label">Stellar Mass</h5>
@@ -51,15 +53,14 @@ const PageSolarSystems = (props) => {
           {/* <InputRange /> */}
         </div>
       </div>
-      <ListStars stars={stars} isloading={isLoading} error={error} />
+      <ListStars stars={filteredStars} isloading={isLoading} error={error} />
     </main>
   );
 }
 
 const mapStateToProps = state => {
   const { stars, planets, isLoading, error } = state.data;
-  const { planetCount } = state.filters;
-  console.log('filters: ', state);
+  const { planetCount } = state.filters;  
   return { stars, planets, isLoading, error, planetCount };
 };
 

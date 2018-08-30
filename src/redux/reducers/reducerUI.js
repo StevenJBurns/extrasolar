@@ -1,7 +1,7 @@
 import { actions } from "../actions/actionTypes.js";
 
 
-const initialState =  {
+const initialState = {
   ui: {
     isAudioMuted: JSON.parse(localStorage.getItem("isAudioMuted")),
     currentAudioSource: null
@@ -14,7 +14,6 @@ export const reducerUI = (state = initialState, action) => {
       let isMuted = !action.payload   
       state = {...state, ...state.data, ...state.ui, isAudioMuted: isMuted};
       localStorage.setItem("isAudioMuted", JSON.stringify(isMuted));
-      console.log(JSON.parse(localStorage.getItem("isAudioMuted")));
       break;
     case actions.CHANGE_AUDIO_SOURCE:
       let source = action.payload;

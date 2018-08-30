@@ -26,9 +26,7 @@ const initialState = {
   },
   ui: {
     isAudioMuted: localStorage.getItem("isAudioMuted")
-  },
-  filters: {},
-  sorting: {}
+  }
 }
 
 
