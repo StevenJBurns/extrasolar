@@ -8,21 +8,3 @@
   flex-wrap: wrap;
   min-width: 288px
 }
-
-#ul-star-list li {
-  margin: 2px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  font-size: 10px;
-  height: 80px;
-  width: 80px;
-  background: navy;
-  overflow: hidden;
-  border-radius: 4px;
-  transition: background 0.15s
-}
-
-#ul-star-list li:hover {
-  background: blue
-}
