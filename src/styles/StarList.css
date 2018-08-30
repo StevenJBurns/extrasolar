@@ -8,3 +8,10 @@
   flex-wrap: wrap;
   min-width: 288px
 }
+
+.star-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap
+}

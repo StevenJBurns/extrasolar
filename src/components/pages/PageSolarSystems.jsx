@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
-import { ListStars } from "../ui/ListStars.jsx";
+import { StarList } from "../ui/StarList.jsx";
 // import { ListPlanets } from "../ui/ListPlanets.jsx";
 import InputRange from 'react-input-range';
 
@@ -53,7 +53,7 @@ const PageSolarSystems = (props) => {
           {/* <InputRange /> */}
         </div>
       </div>
-      <ListStars stars={filteredStars} isloading={isLoading} error={error} />
+      <StarList stars={filteredStars} isloading={isLoading} error={error} />
     </main>
   );
 }

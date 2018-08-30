@@ -3,14 +3,14 @@ import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 /* Component Imports */
-import { StarItem } from "./StarItem.jsx";
+import { StarItem } from "./StarItem";
 
 /* Assets and Style Imports */
-import "../../styles/ListStars.css";
+import "../../styles/StarList.css";
 import "../../styles/StarItem.css";
 
 
-export const ListStars = ({ stars, isLoading, error }) => {
+export const StarList = ({ stars, isLoading, error }) => {
   if(stars) console.log(stars.length);
 
   if(!stars || isLoading) return (<h1>LOADING...</h1>);
@@ -25,7 +25,16 @@ export const ListStars = ({ stars, isLoading, error }) => {
 
   return (
     <ul id="ul-star-list" style={{ backgroundColor: "#5F5F5F", margin: 64 + "px", padding: 12 + "px" }}>
-      { stars.map(star => (<StarItem className="star" star={star} />)) }
+      <TransitionGroup className="star-list">
+        {
+          stars.map(star => (
+            <CSSTransition classNames="star" key={star.pl_hostname} timeout={500}>
+              <li className="star">{star.pl_hostname}</li>
+            </CSSTransition>
+            )
+          )
+        }
+      </TransitionGroup>
     </ul>
   );
 };
