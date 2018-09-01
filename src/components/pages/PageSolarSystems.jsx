@@ -5,12 +5,15 @@ import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
 import { StarList } from "../ui/StarList.jsx";
+import { StarItem } from "../ui/StarItem.jsx";
 // import { ListPlanets } from "../ui/ListPlanets.jsx";
+import { Collection, List } from 'react-virtualized';
 import InputRange from 'react-input-range';
 
 /* Assets and Styles Imports */
 import "../../styles/PageSolarSystems.css";
 import "react-input-range/lib/css/index.css";
+import 'react-virtualized/styles.css';
 import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
@@ -53,6 +56,10 @@ const PageSolarSystems = (props) => {
           {/* <InputRange /> */}
         </div>
       </div>
+      {/* <List rowCount={filteredStars.length}
+        rowHeight={64}
+        rowRenderer={rowRenderer}
+        height={300} width={300} /> */}
       <StarList stars={filteredStars} isloading={isLoading} error={error} />
     </main>
   );
