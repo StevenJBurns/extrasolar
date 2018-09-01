@@ -17,24 +17,26 @@ export const StarList = ({ stars, isLoading, error }) => {
 
   if(error) return (<h2>Data Error</h2>);
 
-  // return (
-  //   <ul id="ul-star-list" style={{ backgroundColor: "#5F5F5F", margin: 64 + "px", padding: 12 + "px" }}>
-  //     { stars.map(star => (<li key={Math.random()}>{star.pl_hostname}</li>)) }
-  //   </ul>
-  // );
-
   return (
     <ul id="ul-star-list" style={{ backgroundColor: "#5F5F5F", margin: 64 + "px", padding: 12 + "px" }}>
-      <TransitionGroup className="star-list">
-        {
-          stars.map(star => (
-            <CSSTransition classNames="star" key={star.pl_hostname} timeout={500}>
-              <li className="star">{star.pl_hostname}</li>
-            </CSSTransition>
-            )
-          )
-        }
-      </TransitionGroup>
+      <Shuffle>
+        { stars.map(star => (<li key={Math.random()}>{star.pl_hostname}</li>)) }
+      </Shuffle>
     </ul>
   );
+
+  // return (
+  //   <ul id="ul-star-list" style={{ backgroundColor: "#5F5F5F", margin: 64 + "px", padding: 12 + "px" }}>
+  //     <TransitionGroup className="star-list">
+  //       {
+  //         stars.map(star => (
+  //           <CSSTransition classNames="star" key={star.pl_hostname} timeout={500}>
+  //             <li className="star">{star.pl_hostname}</li>
+  //           </CSSTransition>
+  //           )
+  //         )
+  //       }
+  //     </TransitionGroup>
+  //   </ul>
+  // );
 };
