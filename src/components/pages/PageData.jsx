@@ -11,6 +11,16 @@ import "../../styles/PageData.css";
 const PageData = ({changeSource, stars, planets}) => {
   changeSource(AudioData);
 
+  let setPlanetCount = new Set();
+  let arrPlanetCount = [];
+
+  if (stars) {
+    stars.forEach((star) => setPlanetCount.add(star.pl_pnum));
+    arrPlanetCount = [...setPlanetCount].sort().map((count, index) =>  ({"planetCount" : count, "count" : 0}))
+
+    console.log(arrPlanetCount);
+  }
+
   return (
     <main id="main-data">
       <div id="div-content-wrapper">
