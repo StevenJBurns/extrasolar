@@ -18,6 +18,11 @@ const PageData = ({changeSource, stars, planets}) => {
     stars.forEach((star) => setPlanetCount.add(star.pl_pnum));
     arrPlanetCount = [...setPlanetCount].sort().map((count, index) =>  ({"planetCount" : count, "count" : 0}))
 
+    for (let size of arrPlanetCount) {
+      for (let star of stars) {
+        if (star.pl_pnum === size["planetCount"]) size["count"]++;
+      }
+    }
     console.log(arrPlanetCount);
   }
 
