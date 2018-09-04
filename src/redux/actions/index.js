@@ -21,16 +21,16 @@ export const fetchStarsFailed = error => ({
 });
 
 export const fetchPlanetsBegin = () => ({
-  type: actions.FETCH_STARS_BEGIN
+  type: actions.FETCH_PLANETS_BEGIN
 });
 
-export const fetchPlanetsSuccess = stars => ({
-  type: actions.FETCH_STARS_SUCCESS,
-  payload: stars
+export const fetchPlanetsSuccess = planets => ({
+  type: actions.FETCH_PLANETS_SUCCESS,
+  payload: planets
 });
 
 export const fetchPlanetsFailed = error => ({
-  type: actions.FETCH_STARS_FAILED,
+  type: actions.FETCH_PLANETS_FAILED,
   payload: error
 });
 

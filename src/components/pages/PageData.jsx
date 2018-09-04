@@ -57,7 +57,7 @@ const PageData = ({changeSource, stars, planets}) => {
           </tbody>
           <tfoot>
             <tr>
-              <th colSpan={2}>Total Planets: {stars ? stars.length: 0}</th>
+              <th colSpan={2}>Total Planets: {planets ? planets.length: 0}</th>
             </tr>
           </tfoot>
         </table>
