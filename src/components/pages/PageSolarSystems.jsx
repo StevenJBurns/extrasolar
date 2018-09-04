@@ -5,7 +5,7 @@ import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
 import { StarList } from "../ui/StarList.jsx";
-import { StarItem } from "../ui/StarItem.jsx";
+// import { StarItem } from "../ui/StarItem.jsx";
 // import { ListPlanets } from "../ui/ListPlanets.jsx";
 import InputRange from 'react-input-range';
 

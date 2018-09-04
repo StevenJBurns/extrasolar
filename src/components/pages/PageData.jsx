@@ -3,6 +3,9 @@ import React from 'react';
 import { connect } from "react-redux";
 import { changeAudioSource } from "../../redux/actions";
 
+/* Component Imports */
+import * as D3 from "d3";
+
 /* Assets and Styles Imports */
 import AudioData from '../../assets/audio/data.ogg';
 import "../../styles/PageData.css";
@@ -23,7 +26,6 @@ const PageData = ({changeSource, stars, planets}) => {
         if (star.pl_pnum === size["planetCount"]) size["count"]++;
       }
     }
-    console.log(arrPlanetCount);
   }
 
   return (

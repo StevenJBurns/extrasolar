@@ -14,9 +14,9 @@ if (localStorage.getItem("isAudioMuted") === null) {
   localStorage.setItem("isAudioMuted", "false")
 };
 
-let now = Date.now();
-let lastFetch = JSON.parse(localStorage.getItem("lastFetch"));
-let diff = now - lastFetch;
+// let now = Date.now();
+// let lastFetch = JSON.parse(localStorage.getItem("lastFetch"));
+// let diff = now - lastFetch;
 
 // console.log("diff: ", (diff / 1000) / 3600);
 
