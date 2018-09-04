@@ -20,7 +20,7 @@
 .star-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: all 300ms ease-out;
+  transition: all 250ms ease-out;
 }
 
 .star-exit {
@@ -31,7 +31,7 @@
 .star-exit-active {
   opacity: 0;
   transform: scale(0.1);
-  transition: all 300ms ease-in;
+  transition: all 250ms ease-in;
 }
 
 .star:hover {
