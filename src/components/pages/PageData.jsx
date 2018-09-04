@@ -16,7 +16,7 @@ const PageData = ({changeSource, stars, planets}) => {
 
   if (stars) {
     stars.forEach((star) => setPlanetCount.add(star.pl_pnum));
-    arrPlanetCount = [...setPlanetCount].sort().map((count, index) =>  ({"planetCount" : count, "count" : 0}))
+    arrPlanetCount = [...setPlanetCount].sort().map((count, index) => ({"planetCount" : count, "count" : 0}))
 
     for (let size of arrPlanetCount) {
       for (let star of stars) {
@@ -36,6 +36,31 @@ const PageData = ({changeSource, stars, planets}) => {
         <hr></hr>
         <p>Total Star Count: {stars ? stars.length : 0}</p>
         <p>Total Planet Count: {planets ? planets.length : 0}</p>
+        <hr></hr>
+        <table>
+          <caption>Categorical Planet Counts</caption>
+          <thead>
+            <tr colSpan={2}>
+              <th>Planet Count</th>
+              <th># of Systems</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              arrPlanetCount.map(x => {
+                return (<tr key={x["planetCount"]}>
+                  <td>{x["planetCount"]}</td>
+                  <td>{x["count"]}</td>
+                </tr>)
+              })
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colSpan={2}>Total Planets: {stars ? stars.length: 0}</th>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </main>
   );

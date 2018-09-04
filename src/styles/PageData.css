@@ -27,3 +27,32 @@
 #main-data p {
   margin: 16px 0;
 }
+
+table {
+  margin: auto;
+  max-width: 300px;
+  text-align: center;
+  border: 2px #333333 solid
+}
+
+caption {
+  padding: 12px;
+  text-align: center;
+  background: #777777;
+  border: 2px #333333 solid
+}
+
+th {
+  padding: 8px;
+  background: #999999
+}
+
+tbody tr td {
+  padding: 2px;
+}
+
+tfoot tr th {
+  padding: 8px;
+  text-align: center;
+  background: #777777
+}
