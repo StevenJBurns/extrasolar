@@ -14,6 +14,7 @@ import App from './App.jsx';
 /* stylesheet imports */
 import './styles/index.css';
 
+
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
