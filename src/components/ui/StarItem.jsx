@@ -5,6 +5,13 @@ import React from "react";
 /* Asset and Style Imports */
 // import "../../styles/StarItem.css";
 
-export const StarItem = ({star}) => (
-    <li className="star" key={Math.random()}>{star.pl_hostname}</li>
+export const StarItem = ({ index, key, style }) => (
+    // <div className="star" key={Math.random()}>{star.pl_hostname}</div>
+
+    <div key={key} style={style} className="row">
+      <div className="content">
+        <div>{this.list[index].name}</div>
+        <div>{this.list[index].text}</div>
+      </div>
+    </div>
 );
