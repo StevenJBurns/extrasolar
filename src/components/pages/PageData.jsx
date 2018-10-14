@@ -65,7 +65,7 @@ const PageData = ({changeSource, stars, planets}) => {
               </tr>
             </tfoot>
           </table>
-          <BarChart data={ [1,2,3,4,5,6,7,8] } />
+          <BarChart planetData={ arrPlanetCount } />
         </section>
       </div>
     </main>

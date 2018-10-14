@@ -46,6 +46,11 @@
   display: inline-block
 }
 
+#section-chart-categorical svg {
+  max-width: 320px;
+  display: inline-block
+}
+
 table {
   margin: auto;
   max-width: 300px;
