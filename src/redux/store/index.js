@@ -25,7 +25,7 @@ const initialState = {
     lastFetch: localStorage.getItem("lastFetch")
   },
   ui: {
-    isAudioMuted: localStorage.getItem("isAudioMuted")
+    isAudioMuted: localStorage.getItem("isAudioMuted") === "true"
   }
 }
 
