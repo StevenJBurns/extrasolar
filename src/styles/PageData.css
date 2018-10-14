@@ -34,9 +34,16 @@
 
 #section-chart-categorical {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+#section-chart-categorical {
+  width: 320px;
+  height: 320px;
+  display: inline-block
 }
 
 table {
