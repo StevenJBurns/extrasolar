@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
-export const AppFooter = (props) => {
+export const AppFooter = () => {
   return (
     <footer id="app-footer">
       <div id="div-logo-wrapper">
