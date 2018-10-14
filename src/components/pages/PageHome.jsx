@@ -6,7 +6,6 @@ import { changeAudioSource } from "../../redux/actions";
 /* Assets and Styles Imports */
 import "../../styles/PageHome.css";
 import AudioHome from '../../assets/audio/home.ogg';
-// import { CanvasComponent } from '../components/CanvasComponent.jsx';
 
 
 const PageHome = ({changeSource}) => {
@@ -25,24 +24,6 @@ const PageHome = ({changeSource}) => {
     </main>
   );
 }
-
-  // componentDidMount() {
-  //   window.addEventListener('resize', this.handleResize)
-  //   // const height = document.getElementById('main-home').clientHeight;
-  //   // const width = document.getElementById('main-home').clientWidth;
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.handleResize);
-  // }
-
-  // handleResize() {
-  //   this.setState({
-  //     windowHeight: document.getElementById('main-home').clientHeight,
-  //     windowWidth: document.getElementById('main-home').clientWidth
-  //   });
-  // }
-
 
 const mapDispatchToProps = dispatch => {
   return {
