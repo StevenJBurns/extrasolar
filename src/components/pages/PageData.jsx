@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { changeAudioSource } from "../../redux/actions";
 
 /* Component Imports */
-import * as D3 from "d3";
 import{ BarChart}  from "../ui/BarChart";
 
 /* Assets and Styles Imports */
@@ -65,25 +64,25 @@ const PageData = ({changeSource, stars, planets}) => {
               </tr>
             </tfoot>
           </table>
-          <BarChart planetData={ arrPlanetCount } />
+          {
+            arrPlanetCount ? <BarChart planetData={ arrPlanetCount } /> : null
+          }
         </section>
       </div>
     </main>
   );
-}
+};
 
 const MapStateToProps = state => {
   const {stars, planets} = state.data
   
-  return {
-    stars, planets
-  }
-}
+  return {stars, planets};
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     changeSource: source => dispatch(changeAudioSource(source))
-  }
-}
+  };
+};
 
 export default connect(MapStateToProps, mapDispatchToProps)(PageData);
