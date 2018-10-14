@@ -14,7 +14,6 @@ export const AppHeader = () => {
         <h4 id="h2-header">Visualization of exoplanets in distant solar systems</h4>
       </div>
       <ConnectedAudioButton />
-      {/* <AudioButton /> */}
     </header>
   );
 }
