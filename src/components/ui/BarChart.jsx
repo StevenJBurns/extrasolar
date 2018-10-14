@@ -16,7 +16,7 @@ export const BarChart = (props) => {
   const domainMax = D3.max(planetCounts);
   const domainMin = D3.min(planetCounts);
   
-  const chartScaleLinear = D3.scaleLinear().domain([0, D3.max(planetOrdinals)]).range([0, 280]);
+  const chartScaleLinear = D3.scaleLinear().domain([0, D3.max(planetOrdinals) + 1]).range([0, 270]);
   const chartScaleSPow = D3.scalePow().exponent(0.5).domain([domainMin , domainMax]).range([1, 240]);
 
   const xAxis = D3.axisBottom(chartScaleLinear).tickSize(8).tickValues([...planetOrdinals]).tickFormat(d => d);
@@ -31,9 +31,9 @@ export const BarChart = (props) => {
       .data(planetCounts)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * 28)
+      .attr("x", (d, i) => (chartScaleLinear(i) + 1) + 16)
       .attr("y", (d, i) => chartScaleSPow(d) > 8 ? (280 - chartScaleSPow(d)) : 272)
-      .attr("width", 24)
+      .attr("width", 27)
       .attr("height", (d, i) => chartScaleSPow(d) < 8 ? d * 8 : chartScaleSPow(d))
       .attr("fill", "grey");        
 
