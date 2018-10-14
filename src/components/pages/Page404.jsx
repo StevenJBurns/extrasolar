@@ -4,7 +4,7 @@ import "../../styles/Page404.css";
 import "../../assets/images/black-hole.jpg";
 
 
-export const Page404 = (props) => {
+export const Page404 = () => {
   return (
     <main id="main-404">
       <h1>Page Not Found</h1>
