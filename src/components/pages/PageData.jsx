@@ -5,6 +5,7 @@ import { changeAudioSource } from "../../redux/actions";
 
 /* Component Imports */
 import * as D3 from "d3";
+import{ BarChart}  from "../ui/BarChart";
 
 /* Assets and Styles Imports */
 import AudioData from '../../assets/audio/data.ogg';
@@ -39,30 +40,33 @@ const PageData = ({changeSource, stars, planets}) => {
         <p>Total Star Count: {stars ? stars.length : 0}</p>
         <p>Total Planet Count: {planets ? planets.length : 0}</p>
         <hr></hr>
-        <table>
-          <caption>Categorical Planet Counts</caption>
-          <thead>
-            <tr colSpan={2}>
-              <th>Planet Count</th>
-              <th># of Systems</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              arrPlanetCount.map(x => {
-                return (<tr key={x["planetCount"]}>
-                  <td>{x["planetCount"]}</td>
-                  <td>{x["count"]}</td>
-                </tr>)
-              })
-            }
-          </tbody>
-          <tfoot>
-            <tr>
-              <th colSpan={2}>Total Planets: {planets ? planets.length: 0}</th>
-            </tr>
-          </tfoot>
-        </table>
+        <section id="section-chart-categorical" className="section-chart-container">
+          <table>
+            <caption>Categorical Planet Counts</caption>
+            <thead>
+              <tr colSpan={2}>
+                <th>Planet Count</th>
+                <th># of Systems</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                arrPlanetCount.map(x => {
+                  return (<tr key={x["planetCount"]}>
+                    <td>{x["planetCount"]}</td>
+                    <td>{x["count"]}</td>
+                  </tr>)
+                })
+              }
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colSpan={2}>Total Planets: {planets ? planets.length: 0}</th>
+              </tr>
+            </tfoot>
+          </table>
+          <BarChart data={ [1,2,3,4,5,6,7,8] } />
+        </section>
       </div>
     </main>
   );

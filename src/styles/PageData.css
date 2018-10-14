@@ -28,6 +28,17 @@
   margin: 16px 0;
 }
 
+.section-chart-container {
+  margin: 16px auto
+}
+
+#section-chart-categorical {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
 table {
   margin: auto;
   max-width: 300px;
