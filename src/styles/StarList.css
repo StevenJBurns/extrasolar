@@ -15,3 +15,9 @@
   justify-content: left;
   flex-wrap: wrap
 }
+
+.div-star-item {
+  margin: 4px;
+  color: black;
+  background-color: azure
+}
