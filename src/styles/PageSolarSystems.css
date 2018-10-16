@@ -1,4 +1,6 @@
 #main-solarsystems {
+  display: flex;
+  flex-direction: column;
   flex: 1 0 auto;
   color: #DFDFDF
 }
@@ -26,3 +28,16 @@
 .slider-label {
   margin: 24px 0
 }
+
+#section-container {
+  padding-top: 4px;
+  height: 160px;
+  overflow: scroll;
+}
+
+.ul-star-list {
+  list-style: none;
+  background-color: red
+}
+
+

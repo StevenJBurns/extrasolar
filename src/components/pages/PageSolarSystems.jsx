@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
-import { StarList } from "../ui/StarList.jsx";
-// import { StarItem } from "../ui/StarItem.jsx";
-// import { ListPlanets } from "../ui/ListPlanets.jsx";
+import VirtualList from 'react-virtual-list';
 import InputRange from 'react-input-range';
 
 /* Assets and Styles Imports */
@@ -16,10 +14,36 @@ import 'react-virtualized/styles.css';
 import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
+const StarList = ({virtual, itemHeight}) => {
+  const listStyle = { margin: "4px",
+                      height: "64px",
+                      borderRadius: "8px",
+                      backgroundColor: "azure",
+                      color: "#0F0F0F"}
+
+  return (
+    <ul className="ul-star-list" style={virtual.style}>
+      {
+      virtual.items.map(item => (
+        <li key={ Math.random()} style={listStyle}>
+          <h3>{item["pl_hostname"]}</h3>
+          <h5>Planets: {item["pl_pnum"]}</h5>
+        </li>)
+        )
+      }
+    </ul>
+  );
+};
+
+const virtualOptions = { }
+
+const VirtualStarList = VirtualList(virtualOptions)(StarList);
+
 const PageSolarSystems = (props) => {
   const {changeAudioSource, stars, planets, isLoading, error, changeFilters, planetCount} = props;
+  
   changeAudioSource(AudioSolarSystems);
-
+  
   let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
 
   return (
@@ -27,39 +51,21 @@ const PageSolarSystems = (props) => {
       <div id="div-filters">
         <div id="div-filter-stars">
           <h5 className="slider-label">Planet Count</h5>
-          <InputRange draggableTrack allowSameValues
-            minValue={1} maxValue={8} step={1}
-            value={planetCount}
-            onChange={value => changeFilters(value)}
-            onChangeComplete={value => changeFilters(value)} />
+          <InputRange draggableTrack allowSameValues minValue={1} maxValue={8} step={1} value={planetCount} onChange={value => changeFilters(value)} onChangeComplete={value => changeFilters(value)} />
           <h5 className="slider-label">Binary Star?</h5>
           <h5 className="slider-label">Stellar Mass</h5>
-          {/* <InputRange draggableTrack minValue={0} maxValue={25} step={0.001}
-            value={{min: 4, max: 17}}
-            onChange={value => changeFilters(value)}
-            onChangeComplete={value => changeFilters(value)} /> */}
           <h5 className="slider-label">Stellar Radius</h5>
-          {/* <InputRange /> */}
           <h5 className="slider-label">Stellar Temperature</h5>
-          {/* <InputRange /> */}
+          <section id="section-container">
+            <VirtualStarList items={filteredStars} itemHeight={96} />
+          </section>
         </div>
         <div id="div-filter-planets">
           <h5 className="slider-label">Planet Orbital Eccentricity</h5>
-          {/* <InputRange draggableTrack minValue={0} maxValue={1} step={0.01}
-              value={{min: 0.25, max: 0.75}}
-              onChange={value => changeFilters(value)}
-              onChangeComplete={value => changeFilters(value)} /> */}
           <h5 className="slider-label">Planetary Orbit Semi-Major Axis</h5>
-          {/* <InputRange /> */}
           <h5 className="slider-label">Planetary Orbit Period</h5>
-          {/* <InputRange /> */}
         </div>
       </div>
-      {/* <List rowCount={filteredStars.length}
-        rowHeight={64}
-        rowRenderer={rowRenderer}
-        height={300} width={300} /> */}
-      <StarList stars={filteredStars} isloading={isLoading} error={error} />
     </main>
   );
 }
