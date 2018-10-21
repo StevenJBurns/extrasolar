@@ -25,7 +25,7 @@ export const BarChart = (props) => {
       .append("svg")
       .attr("width", w)
       .attr("height", h)
-      .style("background-color", "lavender")
+      .style("background-color", "#E2E2E2")
 
   svg.selectAll("rect")
       .data(planetCounts)
