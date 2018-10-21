@@ -18,8 +18,8 @@ export const BarChart = (props) => {
   const domainMin = D3.min(planetCounts);
   
   const scaleX = D3.scaleLinear().domain([0, D3.max(planetOrdinals) + 1]).range([0, 270]);
-  const scaleAxisY = D3.scalePow().exponent(0.5).domain([domainMax, domainMin]).range([1, 280]);
-  const scaleY = D3.scalePow().exponent(0.5).domain([domainMin , domainMax]).range([1, 240]);
+  const scaleAxisY = D3.scalePow().exponent(0.5).domain([domainMax, domainMin]).range([0, 240]);
+  const scaleY = D3.scalePow().exponent(0.5).domain([domainMin , domainMax]).range([0, 240]);
 
   const svg = D3.select("#div-chart-categorical")
       .append("svg")
@@ -32,13 +32,13 @@ export const BarChart = (props) => {
       .enter()
       .append("rect")
       .attr("x", (d, i) => (scaleX(i) + 1) + 40)
-      .attr("y", (d, i) => scaleY(d) > 8 ? (280 - scaleY(d)) : 272)
+      .attr("y", (d, i) => scaleY(d) > 4 ? (280 - scaleY(d)) : 276)
       .attr("width", 28)
-      .attr("height", (d, i) => scaleY(d) < 8 ? d * 8 : scaleY(d))
+      .attr("height", (d, i) => scaleY(d) < 4 ? d * 4 : scaleY(d))
       .attr("fill", "grey");        
 
   const xAxis = D3.axisBottom(scaleX).tickSize(8).tickValues([...planetOrdinals]).tickFormat(d => d);
-  const yAxis = D3.axisLeft(scaleAxisY).tickSize(8).tickValues([0, 1000, 2000, 3000]).tickFormat(d => d);
+  const yAxis = D3.axisLeft(scaleAxisY).tickSize(4).tickValues([100, 500, 1000, 1500, 2000]).tickFormat(d => d);
     
   svg.append("g")
       .attr("class", "axis")
@@ -47,7 +47,7 @@ export const BarChart = (props) => {
 
   svg.append("g")
       .attr("class", "axis")
-      .attr("transform", `translate(36, -6)`)
+      .attr("transform", `translate(36, 40)`)
       .call(yAxis);
 
   return (<div id="div-chart-categorical"></div>);
