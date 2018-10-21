@@ -42,7 +42,7 @@
 }
 
 #div-chart-categorical {
-  max-width: 320px;
+  width: 320px;
   height: 320px;
   display: inline-block;
   overflow: hidden;
