@@ -4,40 +4,14 @@ import { connect } from "react-redux";
 import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
-import VirtualList from 'react-virtual-list';
 import InputRange from 'react-input-range';
+import { StarList } from "../ui/StarList";
 
 /* Assets and Styles Imports */
 import "../../styles/PageSolarSystems.css";
 import "react-input-range/lib/css/index.css";
-import 'react-virtualized/styles.css';
 import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
-
-const StarList = ({virtual, itemHeight}) => {
-  const listStyle = { margin: "4px",
-                      height: "64px",
-                      borderRadius: "8px",
-                      backgroundColor: "azure",
-                      color: "#0F0F0F"}
-
-  return (
-    <ul className="ul-star-list" style={virtual.style}>
-      {
-      virtual.items.map(item => (
-        <li key={ Math.random()} style={listStyle}>
-          <h3>{item["pl_hostname"]}</h3>
-          <h5>Planets: {item["pl_pnum"]}</h5>
-        </li>)
-        )
-      }
-    </ul>
-  );
-};
-
-const virtualOptions = { }
-
-const VirtualStarList = VirtualList(virtualOptions)(StarList);
 
 const PageSolarSystems = (props) => {
   const {changeAudioSource, stars, planets, isLoading, error, changeFilters, planetCount} = props;
@@ -57,7 +31,7 @@ const PageSolarSystems = (props) => {
           <h5 className="slider-label">Stellar Radius</h5>
           <h5 className="slider-label">Stellar Temperature</h5>
           <section id="section-container">
-            <VirtualStarList items={filteredStars} itemHeight={96} />
+
           </section>
         </div>
         <div id="div-filter-planets">
