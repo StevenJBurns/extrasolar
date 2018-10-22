@@ -50,5 +50,12 @@ export const BarChart = (props) => {
       .attr("transform", `translate(36, 40)`)
       .call(yAxis);
 
+  svg.append("text")
+      .attr("x", w / 2)
+      .attr("y", 24)
+      .style("font-size", "14px")
+      .attr("text-anchor", "middle")
+      .text("SUMMED CATEGORICAL PLANET COUNTS")
+
   return (<div id="div-chart-categorical"></div>);
 };

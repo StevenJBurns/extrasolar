@@ -61,13 +61,13 @@
 
 #div-chart-categorical svg {
   max-width: 320px;
-  margin: 16px;
+  margin: 16px auto;
   display: inline-block
 }
 
 table {
   margin: auto;
-  max-width: 300px;
+  width: 288px;
   text-align: center;
   border: 2px #333333 solid
 }
