@@ -1,8 +1,8 @@
 import { actions } from "../actions/actionTypes.js";
 
 
-if (localStorage.getItem("lastFetch") === null) {
-  localStorage.setItem("lastFetch", Date.now().toString())
+if (localStorage.getItem("lastDataFetch") === null) {
+  localStorage.setItem("lastDataFetch", Date.now().toString())
 };
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
     planets: [],
     isLoading: {stars: false, planets: false},
     selectedSolarSystem: null,
-    lastFetch: JSON.parse(localStorage.getItem("lastFetch"))
+    lastDataFetch: JSON.parse(localStorage.getItem("lastFetch"))
   }
 };
 
@@ -35,8 +35,8 @@ export const reducerData = (state = initialState, action) => {
     case (actions.FETCH_PLANETS_FAILED):
       state = {...state, ...state.ui, ...state.data, isLoading: false, planets: [], error: action.payload.error}
       break;
-    case actions.GET_LAST_FETCH:
-      state = {...state, ...state.ui, ...state.data, lastFetch: JSON.parse(localStorage["lastFetch"])};
+    case actions.GET_LAST_DATA_FETCH:
+      state = {...state, ...state.ui, ...state.data, lastDataFetch: JSON.parse(localStorage["lastDataFetch"])};
       break;
     default:
       state = {...state};

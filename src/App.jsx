@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
-import { getLastFetch } from "./redux/actions/index.js";
+import { getLastDataFetch } from "./redux/actions/index.js";
 import { fetchStars } from "./redux/actions/actionAsyncFetchStars.js";
 import { fetchPlanets } from "./redux/actions/actionAsyncFetchPlanets.js";
 
@@ -52,7 +52,7 @@ export const App = ({fetchStars, fetchPlanets}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getLastFetch: () => dispatch(getLastFetch()),
+    getLastDataFetch: () => dispatch(getLastDataFetch()),
     fetchStars: () => dispatch(fetchStars()),
     fetchPlanets: () => dispatch(fetchPlanets())
   }

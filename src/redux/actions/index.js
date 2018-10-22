@@ -1,9 +1,9 @@
 import { actions } from "./actionTypes";
 
 
-export const getLastFetch = () => ({
-  type: actions.GET_LAST_FETCH,
-  payload: JSON.parse(localStorage.getItem("lastFetch"))
+export const getLastDataFetch = () => ({
+  type: actions.GET_LAST_DATA_FETCH,
+  payload: JSON.parse(localStorage.getItem("lastDataFetch"))
 });
 
 export const fetchStarsBegin = () => ({
