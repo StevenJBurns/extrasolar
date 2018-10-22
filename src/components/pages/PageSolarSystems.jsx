@@ -1,12 +1,11 @@
 /* React and Redux Imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource, changeFilters } from "../../redux/actions";
+import { changeAudioSource, changeFilters, changeSelectedSystem } from "../../redux/actions";
 
 /* Component Imports */
 import InputRange from 'react-input-range';
 import VirtualList from 'react-tiny-virtual-list';
-import { StarList } from "../ui/StarList";
 
 /* Assets and Styles Imports */
 import "../../styles/PageSolarSystems.css";
@@ -15,14 +14,20 @@ import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
 const PageSolarSystems = (props) => {
-  const {changeAudioSource, stars, planets, isLoading, error, changeFilters, planetCount} = props;
+  const {changeAudioSource, changeSelectedSystem, stars, planets, selectedSolarSystem, isLoading, error, changeFilters, planetCount} = props;
   
   changeAudioSource(AudioSolarSystems);
   
   let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
 
+  let itemStyle = {
+    fontSize: "16px",
+    cursor: "default"
+  }
+
   return (
     <main id="main-solarsystems">
+      <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem["pl_hostname"] : null}</h3>
       <div id="div-filters">
         <div id="div-filter-stars">
           <h5 className="slider-label">Planet Count</h5>
@@ -33,12 +38,14 @@ const PageSolarSystems = (props) => {
           <h5 className="slider-label">Stellar Temperature</h5>
           <section id="section-container">
           <VirtualList
+            className="div-virtual-list"
             width='100%'
             height={160}
+            style={itemStyle}
             itemCount={filteredStars.length}
-            itemSize={40} // Also supports variable heights (array or function getter)
+            itemSize={40}
             renderItem={({index, style}) => (
-              <div key={index} style={style}>{filteredStars[index].pl_hostname}</div>
+              <p key={index} className="div-virtual-item" style={style} onClick={() => changeSelectedSystem(filteredStars[index])}>{filteredStars[index].pl_hostname}</p>
             )
             } />
           </section>
@@ -54,14 +61,15 @@ const PageSolarSystems = (props) => {
 }
 
 const mapStateToProps = state => {
-  const { stars, planets, isLoading, error } = state.data;
+  const { stars, planets, selectedSolarSystem, isLoading, error } = state.data;
   const { planetCount } = state.filters;  
-  return { stars, planets, isLoading, error, planetCount };
+  return { stars, planets, selectedSolarSystem, isLoading, error, planetCount };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     changeFilters: newFilter => dispatch(changeFilters(newFilter)),
+    changeSelectedSystem: newSystem => dispatch(changeSelectedSystem(newSystem)),
     changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
   }
 };

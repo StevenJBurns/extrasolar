@@ -35,9 +35,15 @@
   overflow: scroll;
 }
 
-.ul-star-list {
+.div-virtual-list {
   list-style: none;
-  background-color: red
+  background-color: #3f51b5
+}
+
+.div-virtual-item {
+  width: 90%;
+  margin: auto;
+  background-color: darkgreen
 }
 
 

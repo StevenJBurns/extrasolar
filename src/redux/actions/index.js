@@ -44,6 +44,11 @@ export const toggleAudioMute = audioState => ({
   payload: audioState
 });
 
+export const changeSelectedSystem = newSystem => ({
+  type: actions.CHANGE_SELECTED_SYSTEM,
+  payload: newSystem
+});
+
 export const changeAudioSource = audioSource => ({
   type: actions.CHANGE_AUDIO_SOURCE,
   payload: audioSource

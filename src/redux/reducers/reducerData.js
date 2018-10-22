@@ -35,7 +35,10 @@ export const reducerData = (state = initialState, action) => {
     case (actions.FETCH_PLANETS_FAILED):
       state = {...state, ...state.ui, ...state.data, isLoading: false, planets: [], error: action.payload.error}
       break;
-    case actions.GET_LAST_DATA_FETCH:
+    case (actions.CHANGE_SELECTED_SYSTEM):
+      state = {...state, ...state.ui, ...state.data, selectedSolarSystem: action.payload};
+      break;
+    case (actions.GET_LAST_DATA_FETCH):
       state = {...state, ...state.ui, ...state.data, lastDataFetch: JSON.parse(localStorage["lastDataFetch"])};
       break;
     default:
