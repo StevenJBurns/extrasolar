@@ -18,8 +18,8 @@ export const BarChart = (props) => {
   const domainMin = D3.min(planetCounts);
   
   const scaleX = D3.scaleLinear().domain([0, D3.max(planetOrdinals) + 1]).range([0, 270]);
-  const scaleAxisY = D3.scalePow().exponent(0.5).domain([domainMax, domainMin]).range([0, 240]);
   const scaleY = D3.scalePow().exponent(0.5).domain([domainMin , domainMax]).range([0, 240]);
+  const scaleAxisY = D3.scalePow().exponent(0.5).domain([domainMax, domainMin]).range([0, 240]);
 
   const svg = D3.select("#div-chart-categorical")
       .append("svg")

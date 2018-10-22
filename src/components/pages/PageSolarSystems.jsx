@@ -5,6 +5,7 @@ import { changeAudioSource, changeFilters } from "../../redux/actions";
 
 /* Component Imports */
 import InputRange from 'react-input-range';
+import VirtualList from 'react-tiny-virtual-list';
 import { StarList } from "../ui/StarList";
 
 /* Assets and Styles Imports */
@@ -31,7 +32,15 @@ const PageSolarSystems = (props) => {
           <h5 className="slider-label">Stellar Radius</h5>
           <h5 className="slider-label">Stellar Temperature</h5>
           <section id="section-container">
-
+          <VirtualList
+            width='100%'
+            height={160}
+            itemCount={filteredStars.length}
+            itemSize={40} // Also supports variable heights (array or function getter)
+            renderItem={({index, style}) => (
+              <div key={index} style={style}>{filteredStars[index].pl_hostname}</div>
+            )
+            } />
           </section>
         </div>
         <div id="div-filter-planets">
