@@ -28,7 +28,7 @@ export const StarList = ({ stars, isLoading, error }) => {
   return (
     <AutoSizer>
       {
-        width => (<List width={320} height={240} rowHeight={60} rowCount={stars.length} rowRenderer={rowRenderer} />)
+        width => (<List width={320} height={256} rowHeight={60} rowCount={stars.length} rowRenderer={rowRenderer} />)
       }
     </AutoSizer>
   );
