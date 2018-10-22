@@ -37,8 +37,11 @@ const PageData = ({changeSource, stars, planets}) => {
         <p>The available data from NASA comes from a SQL table view that combines star and planet data together. While this allows for compact and less-effort storage, the hierarchical or relationship of planets to stars is lost. Those relationships are rebuilt in JavaScript files of these web pages.</p>
         <p>Some exoplanet data is incomplete, as is the stellar data of their host stars. The aim of this simple web site is to visually plot and animate a rough estimation of the geometry and scale of these distant star systems. Without some of the variables, a section of stars and planets can not be plotted and therefore are not included in the snapshot of data used here.</p>
         <hr></hr>
-        <p>Total Star Count: {stars ? stars.length : 0}</p>
-        <p>Total Planet Count: {planets ? planets.length : 0}</p>
+        <h3>Most Recent Data</h3>
+        <section id="section-live-data">
+          <p>Total Star Count: {stars ? stars.length : 0}</p>
+          <p>Total Planet Count: {planets ? planets.length : 0}</p>
+        </section>
         <hr></hr>
         <section id="section-chart-categorical" className="section-chart-container">
           <table>

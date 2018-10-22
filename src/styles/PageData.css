@@ -28,6 +28,18 @@
   margin: 16px 0;
 }
 
+#section-live-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+#section-live-data p {
+  max-width: 288px;
+  margin: 16px auto
+}
+
 .section-chart-container {
   margin: 16px auto
 }
