@@ -22,8 +22,6 @@ const PageSolarSystems = (props) => {
   let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
   let relatedPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] == selectedSolarSystem["pl_hostname"]) : null;
 
-  console.log(relatedPlanets);
-
   let itemStyle = {
     fontSize: "16px",
     cursor: "default"
@@ -31,7 +29,7 @@ const PageSolarSystems = (props) => {
 
   return (
     <main id="main-solarsystems">
-      <CanvasComponent w="0" h="0" selectedSystem={selectedSolarSystem} relatedPlanets={null} />
+      <CanvasComponent selectedSystem={selectedSolarSystem} relatedPlanets={relatedPlanets} />
       <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem["pl_hostname"] : null}</h3>
       <div id="div-filters">
         <div id="div-filter-stars">
