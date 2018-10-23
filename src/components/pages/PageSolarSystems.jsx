@@ -20,12 +20,14 @@ const PageSolarSystems = (props) => {
   changeAudioSource(AudioSolarSystems);
   
   let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
-  let relatedPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] == selectedSolarSystem["pl_hostname"]) : null;
+  let relatedPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] === selectedSolarSystem["pl_hostname"]) : null;
 
   let itemStyle = {
     fontSize: "16px",
     cursor: "default"
   }
+
+  console.log(selectedSolarSystem);
 
   return (
     <main id="main-solarsystems">

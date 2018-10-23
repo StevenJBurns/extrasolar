@@ -19,6 +19,8 @@ export class CanvasComponent extends React.Component {
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048); 
 
+    console.log("star: ", this.state.selectedSystem);
+
     this.drawCanvas();
   };
 
@@ -27,13 +29,13 @@ export class CanvasComponent extends React.Component {
     ctx = this.refs.canvas.getContext('2d');
 
     ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, 2048, 2048); 
+    ctx.fillRect(0, 0, 2048, 2048);
 
     // Build a random starfield for the canvas
-    if (this.state.starfield.length == 0 || !this.state.starfield) {      
+    if (this.state.starfield.length === 0 || !this.state.starfield) {      
       for (let i = 0; i < (this.state.w / 2); i++) {
-        let randomX = Math.floor(Math.random() * ctx.canvas.width);
-        let randomY = Math.floor(Math.random() * ctx.canvas.height);
+        let randomX = Math.floor(Math.random() * ctx.canvas.width * 4);
+        let randomY = Math.floor(Math.random() * ctx.canvas.height * 2);
         let randomO = Math.random();
         // Create an array [x, y, o] for each star from the above variables then push it into this.state.starfield array
         // x and y are randomized coords based on canvas size -- o is a random opacity (conveniently) from 0 to 1
@@ -48,7 +50,7 @@ export class CanvasComponent extends React.Component {
       ctx.closePath();
       ctx.fill();
     }
-
+    
     this.drawStar(this.state.selectedSystem);
   };
 
