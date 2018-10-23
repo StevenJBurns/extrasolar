@@ -7,8 +7,8 @@ export class CanvasComponent extends React.Component {
     this.state = {
       w: window.innerWidth,
       selectedSystem: props.selectedSystem,
-      starfield: [],
-      ctx: null
+      relatedPlanets: props.relatedPlanets,
+      starfield: []
     }
   }
   
@@ -20,6 +20,7 @@ export class CanvasComponent extends React.Component {
     ctx.fillRect(0, 0, 2048, 2048); 
 
     console.log("star: ", this.state.selectedSystem);
+    console.log("planets: ", this.state.relatedPlanets);
 
     this.drawCanvas();
   };
@@ -51,7 +52,7 @@ export class CanvasComponent extends React.Component {
       ctx.fill();
     }
     
-    this.drawStar(this.state.selectedSystem);
+    if (this.state.selectedSystem) this.drawStar(this.state.selectedSystem);
   };
 
   drawStar(star) {
@@ -81,6 +82,15 @@ export class CanvasComponent extends React.Component {
     this.drawCanvas();
   }
   
+  componentWillReceiveProps(nextProps) {
+    this.setState(
+      {
+        selectedSystem: nextProps.selectedSystem,
+        relatedPlanets: nextProps.relatedPlanets
+      }
+    );  
+  }
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateCanvas.bind(this))
   }
