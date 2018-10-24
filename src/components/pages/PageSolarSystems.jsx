@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { changeAudioSource, changeFilters, changeSelectedSystem } from "../../redux/actions";
 
 /* Component Imports */
-import { CanvasComponent } from "../ui/CanvasComponent.jsx";
+import CanvasComponent from "../ui/CanvasComponent.jsx";
 import InputRange from 'react-input-range';
 import VirtualList from 'react-tiny-virtual-list';
 
@@ -15,15 +15,20 @@ import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
 
 const PageSolarSystems = (props) => {
-  const {changeAudioSource, changeSelectedSystem, stars, planets, selectedSolarSystem, isLoading, error, changeFilters, planetCount} = props;
+  const { changeAudioSource,
+          changeSelectedSystem,
+          stars,
+          planets,
+          selectedSolarSystem,
+          isLoading,
+          error,
+          changeFilters,
+          planetCount } = props;
   
   changeAudioSource(AudioSolarSystems);
   
   let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
   let relatedPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] === selectedSolarSystem["pl_hostname"]) : null;
-
-  console.log(relatedPlanets);
-  
 
   let itemStyle = {
     fontSize: "16px",
@@ -31,7 +36,7 @@ const PageSolarSystems = (props) => {
   }
   return (
     <main id="main-solarsystems">
-      <CanvasComponent selectedSystem={selectedSolarSystem} relatedPlanets={relatedPlanets} />
+      <CanvasComponent />
       <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem["pl_hostname"] : null}</h3>
       <div id="div-filters">
         <div id="div-filter-stars">

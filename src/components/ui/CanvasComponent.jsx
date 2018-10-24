@@ -1,13 +1,15 @@
 import React from 'react';
+import { connect } from "react-redux";
 
-export class CanvasComponent extends React.Component {
+
+class CanvasComponent extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       w: window.innerWidth,
-      selectedSystem: props.selectedSystem,
-      relatedPlanets: props.relatedPlanets,
+      selectedSystem: null,
+      relatedPlanets: null,
       starfield: []
     }
   }
@@ -18,9 +20,6 @@ export class CanvasComponent extends React.Component {
     const ctx = this.refs.canvas.getContext("2d");
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048); 
-
-    console.log("star: ", this.state.selectedSystem);
-    console.log("planets: ", this.state.relatedPlanets);
 
     this.drawCanvas();
   };
@@ -51,11 +50,13 @@ export class CanvasComponent extends React.Component {
       ctx.closePath();
       ctx.fill();
     }
-    
-    if (this.state.selectedSystem) this.drawStar(this.state.selectedSystem);
+
+    this.drawStar(this.state.selectedSystem);
   };
 
   drawStar(star) {
+    if (!star) return;
+
     const ctx = this.refs.canvas.getContext("2d");
     const w = this.state.w;
 
@@ -79,6 +80,9 @@ export class CanvasComponent extends React.Component {
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048); 
 
+    console.log("star: ", this.state.selectedSystem);
+    console.log("planets: ", this.state.relatedPlanets);
+
     this.drawCanvas();
   }
   
@@ -88,7 +92,12 @@ export class CanvasComponent extends React.Component {
         selectedSystem: nextProps.selectedSystem,
         relatedPlanets: nextProps.relatedPlanets
       }
-    );  
+    );
+
+    console.log("star: ", this.state.selectedSystem);
+    console.log("planets: ", this.state.relatedPlanets);
+
+    this.drawCanvas();
   }
 
   componentWillUnmount() {
@@ -103,3 +112,10 @@ export class CanvasComponent extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { stars, planets, selectedSolarSystem, isLoading, error } = state.data;
+  return { stars, planets, selectedSolarSystem, isLoading, error };
+};
+
+export default connect(mapStateToProps, null)(CanvasComponent);
