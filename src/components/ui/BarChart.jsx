@@ -1,4 +1,4 @@
-/* React and D3 imports */
+/* React and D3js imports */
 import React from 'react';
 import * as D3 from "d3";
 
