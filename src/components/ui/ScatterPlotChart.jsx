@@ -13,8 +13,5 @@ const propTypes = {
 
 export const ScatterPlotChart = (props) => {
 
-
-
-
   return (<div id="div-chart-"></div>);
 }
