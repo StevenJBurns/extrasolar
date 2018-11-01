@@ -35,5 +35,11 @@
     "react-redux": "^5.1.0",
     "redux": "^4.0.1"
   },
-  "homepage": "https://stevenjburns.github.io/extrasolar/"
+  "homepage": "https://stevenjburns.github.io/extrasolar/",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
