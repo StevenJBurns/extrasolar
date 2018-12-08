@@ -9,7 +9,7 @@ export const BarChart = (props) => {
 
   const { planetData } = props;
   const w = 320, h = 320;
-  const margin = { top: 8, bottom: 8, left: 16, right: 16 };
+//   const margin = { top: 8, bottom: 8, left: 16, right: 16 };
 
   const planetCounts = planetData.map((val) => val["count"]);
   const planetOrdinals = planetData.map((val) => val["planetCount"]);

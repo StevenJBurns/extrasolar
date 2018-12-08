@@ -9,8 +9,8 @@ export const StarsPieChart = (props) => {
   D3.select("#div-chart-circumbinaries").selectAll("*").remove();
 
   const { starData } = props;
-  const w = 320, h = 320, r = 120;
-  const margin = { top: 8, bottom: 8, left: 8, right: 8 };
+  // const w = 320, h = 320, r = 120;
+  // const margin = { top: 8, bottom: 8, left: 8, right: 8 };
 
   const dataCircumbinaries = [
     { group: "nonBinary", count: 0 },
