@@ -18,19 +18,19 @@ const PageSolarSystems = (props) => {
   const { changeAudioSource,
           changeSelectedSystem,
           stars,
-          planets,
+          // planets,
           selectedSolarSystem,
-          isLoading,
-          error,
+          // isLoading,
+          // error,
           changeFilters,
           planetCount } = props;
   
   changeAudioSource(AudioSolarSystems);
 
-  if (stars) console.log(stars.filter(star => star.st_mass != null).map(star => star.st_mass).sort())
+  // if (stars) console.log(stars.filter(star => star.st_mass != null).map(star => star.st_mass).sort())
   
   let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
-  let relatedPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] === selectedSolarSystem["pl_hostname"]) : null;
+  // let childPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] === selectedSolarSystem["pl_hostname"]) : null;
 
   let itemStyle = {
     fontSize: "16px",

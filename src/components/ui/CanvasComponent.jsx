@@ -80,8 +80,8 @@ class CanvasComponent extends React.Component {
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048); 
 
-    console.log("star: ", this.state.selectedSystem);
-    console.log("planets: ", this.state.relatedPlanets);
+    // console.log("star: ", this.state.selectedSystem);
+    // console.log("planets: ", this.state.relatedPlanets);
 
     this.drawCanvas();
   }
@@ -93,9 +93,6 @@ class CanvasComponent extends React.Component {
         relatedPlanets: nextProps.relatedPlanets
       }
     );
-
-    console.log("star: ", this.state.selectedSystem);
-    console.log("planets: ", this.state.relatedPlanets);
 
     this.drawCanvas();
   }
