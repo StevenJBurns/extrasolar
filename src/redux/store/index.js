@@ -3,8 +3,8 @@ import thunk from "redux-thunk";
 import { rootReducer } from "../reducers";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-
-const ONE_HOUR = 60 * 60 * 1000; // # of milliseconds in one hour
+/* # of milliseconds in one hour */
+const ONE_HOUR = 60 * 60 * 1000;
 
 if (localStorage.getItem("lastFetch") === null) {
   localStorage.setItem("lastFetch",  (Date.now() - ONE_HOUR).toString());
@@ -28,7 +28,6 @@ const initialState = {
     isAudioMuted: localStorage.getItem("isAudioMuted") === "true"
   }
 }
-
 
 
 export const store = createStore(
