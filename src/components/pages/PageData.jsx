@@ -6,7 +6,7 @@ import { changeAudioSource } from "../../redux/actions";
 /* Component Imports */
 import{ BarChart}  from "../ui/BarChart";
 import { StarsPieChart } from "../ui/StarsPieChart";
-import { ScatterPlotChart } from "../ui/ScatterPlotChart";
+// import { ScatterPlotChart } from "../ui/ScatterPlotChart";
 
 /* Assets and Styles Imports */
 import AudioData from '../../assets/audio/data.ogg';
