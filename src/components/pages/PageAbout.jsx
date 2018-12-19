@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { changeAudioSource} from "../../redux/actions/index";
 
 /* Assets and Styles Imports */
-import "../../styles/PageAbout.css"
+import "./styles/PageAbout.css"
 import AudioAbout from "../../assets/audio/about.ogg";
 
 

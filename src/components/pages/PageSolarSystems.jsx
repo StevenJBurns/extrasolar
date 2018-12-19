@@ -9,7 +9,7 @@ import InputRange from 'react-input-range';
 import VirtualList from 'react-tiny-virtual-list';
 
 /* Assets and Styles Imports */
-import "../../styles/PageSolarSystems.css";
+import "./styles/PageSolarSystems.css";
 import "react-input-range/lib/css/index.css";
 import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
 
@@ -51,7 +51,7 @@ const PageSolarSystems = (props) => {
           <section id="section-container">
           <VirtualList
             className="div-virtual-list"
-            width='100%'
+            width="100%"
             height={160}
             style={itemStyle}
             itemCount={filteredStars.length}

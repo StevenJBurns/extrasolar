@@ -32,7 +32,5 @@ export const StarsPieChart = (props) => {
     }
   })
 
-  console.log(dataCircumbinaries)
-
   return (<div id="div-chart-circumbinaries"></div>);
 };

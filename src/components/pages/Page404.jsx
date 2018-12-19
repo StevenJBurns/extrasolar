@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/Page404.css";
+import "./styles/Page404.css";
 import "../../assets/images/black-hole.jpg";
 
 
