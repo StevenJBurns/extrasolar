@@ -2,4 +2,4 @@
 ## A React App
 
 
-## Using Material-UI
+## Using Redux and Material-UI
