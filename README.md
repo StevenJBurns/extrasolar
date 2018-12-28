@@ -7,6 +7,6 @@
 * React
 * Redux
 * Material-UI
+* Local Storage API
 * HTML5 Canvas
 * MHTL5 Audio
-* Local Storage API
