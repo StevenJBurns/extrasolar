@@ -1,10 +1,10 @@
 {
-  "main.css": "/extrasolar/static/css/main.12c5ba67.chunk.css",
-  "main.js": "/extrasolar/static/js/main.85cd8ef7.chunk.js",
-  "main.js.map": "/extrasolar/static/js/main.85cd8ef7.chunk.js.map",
+  "main.css": "/extrasolar/static/css/main.9ce2512a.chunk.css",
+  "main.js": "/extrasolar/static/js/main.e7e1e1b0.chunk.js",
+  "main.js.map": "/extrasolar/static/js/main.e7e1e1b0.chunk.js.map",
   "static/css/1.ac7aa467.chunk.css": "/extrasolar/static/css/1.ac7aa467.chunk.css",
-  "static/js/1.74d3906f.chunk.js": "/extrasolar/static/js/1.74d3906f.chunk.js",
-  "static/js/1.74d3906f.chunk.js.map": "/extrasolar/static/js/1.74d3906f.chunk.js.map",
+  "static/js/1.db9fd631.chunk.js": "/extrasolar/static/js/1.db9fd631.chunk.js",
+  "static/js/1.db9fd631.chunk.js.map": "/extrasolar/static/js/1.db9fd631.chunk.js.map",
   "runtime~main.js": "/extrasolar/static/js/runtime~main.1fd30268.js",
   "runtime~main.js.map": "/extrasolar/static/js/runtime~main.1fd30268.js.map",
   "static/media/home.ogg": "/extrasolar/static/media/home.e0ee1969.ogg",
@@ -16,8 +16,8 @@
   "static/media/black-hole.jpg": "/extrasolar/static/media/black-hole.5e39783f.jpg",
   "static/media/data.ogg": "/extrasolar/static/media/data.84362f99.ogg",
   "static/css/1.ac7aa467.chunk.css.map": "/extrasolar/static/css/1.ac7aa467.chunk.css.map",
-  "static/css/main.12c5ba67.chunk.css.map": "/extrasolar/static/css/main.12c5ba67.chunk.css.map",
+  "static/css/main.9ce2512a.chunk.css.map": "/extrasolar/static/css/main.9ce2512a.chunk.css.map",
   "index.html": "/extrasolar/index.html",
-  "precache-manifest.9314a34d5e34078ccb6a6210b4df7ee2.js": "/extrasolar/precache-manifest.9314a34d5e34078ccb6a6210b4df7ee2.js",
+  "precache-manifest.b9a7acf5be7a0ec887461c5e0337ab7b.js": "/extrasolar/precache-manifest.b9a7acf5be7a0ec887461c5e0337ab7b.js",
   "service-worker.js": "/extrasolar/service-worker.js"
 }
