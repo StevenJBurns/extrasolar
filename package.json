@@ -20,7 +20,7 @@
     "react-scripts": "^2.1.5",
     "react-tiny-virtual-list": "^2.2.0",
     "react-transition-group": "^2.5.3",
-    "react-window": "^1.5.1",
+    "react-window": "^1.5.2",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   },
