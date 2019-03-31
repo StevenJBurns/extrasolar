@@ -1,18 +1,15 @@
 /* React and Redux Imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource, changeFilters, changeSelectedSystem } from "../../redux/actions";
+import { changeAudioSource, changeFilters, changeSelectedSystem } from "../../../redux/actions";
 
-/* Component Imports */
-import CanvasComponent from "../ui/CanvasComponent.jsx";
+import CanvasComponent from "../../ui/CanvasComponent.jsx";
 import InputRange from 'react-input-range';
 import VirtualList from 'react-tiny-virtual-list';
 
-/* Assets and Styles Imports */
-import "./styles/PageSolarSystems.css";
+import "./PageSolarSystems.scss";
 import "react-input-range/lib/css/index.css";
-import AudioSolarSystems from '../../assets/audio/solarsystems.ogg';
-
+import AudioSolarSystems from '../../../assets/audio/solarsystems.ogg';
 
 const PageSolarSystems = (props) => {
   const { changeAudioSource,

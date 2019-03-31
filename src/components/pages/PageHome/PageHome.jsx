@@ -1,12 +1,9 @@
 /* React and Redux imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource } from "../../redux/actions";
-
-/* Assets and Styles Imports */
-import "./styles/PageHome.css";
-import AudioHome from '../../assets/audio/home.ogg';
-
+import { changeAudioSource } from "../../../redux/actions";
+import AudioHome from '../../../assets/audio/home.ogg';
+import "./PageHome.scss";
 
 const PageHome = ({changeSource}) => {
   changeSource(AudioHome);

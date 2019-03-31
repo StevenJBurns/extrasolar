@@ -1,8 +1,9 @@
 import React from "react";
-import AppLogo from "../../assets/logo/extrasolar.png";
+import AppLogo from "../../../assets/logo/extrasolar.png";
 import ConnectedAudioButton from "../../../containers/ConnectedAudioButton";
+import './AppHeader.scss';
 
-export const AppHeader = () => {
+export const AppHeader = props => {
   return (
     <header id="app-header">
       <img id="app-logo" src={ AppLogo } alt="ExtraSolar Logo" />
@@ -11,6 +12,7 @@ export const AppHeader = () => {
         <h4 id="h2-header">Visualization of exoplanets in distant solar systems</h4>
       </div>
       <ConnectedAudioButton />
+      { props.children }
     </header>
   );
 }

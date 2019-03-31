@@ -14,6 +14,8 @@ import {
 } from './components/app/';
 import './index.scss';
 
+/* for React Routers Link components to style the active menu button */
+const activeStyle = { backgroundColor : '#8F8F8F' };
 
 const render = () => {
   ReactDOM.render(
@@ -21,7 +23,7 @@ const render = () => {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App>
           <AppHeader>
-            <AppNav />
+            <AppNav activeStyle={activeStyle} />
           </AppHeader>
           <AppMain />
           <AppFooter />

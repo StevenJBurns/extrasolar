@@ -1,15 +1,11 @@
-/* React imports */
 import React from "react";
-
-/* App specific imports */
-
-
-/* FONT AWESOME! */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-
+import './AppFooter.scss';
 
 export const AppFooter = () => {
+  const year = new Date().getFullYear();
+  
   return (
     <footer id="app-footer">
       <div id="div-logo-wrapper">
@@ -41,7 +37,7 @@ export const AppFooter = () => {
           <FontAwesomeIcon className="fa-logo" icon={ faGithub } size="2x" />
         </a>
       </div>
-      <h4>&copy;2018 &bull; Steven J Burns</h4>
+      <h4>&copy;{year} &bull; Steven J Burns</h4>
     </footer>
   );
-}
+};

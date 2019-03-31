@@ -5,9 +5,9 @@ import { AppMain } from './AppMain';
 import { AppFooter } from './AppFooter';
 
 export {
-    App,
-    AppHeader,
-    AppNav,
-    AppMain,
-    AppFooter,
+  App,
+  AppHeader,
+  AppNav,
+  AppMain,
+  AppFooter,
 }
