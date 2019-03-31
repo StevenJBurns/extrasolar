@@ -2,10 +2,10 @@
 import React from 'react';
 
 /* Component Imports */
-import { AppHeader } from "./AppHeader.jsx";
-import { AppNav } from "./AppNav.jsx";
-import { AppMain } from "./AppMain.jsx";
-import { AppFooter } from "./AppFooter.jsx";
+import { AppHeader } from "../AppHeader/AppHeader.jsx/index.js";
+import { AppNav } from "../AppNav/AppNav.jsx/index.js";
+import { AppMain } from "../AppMain/AppMain.jsx/index.js";
+import { AppFooter } from "../AppFooter/AppFooter.jsx/index.js";
 
 /* Stylesheet Imports */
 import "./styles/App.css";

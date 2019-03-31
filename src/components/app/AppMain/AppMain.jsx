@@ -3,15 +3,15 @@ import React from "react";
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 
-import { fetchStars } from "../../redux/actions/actionAsyncFetchStars.js";
-import { fetchPlanets } from "../../redux/actions/actionAsyncFetchPlanets.js";
-import { getLastDataFetch } from "../../redux/actions/index.js";
+import { fetchStars } from "../../../redux/actions/actionAsyncFetchStars.js";
+import { fetchPlanets } from "../../../redux/actions/actionAsyncFetchPlanets.js";
+import { getLastDataFetch } from "../../../redux/actions/index.js";
 
-import PageHome from '../pages/PageHome.jsx';
-import PageData from '../pages/PageData.jsx';
-import PageSolarSystems from '../pages/PageSolarSystems.jsx';
-import PageAbout from "../pages/PageAbout.jsx";
-import { Page404 } from "../pages/Page404.jsx"
+import PageHome from '../../pages/PageHome.jsx';
+import PageData from '../../pages/PageData.jsx';
+import PageSolarSystems from '../../pages/PageSolarSystems.jsx';
+import PageAbout from "../../pages/PageAbout.jsx";
+import { Page404 } from "../../pages/Page404.jsx"
 
 
 export const AppMain = (props) => {

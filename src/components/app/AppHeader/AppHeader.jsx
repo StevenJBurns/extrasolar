@@ -3,7 +3,7 @@ import React from "react";
 
 /* App specific imports */
 import AppLogo from "../../assets/logo/extrasolar.png";
-import ConnectedAudioButton from "../../containers/ConnectedAudioButton";
+import ConnectedAudioButton from "../../../containers/ConnectedAudioButton";
 
 export const AppHeader = () => {
   return (
