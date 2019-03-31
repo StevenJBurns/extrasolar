@@ -1,13 +1,12 @@
-/* React and Redux imports */
 import React from "react";
-
-/* FONT AWESOME! */
+import { connect } from "react-redux";
+import { toggleAudioMute } from "../../redux/actions/index.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
-
+import './AudioToggleButton.scss';
 
 export const AudioButton = ({source, isMuted, toggleMute }) => {
-  const style_button = {
+  const buttonStyle = {
     width: '48px',
     height: '48px',
     margin: '12px',
@@ -18,12 +17,23 @@ export const AudioButton = ({source, isMuted, toggleMute }) => {
   
   return (
     <div>
-      <button type="button" style={ style_button } onClick={ () => toggleMute(isMuted) }>
+      <button type="button" style={buttonStyle} onClick={() => toggleMute(isMuted)}>
         <FontAwesomeIcon icon={ isMuted ? faVolumeOff : faVolumeUp } size="2x" />
       </button>
-      <audio autoPlay loop src={ source } muted={ isMuted }>
+      <audio autoPlay loop src={source} muted={isMuted}>
         <span>Your browser does not support the <code>audio</code> element.</span> 
       </audio>
     </div>
-  )  
+  );
 };
+
+const mapStateToProps = state => ({
+  isMuted: state.ui.isAudioMuted,
+  source: state.ui.currentAudioSource
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleMute: muted => dispatch(toggleAudioMute(muted))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);

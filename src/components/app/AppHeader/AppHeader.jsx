@@ -1,6 +1,6 @@
 import React from "react";
 import AppLogo from "../../../assets/logo/extrasolar.png";
-import ConnectedAudioButton from "../../../containers/ConnectedAudioButton";
+import ConnectedAudioButton from "../../ui/AudioToggleButton";
 import './AppHeader.scss';
 
 export const AppHeader = props => {
