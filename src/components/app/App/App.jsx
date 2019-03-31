@@ -14,7 +14,6 @@ import "./styles/AppMain.css";
 import "./styles/AppFooter.css";
 import "./styles/AppNav.css";
 
-
 const activeStyle = { backgroundColor : '#8F8F8F' };
 
 export const App = ({fetchStars, fetchPlanets}) => {

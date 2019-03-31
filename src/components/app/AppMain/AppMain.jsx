@@ -13,7 +13,6 @@ import PageSolarSystems from '../../pages/PageSolarSystems.jsx';
 import PageAbout from "../../pages/PageAbout.jsx";
 import { Page404 } from "../../pages/Page404.jsx"
 
-
 export const AppMain = (props) => {
   return (
     <main>

@@ -1,7 +1,4 @@
-/* React and Redux Imports */
 import React from "react";
-
-/* App specific imports */
 import AppLogo from "../../assets/logo/extrasolar.png";
 import ConnectedAudioButton from "../../../containers/ConnectedAudioButton";
 

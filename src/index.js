@@ -1,25 +1,31 @@
-/* React & Router imports */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
-
-/* Redux imports */ 
 import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
 
-/* App specific imports */
-import { App } from './components/app/App.jsx';
-
-/* stylesheet imports */
-import './styles/index.css';
+import {
+  App,
+  AppHeader,
+  AppNav,
+  AppMain,
+  AppFooter
+} from './components/app/';
+import './index.scss';
 
 
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <App />
+        <App>
+          <AppHeader>
+            <AppNav />
+          </AppHeader>
+          <AppMain />
+          <AppFooter />
+        </App>
       </BrowserRouter>
     </Provider>,
     document.getElementById("react-root")
