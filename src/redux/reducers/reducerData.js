@@ -1,4 +1,4 @@
-import { actions } from "../actions/actionTypes.js";
+import { actions } from "../actionTypes/actionTypes.js/index.js";
 
 
 if (localStorage.getItem("lastDataFetch") === null) {
