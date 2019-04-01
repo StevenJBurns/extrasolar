@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
-
 import {
   App,
   AppHeader,
@@ -14,7 +13,7 @@ import {
 } from './components/app';
 import './index.scss';
 
-/* for React Routers Link components to style the active menu button */
+/* for React Router Link components to style the active menu button */
 const activeStyle = { backgroundColor : '#8F8F8F' };
 
 const render = () => {
@@ -31,7 +30,7 @@ const render = () => {
     </Provider>,
     document.getElementById("react-root")
   );
-}
+};
 
 render();
   

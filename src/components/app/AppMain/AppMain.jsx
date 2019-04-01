@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Switch, Route, withRouter } from 'react-router-dom';
 
+/* necessary? TBD after Redux re-organization */
 import { fetchStars } from "../../../redux/actions/actionAsyncFetchStars.js";
 import { fetchPlanets } from "../../../redux/actions/actionAsyncFetchPlanets.js";
 import { getLastDataFetch } from "../../../redux/actions/index.js";
@@ -34,7 +35,8 @@ const mapDispatchToProps = dispatch => {
     getLastDataFetch: () => dispatch(getLastDataFetch()),
     fetchStars: () => dispatch(fetchStars()),
     fetchPlanets: () => dispatch(fetchPlanets())
-  }
+  };
 };
 
+/* use React Router HoC withRouter when combined with Redux */
 export default withRouter(connect(null, mapDispatchToProps)(AppMain));
