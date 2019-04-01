@@ -1,5 +1,4 @@
-import { fetchStarsBegin, fetchStarsSuccess, fetchStarsFailed } from ".";
-
+import { fetchStarsBegin, fetchStarsSuccess, fetchStarsFailed } from "../actionTypes";
 
 const urlDistinctStars = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname,pl_cbflag,pl_pnum,st_mass,st_rad,st_teff,st_dist&order=pl_hostname&format=json";
 
@@ -17,7 +16,7 @@ export function fetchStars() {
     };
   }
   
-// Handle HTTP errors when Fetch API can't catch them
+/* Handle HTTP errors when Fetch API can't catch them */
 function handleErrors(response) {
   if (!response.ok) {
     console.log("fetchStars Failed!");

@@ -1,5 +1,4 @@
-import { actions } from "./actionTypes";
-
+import { actions } from "../actionTypes/actionTypes";
 
 export const getLastDataFetch = () => ({
   type: actions.GET_LAST_DATA_FETCH,
