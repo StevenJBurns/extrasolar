@@ -1,14 +1,6 @@
-/* React imports */
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
 // import { CSSTransition, TransitionGroup } from "react-transition-group";
-
-
-/* Component Imports */
-
-
-/* Assets and Style Imports */
-import "../../styles/StarList.css";
-
+import './StarList.scss';
 
 export const StarList = () => ( <ul></ul> );
