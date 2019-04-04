@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-
 class CanvasComponent extends React.Component {
   constructor(props) {
     super(props);
+
+    this.refCanvas = React.createRef();
 
     this.state = {
       w: window.innerWidth,
@@ -15,9 +16,9 @@ class CanvasComponent extends React.Component {
   }
   
   updateCanvas() {
-    this.setState({ w: window.innerWidth });
+    this.setState({ w: window.innerWidth - 8 });
 
-    const ctx = this.refs.canvas.getContext("2d");
+    const ctx = this.refCanvas.current.getContext("2d");
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048); 
 
@@ -26,7 +27,7 @@ class CanvasComponent extends React.Component {
 
   drawCanvas() {
     let ctx = null;
-    ctx = this.refs.canvas.getContext('2d');
+    ctx = this.refCanvas.current.getContext('2d');
 
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048);
@@ -38,7 +39,8 @@ class CanvasComponent extends React.Component {
         let randomY = Math.floor(Math.random() * ctx.canvas.height * 2);
         let randomO = Math.random();
         // Create an array [x, y, o] for each star from the above variables then push it into this.state.starfield array
-        // x and y are randomized coords based on canvas size -- o is a random opacity (conveniently) from 0 to 1
+        // x and y are randomized coords based on canvas size
+        // o is a random opacity (conveniently) from 0 to 1 for the illusion of depth in render stars
         this.state.starfield.push([randomX, randomY, randomO]);
       }
     }
@@ -57,8 +59,8 @@ class CanvasComponent extends React.Component {
   drawStar(star) {
     if (!star) return;
 
-    const ctx = this.refs.canvas.getContext("2d");
-    const w = this.state.w;
+    const ctx = this.refCanvas.current.getContext("2d");
+    const w = this.state.w - 8;
 
     let rgStar = ctx.createRadialGradient(w / 2, 180, 4, w /2, 180, 80);
     rgStar.addColorStop(0, "#FFFF99");
@@ -74,14 +76,13 @@ class CanvasComponent extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.updateCanvas.bind(this));    
-
-    const ctx = this.refs.canvas.getContext('2d');
+    
+    console.log(this.refCanvas);
+    
+    const ctx = this.refCanvas.current.getContext('2d');
 
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 2048, 2048); 
-
-    // console.log("star: ", this.state.selectedSystem);
-    // console.log("planets: ", this.state.relatedPlanets);
 
     this.drawCanvas();
   }
@@ -104,7 +105,7 @@ class CanvasComponent extends React.Component {
   render() {
     return (
       <div>
-        <canvas ref="canvas" width={this.state.w} height={this.state.w <= 800 ? this.state.w / 2 : 400} />
+        <canvas ref={this.refCanvas} width={this.state.w} height={this.state.w <= 800 ? this.state.w / 2 : 400} />
       </div>
     );
   }
