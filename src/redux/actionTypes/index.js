@@ -14,7 +14,7 @@ import {
     CHANGE_AUDIO_SOURCE
   } from './ui';
   
-  export const actions = {
+  export const actionTypes = {
     data: {
       ASYNC_GET_STARS_BEGIN,
       ASYNC_GET_STARS_SUCCESS,
