@@ -1,115 +1,74 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { renderStarField } from './renderStarField';
+// import { renderSystemStar } from './renderSystemStar';
 
-class CanvasComponent extends React.Component {
-  constructor(props) {
-    super(props);
+/* custom hook to render an HTML5 canvas */
+function useCanvas(draw, context = '2d') {
+  const canvasRef = React.useRef(null);
 
-    this.refCanvas = React.createRef();
+  React.useEffect(() => {
+    const ctx = canvasRef.current.getContext(context);
+    let frame = requestAnimationFrame(renderFrame);
 
-    this.state = {
-      w: window.innerWidth,
-      selectedSystem: null,
-      relatedPlanets: null,
-      starfield: []
-    }
-  }
-  
-  updateCanvas() {
-    this.setState({ w: window.innerWidth - 8 });
+    renderStarField(ctx)
 
-    const ctx = this.refCanvas.current.getContext("2d");
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, 2048, 2048); 
-
-    this.drawCanvas();
-  };
-
-  drawCanvas() {
-    let ctx = null;
-    ctx = this.refCanvas.current.getContext('2d');
-
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, 2048, 2048);
-
-    // Build a random starfield for the canvas
-    if (this.state.starfield.length === 0 || !this.state.starfield) {      
-      for (let i = 0; i < (this.state.w / 2); i++) {
-        let randomX = Math.floor(Math.random() * ctx.canvas.width * 4);
-        let randomY = Math.floor(Math.random() * ctx.canvas.height * 2);
-        let randomO = Math.random();
-        // Create an array [x, y, o] for each star from the above variables then push it into this.state.starfield array
-        // x and y are randomized coords based on canvas size
-        // o is a random opacity (conveniently) from 0 to 1 for the illusion of depth in render stars
-        this.state.starfield.push([randomX, randomY, randomO]);
-      }
+    function renderFrame() {
+      frame = requestAnimationFrame(renderFrame);
+      draw(ctx);
     }
 
-    for (let star of this.state.starfield) {
-      ctx.fillStyle = `rgba(255,255,255,${star[2]})`;
-      ctx.beginPath();
-      ctx.arc(star[0], star[1], 1, 0, Math.PI * 2, true);
-      ctx.closePath();
-      ctx.fill();
-    }
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
-    this.drawStar(this.state.selectedSystem);
-  };
+  return canvasRef;
+};
 
-  drawStar(star) {
-    if (!star) return;
+const resizeCanvas = e => {
+  // console.log(e.target);
+  // ctx.fillStyle = "#000000";
+  // ctx.fillRect(0, 0, 2048, 2048);
+};
 
-    const ctx = this.refCanvas.current.getContext("2d");
-    const w = this.state.w - 8;
+export const CanvasComponent = ({selectedSolarSystem = null}) => {
+  const [starField, setStarField] = React.useState([]);
+  const [canvasWidth, setCanvasWidth] = React.useState(0);
 
-    let rgStar = ctx.createRadialGradient(w / 2, 180, 4, w /2, 180, 80);
-    rgStar.addColorStop(0, "#FFFF99");
-    rgStar.addColorStop(0.05, "rgba(255,255,127,255)")
-    rgStar.addColorStop(1, "rgba(0,0,0,0)");
-
-    ctx.fillStyle = rgStar;
-    ctx.beginPath();
-    ctx.arc(w /2, 180, 96, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fill();
-  }
-
-  componentDidMount() {
-    window.addEventListener("resize", this.updateCanvas.bind(this));    
+  React.useEffect(() => {
+    window.addEventListener("resize", resizeCanvas);
     
-    console.log(this.refCanvas);
+    setCanvasWidth(window.innerWidth);
+
+    /* on Mount, create a randomized starfield for the canvas */
+    const _starfield = [];
+    for (let i = 0; i < (canvasWidth / 2); i++) {
+      let randomX = Math.floor(Math.random() * canvasWidth * 4);
+      let randomY = Math.floor(Math.random() * canvasWidth * 2);
+      let randomO = Math.random();
+      // Create an array [x, y, o] for each star from the above variables
+      // x and y are randomized coords based on canvas size
+      // o is a random opacity (conveniently) from 0 to 1 for the illusion of depth in the starfield
+      _starfield.push([randomX, randomY, randomO]);
+    }
+    setStarField(_starfield);
     
-    const ctx = this.refCanvas.current.getContext('2d');
+    return () => window.removeEventListener("resize", resizeCanvas);
+  }, []);
 
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(0, 0, 2048, 2048); 
+  const canvasRef = useCanvas(gl => {
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearDepth(1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  }, "webgl2", starField);
 
-    this.drawCanvas();
-  }
+  console.log(starField);
   
-  componentWillReceiveProps(nextProps) {
-    this.setState(
-      {
-        selectedSystem: nextProps.selectedSystem,
-        relatedPlanets: nextProps.relatedPlanets
-      }
-    );
-
-    this.drawCanvas();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateCanvas.bind(this))
-  }
-
-  render() {
-    return (
-      <div>
-        <canvas ref={this.refCanvas} width={this.state.w} height={this.state.w <= 800 ? this.state.w / 2 : 400} />
-      </div>
-    );
-  }
-}
+  return (
+    <div id='div-canvas-wrapper'>
+      <canvas ref={canvasRef} width={canvasWidth} height={canvasWidth <= 800 ? canvasWidth / 2 : 400} />
+    </div>
+  );
+};
 
 const mapStateToProps = state => {
   const { stars, planets, selectedSolarSystem, isLoading, error } = state.data;
