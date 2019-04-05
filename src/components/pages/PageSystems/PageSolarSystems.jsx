@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { changeAudioSource, changeFilters, changeSelectedSystem } from "../../../redux/actions";
 
-import CanvasComponent from "../../ui/CanvasComponent.jsx";
+import CanvasComponent from "../../canvas/CanvasComponent";
 import InputRange from 'react-input-range';
 import VirtualList from 'react-tiny-virtual-list';
 
