@@ -1,6 +1,6 @@
 import React from "react";
 import AppLogo from "../../../assets/logo/extrasolar.png";
-import ConnectedAudioButton from "../../ui/AudioToggleButton";
+import AudioToggleButton from "../../ui/AudioToggleButton";
 import './AppHeader.scss';
 
 export const AppHeader = props => {
@@ -11,7 +11,7 @@ export const AppHeader = props => {
         <h1 id="h1-header">ExtraSolar</h1>
         <h4 id="h2-header">Visualization of exoplanets in distant solar systems</h4>
       </div>
-      <ConnectedAudioButton />
+      <AudioToggleButton />
     </header>
   );
 }
