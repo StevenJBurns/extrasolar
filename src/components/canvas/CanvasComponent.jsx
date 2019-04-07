@@ -19,7 +19,7 @@ const useCanvas = (draw, stars, selectedSolarSystem) => {
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
       /* update each star.theta and re-render */
-      for (let star of stars) star.theta -= 0.01 * (star.opacity * 2);
+      for (let star of stars) star.theta -= 0.005 * (star.opacity * 2);
       draw(ctx, stars);
       renderSystemStar(ctx, {})
     }
@@ -35,14 +35,13 @@ export const CanvasComponent = ({ selectedSolarSystem }) => {
   const [solarSystem, setSolarSystem] = React.useState(selectedSolarSystem || null);
   const [starField, setStarField] = React.useState([]);
 
+  const handleResize = () => setCanvasWidth(window.innerWidth);
+
   React.useEffect(() => {
-    window.addEventListener("resize", () => {
-      setCanvasWidth(window.innerWidth);
-    }, false);
-    
     setCanvasWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize, true);
     
-    return () => window.removeEventListener("resize");
+    return () => window.removeEventListener("resize", handleResize, true);
   }, []);
 
   React.useEffect(() => {
