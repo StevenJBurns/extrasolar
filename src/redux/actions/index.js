@@ -6,7 +6,7 @@ export const getLastDataFetch = () => ({
 });
 
 export const fetchStarsBegin = () => ({
-  type: actionTypes.data.FETCH_STARS_BEGIN
+  type: actionTypes.data.FETCH_STARS_BEGIN,
 });
 
 export const fetchStarsSuccess = stars => ({
@@ -20,7 +20,7 @@ export const fetchStarsFailed = error => ({
 });
 
 export const fetchPlanetsBegin = () => ({
-  type: actionTypes.data.FETCH_PLANETS_BEGIN
+  type: actionTypes.data.FETCH_PLANETS_BEGIN,
 });
 
 export const fetchPlanetsSuccess = planets => ({
