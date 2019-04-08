@@ -1,14 +1,14 @@
 import { combineReducers } from "redux";
 
-import { reducerUI } from "./reducerUI";
-import { reducerData } from "./reducerData";
-import { reducerFilters } from "./reducerFilters";
-import { reducerSorting } from "./reducerSorting";
+import { reducerUI } from "./ui/reducerUI";
+import { reducerData } from "./data/reducerData";
+import { reducerFilters } from "./filter/reducerFilters";
+import { reducerSorting } from "./sort/reducerSorting";
 
 
 const initalState = {
-  data: {},
   ui: {},
+  data: {},
   filters: {},
   sorting: {}
 }

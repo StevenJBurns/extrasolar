@@ -1,4 +1,4 @@
-import { actionTypes } from "../actionTypes";
+import { actionTypes } from "../../actionTypes";
 
 
 if (localStorage.getItem("lastDataFetch") === null) {

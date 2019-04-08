@@ -1,35 +1,35 @@
 import { actionTypes } from "../actionTypes";
 
 export const getLastDataFetch = () => ({
-  type: actionTypes.data.GET_LAST_DATA_FETCH,
+  type: actionTypes.ui.LAST_DATA_FETCH_DATETIME_GET,
   payload: JSON.parse(localStorage.getItem("lastDataFetch"))
 });
 
 export const fetchStarsBegin = () => ({
-  type: actionTypes.data.FETCH_STARS_BEGIN,
+  type: actionTypes.data.STARS_ASYNC_GET_BEGIN,
 });
 
 export const fetchStarsSuccess = stars => ({
-  type: actionTypes.data.FETCH_STARS_SUCCESS,
+  type: actionTypes.data.STARS_ASYNC_GET_SUCCESS,
   payload: stars
 });
 
 export const fetchStarsFailed = error => ({
-  type: actionTypes.data.FETCH_STARS_FAILED,
+  type: actionTypes.data.STARS_ASYNC_GET_FAILED,
   payload: error
 });
 
 export const fetchPlanetsBegin = () => ({
-  type: actionTypes.data.FETCH_PLANETS_BEGIN,
+  type: actionTypes.data.PLANETS_ASYNC_GET_BEGIN,
 });
 
 export const fetchPlanetsSuccess = planets => ({
-  type: actionTypes.data.FETCH_PLANETS_SUCCESS,
+  type: actionTypes.data.PLANETS_ASYNC_GET_SUCCESS,
   payload: planets
 });
 
 export const fetchPlanetsFailed = error => ({
-  type: actionTypes.FETCH_PLANETS_FAILED,
+  type: actionTypes.data.PLANETS_ASYNC_GET_FAILED,
   payload: error
 });
 
@@ -39,16 +39,16 @@ export const changeFilters = newFilters => ({
 });
 
 export const toggleAudioMute = audioState => ({
-  type: actionTypes.ui.TOGGLE_AUDIO_MUTE,
+  type: actionTypes.ui.AUDIO_MUTE_TOGGLE,
   payload: audioState
 });
 
 export const changeAudioSource = audioSource => ({
-  type: actionTypes.ui.CHANGE_AUDIO_SOURCE,
+  type: actionTypes.ui.AUDIO_SOURCE_CHANGE,
   payload: audioSource
 });
 
 export const changeSelectedSystem = newSystem => ({
-  type: actionTypes.ui.CHANGE_SELECTED_SYSTEM,
+  type: actionTypes.ui.SELECTED_SOLARSYSTEM_CHANGE,
   payload: newSystem
 });
