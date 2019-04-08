@@ -17,6 +17,11 @@ import {
 import './AppMain.scss';
 
 export const AppMain = props => {
+  React.useEffect(() => {
+    console.log('AppMain Mounted');
+    }, []
+  );
+
   return (
     <main>
       <Switch>
@@ -30,6 +35,11 @@ export const AppMain = props => {
   );
 };
 
+const mapStateToProps = state => ({
+  stars: state.data.stars,
+  planets: state.data.planets,
+});
+
 const mapDispatchToProps = dispatch => {
   return {
     getLastDataFetch: () => dispatch(getLastDataFetch()),
@@ -38,5 +48,5 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-/* use React Router HoC withRouter when combined with Redux */
-export default withRouter(connect(null, mapDispatchToProps)(AppMain));
+/* withRouter is a HoC for Router use with Redux */
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AppMain));
