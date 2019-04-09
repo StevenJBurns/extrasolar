@@ -19,7 +19,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8",
     "react-tiny-virtual-list": "^2.2.0",
-    "react-transition-group": "^2.8.0",
+    "react-transition-group": "^2.9.0",
     "react-window": "^1.7.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-adapter-react-16": "^1.12.1",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react-redux": "^6.0.1",
