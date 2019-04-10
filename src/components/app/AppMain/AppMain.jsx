@@ -18,7 +18,7 @@ import './AppMain.scss';
 
 export const AppMain = props => {
   React.useEffect(() => {
-    console.log('AppMain Mounted');
+    // console.log('AppMain Mounted');
     }, []
   );
 
