@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { Switch, Route, withRouter } from 'react-router-dom';
 
 /* necessary? TBD after Redux re-organization */
-import { fetchStars } from "../../../redux/actions/actionAsyncFetchStars.js";
-import { fetchPlanets } from "../../../redux/actions/actionAsyncFetchPlanets.js";
-import { getLastDataFetch } from "../../../redux/actions/index.js";
+import { getStarsAsync } from "../../../redux/actions/data/stars";
+import { getPlanetsAsync } from "../../../redux/actions/data/planets";
+import { getLastDataFetch } from "../../../redux/actions/ui";
 
 import {
   PageHome,
@@ -18,7 +18,9 @@ import './AppMain.scss';
 
 export const AppMain = props => {
   React.useEffect(() => {
-    // console.log('AppMain Mounted');
+    console.log('AppMain Mounted');
+    props.getStarsAsync();
+    props.getPlanetsAsync();
     }, []
   );
 
@@ -38,13 +40,14 @@ export const AppMain = props => {
 const mapStateToProps = state => ({
   stars: state.data.stars,
   planets: state.data.planets,
+  lastDataFetch: state.ui.lastDataFetch,
 });
 
 const mapDispatchToProps = dispatch => {
   return {
+    getStarsAsync: () => dispatch(getStarsAsync()),
+    getPlanetsAsync: () => dispatch(getPlanetsAsync()),
     getLastDataFetch: () => dispatch(getLastDataFetch()),
-    fetchStars: () => dispatch(fetchStars()),
-    fetchPlanets: () => dispatch(fetchPlanets())
   };
 };
 

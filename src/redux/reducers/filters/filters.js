@@ -10,7 +10,7 @@ const initialState = {
   planetOrbitPeriod: null
 };
 
-export const reducerFilters = (state = initialState, action) => {
+export const filters = (state = initialState, action) => {
   switch (action.type) {
     case (actionTypes.filters.CHANGE_FILTERS):
       state = {...state, ...state.filters, planetCount: action.payload};

@@ -1,6 +1,5 @@
 import { actionTypes } from "../../actionTypes";
 
-
 if (localStorage.getItem("lastDataFetch") === null) {
   localStorage.setItem("lastDataFetch", Date.now().toString())
 };
@@ -9,9 +8,6 @@ const initialState = {
   data: {
     stars: [],
     planets: [],
-    isLoading: {stars: false, planets: false},
-    selectedSolarSystem: null,
-    lastDataFetch: JSON.parse(localStorage.getItem("lastFetch"))
   }
 };
 

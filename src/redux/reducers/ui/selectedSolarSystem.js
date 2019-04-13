@@ -1,10 +1,6 @@
 import { actionTypes } from "../../actionTypes";
 
-const initialState = {
-  selectedSolarSystem: null,
-};
-
-export const selectedSolarSystem = (state = initialState, action) => {  
+export const selectedSolarSystem = (state = {}, action) => {  
   switch (action.type) {
     case actionTypes.ui.SELECTED_SOLARSYSTEM_GET:
 

@@ -1,22 +1,12 @@
 import { combineReducers } from "redux";
 import { ui } from "./ui";
-import { reducerData } from "./data/reducerData";
-import { reducerFilters } from "./filter/reducerFilters";
-import { reducerSorting } from "./sort/reducerSorting";
+import { data } from "./data";
+import { filters } from "./filters/filters";
+import { sorting } from "./sorting/sorting";
 
-const initalState = {
-  ui: {},
-  data: {},
-  filters: {},
-  sorting: {}
-}
-
-export const rootReducer = combineReducers(
-  {
-    ui,
-    data: reducerData, 
-    filters: reducerFilters,
-    sorting: reducerSorting
-  },
-  initalState
-);
+export const rootReducer = combineReducers({
+  ui,
+  data, 
+  filters,
+  sorting
+});
