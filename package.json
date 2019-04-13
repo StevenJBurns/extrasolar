@@ -20,7 +20,7 @@
     "react-scripts": "^2.1.8",
     "react-tiny-virtual-list": "^2.2.0",
     "react-transition-group": "^2.9.0",
-    "react-window": "^1.7.1",
+    "react-window": "^1.8.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   },
@@ -36,7 +36,7 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
-    "react-redux": "^6.0.1",
+    "react-redux": "^7.0.0",
     "redux": "^4.0.1"
   },
   "homepage": "https://stevenjburns.github.io/extrasolar/",
