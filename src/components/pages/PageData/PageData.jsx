@@ -9,13 +9,16 @@ import { StarsPieChart } from "../../charts/StarsPieChart";
 // import { ScatterPlotChart } from "../../ui/ScatterPlotChart";
 
 /* Assets and Styles Imports */
-import AudioData from '../../../assets/audio/data.ogg';
+import DataOGG from '../../../assets/audio/data.ogg';
 import "./PageData.scss";
 //import '../../styles/StarsPieChart.css';
 
 
-const PageData = ({changeSource, stars, planets}) => {
-  React.useEffect(() => {changeSource(AudioData);}, []);
+const PageData = ({changeAudioSource, stars, planets}) => {
+  React.useEffect(() => {
+    console.log(DataOGG);
+    changeAudioSource(DataOGG)
+  }, []);
 
   let setPlanetCount = new Set();
   let arrPlanetCount = [];
@@ -75,7 +78,7 @@ const PageData = ({changeSource, stars, planets}) => {
           <p>The ability to find exoplanets is obviously very limited given current technology and the vast distances to even the closest stars. Most solar systems have only been observed to have 1 single planet as shown in the table and chart above. Systems containing 7 and 8 planets have only been discovered once. Because of the large disparity in that data the chart plots the number of exo-systems containing X planets on an exponential Y scale. Scientists estimate the average exo system should contain several planets of varying sizes but discovering them will require advances in detection technology. </p>
         </section>
         <section>
-          <StarsPieChart starData={stars} />
+          {/* <StarsPieChart starData={stars} /> */}
         </section>
       </div>
     </main>
@@ -89,7 +92,7 @@ const MapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  changeSource: source => dispatch(changeAudioSource(source))
+  changeAudioSource: source => dispatch(changeAudioSource(source))
 });
 
 export default connect(MapStateToProps, mapDispatchToProps)(PageData);

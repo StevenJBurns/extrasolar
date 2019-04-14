@@ -8,7 +8,7 @@ import CanvasComponent from "../../canvas/CanvasComponent";
 
 import "./PageSolarSystems.scss";
 import "react-input-range/lib/css/index.css";
-import AudioSolarSystems from '../../../assets/audio/solarsystems.ogg';
+import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
 
 const PageSolarSystems = (props) => {
   const {
@@ -19,7 +19,7 @@ const PageSolarSystems = (props) => {
     changeAudioSource,
   } = props;
   
-  React.useEffect(() => {changeAudioSource(AudioSolarSystems);}, []);
+  React.useEffect(() => {changeAudioSource(SolarSystemsOGG)}, []);
 
   // if (stars) console.log(stars.filter(star => star.st_mass != null).map(star => star.st_mass).sort())
   

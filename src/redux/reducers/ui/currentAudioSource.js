@@ -1,13 +1,10 @@
 import { actionTypes } from '../../actionTypes';
 
-export const currentAudioSource = (state = {}, action) => {  
+export const currentAudioSource = (state = null, action) => {
   switch (action.type) {
-    case actionTypes.ui.CHANGE_AUDIO_SOURCE:
-      let source = action.payload;
-      state = {...state, currentAudioSource: source};
-      break;
+    case actionTypes.ui.AUDIO_SOURCE_CHANGE:
+      return action.payload;
     default:
-      state = {...state};
-  }
-  return state;
-}
+      return null;
+  };
+};

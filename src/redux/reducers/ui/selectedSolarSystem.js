@@ -9,7 +9,7 @@ export const selectedSolarSystem = (state = {}, action) => {
 
     break;
     default:
-      state = {...state};
+      return null;
   }
   return state;
 }

@@ -1,11 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import { toggleAudioMute } from "../../redux/actions/ui";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { toggleAudioMute } from '../../redux/actions/ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 import './AudioToggleButton.scss';
 
-export const AudioButton = ({source, isMuted, toggleMute }) => {
+export const AudioToggleButton = ({source, isMuted, toggleMute }) => {
   const buttonStyle = {
     width: '48px',
     height: '48px',
@@ -17,7 +18,7 @@ export const AudioButton = ({source, isMuted, toggleMute }) => {
   
   return (
     <div>
-      <button type="button" style={buttonStyle} onClick={() => toggleMute(isMuted)}>
+      <button type="button" style={buttonStyle} onClick={() => toggleMute(!isMuted)}>
         <FontAwesomeIcon icon={ isMuted ? faVolumeOff : faVolumeUp } size="2x" />
       </button>
       <audio autoPlay loop src={source} muted={isMuted}>
@@ -33,7 +34,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleMute: muted => dispatch(toggleAudioMute(muted))
+  toggleMute: isMuted => dispatch(toggleAudioMute(isMuted))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AudioButton);
+export default connect(mapStateToProps, mapDispatchToProps)(AudioToggleButton);

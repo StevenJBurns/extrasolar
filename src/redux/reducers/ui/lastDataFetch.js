@@ -11,13 +11,11 @@ const initialState = JSON.parse(localStorage.getItem("lastDataFetch")) || 0;
 export const lastDataFetch = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ui.LAST_DATA_FETCH_DATETIME_GET:
-      state = {...state, lastDataFetch: action.payload}
-      break;
+      return {...state, lastDataFetch: action.payload}
     case actionTypes.ui.LAST_DATA_FETCH_DATETIME_SET:
-      state = {...state, lastDataFetch: action.payload}
-      break;
+      localStorage.setItem('lastDataFetch', action.payload);
+      return state;
     default:
-      state = {...state };
-  }
-  return state;
-}
+      return 0;
+  };
+};

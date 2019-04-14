@@ -2,11 +2,14 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { changeAudioSource } from "../../../redux/actions/ui";
-import AudioHome from '../../../assets/audio/home.ogg';
+import HomeOGG from '../../../assets/audio/home.ogg';
 import "./PageHome.scss";
 
 const PageHome = ({changeSource}) => {
-  React.useEffect(() => {changeSource(AudioHome);}, []);
+  React.useEffect(() => {
+    console.log(HomeOGG);
+    changeSource(HomeOGG);
+  }, []);
 
   return (
     <main id="main-home">
