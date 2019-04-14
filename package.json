@@ -1,6 +1,6 @@
 {
   "name": "extrasolar",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
@@ -35,7 +35,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.10.0",
     "react-redux": "^7.0.0",
     "redux": "^4.0.1"
   },
