@@ -20,16 +20,16 @@ const PageData = ({changeSource, stars, planets}) => {
   let setPlanetCount = new Set();
   let arrPlanetCount = [];
 
-  if (stars) {
-    stars.forEach((star) => setPlanetCount.add(star.pl_pnum));
-    arrPlanetCount = [...setPlanetCount].sort().map((count, index) => ({"planetCount" : count, "count" : 0}))
+  // if (stars) {
+  //   stars.forEach((star) => setPlanetCount.add(star.pl_pnum));
+  //   arrPlanetCount = [...setPlanetCount].sort().map((count, index) => ({"planetCount" : count, "count" : 0}))
 
-    for (let size of arrPlanetCount) {
-      for (let star of stars) {
-        if (star.pl_pnum === size["planetCount"]) size["count"]++;
-      }
-    }
-  }
+  //   for (let size of arrPlanetCount) {
+  //     for (let star of stars) {
+  //       if (star.pl_pnum === size["planetCount"]) size["count"]++;
+  //     }
+  //   }
+  // }
 
   return (
     <main id="main-data">
@@ -88,10 +88,8 @@ const MapStateToProps = state => {
   return {stars, planets};
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    changeSource: source => dispatch(changeAudioSource(source))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  changeSource: source => dispatch(changeAudioSource(source))
+});
 
 export default connect(MapStateToProps, mapDispatchToProps)(PageData);
