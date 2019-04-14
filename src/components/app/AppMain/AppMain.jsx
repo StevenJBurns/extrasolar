@@ -18,11 +18,9 @@ import './AppMain.scss';
 
 export const AppMain = props => {
   React.useEffect(() => {
-    console.log('AppMain Mounted');
     props.getStarsAsync();
     props.getPlanetsAsync();
-    }, []
-  );
+  }, []);
 
   return (
     <main>

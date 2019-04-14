@@ -1,7 +1,7 @@
 /* React and Redux imports */
 import React from 'react';
 import { connect } from "react-redux";
-import { changeAudioSource } from "../../../redux/actions";
+import { changeAudioSource } from "../../../redux/actions/ui";
 
 /* Component Imports */
 import{ BarChart}  from "../../charts/BarChart";
@@ -15,7 +15,7 @@ import "./PageData.scss";
 
 
 const PageData = ({changeSource, stars, planets}) => {
-  changeSource(AudioData);
+  React.useEffect(() => {changeSource(AudioData);}, []);
 
   let setPlanetCount = new Set();
   let arrPlanetCount = [];

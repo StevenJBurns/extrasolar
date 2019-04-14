@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { changeAudioSource} from "../../../redux/actions/index";
+import { changeAudioSource} from "../../../redux/actions/ui";
 import AudioAbout from "../../../assets/audio/about.ogg";
 import "./PageAbout.scss";
 
 const PageAbout = ({changeSource}) => {
-  changeSource(AudioAbout);
+  React.useEffect(() => {changeSource(AudioAbout);}, []);
 
   return(
     <main id="main-about">

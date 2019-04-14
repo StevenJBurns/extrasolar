@@ -17,7 +17,6 @@ export const getStarsFailed = error => ({
 });
 
 export const getStarsAsync = () => {
-  console.log('starting getStarsAsync');
   return dispatch => {
     dispatch(getStarsBegin());
     return fetch(urlDistinctStars)
@@ -25,7 +24,6 @@ export const getStarsAsync = () => {
       .then(res => res.json())
       .then(jsonStars => {
         dispatch(getStarsSuccess(jsonStars));
-        console.log('getStarsSuccess');
         return jsonStars;
       })
       .catch(error => dispatch(getStarsFailed(error)));

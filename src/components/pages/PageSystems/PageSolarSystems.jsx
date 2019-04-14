@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from "react-redux";
-import { changeAudioSource, changeFilters, changeSelectedSystem } from "../../../redux/actions";
+import { connect } from 'react-redux';
+import { changeAudioSource, changeSelectedSolarSystem } from '../../../redux/actions/ui';
 
 import CanvasComponent from "../../canvas/CanvasComponent";
 // import InputRange from 'react-input-range';
@@ -20,10 +20,6 @@ const PageSolarSystems = (props) => {
   } = props;
   
   React.useEffect(() => {changeAudioSource(AudioSolarSystems);}, []);
-  React.useEffect(() => {
-    console.log('stars: ', stars);
-    console.log('planets: ', planets);
-  }, [stars, planets]);
 
   // if (stars) console.log(stars.filter(star => star.st_mass != null).map(star => star.st_mass).sort())
   
@@ -62,8 +58,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  changeFilters: newFilter => dispatch(changeFilters(newFilter)),
-  changeSelectedSystem: newSystem => dispatch(changeSelectedSystem(newSystem)),
+  changeSelectedSystem: newSystem => dispatch(changeSelectedSolarSystem(newSystem)),
   changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
 });
 

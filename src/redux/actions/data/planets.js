@@ -17,7 +17,6 @@ export const getPlanetsFailed = error => ({
 });
 
 export const getPlanetsAsync = () => {
-console.log('starting getPlanetsAsync');
   return dispatch => {      
     dispatch(getPlanetsBegin());
     return fetch(urlDistinctPlanets)
@@ -34,7 +33,6 @@ console.log('starting getPlanetsAsync');
   // Handle HTTP errors when Fetch API can't catch them
   export const handleErrors = (response) => {
     if (!response.ok) {
-      console.log("getPlanetsAsync Failed!");
       throw Error(response.statusText);
     }
     return response;

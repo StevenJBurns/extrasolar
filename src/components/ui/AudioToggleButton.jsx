@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleAudioMute } from "../../redux/actions/ui/audioMute";
+import { toggleAudioMute } from "../../redux/actions/ui";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 import './AudioToggleButton.scss';
