@@ -1,0 +1,23 @@
+{
+  "main.css": "/extrasolar/static/css/main.41e1e60b.chunk.css",
+  "main.js": "/extrasolar/static/js/main.2d244bca.chunk.js",
+  "main.js.map": "/extrasolar/static/js/main.2d244bca.chunk.js.map",
+  "runtime~main.js": "/extrasolar/static/js/runtime~main.927f8fde.js",
+  "runtime~main.js.map": "/extrasolar/static/js/runtime~main.927f8fde.js.map",
+  "static/css/2.ff7040b3.chunk.css": "/extrasolar/static/css/2.ff7040b3.chunk.css",
+  "static/js/2.a708b10b.chunk.js": "/extrasolar/static/js/2.a708b10b.chunk.js",
+  "static/js/2.a708b10b.chunk.js.map": "/extrasolar/static/js/2.a708b10b.chunk.js.map",
+  "index.html": "/extrasolar/index.html",
+  "precache-manifest.cf4e0d4acdc2fe1419957da9384e228b.js": "/extrasolar/precache-manifest.cf4e0d4acdc2fe1419957da9384e228b.js",
+  "service-worker.js": "/extrasolar/service-worker.js",
+  "static/css/2.ff7040b3.chunk.css.map": "/extrasolar/static/css/2.ff7040b3.chunk.css.map",
+  "static/css/main.41e1e60b.chunk.css.map": "/extrasolar/static/css/main.41e1e60b.chunk.css.map",
+  "static/media/about.ogg": "/extrasolar/static/media/about.3a62f567.ogg",
+  "static/media/PageAbout.scss": "/extrasolar/static/media/alpha-centauri-h.b2eed314.jpg",
+  "static/media/PageData.scss": "/extrasolar/static/media/beta-pictoris-b.27358291.jpg",
+  "static/media/Page404.scss": "/extrasolar/static/media/black-hole.5e39783f.jpg",
+  "static/media/data.ogg": "/extrasolar/static/media/data.84362f99.ogg",
+  "static/media/home.ogg": "/extrasolar/static/media/home.e0ee1969.ogg",
+  "static/media/solarsystems.ogg": "/extrasolar/static/media/solarsystems.11ab2215.ogg",
+  "static/media/PageHome.scss": "/extrasolar/static/media/superearth.c76d1ff4.jpg"
+}
