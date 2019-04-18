@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/extrasolar/precache-manifest.b9a7acf5be7a0ec887461c5e0337ab7b.js"
+  "/extrasolar/precache-manifest.cf4e0d4acdc2fe1419957da9384e228b.js"
 );
 
 workbox.clientsClaim();
