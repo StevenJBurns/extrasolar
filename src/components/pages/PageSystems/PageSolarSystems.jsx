@@ -27,7 +27,7 @@ const PageSolarSystems = (props) => {
   // let childPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] === selectedSolarSystem["pl_hostname"]) : null;
 
   return (
-    <main id="main-solarsystems">
+    <div id="main-solarsystems">
       <CanvasComponent selectedSolarSystem={selectedSolarSystem} />
       <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem["pl_hostname"] : null}</h3>
       <div id="div-filters">
@@ -47,7 +47,7 @@ const PageSolarSystems = (props) => {
         </div>
         <ul></ul>
       </div>
-    </main>
+    </div>
   );
 }
 

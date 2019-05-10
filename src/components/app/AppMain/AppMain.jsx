@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { Switch, Route, withRouter } from 'react-router-dom';
 
@@ -21,6 +22,10 @@ export const AppMain = props => {
     props.getStarsAsync();
     props.getPlanetsAsync();
   }, []);
+
+  React.useEffect(() => {
+    console.log(props);
+  }, [props.location])
 
   return (
     <main>
