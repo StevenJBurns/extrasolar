@@ -35,7 +35,7 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
-    "jest-dom": "^3.2.2",
+    "jest-dom": "^3.4.0",
     "node-sass": "^4.0.0",
     "react-redux": "^7.0.3",
     "react-testing-library": "^7.0.1",
