@@ -37,7 +37,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "jest-dom": "^3.5.0",
     "node-sass": "^4.0.0",
-    "react-redux": "^7.0.3",
+    "react-redux": "^7.1.0",
     "react-testing-library": "^7.0.1",
     "redux": "^4.0.0"
   },
