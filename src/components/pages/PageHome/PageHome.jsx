@@ -11,7 +11,7 @@ const PageHome = ({changeSource}) => {
   }, []);
 
   return (
-    <div id="div-content-wrapper">
+    <div id="div-content-wrapper" className="main-home">
       <h1>ExtraSolar</h1>
       <hr></hr>
       <p>Since 1992, over 3,500 <a href="https://en.wikipedia.org/wiki/Exoplanet">extrasolar planets</a> have been observed through various means. Less than two dozen have been <a href="https://en.wikipedia.org/wiki/List_of_directly_imaged_exoplanets">directly imaged</a> but several thousand more have been catalogued by non-visual means. If complete, that data lends itself to creating an abstract picture of what these distant solar systems look like.</p>
