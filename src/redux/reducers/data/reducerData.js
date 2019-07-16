@@ -8,6 +8,7 @@ const initialState = {
   data: {
     stars: [],
     planets: [],
+    solarSystems: [],
   }
 };
 
