@@ -28,7 +28,7 @@ export const getPlanetsAsync = () => {
       })
       .catch(error => dispatch(getPlanetsFailed(error)));
     };
-  }
+  };
     
   // Handle HTTP errors when Fetch API can't catch them
   export const handleErrors = (response) => {
@@ -36,4 +36,4 @@ export const getPlanetsAsync = () => {
       throw Error(response.statusText);
     }
     return response;
-  }
+  };

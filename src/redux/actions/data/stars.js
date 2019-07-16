@@ -28,7 +28,7 @@ export const getStarsAsync = () => {
       })
       .catch(error => dispatch(getStarsFailed(error)));
     };
-  }
+  };
   
 /* Handle HTTP errors when Fetch API can't catch them */
 export const handleErrors = (response) => {
@@ -37,4 +37,4 @@ export const handleErrors = (response) => {
     throw Error(response.statusText);
   }
   return response;
-}
+};
