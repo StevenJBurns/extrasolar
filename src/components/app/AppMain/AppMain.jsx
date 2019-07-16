@@ -18,14 +18,16 @@ import {
 import './AppMain.scss';
 
 export const AppMain = props => {
+  const { location} = props;
+
   React.useEffect(() => {
     props.getStarsAsync();
     props.getPlanetsAsync();
   }, []);
 
   React.useEffect(() => {
-    console.log(props);
-  }, [props.location])
+    console.log(location);
+  }, [location])
 
   return (
     <main>
