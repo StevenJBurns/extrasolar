@@ -1,3 +1,1 @@
-export const sorting = (state = [], action) => {
-    return state;
-}
+export const sorting = (state = [], action) => action ? state : state;
