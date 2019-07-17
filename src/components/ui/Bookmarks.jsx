@@ -42,7 +42,7 @@ export const Bookmarks = props => {
       </ul>
       <section>
         <h3>FAVORITES</h3>
-        { useSelector(state => state.ui.bookmarks).map(item => (<span key={item}>{item}</span>))}
+        { useSelector(state => state.ui.bookmarkedSolarSystems).map(item => (<span key={item}>{item}</span>))}
         <button type="button" onClick={resetFavorites}>Reset Favorites</button>
       </section>
     </div>
