@@ -1,0 +1,13 @@
+.ul-planet-list {
+  list-style: none;
+}
+
+.planet-item:hover .toggle-as-favorite {
+  visibility: visible
+}
+
+.toggle-as-favorite {
+  height: 1.5rem;
+  width: 1.5rem;
+  visibility: hidden
+}
