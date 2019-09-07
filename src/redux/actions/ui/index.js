@@ -1,12 +1,12 @@
 import { toggleAudioMute } from './audioMute';
 import { changeAudioSource } from './audioSource';
 import { changeSelectedSolarSystem } from './solarSystem';
-import { getLastDataFetch, setLastDataFetch } from './lastDataFetch';
+import { getLastDataFetchDatetime, setLastDataFetchDatetime } from './lastDataFetch';
 
 export {
   toggleAudioMute,
   changeAudioSource,
   changeSelectedSolarSystem,
-  getLastDataFetch,
-  setLastDataFetch,
+  getLastDataFetchDatetime,
+  setLastDataFetchDatetime,
 };

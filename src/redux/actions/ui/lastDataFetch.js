@@ -1,11 +1,11 @@
 import { actionTypes } from '../../actionTypes';
 
-export const getLastDataFetch = () => ({
-  type: actionTypes.ui.LAST_DATA_FETCH_DATETIME_GET,
+export const getLastDataFetchDatetime = () => ({
+  type: actionTypes.ui.GET_LAST_DATA_FETCH_DATETIME,
   payload: JSON.parse(localStorage.getItem("lastDataFetch"))
 });
 
-export const setLastDataFetch = () => ({
-  type: actionTypes.ui.LAST_DATA_FETCH_DATETIME_SET,
+export const setLastDataFetchDatetime = () => ({
+  type: actionTypes.ui.SET_LAST_DATA_FETCH_DATETIME,
   payload: new Date(),
 });
