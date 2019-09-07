@@ -1,13 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
-import { changeAudioSource} from "../../../redux/actions/ui";
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { actionTypes } from '../../../redux/actionTypes';
+import { Bookmarks } from '../../ui/Bookmarks';
 import AboutOGG from "../../../assets/audio/about.ogg";
 import "./PageAbout.scss";
 
-const PageAbout = ({changeSource}) => {
-  React.useEffect(() => {changeSource(AboutOGG)}, []);
+export const PageAbout = () => {
+  const dispatch = useDispatch();
 
-  return(
+  React.useEffect(() => {
+    dispatch({ type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: AboutOGG});
+  }, []);
+
+  return (
     <div id="div-content-wrapper">
       <h1>About</h1>
       <hr></hr>
@@ -16,14 +22,7 @@ const PageAbout = ({changeSource}) => {
       <p>While learning <a href="https://reactjs.org/">React</a>, I knew immediately the modern SPA approach would achieve the native-like look, feel and performance I envisioned. I continued on, tossing in <a href="https://redux.js.org/">Redux</a> to handle the volume of data and <a href="https://d3js.org/">D3js</a> for a simple layer of data presentation.</p>
       <p>The only future feature I would still like to add is 3D rendering most likely via <a href="https://threejs.org/">ThreeJS</a>.</p>
       <p>The current source code is <a href="https://github.com/StevenJBurns/extrasolar">here</a> and the live version is hosted straight from Github Pages.</p>
+      <Bookmarks />
     </div>
   );
 };
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changeSource: source => dispatch(changeAudioSource(source))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(PageAbout);
