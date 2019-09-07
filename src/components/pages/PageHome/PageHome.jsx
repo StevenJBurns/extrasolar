@@ -1,13 +1,15 @@
-/* React and Redux imports */
 import React from 'react';
-import { connect } from "react-redux";
-import { changeAudioSource } from "../../../redux/actions/ui";
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { actionTypes } from '../../../redux/actionTypes';
 import HomeOGG from '../../../assets/audio/home.ogg';
 import "./PageHome.scss";
 
-const PageHome = ({changeSource}) => {
+export const PageHome = () => {
+  const dispatch = useDispatch();
+
   React.useEffect(() => {
-    changeSource(HomeOGG);
+    dispatch({ type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: HomeOGG });
   }, []);
 
   return (
@@ -20,12 +22,4 @@ const PageHome = ({changeSource}) => {
       <p>Browse the project to see visual plots of the solar systems with valid data... </p>
     </div>
   );
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changeSource: source => dispatch(changeAudioSource(source))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(PageHome);
+};
