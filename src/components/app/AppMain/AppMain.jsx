@@ -1,13 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
-
-/* necessary? TBD after Redux re-organization */
-import { getStarsAsync } from "../../../redux/actions/data/stars";
-import { getPlanetsAsync } from "../../../redux/actions/data/planets";
-import { getLastDataFetch } from "../../../redux/actions/ui";
-
+import { services } from '../../../services';
 import {
   PageHome,
   PageData,
@@ -18,16 +14,13 @@ import {
 import './AppMain.scss';
 
 export const AppMain = props => {
-  const { location} = props;
+  // const { getStarsAsync, getPlanetsAsync } = props;
+  const { stars, planets } = services;
 
   React.useEffect(() => {
-    props.getStarsAsync();
-    props.getPlanetsAsync();
+    Promise.all([stars.fetchAllStars, planets.fetchAllPlanets])
+      .then(results => console.log('results: ', results));
   }, []);
-
-  React.useEffect(() => {
-    console.log(location);
-  }, [location])
 
   return (
     <main>
@@ -48,13 +41,5 @@ const mapStateToProps = state => ({
   lastDataFetch: state.ui.lastDataFetch,
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getStarsAsync: () => dispatch(getStarsAsync()),
-    getPlanetsAsync: () => dispatch(getPlanetsAsync()),
-    getLastDataFetch: () => dispatch(getLastDataFetch()),
-  };
-};
-
 /* withRouter is a HoC for Router use with Redux */
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AppMain));
+export default withRouter(connect(mapStateToProps, null)(AppMain));
