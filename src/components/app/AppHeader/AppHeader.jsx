@@ -1,9 +1,9 @@
 import React from "react";
 import AppLogo from "../../../assets/logo/extrasolar.png";
-import AudioToggleButton from "../../ui/AudioToggleButton";
+import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import './AppHeader.scss';
 
-export const AppHeader = props => {
+export const AppHeader = () => {
   return (
     <header id="app-header">
       <img id="app-logo" src={ AppLogo } alt="ExtraSolar Logo" />
