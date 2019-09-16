@@ -30,7 +30,8 @@
     "react-transition-group": "^4.3.0",
     "react-window": "^1.8.5",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.0",
