@@ -19,12 +19,7 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <App>
-          <AppHeader />
-          <AppNav activeStyle={activeStyle} />
-          <AppMain />
-          <AppFooter />
-        </App>
+        <App />
       </BrowserRouter>
     </Provider>,
     document.getElementById("react-root")

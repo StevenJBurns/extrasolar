@@ -1,23 +1,18 @@
-/* React and Redux imports */
 import React from 'react';
-import { connect } from "react-redux";
-import { changeAudioSource } from "../../../redux/actions/ui";
-
-/* Component Imports */
+import PropTypes from 'prop-types';
+import { connect, useDispatch, useSelector } from "react-redux";
+import { actionTypes } from '../../../redux/actionTypes';
 import{ BarChart}  from "../../charts/BarChart";
 import { StarsPieChart } from "../../charts/StarsPieChart";
 // import { ScatterPlotChart } from "../../ui/ScatterPlotChart";
-
-/* Assets and Styles Imports */
 import DataOGG from '../../../assets/audio/data.ogg';
 import "./PageData.scss";
-//import '../../styles/StarsPieChart.css';
 
+export const PageData = ({stars, planets}) => {
+  const dispatch = useDispatch();
 
-const PageData = ({changeAudioSource, stars, planets}) => {
   React.useEffect(() => {
-    // console.log(DataOGG);
-    changeAudioSource(DataOGG)
+    dispatch({type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: DataOGG});
   }, []);
 
   let setPlanetCount = new Set();
@@ -35,7 +30,7 @@ const PageData = ({changeAudioSource, stars, planets}) => {
   // }
 
   return (
-    <div id="div-content-wrapper">
+    <div className="page-data">
       <h1>Data</h1>
       <hr></hr>
       <p>The available data from NASA comes from a SQL table view that combines star and planet data together. While this allows for compact and less-effort storage, the hierarchical or relationship of planets to stars is lost. Those relationships are rebuilt in JavaScript files of these web pages.</p>
@@ -83,14 +78,3 @@ const PageData = ({changeAudioSource, stars, planets}) => {
   );
 };
 
-const MapStateToProps = state => {
-  const {stars, planets} = state.data
-  
-  return {stars, planets};
-};
-
-const mapDispatchToProps = dispatch => ({
-  changeAudioSource: source => dispatch(changeAudioSource(source))
-});
-
-export default connect(MapStateToProps, mapDispatchToProps)(PageData);

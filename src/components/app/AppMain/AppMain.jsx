@@ -14,7 +14,6 @@ import {
 import './AppMain.scss';
 
 export const AppMain = props => {
-  // const { getStarsAsync, getPlanetsAsync } = props;
   const { stars, planets } = services;
 
   React.useEffect(() => {
@@ -23,7 +22,7 @@ export const AppMain = props => {
   }, []);
 
   return (
-    <main>
+    <div>
       <Switch>
         <Route exact path='/' render={() => <PageHome />} />
         <Route exact path='/data' render={() => <PageData />} />
@@ -31,7 +30,7 @@ export const AppMain = props => {
         <Route exact path='/about' render={() => <PageAbout />} />
         <Route component={ Page404 } />
       </Switch>
-    </main>
+    </div>
   );
 };
 
