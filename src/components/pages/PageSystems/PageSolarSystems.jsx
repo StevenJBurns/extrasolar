@@ -10,7 +10,7 @@ import "./PageSolarSystems.scss";
 import "react-input-range/lib/css/index.css";
 import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
 
-const PageSolarSystems = (props) => {
+export const PageSolarSystems = (props) => {
   const {
     stars,
     planets,
