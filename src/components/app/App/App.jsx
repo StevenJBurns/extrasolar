@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { mapRawDataToSolarSystems } from '../../../util/mapRawDataToSolarSystems';
+import { actionTypes } from '../../../redux/actionTypes';
 import { services } from '../../../services';
 import {
   PageHome,
@@ -12,12 +13,10 @@ import {
   Page404,
 } from '../../pages';
 import './App.scss';
-import { actionTypes } from '../../../redux/actionTypes';
 
 export const App = () => {
-  const { stars, planets } = services;
-
   const dispatch = useDispatch();
+  const { stars, planets } = services;
 
   React.useEffect(() => {
     Promise.all([stars.fetchAllStars, planets.fetchAllPlanets])
@@ -33,11 +32,21 @@ export const App = () => {
   
   return (
       <Switch>
-        <Route exact path='/' render={() => <PageHome />} />
-        <Route exact path='/data' render={() => <PageData />} />
-        <Route exact path='/systems' render={() => <PageSystems />} />
-        <Route exact path='/about' render={() => <PageAbout />} />
-        <Route component={ Page404 } />
+        <Route exact path='/'>
+          <PageHome />
+        </Route>
+        <Route exact path='/data'>
+          <PageData />
+        </Route>
+        <Route exact path='/systems'>
+          <PageSystems />
+        </Route>
+        <Route exact path='/about'>
+          <PageAbout />
+        </Route>
+        <Route>
+          <Page404 />
+        </Route>
       </Switch>
   );
 };
