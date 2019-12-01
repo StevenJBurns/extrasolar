@@ -5,13 +5,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { mapRawDataToSolarSystems } from '../../../util/mapRawDataToSolarSystems';
 import { actionTypes } from '../../../redux/actionTypes';
 import { services } from '../../../services';
-import {
-  PageHome,
-  PageData,
-  PageSystems,
-  PageAbout,
-  Page404,
-} from '../../pages';
+import Pages from '../../pages';
 import './App.scss';
 
 export const App = () => {
@@ -33,19 +27,19 @@ export const App = () => {
   return (
     <Switch>
       <Route exact path='/'>
-        <PageHome />
+        <Pages.PageHome />
       </Route>
       <Route exact path='/data'>
-        <PageData />
+        <Pages.PageData />
       </Route>
       <Route exact path='/systems'>
-        <PageSystems />
+        <Pages.PageSolarSystems />
       </Route>
       <Route exact path='/about'>
-        <PageAbout />
+        <Pages.PageAbout />
       </Route>
       <Route>
-        <Page404 />
+        <Pages.Page404 />
       </Route>
     </Switch>
   );
