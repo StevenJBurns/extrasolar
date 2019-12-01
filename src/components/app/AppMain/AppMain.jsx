@@ -4,13 +4,7 @@ import { connect } from "react-redux";
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { services } from '../../../services';
-import {
-  PageHome,
-  PageData,
-  PageSystems,
-  PageAbout,
-  Page404,
-} from '../../pages';
+import Pages from '../../pages';
 import './AppMain.scss';
 
 export const AppMain = props => {
@@ -24,11 +18,11 @@ export const AppMain = props => {
   return (
     <div>
       <Switch>
-        <Route exact path='/' render={() => <PageHome />} />
-        <Route exact path='/data' render={() => <PageData />} />
-        <Route exact path='/systems' render={() => <PageSystems />} />
-        <Route exact path='/about' render={() => <PageAbout />} />
-        <Route component={ Page404 } />
+        <Route exact path='/' render={() => <Pages.PageHome />} />
+        <Route exact path='/data' render={() => <Pages.PageData />} />
+        <Route exact path='/systems' render={() => <Pages.PageSolarSystems />} />
+        <Route exact path='/about' render={() => <Pages.PageAbout />} />
+        <Route component={ Pages.Page404 } />
       </Switch>
     </div>
   );
