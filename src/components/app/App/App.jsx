@@ -31,23 +31,23 @@ export const App = () => {
   }, []);
   
   return (
-      <Switch>
-        <Route exact path='/'>
-          <PageHome />
-        </Route>
-        <Route exact path='/data'>
-          <PageData />
-        </Route>
-        <Route exact path='/systems'>
-          <PageSystems />
-        </Route>
-        <Route exact path='/about'>
-          <PageAbout />
-        </Route>
-        <Route>
-          <Page404 />
-        </Route>
-      </Switch>
+    <Switch>
+      <Route exact path='/'>
+        <PageHome />
+      </Route>
+      <Route exact path='/data'>
+        <PageData />
+      </Route>
+      <Route exact path='/systems'>
+        <PageSystems />
+      </Route>
+      <Route exact path='/about'>
+        <PageAbout />
+      </Route>
+      <Route>
+        <Page404 />
+      </Route>
+    </Switch>
   );
 };
 
