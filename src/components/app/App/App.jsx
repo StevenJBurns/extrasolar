@@ -5,6 +5,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { mapRawDataToSolarSystems } from '../../../util/mapRawDataToSolarSystems';
 import { actionTypes } from '../../../redux/actionTypes';
 import { services } from '../../../services';
+import { PageHeader, PageFooter } from '../../pages/';
 import Pages from '../../pages';
 import './App.scss';
 
@@ -19,7 +20,8 @@ export const App = () => {
         console.log('stars: ', stars || 0);
         console.log('planets: ', planets || 0);
         dispatch({
-          type: actionTypes.data
+          type: actionTypes.ui.GET_LAST_DATA_FETCH_DATETIME,
+          payload: new Date(),
         })
       });
   }, []);
@@ -30,16 +32,24 @@ export const App = () => {
         <Pages.PageHome />
       </Route>
       <Route exact path='/data'>
+        <PageHeader />
         <Pages.PageData />
+        <PageFooter />
       </Route>
       <Route exact path='/systems'>
+        <PageHeader />
         <Pages.PageSolarSystems />
+        <PageFooter />
       </Route>
       <Route exact path='/about'>
+        <PageHeader />
         <Pages.PageAbout />
+        <PageFooter />
       </Route>
       <Route>
+        <PageHeader />
         <Pages.Page404 />
+        <PageFooter />
       </Route>
     </Switch>
   );
