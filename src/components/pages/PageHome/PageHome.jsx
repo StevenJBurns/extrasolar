@@ -20,7 +20,7 @@ export const PageHome = props => {
       <div className="page-home">
         <header>
           <h1>ExtraSolar</h1>
-          <h2>Visualization of exoplanets in distant solar systems</h2>
+          <h2>Exoplanet Data Visualization</h2>
         </header>
         <nav>
           <ul>
