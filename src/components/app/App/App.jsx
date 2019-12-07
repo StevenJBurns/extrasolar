@@ -17,8 +17,8 @@ export const App = () => {
     Promise.all([stars.fetchAllStars, planets.fetchAllPlanets])
       .then(results => {
         const [stars, planets] = results;
-        console.log('stars: ', stars || 0);
-        console.log('planets: ', planets || 0);
+        // console.log('stars: ', stars || 0);
+        // console.log('planets: ', planets || 0);
         dispatch({
           type: actionTypes.ui.GET_LAST_DATA_FETCH_DATETIME,
           payload: new Date(),
@@ -29,26 +29,26 @@ export const App = () => {
   return (
     <Switch>
       <Route exact path='/'>
-        <Pages.PageHome />
+        <Pages.PageHome title="Home" />
       </Route>
       <Route exact path='/data'>
         <PageHeader />
-        <Pages.PageData />
+        <Pages.PageData title="Data"/>
         <PageFooter />
       </Route>
       <Route exact path='/systems'>
         <PageHeader />
-        <Pages.PageSolarSystems />
+        <Pages.PageSolarSystems title="Solar Systems"/>
         <PageFooter />
       </Route>
       <Route exact path='/about'>
         <PageHeader />
-        <Pages.PageAbout />
+        <Pages.PageAbout title="About" />
         <PageFooter />
       </Route>
       <Route>
         <PageHeader />
-        <Pages.Page404 />
+        <Pages.Page404 title="Not Found"/>
         <PageFooter />
       </Route>
     </Switch>
