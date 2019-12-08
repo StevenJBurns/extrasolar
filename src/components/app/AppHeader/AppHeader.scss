@@ -1,18 +1,11 @@
 #app-header {
+  display: grid;
   width: 100%;
   color: #F0F0F0;
-  background-color: #2F2F2F;
+  background: transparent;
   text-shadow: 2px 2px 8px #0F0F0F;
-  align-items: center;
-  display: grid;
   grid-template-columns: auto 1fr auto;
-}
-
-#app-logo {
-  margin: 16px;
-  height: 96px;
-  width: 96px;
-  animation: app-logo-spin infinite 20s linear;
+  align-items: center;
 }
 
 #divAppTaglines {
