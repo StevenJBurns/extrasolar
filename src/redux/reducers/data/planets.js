@@ -9,6 +9,6 @@ export const planets = (state = [], action) => {
     case actionTypes.data.PLANETS_ASYNC_GET_FAILED:
       break;
     default:
+      return state;
   }
-  return state;
 };
