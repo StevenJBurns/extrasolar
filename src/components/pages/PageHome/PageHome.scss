@@ -8,7 +8,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../../../assets/images/apollo.jpg");
-  text-shadow: 1px 1px 32px #BBB;
+  text-shadow: 1px 1px 24px #BBB;
   color: #DDD;
 }
 
@@ -18,10 +18,12 @@
 
 .page-home h1 {
   font-size: 6.5vw;
+  cursor: default
 }
 
 .page-home h2 {
   font-size: 3.33vw;
+  cursor: default
 }
 
 .page-home nav {
@@ -40,7 +42,7 @@
 }
 
 .page-home ul li {
-  margin: 1rem 0;
+  margin: 1.5vw 0;
   text-align: right;
   font-weight: bold
 }
@@ -61,16 +63,26 @@
   font-size: initial;
 }
 
+@media screen and (max-width: 480px) {
+  .page-home h1 {
+    font-size: 36px;
+  }
+
+  .page-home h2 {
+    font-size: 20px;
+ }
+}
+
 @media screen and (min-width: 960px) {
   .page-home {
     padding: 1rem 0
   }
 
   .page-home h1 {
-    //  font-size: 4rem;
+    font-size: 60px;
   }
 
   .page-home h2 {
-    font-size: 1.5rem;
+    font-size: 30px;
  }
 }
