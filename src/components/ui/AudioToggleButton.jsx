@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
 import { actionTypes } from '../../redux/actionTypes';
+import { useSelector, useDispatch } from 'react-redux';
+import { IconButton } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import VolumeOff from '@material-ui/icons/VolumeOff';
+import VolumeUp from '@material-ui/icons/VolumeUp';
 import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 import './AudioToggleButton.scss';
 
@@ -16,19 +19,22 @@ export const AudioToggleButton = () => {
     dispatch({ type: actionTypes.ui.TOGGLE_AUDIO_MUTE, payload: !isAudioMuted });
 
   const buttonStyle = {
-    width: '48px',
-    height: '48px',
-    margin: '12px',
-    outline: 'none',
-    borderRadius: '50%',
-    background: `${ isAudioMuted ? "darkred" : "darkgreen" }`
+    // width: '48px',
+    // height: '48px',
+    // margin: '12px',
+    // outline: 'none',
+    // borderRadius: '50%',
+    padding: 0,
+    background: 'Gainsboro',
+    color: isAudioMuted ? 'firebrick' : 'forestgreen',
+    // background: `${ isAudioMuted ? "firebrick" : "limegreen" }`
   };
   
   return (
     <div>
-      <button type="button" style={buttonStyle} onClick={toggleAudioMute}>
-        <FontAwesomeIcon icon={ isAudioMuted ? faVolumeOff : faVolumeUp } size="2x" />
-      </button>
+      <IconButton type="button" style={buttonStyle} onClick={toggleAudioMute}>
+        { isAudioMuted ? <VolumeOff fontSize="large" /> : <VolumeUp fontSize="large" /> }
+      </IconButton>
       <audio autoPlay loop src={audioSourceFile} muted={isAudioMuted}>
         <span>Your browser does not support the <code>audio</code> element.</span> 
       </audio>
