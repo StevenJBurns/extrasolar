@@ -6,9 +6,6 @@ import { store } from "./redux/store/index";
 import { App } from './components/app';
 import './index.scss';
 
-/* for React Router Link components to style the active menu button */
-const activeStyle = { backgroundColor : '#8F8F8F' };
-
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
