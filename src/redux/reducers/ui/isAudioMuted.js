@@ -9,6 +9,7 @@ export const isAudioMuted = (state = initialState, action) => {
     localStorage.setItem("isAudioMuted", JSON.stringify(isMuted));
 
     return isMuted;
+  } else {
+    return state;
   }
-  return state;
 };
