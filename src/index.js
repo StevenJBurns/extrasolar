@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';
 import { store } from "./redux/store/index";
-import {
-  App,
-  AppHeader,
-  AppNav,
-  AppMain,
-  AppFooter
-} from './components/app';
+import { App } from './components/app';
 import './index.scss';
 
 /* for React Router Link components to style the active menu button */
