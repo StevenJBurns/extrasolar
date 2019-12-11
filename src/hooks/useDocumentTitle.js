@@ -6,5 +6,5 @@ export const useDocumentTitle = pageTitle => {
   React.useEffect(() => {
     pageTitle ? setTitle(`ExtraSolar \u2022 ${pageTitle}`) : setTitle('ExtraSolar');
     document.title = title;
-  }, [title]);
+  }, [pageTitle, title]);
 }
