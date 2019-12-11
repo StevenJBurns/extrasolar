@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
+import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
 import { Page } from '../Page/Page';
 import { actionTypes } from '../../../redux/actionTypes';
 import { AppFooter } from '../../app/AppFooter';
@@ -13,13 +14,15 @@ export const PageHome = props => {
   useDocumentTitle(props.title);
   const dispatch = useDispatch();
 
+  const isOnline = useOnlineStatus();
+
   React.useEffect(() => {
     dispatch({ type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: HomeOGG });
   }, []);
 
   return (
     <div className="page-home">
-      <header>
+      <header style={{ color: isOnline ? 'white': 'darkred' }}>
         <h1>ExtraSolar</h1>
         <h2>Exoplanet Data Visualization</h2>
       </header>
