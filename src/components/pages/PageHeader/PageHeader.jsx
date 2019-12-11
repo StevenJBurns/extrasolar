@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   AppBar,
@@ -12,6 +13,7 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core/';
+import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';
 import AppLogo from "../../../assets/logo/extrasolar.png";
@@ -20,6 +22,8 @@ import './PageHeader.scss';
 export const PageHeader = () => {
   /* for React Router NavLink active styling */
   const activeStyle = { display: 'none' };
+
+  const isOnline = useOnlineStatus();
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
@@ -31,6 +35,20 @@ export const PageHeader = () => {
       toolbar: {
         padding: '1rem 2vw',
         justifyContent: 'center',
+      },
+      header: {
+        margin: '0.25rem 1rem',
+        color: isOnline ? 'white' : 'darkred',
+      },
+      drawer: {
+        paper: {
+          minWidth: '120px',
+        },
+        '& a' : {
+          color: '#1F1F1F',
+        },
+      },
+      menuList: {
       },
       menuItem: {
         padding: 0,
@@ -49,10 +67,13 @@ export const PageHeader = () => {
 
   const classes = useStyles();
 
-  const handleHamburgerClick = e => {
-    console.log('onClick Hamburger');
-    setIsDrawerOpen(!isDrawerOpen);
-  }
+  const handleHamburgerClick = e => setIsDrawerOpen(!isDrawerOpen);
+
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
 
   return (
     <AppBar position="relative" className={classes.root}>
@@ -61,10 +82,8 @@ export const PageHeader = () => {
           <img id="app-logo" src={ AppLogo } alt="ExtraSolar Logo" />
         </Hidden> */}
         <Grid container direction="column" style={{flexGrow: 1}}>
-          <Typography style={{margin: '0.25rem 1rem'}} variant="h3" noWrap>ExtraSolar</Typography>
-          <Hidden xsDown>
-            <Typography style={{margin: '0.25rem 1rem'}} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
-          </Hidden>
+          <Typography className={classes.header} variant="h3" noWrap>ExtraSolar</Typography>
+          <Typography className={classes.header} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
         </Grid>
         <Hidden xsDown>
           <MenuList>
@@ -99,12 +118,20 @@ export const PageHeader = () => {
           </IconButton>
         </Hidden>
       </Toolbar>
-      <Drawer open={isDrawerOpen}>
-        <MenuList>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Data</MenuItem>
-          <MenuItem>Systems</MenuItem>
-          <MenuItem>About</MenuItem>
+      <Drawer className={classes.drawer} open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} variant='temporary'>
+        <MenuList >
+          <MenuItem>
+            <NavLink to='/'>Home</NavLink>
+          </MenuItem>
+          <MenuItem>
+            <NavLink to='/data'>Data</NavLink>
+          </MenuItem>
+          <MenuItem>
+            <NavLink to='/systems'>Systems</NavLink>
+          </MenuItem>
+          <MenuItem>
+            <NavLink to='/about'>About</NavLink>
+          </MenuItem>
         </MenuList>
       </Drawer>
     </AppBar>
