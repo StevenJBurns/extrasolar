@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { Page } from '../Page/Page';
 import { changeAudioSource, changeSelectedSolarSystem } from '../../../redux/actions/ui';
 
@@ -12,15 +12,24 @@ import "react-input-range/lib/css/index.css";
 import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
 
 export const PageSolarSystems = (props) => {
+  const dispatch = useDispatch();
+
+  const stars = useSelector(state => state.data.stars);
+  const planets = useSelector(state => state.data.planets);
+
   const {
-    stars,
-    planets,
+    // stars,
+    // planets,
     selectedSolarSystem,
     changeSelectedSystem,
-    changeAudioSource,
+    // changeAudioSource,
   } = props;
   
-  React.useEffect(() => {changeAudioSource(SolarSystemsOGG)}, []);
+  React.useEffect(() => {
+    dispatch(changeAudioSource(SolarSystemsOGG));
+
+    if (!stars || stars.length === 0) console.log('no STARS data', stars);
+  }, []);
 
   // if (stars) console.log(stars.filter(star => star.st_mass != null).map(star => star.st_mass).sort())
   
