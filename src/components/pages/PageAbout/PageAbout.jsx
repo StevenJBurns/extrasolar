@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Page } from '../Page/Page';
 import { actionTypes } from '../../../redux/actionTypes';
-import { Bookmarks } from '../../ui/Bookmarks';
+// import { Bookmarks } from '../../ui/Bookmarks';
 import AboutOGG from "../../../assets/audio/about.ogg";
-import "./PageAbout.scss";
 import { useStyles } from "./PageAbout.js";
+import "./PageAbout.scss";
 
 export const PageAbout = props => {
   const classes = useStyles();
@@ -30,7 +30,7 @@ export const PageAbout = props => {
       <p>While learning <a href="https://reactjs.org/">React</a>, I knew immediately the modern SPA approach would achieve the native-like look, feel and performance I envisioned. I continued on, tossing in <a href="https://redux.js.org/">Redux</a> to handle the volume of data and <a href="https://d3js.org/">D3js</a> for a simple layer of data presentation.</p>
       <p>The only future feature I would still like to add is 3D rendering most likely via <a href="https://threejs.org/">ThreeJS</a>.</p>
       <p>The current source code is <a href="https://github.com/StevenJBurns/extrasolar">here</a> and the live version is hosted straight from Github Pages.</p>
-      <Bookmarks />
+      {/* <Bookmarks /> */}
     </Page>
   );
 };

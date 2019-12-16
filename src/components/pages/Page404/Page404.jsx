@@ -6,10 +6,10 @@ import "./Page404.scss";
 export const Page404 = props => {
   return (
     <Page {...props}>
-      <div id="page-404">
+      <section id="page-404">
         <h1>Page Not Found</h1>
         <h2>Error 404</h2>
-      </div>
+      </section>
     </Page>
   );
 };
