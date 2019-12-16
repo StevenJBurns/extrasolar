@@ -1,16 +1,20 @@
 import { actionTypes } from '../../actionTypes';
 
-export const stars = (state = [], action) => {
+const initialState = {
+  isFetching: false,
+  list: [],
+  error: '',
+};
+
+export const stars = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.data.STARS_ASYNC_GET_BEGIN:
-      break;
+      return { ...state, isFetching: action.isFetching }
     case actionTypes.data.STARS_ASYNC_GET_SUCCESS:
-      {
-      return {...state, stars: action.payload};
-      }
+      return { ...state, list: action.payload };
     case actionTypes.data.STARS_ASYNC_GET_FAILED:
-      break;
+      return { ...state, error: action.error}
     default:
+      return state;
   }
-  return state;
 };

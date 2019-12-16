@@ -14,7 +14,7 @@ import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
 export const PageSolarSystems = (props) => {
   const dispatch = useDispatch();
 
-  const stars = useSelector(state => state.data.stars);
+  const stars = useSelector(state => state.data.stars.list);
   const planets = useSelector(state => state.data.planets);
 
   const {
@@ -39,7 +39,7 @@ export const PageSolarSystems = (props) => {
   return (
     <Page {...props}>
       <div id="main-solarsystems">
-        <CanvasComponent selectedSolarSystem={selectedSolarSystem} />
+        {/* <CanvasComponent selectedSolarSystem={selectedSolarSystem} /> */}
         <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem["pl_hostname"] : null}</h3>
         <div id="div-filters">
           <div id="div-filter-stars">

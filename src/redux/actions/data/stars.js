@@ -2,23 +2,24 @@ import { actionTypes } from '../../actionTypes';
 
 const urlDistinctStars = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=distinct%20pl_hostname,pl_cbflag,pl_pnum,st_mass,st_rad,st_teff,st_dist&order=pl_hostname&format=json";
 
-export const getStarsBegin = () => ({
+export const getStarsBegin = status => ({
   type: actionTypes.data.STARS_ASYNC_GET_BEGIN,
+  isFetching: status,
 });
 
 export const getStarsSuccess = stars => ({
   type: actionTypes.data.STARS_ASYNC_GET_SUCCESS,
-  payload: stars
+  payload: stars,
 });
 
 export const getStarsFailed = error => ({
   type: actionTypes.data.STARS_ASYNC_GET_FAILED,
-  payload: error
+  payload: error,
 });
 
-export const getStarsAsync = () => {
+export const getStarsThunk = () => {
   return dispatch => {
-    dispatch(getStarsBegin());
+    dispatch(getStarsBegin(true));
     return fetch(urlDistinctStars)
       .then(handleErrors)
       .then(res => res.json())
@@ -26,7 +27,8 @@ export const getStarsAsync = () => {
         dispatch(getStarsSuccess(jsonStars));
         return jsonStars;
       })
-      .catch(error => dispatch(getStarsFailed(error)));
+      .catch(error => dispatch(getStarsFailed(error)))
+      .finally(() => dispatch(getStarsBegin(false)))
     };
   };
   

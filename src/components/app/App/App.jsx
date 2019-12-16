@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import { actionTypes } from '../../../redux/actionTypes';
-import { services } from '../../../services';
+import { getStarsThunk } from '../../../redux/actions/data';
 import { PageHeader, PageFooter } from '../../pages/';
 import {
   PageHome,
@@ -16,23 +15,14 @@ import HomeOGG from '../../../assets/audio/home.ogg';
 import DataOGG from '../../../assets/audio/data.ogg';
 import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
 import AboutOGG from "../../../assets/audio/about.ogg";
+import CanvasComponent from "../../canvas/CanvasComponent";
 import './App.scss';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { stars, planets } = services;
 
   React.useEffect(() => {
-    Promise.all([stars.fetchAllStars, planets.fetchAllPlanets])
-      .then(results => {
-        const [stars, planets] = results;
-        console.log('stars: ', stars || 0);
-        console.log('planets: ', planets || 0);
-        dispatch({
-          type: actionTypes.ui.GET_LAST_DATA_FETCH_DATETIME,
-          payload: new Date(),
-        })
-      });
+    dispatch(getStarsThunk());
   }, []);
   
   return (
@@ -47,6 +37,7 @@ export const App = () => {
       </Route>
       <Route exact path='/systems'>
         <PageHeader />
+        <CanvasComponent selectedSolarSystem={{}} />
         <PageSolarSystems title="Solar Systems" audioSource={SolarSystemsOGG} />
         <PageFooter />
       </Route>
