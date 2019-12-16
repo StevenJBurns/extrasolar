@@ -19,7 +19,7 @@ const useCanvas = (draw, stars, selectedSolarSystem) => {
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
       /* update each star.theta and re-render */
-      for (let star of stars) star.theta -= 0.005 * (star.opacity * 2);
+      for (let star of stars) star.theta -= 0.001 * (star.opacity * 2);
       draw(ctx, stars);
       renderSystemStar(ctx, {})
     }
