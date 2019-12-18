@@ -7,5 +7,4 @@ export const getLastDataFetchDatetime = () => ({
 
 export const setLastDataFetchDatetime = () => ({
   type: actionTypes.ui.SET_LAST_DATA_FETCH_DATETIME,
-  payload: new Date(),
 });

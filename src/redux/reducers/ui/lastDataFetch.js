@@ -6,16 +6,17 @@ import { actionTypes } from "../../actionTypes";
 // if (localStorage.getItem('lastFetch') === null)
 //   localStorage.setItem('lastFetch', (Date.now() - ONE_HOUR).toString());
 
-const initialState = JSON.parse(localStorage.getItem("lastDataFetch")) || 0;
+// const initialState = JSON.parse(localStorage.getItem("lastDataFetch")) || new Date();
+const initialState = new Date();
 
 export const lastDataFetch = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ui.LAST_DATA_FETCH_DATETIME_GET:
+    case actionTypes.ui.GET_LAST_DATA_FETCH_DATETIME:
       return {...state, lastDataFetch: action.payload}
-    case actionTypes.ui.LAST_DATA_FETCH_DATETIME_SET:
+    case actionTypes.ui.SET_LAST_DATA_FETCH_DATETIME:
       localStorage.setItem('lastDataFetch', action.payload);
-      return state;
+      return { ...state, lastDataFetch: new Date() };
     default:
-      return 0;
+      return state;
   };
 };
