@@ -13,7 +13,7 @@ export const stars = (state = initialState, action) => {
     case actionTypes.data.STARS_ASYNC_GET_SUCCESS:
       return { ...state, list: action.payload };
     case actionTypes.data.STARS_ASYNC_GET_FAILED:
-      return { ...state, error: action.error}
+      return { ...state, error: action.error }
     default:
       return state;
   }

@@ -1,13 +1,19 @@
 import { actionTypes } from "../../actionTypes";
 
-export const planets = (state = [], action) => {
+const initialState = {
+  isFetching: false,
+  list: [],
+  error: '',
+};
+
+export const planets = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.data.PLANETS_ASYNC_GET_BEGIN:
-      break;
+      return { ...state, isFetching: action.isFetching }
     case actionTypes.data.PLANETS_ASYNC_GET_SUCCESS:
-      return {...state, planets: action.payload};
+      return { ...state, list: action.payload };
     case actionTypes.data.PLANETS_ASYNC_GET_FAILED:
-      break;
+      return { ...state, error: action.error};
     default:
       return state;
   }
