@@ -10,7 +10,7 @@ export const selectCategoricalSystemSizes = () => createSelector(
     /* Sort the Set and .map() it to give each category a label and initialize each to 0 */
     const arr = [...set].sort().map(count => ({"planetCount" : count, "count" : 0}));
 
-    /* iterate over the */
+    /* iterate over the categorical sizes ++ incrememnt on each occirance */
     for (let size of arr) {
       for (let star of stars) {
         if (star.pl_pnum === size["planetCount"]) size["count"]++;
