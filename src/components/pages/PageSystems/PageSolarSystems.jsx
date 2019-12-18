@@ -10,34 +10,35 @@ import CanvasComponent from "../../canvas/CanvasComponent";
 import "./PageSolarSystems.scss";
 import "react-input-range/lib/css/index.css";
 import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
+import { LinearProgress } from '@material-ui/core';
 
 export const PageSolarSystems = (props) => {
   const dispatch = useDispatch();
 
   const stars = useSelector(state => state.data.stars.list);
+  const isFetchingStars = useSelector(state => state.data.stars.isFetching);
   const planets = useSelector(state => state.data.planets);
 
   const {
-    // stars,
-    // planets,
     selectedSolarSystem,
     changeSelectedSystem,
-    // changeAudioSource,
   } = props;
   
   React.useEffect(() => {
     dispatch(changeAudioSource(SolarSystemsOGG));
-
-    if (!stars || stars.length === 0) console.log('no STARS data', stars);
   }, []);
 
-  // if (stars) console.log(stars.filter(star => star.st_mass != null).map(star => star.st_mass).sort())
-  
+  React.useEffect(() => {
+    if (!stars || stars.length === 0) console.log('no STARS data', stars);
+    if (stars) console.log(stars);
+  }, [stars])
+
   // let filteredStars = stars ? stars.filter(star => star.pl_pnum <= planetCount.max && star.pl_pnum >= planetCount.min) : [];
   // let childPlanets = (planets && selectedSolarSystem) ? planets.filter(p => p["pl_hostname"] === selectedSolarSystem["pl_hostname"]) : null;
 
   return (
     <Page {...props}>
+      { isFetchingStars && <LinearProgress />}
       <div id="main-solarsystems">
         {/* <CanvasComponent selectedSolarSystem={selectedSolarSystem} /> */}
         <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem["pl_hostname"] : null}</h3>

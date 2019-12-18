@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Typography,
   Divider,
@@ -15,6 +15,9 @@ import {
   LinearProgress,
 } from '@material-ui/core';
 import { actionTypes } from '../../../redux/actionTypes';
+import { selectTotalStarCount } from '../../../redux/selectors/selectTotalStarCount';
+import { selectTotalPlanetCount } from '../../../redux/selectors/selectTotalPlanetCount';
+import { selectCategoricalSystemSizes } from '../../../redux/selectors/selectCatergoricalSystemSizes';
 import { Page } from '../Page/Page';
 import{ BarChart}  from "../../charts/BarChart";
 import { StarsPieChart } from "../../charts/StarsPieChart";
@@ -35,28 +38,17 @@ export const PageData = ({stars, planets, ...props}) => {
   const dispatch = useDispatch();
 
   const selectStars = useSelector(state => state.data.stars);
+  const countStars = useSelector(selectTotalStarCount()) || 'No Star Data';
+  const countPlanets = useSelector(selectTotalPlanetCount()) || 'No Planet Data';
+  const catergoricalData = useSelector(selectCategoricalSystemSizes()) || [];
 
   React.useEffect(() => {
     dispatch({type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: DataOGG});
   }, []);
 
-  let setPlanetCount = new Set();
-  let arrPlanetCount = useSelector(state => state.data.planets);
-
-  // if (stars) {
-  //   stars.forEach((star) => setPlanetCount.add(star.pl_pnum));
-  //   arrPlanetCount = [...setPlanetCount].sort().map((count, index) => ({"planetCount" : count, "count" : 0}))
-
-  //   for (let size of arrPlanetCount) {
-  //     for (let star of stars) {
-  //       if (star.pl_pnum === size["planetCount"]) size["count"]++;
-  //     }
-  //   }
-  // }
-
   if (selectStars.isFetching) return (
     <Page {...props}>
-      <LinearProgress />
+      <CircularProgress />
     </Page>
   );
 
@@ -78,8 +70,10 @@ export const PageData = ({stars, planets, ...props}) => {
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell className={classes.tableCell}>Total Star Count:{selectStars.list.length}</TableCell>
-              <TableCell className={classes.tableCell}>Total Planet Count: {planets ? planets.length : 0}</TableCell>
+              <TableCell className={classes.tableCell}>Total Star Count: {countStars}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className={classes.tableCell}>Total Planet Count: {countPlanets}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -96,7 +90,7 @@ export const PageData = ({stars, planets, ...props}) => {
           </thead>
           <tbody>
             {
-              arrPlanetCount.map(x => {
+              catergoricalData.map(x => {
                 return (<tr key={x["planetCount"]}>
                   <td>{x["planetCount"]}</td>
                   <td>{x["count"]}</td>
@@ -110,7 +104,7 @@ export const PageData = ({stars, planets, ...props}) => {
             </tr>
           </tfoot>
         </table>
-        { arrPlanetCount ? <BarChart planetData={ arrPlanetCount } /> : null }
+        {/* { arrPlanetCount ? <BarChart planetData={ arrPlanetCount } /> : null } */}
         <Typography paragraph align='justify'>The ability to find exoplanets is obviously very limited given current technology and the vast distances to even the closest stars. Most solar systems have only been observed to have 1 single planet as shown in the table and chart above. Systems containing 7 and 8 planets have only been discovered once. Because of the large disparity in that data the chart plots the number of exo-systems containing X planets on an exponential Y scale. Scientists estimate the average exo system should contain several planets of varying sizes but discovering them will require advances in detection technology. </Typography>
       </section>
       <section>
