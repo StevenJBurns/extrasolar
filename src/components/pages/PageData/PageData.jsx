@@ -18,6 +18,7 @@ import { actionTypes } from '../../../redux/actionTypes';
 import { selectTotalStarCount } from '../../../redux/selectors/selectTotalStarCount';
 import { selectTotalPlanetCount } from '../../../redux/selectors/selectTotalPlanetCount';
 import { selectCategoricalSystemSizes } from '../../../redux/selectors/selectCatergoricalSystemSizes';
+import { selectLargestStar } from '../../../redux/selectors/selectLargestStar';
 import { Page } from '../Page/Page';
 import{ BarChart}  from "../../charts/BarChart";
 import { StarsPieChart } from "../../charts/StarsPieChart";
@@ -33,27 +34,28 @@ const useStyles = makeStyles({
   },
 });
 
-export const PageData = ({stars, planets, ...props}) => {
+export const PageData = props => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const selectStars = useSelector(state => state.data.stars);
+  const selectPlanets = useSelector(state => state.data.planets);
   const countStars = useSelector(selectTotalStarCount()) || 'No Star Data';
   const countPlanets = useSelector(selectTotalPlanetCount()) || 'No Planet Data';
   const catergoricalData = useSelector(selectCategoricalSystemSizes()) || [];
+  const largestStar = useSelector(selectLargestStar()) || { pl_hostname: '' };
 
   React.useEffect(() => {
     dispatch({type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: DataOGG});
   }, []);
 
-  if (selectStars.isFetching) return (
-    <Page {...props}>
-      <CircularProgress />
-    </Page>
-  );
+  React.useEffect(() => {
+    largestStar && console.log('largest star: ', largestStar);
+  }, [largestStar]);
 
   return (
     <Page {...props}>
+      { selectStars.isFetching && <LinearProgress /> }
       <Typography variant='h4'>DATA</Typography>
       <Divider />
       <Typography paragraph align='justify'>The available data from NASA comes from a SQL table view that combines star and planet data together. While this allows for compact and less-effort storage, the hierarchical or relationship of planets to stars is lost. Those relationships are rebuilt in JavaScript files of these web pages.</Typography>
@@ -100,17 +102,20 @@ export const PageData = ({stars, planets, ...props}) => {
           </tbody>
           <tfoot>
             <tr>
-              <th colSpan={2}>Total Planets: {planets ? planets.length: 0}</th>
+              <th colSpan={2}>Total Planets: {selectPlanets.isFetching ? <CircularProgress/> : countPlanets }</th>
             </tr>
           </tfoot>
         </table>
-        {/* { arrPlanetCount ? <BarChart planetData={ arrPlanetCount } /> : null } */}
+        { catergoricalData.length ? <BarChart planetData={ catergoricalData } /> : null }
         <Typography paragraph align='justify'>The ability to find exoplanets is obviously very limited given current technology and the vast distances to even the closest stars. Most solar systems have only been observed to have 1 single planet as shown in the table and chart above. Systems containing 7 and 8 planets have only been discovered once. Because of the large disparity in that data the chart plots the number of exo-systems containing X planets on an exponential Y scale. Scientists estimate the average exo system should contain several planets of varying sizes but discovering them will require advances in detection technology. </Typography>
       </section>
-      <section>
-        {/* <StarsPieChart starData={stars} /> */}
+      <section id="section-chart-circumbinaries">
+        <StarsPieChart starData={selectStars.list || []} />
       </section>
+      <Typography variant='h6'>Largest Star: {largestStar.pl_hostname || <CircularProgress />}</Typography>
+      <Typography variant='h6'>Heaviest Star:</Typography>
+      <Typography variant='h6'>Largest Planet:</Typography>
+      <Typography variant='h6'>Heaviest Planet:</Typography>
     </Page>
   );
 };
-
