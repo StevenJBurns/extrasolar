@@ -13,17 +13,21 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core/';
+import { selectLastDataFetch } from '../../../redux/selectors/selectLastDataFetchDatetime';
 import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';
 import AppLogo from "../../../assets/logo/extrasolar.png";
 import './PageHeader.scss';
+import { useSelector } from "react-redux";
 
 export const PageHeader = () => {
   /* for React Router NavLink active styling */
   const activeStyle = { display: 'none' };
 
   const isOnline = useOnlineStatus();
+
+  const lastFetch = useSelector(selectLastDataFetch());
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
@@ -84,6 +88,7 @@ export const PageHeader = () => {
         <Grid container direction="column" style={{flexGrow: 1}}>
           <Typography className={classes.header} variant="h3" noWrap>ExtraSolar</Typography>
           <Typography className={classes.header} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
+          <Typography className={classes.header} paragraph noWrap>{lastFetch.toString()}</Typography>
         </Grid>
         <Hidden xsDown>
           <MenuList>
