@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { getStarsThunk, getPlanetsThunk } from '../../../redux/actions/data';
 import { PageHeader, PageFooter } from '../../pages/';
 import {
