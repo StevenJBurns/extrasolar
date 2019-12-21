@@ -6,7 +6,7 @@ import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
 import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
 import { Page } from '../Page/Page';
 import { actionTypes } from '../../../redux/actionTypes';
-import { AppFooter } from '../../app/AppFooter';
+import { PageFooter } from '../../pages/PageFooter/PageFooter';
 import HomeOGG from '../../../assets/audio/home.ogg';
 import "./PageHome.scss";
 
@@ -33,7 +33,7 @@ export const PageHome = props => {
           <li><Link to="./about">ABOUT</Link></li>
         </ul>
       </nav>
-      <AppFooter />
+      <PageFooter />
     </div>
   );
 };
