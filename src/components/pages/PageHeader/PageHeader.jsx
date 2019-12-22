@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,6 +7,7 @@ import {
   AppBar,
   Hidden,
   Drawer,
+  Divider,
   Grid,
   MenuList,
   MenuItem,
@@ -19,18 +21,8 @@ import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';
 import AppLogo from "../../../assets/logo/extrasolar.png";
 import './PageHeader.scss';
-import { useSelector } from "react-redux";
 
 export const PageHeader = () => {
-  /* for React Router NavLink active styling */
-  const activeStyle = { display: 'none' };
-
-  const isOnline = useOnlineStatus();
-
-  const lastFetch = useSelector(selectLastDataFetch());
-
-  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-
   const useStyles = makeStyles(theme =>
     ({
       root: {
@@ -46,13 +38,15 @@ export const PageHeader = () => {
       },
       drawer: {
         paper: {
-          minWidth: '120px',
+          width: '280px',
+          backgroundColor: 'palegoldenrod',
         },
         '& a' : {
           color: '#1F1F1F',
         },
       },
       menuList: {
+        width: '240px',
       },
       menuItem: {
         padding: 0,
@@ -65,15 +59,21 @@ export const PageHeader = () => {
         display: 'table-cell',
         verticalAlign: 'middle',
         textAlign: 'center',
-      }
+      },
     })
   );
-
+  
   const classes = useStyles();
-
-  const handleHamburgerClick = e => setIsDrawerOpen(!isDrawerOpen);
+  /* for React Router NavLink active styling */
+  const activeStyle = { display: 'none' };
 
   const { pathname } = useLocation();
+  const isOnline = useOnlineStatus();
+  const lastFetch = useSelector(selectLastDataFetch());
+
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+
+  const handleHamburgerClick = e => setIsDrawerOpen(!isDrawerOpen);
 
   React.useEffect(() => {
     setIsDrawerOpen(false);
@@ -88,7 +88,7 @@ export const PageHeader = () => {
         <Grid container direction="column" style={{flexGrow: 1}}>
           <Typography className={classes.header} variant="h3" noWrap>ExtraSolar</Typography>
           <Typography className={classes.header} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
-          <Typography className={classes.header} paragraph noWrap>{lastFetch.toString()}</Typography>
+          <Typography className={classes.header} paragraph noWrap>{new Date(lastFetch).toLocaleString("en-US")}</Typography>
         </Grid>
         <Hidden xsDown>
           <MenuList>
@@ -123,8 +123,13 @@ export const PageHeader = () => {
           </IconButton>
         </Hidden>
       </Toolbar>
-      <Drawer className={classes.drawer} open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} variant='temporary'>
-        <MenuList >
+      <Drawer
+        className={classes.drawer}
+        PaperProps={{className: classes.drawer.paper}}
+        onClose={() => setIsDrawerOpen(false)} variant='temporary'
+        open={isDrawerOpen}
+      >
+        <MenuList className={classes.menuList}>
           <MenuItem>
             <NavLink to='/'>Home</NavLink>
           </MenuItem>
@@ -138,6 +143,7 @@ export const PageHeader = () => {
             <NavLink to='/about'>About</NavLink>
           </MenuItem>
         </MenuList>
+        <Divider />
       </Drawer>
     </AppBar>
   );
