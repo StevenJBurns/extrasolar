@@ -25,7 +25,7 @@ export const getStarsThunk = () => {
       .then(handleErrors)
       .then(res => res.json())
       .then(jsonStars => dispatch(getStarsSuccess(jsonStars)))
-      .then(() => dispatch(setLastDataFetchDatetime()))
+      .then(() => dispatch(setLastDataFetchDatetime(new Date())))
       .catch(error => dispatch(getStarsFailed(error)))
       .finally(() => dispatch(getStarsBegin(false)))
     };

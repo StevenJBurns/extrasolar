@@ -25,7 +25,7 @@ export const getPlanetsThunk = () => {
       .then(handleErrors)
       .then(res => res.json())
       .then(jsonPlanets => dispatch(getPlanetsSuccess(jsonPlanets)))
-      .then(() => dispatch(setLastDataFetchDatetime()))
+      .then(() => dispatch(setLastDataFetchDatetime(new Date())))
       .catch(error => dispatch(getPlanetsFailed(error)))
       .finally(() => dispatch(getPlanetsBegin(false)))
     };

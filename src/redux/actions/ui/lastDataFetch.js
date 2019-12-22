@@ -5,6 +5,7 @@ export const getLastDataFetchDatetime = () => ({
   payload: JSON.parse(localStorage.getItem("lastDataFetch"))
 });
 
-export const setLastDataFetchDatetime = () => ({
+export const setLastDataFetchDatetime = date => ({
   type: actionTypes.ui.SET_LAST_DATA_FETCH_DATETIME,
+  payload: date,
 });

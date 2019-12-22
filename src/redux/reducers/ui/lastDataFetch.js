@@ -15,7 +15,7 @@ export const lastDataFetch = (state = initialState, action) => {
       return {...state, lastDataFetch: action.payload}
     case actionTypes.ui.SET_LAST_DATA_FETCH_DATETIME:
       localStorage.setItem('lastDataFetch', action.payload);
-      return { ...state, lastDataFetch: new Date() };
+      return action.payload;
     default:
       return state;
   };
