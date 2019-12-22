@@ -34,8 +34,5 @@ export const StarsPieChart = props => {
     }
   });
 }
-
-  console.table('system types: ', dataCircumbinaries);
-
   return (<div id="div-chart-circumbinaries"></div>);
 };
