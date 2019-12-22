@@ -23,6 +23,10 @@ import AppLogo from "../../../assets/logo/extrasolar.png";
 import './PageHeader.scss';
 
 export const PageHeader = () => {
+  const { pathname } = useLocation();
+  const isOnline = useOnlineStatus();
+  const lastFetch = useSelector(selectLastDataFetch());
+
   const useStyles = makeStyles(theme =>
     ({
       root: {
@@ -67,17 +71,11 @@ export const PageHeader = () => {
   /* for React Router NavLink active styling */
   const activeStyle = { display: 'none' };
 
-  const { pathname } = useLocation();
-  const isOnline = useOnlineStatus();
-  const lastFetch = useSelector(selectLastDataFetch());
-
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   const handleHamburgerClick = e => setIsDrawerOpen(!isDrawerOpen);
 
-  React.useEffect(() => {
-    setIsDrawerOpen(false);
-  }, [pathname]);
+  React.useEffect(() => setIsDrawerOpen(false), [pathname]);
 
   return (
     <AppBar position="relative" className={classes.root}>
