@@ -49,10 +49,6 @@ export const PageData = props => {
     dispatch({type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: DataOGG});
   }, []);
 
-  React.useEffect(() => {
-    largestStar && console.log('largest star: ', largestStar);
-  }, [largestStar]);
-
   return (
     <Page {...props}>
       { selectStars.isFetching && <LinearProgress /> }
