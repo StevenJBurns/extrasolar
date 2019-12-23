@@ -18,10 +18,11 @@ import { actionTypes } from '../../../redux/actionTypes';
 import { selectTotalStarCount } from '../../../redux/selectors/selectTotalStarCount';
 import { selectTotalPlanetCount } from '../../../redux/selectors/selectTotalPlanetCount';
 import { selectCategoricalSystemSizes } from '../../../redux/selectors/selectCatergoricalSystemSizes';
-import { selectLargestStar } from '../../../redux/selectors/selectLargestStar';
+import { selectTopLargestStars } from '../../../redux/selectors/selectTopLargestStars';
 import { Page } from '../Page/Page';
-import{ BarChart}  from "../../charts/BarChart";
+import { BarChart}  from "../../charts/BarChart";
 import { StarsPieChart } from "../../charts/StarsPieChart";
+import { TopLargestStarsTable } from '../../tables/TopLargestStarsTable';
 // import { ScatterPlotChart } from "../../ui/ScatterPlotChart";
 import DataOGG from '../../../assets/audio/data.ogg';
 import "./PageData.scss";
@@ -43,11 +44,15 @@ export const PageData = props => {
   const countStars = useSelector(selectTotalStarCount()) || 'No Star Data';
   const countPlanets = useSelector(selectTotalPlanetCount()) || 'No Planet Data';
   const catergoricalData = useSelector(selectCategoricalSystemSizes()) || [];
-  const largestStar = useSelector(selectLargestStar()) || { pl_hostname: '' };
+  const largestStars = useSelector(selectTopLargestStars()) || [];
 
   React.useEffect(() => {
     dispatch({type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: DataOGG});
   }, []);
+
+  React.useEffect(() => {
+    console.log('largest start:', largestStars.map(star => ({ name: star.pl_hostname, radius: star.st_rad})));
+  }, [largestStars])
 
   return (
     <Page {...props}>
@@ -108,7 +113,8 @@ export const PageData = props => {
       <section id="section-chart-circumbinaries">
         <StarsPieChart starData={selectStars.list || []} />
       </section>
-      <Typography variant='h6'>Largest Star: {largestStar.pl_hostname || <CircularProgress />}</Typography>
+      <TopLargestStarsTable data={largestStars} />
+      <Typography variant='h6'>Largest Star: {largestStars.length || <CircularProgress />}</Typography>
       <Typography variant='h6'>Heaviest Star:</Typography>
       <Typography variant='h6'>Largest Planet:</Typography>
       <Typography variant='h6'>Heaviest Planet:</Typography>
