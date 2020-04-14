@@ -1,12 +1,21 @@
 import { combineReducers } from "redux";
-import { data } from "./data";
-import { filters } from "./filters/filters";
-import { sorting } from "./sorting/sorting";
-import { ui } from "./ui";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { data } from "redux/reducers/data";
+import { filters } from "redux/reducers//filters/filters";
+import { sorting } from "redux/reducers//sorting/sorting";
+import { ui } from "redux/reducers//ui";
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   data, 
   filters,
   sorting,
   ui,
 });
+
+const persistConfig = {
+  key: 'root',
+  storage: storage,
+};
+
+export const persistedRootReducer = persistReducer(persistConfig, rootReducer);
