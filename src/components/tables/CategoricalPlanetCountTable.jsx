@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectCategoricalSystemSizes } from '../../redux/selectors/selectCatergoricalSystemSizes';
 import {
@@ -7,16 +6,13 @@ import {
   Table,
   TableHead,
   TableBody,
-  TableRow,
   TableCell,
-  Typography,
-  makeStyles,
 } from '@material-ui/core';
 
-export const CategoricalPlanetCountTable = props => {
+export const CategoricalPlanetCountTable = () => {
   const data = useSelector(selectCategoricalSystemSizes());
 
-  React.useEffect(() => console.log('data: ', data), []);
+  React.useEffect(() => console.log('data: ', data), [data]);
 
   return (
     <>
