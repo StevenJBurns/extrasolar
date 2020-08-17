@@ -1,12 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { actionTypes } from '../../redux/actionTypes';
 import { useSelector, useDispatch } from 'react-redux';
 import { IconButton } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import VolumeOff from '@material-ui/icons/VolumeOff';
 import VolumeUp from '@material-ui/icons/VolumeUp';
-import { faVolumeUp, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 import './AudioToggleButton.scss';
 
 export const AudioToggleButton = () => {
