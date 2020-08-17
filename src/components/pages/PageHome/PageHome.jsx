@@ -1,10 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
 import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
-import { Page } from '../Page/Page';
 import { actionTypes } from '../../../redux/actionTypes';
 import { PageFooter } from '../../pages/PageFooter/PageFooter';
 import HomeOGG from '../../../assets/audio/home.ogg';
@@ -18,7 +16,7 @@ export const PageHome = props => {
 
   React.useEffect(() => {
     dispatch({ type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: HomeOGG });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="page-home">
