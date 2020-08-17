@@ -19,7 +19,6 @@ import { selectLastDataFetch } from '../../../redux/selectors/selectLastDataFetc
 import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';
-import AppLogo from "../../../assets/logo/extrasolar.png";
 import './PageHeader.scss';
 
 export const PageHeader = () => {

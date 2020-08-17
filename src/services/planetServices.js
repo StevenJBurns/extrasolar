@@ -2,8 +2,8 @@ const urlDistinctPlanets = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/ns
 const urlPlanetBySolarSystemId = ';'
 const urlPlanetById = '';
 
-export const fetchAllPlanets = fetch(urlDistinctPlanets).then(data => data.json());
+export const fetchAllPlanets = () => fetch(urlDistinctPlanets).then(data => data.json());
 
-export const fetchPlanetById = fetch(urlPlanetById).then(planet => planet.json());
+export const fetchPlanetById = id => fetch(urlPlanetById).then(planet => planet.json());
 
-export const fetchPlanetBySolarSystemId = fetch(urlDistinctPlanets)
+export const fetchPlanetBySolarSystemId = id => fetch(urlDistinctPlanets)
