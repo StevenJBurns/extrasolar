@@ -25,7 +25,7 @@ const useCanvas = (draw, stars, selectedSolarSystem) => {
     }
 
     return () => cancelAnimationFrame(frame);
-  }, [stars]);
+  }, [draw, stars]);
 
   return canvasRef;
 };
@@ -62,7 +62,7 @@ export const CanvasComponent = ({ selectedSolarSystem }) => {
 
   React.useEffect(() => {
     if(selectedSolarSystem) setSolarSystem(selectedSolarSystem);
-  }, [solarSystem]);
+  }, [solarSystem, selectedSolarSystem]);
 
   const canvasRef = useCanvas(renderStarField, starField, solarSystem);
   
