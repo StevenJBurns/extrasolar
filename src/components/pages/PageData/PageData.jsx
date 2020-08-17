@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
 import {
-  Grid,
   Typography,
   Divider,
   TableContainer,
@@ -18,14 +16,11 @@ import {
 import { actionTypes } from '../../../redux/actionTypes';
 import { selectTotalStarCount } from '../../../redux/selectors/selectTotalStarCount';
 import { selectTotalPlanetCount } from '../../../redux/selectors/selectTotalPlanetCount';
-import { selectCategoricalSystemSizes } from '../../../redux/selectors/selectCatergoricalSystemSizes';
 import { selectTopLargestStars } from '../../../redux/selectors/selectTopLargestStars';
 import { Page } from '../Page/Page';
-import { BarChart}  from "../../charts/BarChart";
 import { CategoricalPlanetCountTable} from '../../tables/CategoricalPlanetCountTable';
 import { StarsPieChart } from "../../charts/StarsPieChart";
 import { TopLargestStarsTable } from '../../tables/TopLargestStarsTable';
-// import { ScatterPlotChart } from "../../ui/ScatterPlotChart";
 import DataOGG from '../../../assets/audio/data.ogg';
 import "./PageData.scss";
 
@@ -44,15 +39,13 @@ export const PageData = props => {
 
   const lastDataFetch = useSelector(state => state.ui.lastDataFetch);
   const selectAllStars = useSelector(state => state.data.stars);
-  const selectAllPlanets = useSelector(state => state.data.planets);
   const countStars = useSelector(selectTotalStarCount()) || [];
   const countPlanets = useSelector(selectTotalPlanetCount()) || [];
-  const catergoricalData = useSelector(selectCategoricalSystemSizes()) || [];
   const largestStars = useSelector(selectTopLargestStars()) || [];
 
   React.useEffect(() => {
     dispatch({type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: DataOGG});
-  }, []);
+  }, [dispatch]);
 
   React.useEffect(() => {
     console.log('largest star:',
@@ -62,7 +55,7 @@ export const PageData = props => {
           planetCount: star.pl_num,
           radius: star.st_rad
         })));
-  }, [largestStars])
+  }, [dispatch, largestStars])
 
   return (
     <Page {...props}>
