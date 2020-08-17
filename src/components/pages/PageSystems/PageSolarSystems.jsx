@@ -2,31 +2,20 @@ import React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { Page } from '../Page/Page';
 import { changeAudioSource, changeSelectedSolarSystem } from '../../../redux/actions/ui';
-
-import CanvasComponent from "../../canvas/CanvasComponent";
-// import InputRange from 'react-input-range';
-// import VirtualList from 'react-tiny-virtual-list';
-
-import "./PageSolarSystems.scss";
-import "react-input-range/lib/css/index.css";
-import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
 import { LinearProgress } from '@material-ui/core';
+import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
+import "react-input-range/lib/css/index.css";
+import "./PageSolarSystems.scss";
 
-export const PageSolarSystems = (props) => {
+export const PageSolarSystems = props => {
   const dispatch = useDispatch();
-
-  const stars = useSelector(state => state.data.stars.list);
   const isFetchingStars = useSelector(state => state.data.stars.isFetching);
-  const planets = useSelector(state => state.data.planets);
 
-  const {
-    selectedSolarSystem,
-    changeSelectedSystem,
-  } = props;
+  const { selectedSolarSystem } = props;
   
   React.useEffect(() => {
     dispatch(changeAudioSource(SolarSystemsOGG));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Page {...props}>
