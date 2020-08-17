@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Typography, Divider, makeStyles } from '@material-ui/core';
 import { Page } from '../Page/Page';
@@ -21,7 +20,7 @@ export const PageAbout = props => {
 
   React.useEffect(() => {
     dispatch({ type: actionTypes.ui.CHANGE_AUDIO_SOURCE, payload: AboutOGG});
-  }, []);
+  }, [dispatch]);
 
   return (
     <Page className={classes.main} {...props}>

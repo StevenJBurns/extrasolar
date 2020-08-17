@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Table,
   TableHead,
@@ -40,29 +39,29 @@ export const TopLargestStarsTable = ({data}) => {
 
   return (
     <>
-    <Typography className={classes.tableTitle} variant="h6">
-      {'Top Largest Radius Stars'.toUpperCase()}
-    </Typography>
-    <Table size="small" className={classes.tableRoot}>
-      <TableHead className={classes.tableHead}>
-        <TableRow>
-          <TableCell>Star Name</TableCell>
-          <TableCell>Planets</TableCell>
-          <TableCell>Radius<sub><strong>&#x2609;</strong></sub></TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody >
-        {
-          data.map((star, index) => (
-            <TableRow key={index} className={classes.body}>
-              <TableCell className={classes.body} variant='body'>{star.pl_hostname}</TableCell>
-              <TableCell className={classes.body} variant="body">{star.pl_pnum}</TableCell>
-              <TableCell className={classes.body} variant='body'>{star.st_rad.toFixed(2)}</TableCell>
-            </TableRow>
-          ))
-        }
-      </TableBody>
-    </Table>
+      <Typography className={classes.tableTitle} variant="h6">
+        {'Top Largest Radius Stars'.toUpperCase()}
+      </Typography>
+      <Table size="small" className={classes.tableRoot}>
+        <TableHead className={classes.tableHead}>
+          <TableRow>
+            <TableCell>Star Name</TableCell>
+            <TableCell>Planets</TableCell>
+            <TableCell>Radius<sub><strong>&#x2609;</strong></sub></TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody >
+          {
+            data.map((star, index) => (
+              <TableRow key={index} className={classes.body}>
+                <TableCell className={classes.body} variant='body'>{star.pl_hostname}</TableCell>
+                <TableCell className={classes.body} variant="body">{star.pl_pnum}</TableCell>
+                <TableCell className={classes.body} variant='body'>{star.st_rad.toFixed(2)}</TableCell>
+              </TableRow>
+            ))
+          }
+        </TableBody>
+      </Table>
     </>
   );
 };
