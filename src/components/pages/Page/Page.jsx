@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container, makeStyles } from '@material-ui/core/'
-import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
+import { Container, makeStyles } from '@material-ui/core/';
+import { useDocumentTitle } from 'hooks/useDocumentTitle';
 
 const useStyles = makeStyles({
   container: {

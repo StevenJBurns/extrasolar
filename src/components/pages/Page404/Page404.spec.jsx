@@ -23,5 +23,5 @@ describe('<Page404 />', () => {
 		const { page404, debug } = setup();
 		expect(page404()).toBeInTheDocument();
 		debug();
-	})
+	});
 });
