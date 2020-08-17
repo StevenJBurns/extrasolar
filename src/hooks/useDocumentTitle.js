@@ -7,4 +7,4 @@ export const useDocumentTitle = pageTitle => {
     pageTitle ? setTitle(`ExtraSolar \u2022 ${pageTitle}`) : setTitle('ExtraSolar');
     document.title = title;
   }, [pageTitle, title]);
-}
+};
