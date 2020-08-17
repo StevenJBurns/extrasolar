@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { batch, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { getStarsThunk, getPlanetsThunk } from '../../../redux/actions/data';
 import { PageHeader, PageFooter } from '../../pages/';
@@ -24,7 +23,7 @@ export const App = () => {
   React.useEffect(() => {
     dispatch(getStarsThunk());
     dispatch(getPlanetsThunk());
-  }, []);
+  }, [dispatch]);
   
   return (
     <Switch>
