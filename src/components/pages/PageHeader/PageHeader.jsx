@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   AppBar,
@@ -15,18 +14,18 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core/';
-import { selectLastDataFetch } from '../../../redux/selectors/selectLastDataFetchDatetime';
-import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
+import { selectLastDataFetch } from 'redux/selectors/selectLastDataFetchDatetime';
+import { useOnlineStatus } from 'hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';
 import './PageHeader.scss';
 
 export const PageHeader = () => {
   const { pathname } = useLocation();
-  const isOnline = useOnlineStatus();
   const lastFetch = useSelector(selectLastDataFetch());
+  const isOnline = useOnlineStatus();
 
-  const useStyles = makeStyles(theme =>
+  const useStyles = makeStyles(() =>
     ({
       root: {
         background: 'linear-gradient(290deg, goldenrod 40%, darkgoldenrod 40%)',
@@ -79,9 +78,6 @@ export const PageHeader = () => {
   return (
     <AppBar position="relative" className={classes.root}>
       <Toolbar className={classes.toolbar}>
-        {/* <Hidden xsDown>
-          <img id="app-logo" src={ AppLogo } alt="ExtraSolar Logo" />
-        </Hidden> */}
         <Grid container direction="column" style={{flexGrow: 1}}>
           <Typography className={classes.header} variant="h3" noWrap>ExtraSolar</Typography>
           <Typography className={classes.header} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
