@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectCategoricalSystemSizes } from '../../redux/selectors/selectCatergoricalSystemSizes';
+import { selectCategoricalSystemSizes } from '../../state/selectors/selectCatergoricalSystemSizes';
 import {
   TableContainer,
   Table,

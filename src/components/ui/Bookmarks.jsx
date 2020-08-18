@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionTypes } from '../../redux/actionTypes';
+import { actionTypes } from '../../state/actionTypes';
 import './Bookmarks.scss';
 
 const dataz = [

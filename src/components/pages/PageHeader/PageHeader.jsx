@@ -14,7 +14,7 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core/';
-import { selectLastDataFetch } from 'redux/selectors/selectLastDataFetchDatetime';
+import { selectLastDataFetch } from 'state/selectors/selectLastDataFetchDatetime';
 import { useOnlineStatus } from 'hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';

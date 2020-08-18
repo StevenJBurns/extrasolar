@@ -13,10 +13,10 @@ import {
   CircularProgress,
   LinearProgress,
 } from '@material-ui/core';
-import { actionTypes } from 'redux/actionTypes';
-import { selectTotalStarCount } from 'redux/selectors/selectTotalStarCount';
-import { selectTotalPlanetCount } from 'redux/selectors/selectTotalPlanetCount';
-import { selectTopLargestStars } from 'redux/selectors/selectTopLargestStars';
+import { actionTypes } from 'state/actionTypes';
+import { selectTotalStarCount } from 'state/selectors/selectTotalStarCount';
+import { selectTotalPlanetCount } from 'state/selectors/selectTotalPlanetCount';
+import { selectTopLargestStars } from 'state/selectors/selectTopLargestStars';
 import { Page } from '../Page/Page';
 import { CategoricalPlanetCountTable} from '../../tables/CategoricalPlanetCountTable';
 import { StarsPieChart } from "../../charts/StarsPieChart";

@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-import { persistedRootReducer as rootReducer } from 'redux/reducers';
+import { persistedRootReducer as rootReducer } from 'state/reducers';
 
 const initialState = {
   data: {},

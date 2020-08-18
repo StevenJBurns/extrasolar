@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { changeAudioSource, changeSelectedSolarSystem } from 'redux/actions/ui';
+import { changeAudioSource, changeSelectedSolarSystem } from 'state/actions/ui';
 import { LinearProgress } from '@material-ui/core';
 import SolarSystemsOGG from 'assets/audio/solarsystems.ogg';
 import 'react-input-range/lib/css/index.css';

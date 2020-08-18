@@ -1,5 +1,5 @@
 import React from 'react';
-import { actionTypes } from '../../redux/actionTypes';
+import { actionTypes } from '../../state/actionTypes';
 import { useSelector, useDispatch } from 'react-redux';
 import { IconButton } from '@material-ui/core';
 import VolumeOff from '@material-ui/icons/VolumeOff';

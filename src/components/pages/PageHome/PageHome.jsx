@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useOnlineStatus } from 'hooks/useOnlineStatus';
-import { actionTypes } from 'redux/actionTypes';
+import { actionTypes } from 'state/actionTypes';
 import { PageFooter } from 'components/pages/PageFooter/PageFooter';
 import { Page } from 'components/pages/Page/Page';
 import HomeOGG from 'assets/audio/home.ogg';

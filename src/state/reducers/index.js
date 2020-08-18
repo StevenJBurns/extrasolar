@@ -1,10 +1,10 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { data } from "redux/reducers/data";
-import { filters } from "redux/reducers//filters/filters";
-import { sorting } from "redux/reducers//sorting/sorting";
-import { ui } from "redux/reducers//ui";
+import { data } from 'state/reducers/data';
+import { filters } from 'state/reducers/filters/filters';
+import { sorting } from 'state/reducers/sorting/sorting';
+import { ui } from 'state/reducers/ui';
 
 const rootReducer = combineReducers({
   data, 
