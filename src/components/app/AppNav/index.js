@@ -1,3 +1,1 @@
-import { AppNav } from './AppNav';
-
-export { AppNav };
+export { AppNav } from './AppNav';
