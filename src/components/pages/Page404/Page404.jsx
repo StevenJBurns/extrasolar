@@ -1,6 +1,6 @@
 import React from "react";
 import { Page } from '../Page/Page';
-import "../../../assets/images/black-hole.jpg";
+import "assets/images/black-hole.jpg";
 import "./Page404.scss";
 
 export const Page404 = props => {
