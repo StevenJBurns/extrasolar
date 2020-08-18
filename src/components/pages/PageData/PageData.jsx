@@ -13,15 +13,15 @@ import {
   CircularProgress,
   LinearProgress,
 } from '@material-ui/core';
-import { actionTypes } from '../../../redux/actionTypes';
-import { selectTotalStarCount } from '../../../redux/selectors/selectTotalStarCount';
-import { selectTotalPlanetCount } from '../../../redux/selectors/selectTotalPlanetCount';
-import { selectTopLargestStars } from '../../../redux/selectors/selectTopLargestStars';
+import { actionTypes } from 'redux/actionTypes';
+import { selectTotalStarCount } from 'redux/selectors/selectTotalStarCount';
+import { selectTotalPlanetCount } from 'redux/selectors/selectTotalPlanetCount';
+import { selectTopLargestStars } from 'redux/selectors/selectTopLargestStars';
 import { Page } from '../Page/Page';
 import { CategoricalPlanetCountTable} from '../../tables/CategoricalPlanetCountTable';
 import { StarsPieChart } from "../../charts/StarsPieChart";
 import { TopLargestStarsTable } from '../../tables/TopLargestStarsTable';
-import DataOGG from '../../../assets/audio/data.ogg';
+import DataOGG from 'assets/audio/data.ogg';
 import "./PageData.scss";
 
 const useStyles = makeStyles({
