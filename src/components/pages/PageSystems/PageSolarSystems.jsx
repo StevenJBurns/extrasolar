@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { Page } from '../Page/Page';
-import { changeAudioSource, changeSelectedSolarSystem } from '../../../redux/actions/ui';
+import { changeAudioSource, changeSelectedSolarSystem } from 'redux/actions/ui';
 import { LinearProgress } from '@material-ui/core';
-import SolarSystemsOGG from '../../../assets/audio/solarsystems.ogg';
-import "react-input-range/lib/css/index.css";
-import "./PageSolarSystems.scss";
+import SolarSystemsOGG from 'assets/audio/solarsystems.ogg';
+import 'react-input-range/lib/css/index.css';
+import { Page } from '../Page/Page';
+import './PageSolarSystems.scss';
 
 export const PageSolarSystems = props => {
   const dispatch = useDispatch();
