@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
-import { useOnlineStatus } from '../../../hooks/useOnlineStatus';
-import { actionTypes } from '../../../redux/actionTypes';
-import { PageFooter } from '../../pages/PageFooter/PageFooter';
-import HomeOGG from '../../../assets/audio/home.ogg';
+import { useOnlineStatus } from 'hooks/useOnlineStatus';
+import { actionTypes } from 'redux/actionTypes';
+import { PageFooter } from 'components/pages/PageFooter/PageFooter';
+import { Page } from 'components/pages/Page/Page';
+import HomeOGG from 'assets/audio/home.ogg';
 import "./PageHome.scss";
 
 export const PageHome = props => {
-  useDocumentTitle(props.title);
   const dispatch = useDispatch();
-
   const isOnline = useOnlineStatus();
 
   React.useEffect(() => {
@@ -19,7 +17,7 @@ export const PageHome = props => {
   }, [dispatch]);
 
   return (
-    <div className="page-home">
+    <Page>
       <header style={{ color: isOnline ? 'white': 'darkred' }}>
         <h1>ExtraSolar</h1>
         <h2>Exoplanet Data Visualization</h2>
@@ -32,6 +30,6 @@ export const PageHome = props => {
         </ul>
       </nav>
       <PageFooter />
-    </div>
+    </Page>
   );
 };
