@@ -2,9 +2,8 @@ import React from "react";
 import { useDispatch } from 'react-redux';
 import { Typography, Divider, makeStyles } from '@material-ui/core';
 import { Page } from '../Page/Page';
-import { actionTypes } from '../../../redux/actionTypes';
-import AboutOGG from "../../../assets/audio/about.ogg";
-// import { useStyles } from "./PageAbout.js";
+import { actionTypes } from 'redux/actionTypes';
+import AboutOGG from "assets/audio/about.ogg";
 import "./PageAbout.scss";
 
 const useStyles = makeStyles({
