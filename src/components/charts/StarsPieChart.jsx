@@ -1,7 +1,5 @@
-/* React and D3 Imports */
 import React from "react";
 import * as D3 from "d3";
-
 
 export const StarsPieChart = props => {
   if (!props.starData) return null;
