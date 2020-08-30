@@ -1,8 +1,7 @@
-/* React and D3js imports */
 import React from 'react';
 import * as D3 from "d3";
 
-export const BarChart = (props) => {
+export const BarChart = props => {
   if (!props.planetData) return null;
 
   D3.select("#div-chart-categorical").selectAll("*").remove();
