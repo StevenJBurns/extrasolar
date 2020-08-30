@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a6bec49d1de3b727b1450b564cb8e96f",
+    "revision": "4f16b1c382808ba2b143dd0123079244",
     "url": "/extrasolar/index.html"
   },
   {
-    "revision": "94fa9d60a5d6e2681d7d",
-    "url": "/extrasolar/static/css/2.6d7d54d2.chunk.css"
+    "revision": "5922d126b61f2cd8e8d5",
+    "url": "/extrasolar/static/css/2.60eec0d8.chunk.css"
   },
   {
-    "revision": "c802abac03e0c783391d",
-    "url": "/extrasolar/static/css/main.4eea617f.chunk.css"
+    "revision": "813e8b9d318bdc305bf8",
+    "url": "/extrasolar/static/css/main.5cecab17.chunk.css"
   },
   {
-    "revision": "94fa9d60a5d6e2681d7d",
-    "url": "/extrasolar/static/js/2.b009e87e.chunk.js"
+    "revision": "5922d126b61f2cd8e8d5",
+    "url": "/extrasolar/static/js/2.aed52183.chunk.js"
   },
   {
-    "revision": "161de8095050f61c4f5b71bddd06031a",
-    "url": "/extrasolar/static/js/2.b009e87e.chunk.js.LICENSE"
+    "revision": "0749163b59fbee32225059cb60c18af6",
+    "url": "/extrasolar/static/js/2.aed52183.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c802abac03e0c783391d",
-    "url": "/extrasolar/static/js/main.490beada.chunk.js"
+    "revision": "813e8b9d318bdc305bf8",
+    "url": "/extrasolar/static/js/main.1113fea7.chunk.js"
   },
   {
-    "revision": "5eda6767d6940eb012b5",
-    "url": "/extrasolar/static/js/runtime-main.9450ce01.js"
+    "revision": "4d01aa14eea8905587cf",
+    "url": "/extrasolar/static/js/runtime-main.e68373a8.js"
   },
   {
     "revision": "3a62f567ef47cb0ba4b4a4e65b5e1ad0",

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/extrasolar/static/css/main.4eea617f.chunk.css",
-    "main.js": "/extrasolar/static/js/main.490beada.chunk.js",
-    "main.js.map": "/extrasolar/static/js/main.490beada.chunk.js.map",
-    "runtime-main.js": "/extrasolar/static/js/runtime-main.9450ce01.js",
-    "runtime-main.js.map": "/extrasolar/static/js/runtime-main.9450ce01.js.map",
-    "static/css/2.6d7d54d2.chunk.css": "/extrasolar/static/css/2.6d7d54d2.chunk.css",
-    "static/js/2.b009e87e.chunk.js": "/extrasolar/static/js/2.b009e87e.chunk.js",
-    "static/js/2.b009e87e.chunk.js.map": "/extrasolar/static/js/2.b009e87e.chunk.js.map",
+    "main.css": "/extrasolar/static/css/main.5cecab17.chunk.css",
+    "main.js": "/extrasolar/static/js/main.1113fea7.chunk.js",
+    "main.js.map": "/extrasolar/static/js/main.1113fea7.chunk.js.map",
+    "runtime-main.js": "/extrasolar/static/js/runtime-main.e68373a8.js",
+    "runtime-main.js.map": "/extrasolar/static/js/runtime-main.e68373a8.js.map",
+    "static/css/2.60eec0d8.chunk.css": "/extrasolar/static/css/2.60eec0d8.chunk.css",
+    "static/js/2.aed52183.chunk.js": "/extrasolar/static/js/2.aed52183.chunk.js",
+    "static/js/2.aed52183.chunk.js.map": "/extrasolar/static/js/2.aed52183.chunk.js.map",
     "index.html": "/extrasolar/index.html",
-    "precache-manifest.7e360562ad9cf94a40237385396d84d6.js": "/extrasolar/precache-manifest.7e360562ad9cf94a40237385396d84d6.js",
+    "precache-manifest.d7f3bcb3241c37a18d9884da44480de1.js": "/extrasolar/precache-manifest.d7f3bcb3241c37a18d9884da44480de1.js",
     "service-worker.js": "/extrasolar/service-worker.js",
-    "static/css/2.6d7d54d2.chunk.css.map": "/extrasolar/static/css/2.6d7d54d2.chunk.css.map",
-    "static/css/main.4eea617f.chunk.css.map": "/extrasolar/static/css/main.4eea617f.chunk.css.map",
-    "static/js/2.b009e87e.chunk.js.LICENSE": "/extrasolar/static/js/2.b009e87e.chunk.js.LICENSE",
+    "static/css/2.60eec0d8.chunk.css.map": "/extrasolar/static/css/2.60eec0d8.chunk.css.map",
+    "static/css/main.5cecab17.chunk.css.map": "/extrasolar/static/css/main.5cecab17.chunk.css.map",
+    "static/js/2.aed52183.chunk.js.LICENSE.txt": "/extrasolar/static/js/2.aed52183.chunk.js.LICENSE.txt",
     "static/media/about.ogg": "/extrasolar/static/media/about.3a62f567.ogg",
     "static/media/PageAbout.scss": "/extrasolar/static/media/alpha-centauri-h.b2eed314.jpg",
     "static/media/PageHome.scss": "/extrasolar/static/media/apollo.85338426.jpg",
@@ -23,10 +23,10 @@
     "static/media/solarsystems.ogg": "/extrasolar/static/media/solarsystems.11ab2215.ogg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9450ce01.js",
-    "static/css/2.6d7d54d2.chunk.css",
-    "static/js/2.b009e87e.chunk.js",
-    "static/css/main.4eea617f.chunk.css",
-    "static/js/main.490beada.chunk.js"
+    "static/js/runtime-main.e68373a8.js",
+    "static/css/2.60eec0d8.chunk.css",
+    "static/js/2.aed52183.chunk.js",
+    "static/css/main.5cecab17.chunk.css",
+    "static/js/main.1113fea7.chunk.js"
   ]
 }
