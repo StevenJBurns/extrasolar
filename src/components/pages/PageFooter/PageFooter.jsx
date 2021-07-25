@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './PageFooter.scss';
 
 export const PageFooter = () => (
@@ -27,12 +25,12 @@ export const PageFooter = () => (
           </polygon>
         </svg>
       </a>
-      <a href="https://twitter.com/StevenJBurns">
+      {/* <a href="https://twitter.com/StevenJBurns">
         <FontAwesomeIcon className="fa-logo" icon={ faTwitter } size="2x" />
       </a>
       <a href="https://github.com/StevenJBurns/extrasolar">
         <FontAwesomeIcon className="fa-logo" icon={ faGithub } size="2x" />
-      </a>
+      </a> */}
     </div>
     <h4>&copy;{new Date().getFullYear()} &bull; Steven J Burns</h4>
   </footer>
