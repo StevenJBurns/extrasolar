@@ -1,17 +1,10 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-import { Typography, Divider, makeStyles } from '@material-ui/core';
+import { Typography, Divider } from '@material-ui/core';
 import { Page } from '../Page/Page';
 import { actionTypes } from 'state/actionTypes';
 import AboutOGG from "assets/audio/about.ogg";
-import "./PageAbout.scss";
-
-const useStyles = makeStyles({
-  divider: {
-    marginBottom: '8px',
-    backgroundColor: '#DDD',
-  },
-})
+import { useStyles } from './PageAbout.styles';
 
 export const PageAbout = props => {
   const classes = useStyles();
@@ -22,7 +15,7 @@ export const PageAbout = props => {
   }, [dispatch]);
 
   return (
-    <Page className={classes.main} {...props}>
+    <Page classes={classes}>
       <h1>About</h1>
       <Divider className={classes.divider} />
       <Typography paragraph align='justify'>Since 1992, over 3,500 <a href="https://en.wikipedia.org/wiki/Exoplanet">extrasolar planets</a> have been observed through various means. Less than two dozen have been <a href="https://en.wikipedia.org/wiki/List_of_directly_imaged_exoplanets">directly imaged</a> but several thousand more have been catalogued by non-visual means. If complete, that data lends itself to creating an abstract picture of what these distant solar systems look like.</Typography>
