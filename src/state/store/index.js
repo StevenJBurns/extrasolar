@@ -5,6 +5,20 @@ import thunk from 'redux-thunk';
 import { persistedRootReducer as rootReducer } from 'state/reducers';
 
 const initialState = {
+  audio: {
+    isAudioToggled: true,
+    sourcePath: '',
+  },
+  bookmarks: [],
+  selectedSolarSystemId: null,
+  solarSystems: {
+    status: undefined,
+    lastRequest: {
+
+    },
+    list: [],
+    error: '',
+  },
   data: {},
   filters: {},
   sorting: {},
