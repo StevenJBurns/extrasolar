@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { getStarsThunk, getPlanetsThunk } from 'state/actions/data';
 import { PageHeader, PageFooter } from 'components/pages';
@@ -10,15 +10,23 @@ import {
   PageAbout,
   Page404
 } from 'components/pages';
-import HomeOGG from 'assets/audio/home.ogg';
-import DataOGG from 'assets/audio/data.ogg';
-import SolarSystemsOGG from 'assets/audio/solarsystems.ogg';
-import AboutOGG from "assets/audio/about.ogg";
 import CanvasComponent from "components/canvas/CanvasComponent";
 import './App.scss';
 
+const HomeOGG = React.lazy(() => import('assets/audio/home.ogg'));
+const DataOGG = React.lazy(() => import('assets/audio/data.ogg'));
+const SolarSystemsOGG = React.lazy(() => import('assets/audio/solarsystems.ogg'));
+const AboutOGG = React.lazy(() => import('assets/audio/about.ogg'));
+
 export const App = () => {
   const dispatch = useDispatch();
+  const stars = useSelector(state => state.data.stars.list);
+  
+  const { length } = stars;
+
+  React.useEffect(() => {
+    console.log(stars);
+  }, [stars, length]);
 
   React.useEffect(() => {
     dispatch(getStarsThunk());
