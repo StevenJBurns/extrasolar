@@ -12,10 +12,6 @@
   color: #DDD;
 }
 
-.page-home header {
-  margin: 16px;
-}
-
 .page-home h1 {
   font-size: 6.5vw;
   cursor: default
@@ -24,27 +20,6 @@
 .page-home h2 {
   font-size: 3.33vw;
   cursor: default
-}
-
-.page-home nav {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  width: 100%;
-}
-
-.page-home ul {
-  width: 100%;
-  padding: 0 2rem;
-  list-style: none
-}
-
-.page-home ul li {
-  margin: 1.5vw 0;
-  text-align: right;
-  font-weight: bold
 }
 
 .page-home a:link,
@@ -57,10 +32,6 @@
 .page-home a:hover,
 .page-home a:active {
   color: #E0E0E0
-}
-
-.page-home footer h4 {
-  font-size: initial;
 }
 
 @media screen and (max-width: 480px) {
