@@ -1,5 +1,5 @@
-export enum apiRequstStatus = {
-  PENDING: 'PENDING'
-  SUCCESS: 'SUCCESS'
-  FAILED: 'FAILED'
+export enum apiRequstStatus {
+  PENDING,
+  SUCCESS,
+  FAILED,
 };
