@@ -1,6 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectCategoricalSystemSizes } from '../../state/selectors/selectCatergoricalSystemSizes';
 import {
   TableContainer,
   Table,
@@ -10,10 +8,6 @@ import {
 } from '@material-ui/core';
 
 export const CategoricalPlanetCountTable = () => {
-  const data = useSelector(selectCategoricalSystemSizes());
-
-  React.useEffect(() => console.log('data: ', data), [data]);
-
   return (
     <>
       <TableContainer component="section">
