@@ -6,7 +6,6 @@ import {
   AppBar,
   Hidden,
   Drawer,
-  Divider,
   Grid,
   MenuList,
   MenuItem,
@@ -18,9 +17,10 @@ import { selectLastDataFetch } from 'state/selectors/selectLastDataFetchDatetime
 import { useOnlineStatus } from 'hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 import MenuIcon from '@material-ui/icons/Menu';
+import { formatLastFetch } from 'util/formatDate';
 import './PageHeader.scss';
 
-export const PageHeader = () => {
+export const PageHeader = props => {
   const { pathname } = useLocation();
   const lastFetch = useSelector(selectLastDataFetch());
   const isOnline = useOnlineStatus();
@@ -40,15 +40,15 @@ export const PageHeader = () => {
       },
       drawer: {
         paper: {
-          width: '280px',
-          backgroundColor: 'palegoldenrod',
-        },
-        '& a' : {
-          color: '#1F1F1F',
+
         },
       },
+      drawerPaper: {
+        width: '280px',
+        backgroundColor: 'darkgoldenrod',
+      },
       menuList: {
-        width: '240px',
+        backgroundColor: 'transparent',
       },
       menuItem: {
         padding: 0,
@@ -65,13 +65,15 @@ export const PageHeader = () => {
     })
   );
   
-  const classes = useStyles();
+  const classes = useStyles(props);
   /* for React Router NavLink active styling */
   const activeStyle = { display: 'none' };
 
+  const formattedLastFetch = formatLastFetch(lastFetch);
+
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
-  const handleHamburgerClick = e => setIsDrawerOpen(!isDrawerOpen);
+  const handleHamburgerClick = () => setIsDrawerOpen(!isDrawerOpen);
 
   React.useEffect(() => setIsDrawerOpen(false), [pathname]);
 
@@ -81,7 +83,7 @@ export const PageHeader = () => {
         <Grid container direction="column" style={{flexGrow: 1}}>
           <Typography className={classes.header} variant="h3" noWrap>ExtraSolar</Typography>
           <Typography className={classes.header} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
-          <Typography className={classes.header} paragraph noWrap>{new Date(lastFetch).toLocaleString("en-US")}</Typography>
+          <Typography className={classes.header} paragraph noWrap>{formattedLastFetch}</Typography>
         </Grid>
         <Hidden xsDown>
           <MenuList>
@@ -118,25 +120,25 @@ export const PageHeader = () => {
       </Toolbar>
       <Drawer
         className={classes.drawer}
-        PaperProps={{className: classes.drawer.paper}}
-        onClose={() => setIsDrawerOpen(false)} variant='temporary'
+        classes={{ paper: classes.drawerPaper}}
+        onClose={() => setIsDrawerOpen(false)}
+        variant='temporary'
         open={isDrawerOpen}
       >
         <MenuList className={classes.menuList}>
-          <MenuItem>
-            <NavLink to='/'>Home</NavLink>
-          </MenuItem>
-          <MenuItem>
-            <NavLink to='/data'>Data</NavLink>
-          </MenuItem>
-          <MenuItem>
-            <NavLink to='/systems'>Systems</NavLink>
-          </MenuItem>
-          <MenuItem>
-            <NavLink to='/about'>About</NavLink>
-          </MenuItem>
+          <NavLink to='/'>
+            <MenuItem>HOME</MenuItem>
+          </NavLink>
+          <NavLink to='/data'>
+            <MenuItem>DATA</MenuItem>
+          </NavLink>
+          <NavLink to='/systems'>
+            <MenuItem>SYSTEMS</MenuItem>
+          </NavLink>
+          <NavLink to='/about'>
+            <MenuItem>ABOUT</MenuItem>
+          </NavLink>
         </MenuList>
-        <Divider />
       </Drawer>
     </AppBar>
   );
