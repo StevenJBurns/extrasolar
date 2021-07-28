@@ -1,5 +1,3 @@
-import { type } from "os";
-
 import { Planet } from './Planet';
 
 /* star mass and radius are relative to the Sun */
