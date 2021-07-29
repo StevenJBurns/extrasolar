@@ -103,6 +103,11 @@ export const PageHeader = props => {
               </NavLink>
             </MenuItem>
             <MenuItem className={classes.menuItem}>
+              <NavLink exact to="/bookmarks" className={classes.link} activeStyle={activeStyle}>
+                Bookmarks
+              </NavLink>
+            </MenuItem>
+            <MenuItem className={classes.menuItem}>
               <NavLink exact to="/about" className={classes.link} activeStyle={activeStyle}>
                 About
               </NavLink>

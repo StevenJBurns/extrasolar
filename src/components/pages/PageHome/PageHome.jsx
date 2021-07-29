@@ -27,6 +27,7 @@ export const PageHome = () => {
         <ul>
           <li><Link to="./data">DATA</Link></li>
           <li><Link to="./systems">SOLAR SYSTEMS</Link></li>
+          <li><Link to="./bookmarks">BOOKMARKS</Link></li>
           <li><Link to="./about">ABOUT</Link></li>
         </ul>
       </nav>

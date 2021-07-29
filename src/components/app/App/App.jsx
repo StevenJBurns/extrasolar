@@ -7,6 +7,7 @@ import {
   PageHome,
   PageData,
   PageSolarSystems,
+  PageBookmarks,
   PageAbout,
   Page404
 } from 'components/pages';
@@ -47,6 +48,11 @@ export const App = () => {
         <PageHeader />
         <CanvasComponent selectedSolarSystem={{}} />
         <PageSolarSystems title="Solar Systems" audioSource={SolarSystemsOGG} />
+        <PageFooter />
+      </Route>
+      <Route exact path='/bookmarks'>
+        <PageHeader />
+        <PageBookmarks title="Bookmarks" audioSource={AboutOGG} />
         <PageFooter />
       </Route>
       <Route exact path='/about'>
