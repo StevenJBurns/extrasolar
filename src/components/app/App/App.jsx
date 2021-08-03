@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { getStarsThunk, getPlanetsThunk } from 'state/actions/data';
 import { PageHeader, PageFooter } from 'components/pages';
 import {
@@ -21,18 +21,19 @@ const AboutOGG = React.lazy(() => import('assets/audio/about.ogg'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const stars = useSelector(state => state.data.stars.list);
-  
-  const { length } = stars;
 
-  React.useEffect(() => {
-    console.log(stars);
-  }, [stars, length]);
+  const lastDataFetch = useSelector(state => state.ui.lastDataFetch);
+  const isFetchingStars = useSelector(state => state.data.stars.isFetching);
+  const isFetchingPlanets = useSelector(state => state.data.planets.isFetching);
 
-  React.useEffect(() => {
+  const getData = React.useCallback(() => {
     dispatch(getStarsThunk());
     dispatch(getPlanetsThunk());
   }, [dispatch]);
+
+  React.useEffect(() => {
+    getData();
+  }, [getData]);
   
   return (
     <Switch>

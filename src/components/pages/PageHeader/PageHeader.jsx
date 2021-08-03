@@ -13,10 +13,10 @@ import {
   Toolbar,
   Typography
 } from '@material-ui/core/';
+import MenuIcon from '@material-ui/icons/Menu';
 import { selectLastDataFetch } from 'state/selectors/selectLastDataFetchDatetime';
 import { useOnlineStatus } from 'hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
-import MenuIcon from '@material-ui/icons/Menu';
 import { formatLastFetch } from 'util/formatDate';
 import './PageHeader.scss';
 

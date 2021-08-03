@@ -15,10 +15,10 @@ export const PageBookmarks = () => {
   return (
     <Page>
       <List>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+        <ListItem />
+        <ListItem />
+        <ListItem />
+        <ListItem />
       </List>
     </Page>
   )
