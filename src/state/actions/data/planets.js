@@ -1,7 +1,7 @@
 import { actionTypes } from '../../actionTypes';
 import { setLastDataFetchDatetime } from '../ui/lastDataFetch';
 
-const urlDistinctPlanets = '/TAP/sync?query=select+distinct+hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper,pl_masse,pl_rade+from+ps&format=json';
+const urlDistinctPlanets = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper,pl_masse,pl_rade+from+ps&format=json';
 
 export const getPlanetsBegin = status => ({
   type: actionTypes.data.PLANETS_ASYNC_GET_BEGIN,
