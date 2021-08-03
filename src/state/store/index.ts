@@ -9,7 +9,9 @@ import { solarSystems } from 'state/reducers/data/solarSystems';
 const initialState = {
   // audio: {},
   // bookmarks: [],
-  // selectedSolarSystemId: null,
+  // selectedSolarSystemID: null,
+  // stars: {},
+  // planets: {},
   // solarSystems: {
   //   status: undefined,
   //   lastRequest: {
