@@ -1,45 +1,26 @@
 import { actionTypes } from "../../actionTypes";
 
-if (localStorage.getItem("lastDataFetch") === null) {
-  localStorage.setItem("lastDataFetch", Date.now().toString())
-};
+// export const reducerData = (state = {}, action) => {
+//   switch (action.type) {
+//     case (actionTypes.data.FETCH_STARS_BEGIN):
+//       return { isLoading: true, list: [], error: null }
+//     case (actionTypes.data.FETCH_STARS_SUCCESS):
+//       return { isLoading: false, list: action.payload, error: null }
+//     case (actionTypes.data.FETCH_STARS_FAILED):
+//       return { isLoading: false, stars: [], error: action.payload.error }
+//     case (actionTypes.data.FETCH_PLANETS_BEGIN):
+//       return { isLoading: true, list: [], error: null }
+//     case (actionTypes.data.FETCH_PLANETS_SUCCESS):
+//       return { isLoading: false, list: [action.payload], error: null }
+//     case (actionTypes.data.FETCH_PLANETS_FAILED):
+//       state = { isLoading: false, list: [], error: action.payload.error }
+//     case (actionTypes.ui.CHANGE_SELECTED_SYSTEM):
+//       return { ...state, selectedSolarSystemID: action.payload} ;
+//     case (actionTypes.ui.SET_LAST_DATA_FETCH):
+//       return { ...state, lastDataFetch: new Date(Date.now) };
+//     default:
+//       return state;
+//   };
+// };
 
-const initialState = {
-  data: {
-    stars: [],
-    planets: [],
-    solarSystems: [],
-  }
-};
-
-export const reducerData = (state = initialState, action) => {
-  switch (action.type) {
-    case (actionTypes.data.FETCH_STARS_BEGIN):
-      state = {...state, ...state.ui, ...state.data, isLoading: true, error: null}
-      break;
-    case (actionTypes.data.FETCH_STARS_SUCCESS):
-      state = {...state, ...state.ui, ...state.data, isLoading: false, stars: action.payload}
-      break;
-    case (actionTypes.data.FETCH_STARS_FAILED):
-      state = {...state, ...state.ui, ...state.data, isLoading: false, stars: [], error: action.payload.error}
-      break;
-    case (actionTypes.data.FETCH_PLANETS_BEGIN):
-      state = {...state, ...state.ui, ...state.data, isLoading: true, error: null}
-      break;
-    case (actionTypes.data.FETCH_PLANETS_SUCCESS):
-      state = {...state, ...state.ui, ...state.data, isLoading: false, planets: action.payload}
-      break;
-    case (actionTypes.data.FETCH_PLANETS_FAILED):
-      state = {...state, ...state.ui, ...state.data, isLoading: false, planets: [], error: action.payload.error}
-      break;
-    case (actionTypes.ui.CHANGE_SELECTED_SYSTEM):
-      state = {...state, ...state.ui, ...state.data, selectedSolarSystem: action.payload};
-      break;
-    case (actionTypes.ui.GET_LAST_DATA_FETCH):
-      state = {...state, ...state.ui, ...state.data, lastDataFetch: JSON.parse(localStorage["lastDataFetch"])};
-      break;
-    default:
-      state = {...state};
-  }
-  return state;
-}
+export const {};
