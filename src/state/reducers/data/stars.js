@@ -7,13 +7,14 @@ const initialState = {
 };
 
 export const stars = (state = initialState, action) => {
+  console.log(action.payload);
   switch(action.type) {
     case actionTypes.data.STARS_ASYNC_GET_BEGIN:
-      return { ...state, isFetching: action.isFetching }
+      return { ...state, isFetching: action.payload, list: [], error: '' }
     case actionTypes.data.STARS_ASYNC_GET_SUCCESS:
-      return { ...state, list: action.payload };
+      return { ...state, isFetching: false, list: action.payload, error: '' };
     case actionTypes.data.STARS_ASYNC_GET_FAILED:
-      return { ...state, error: action.error }
+      return { ...state, isFetching: false, list: [], error: JSON.stringify(action.payload) }
     default:
       return state;
   }

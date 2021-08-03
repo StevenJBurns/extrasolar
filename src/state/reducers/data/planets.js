@@ -9,11 +9,11 @@ const initialState = {
 export const planets = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.data.PLANETS_ASYNC_GET_BEGIN:
-      return { ...state, isFetching: action.isFetching }
+      return { ...state, isFetching: action.payload, list: [], error: '' }
     case actionTypes.data.PLANETS_ASYNC_GET_SUCCESS:
-      return { ...state, list: action.payload };
+      return { ...state, isFetching: false, list: [...action.payload], error: '' };
     case actionTypes.data.PLANETS_ASYNC_GET_FAILED:
-      return { ...state, error: action.error};
+      return { ...state, isFetching: false, list: [], error: JSON.stringify(action.payload) };
     default:
       return state;
   }
