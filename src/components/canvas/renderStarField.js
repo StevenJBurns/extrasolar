@@ -11,5 +11,5 @@ export const renderStarField = (ctx, stars) => {
 
     ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
     ctx.fillRect(x, y, 3, 3)
-  };
+  }
 };

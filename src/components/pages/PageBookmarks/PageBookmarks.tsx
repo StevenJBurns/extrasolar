@@ -1,25 +1,15 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+// import { useSelector, useDispatch } from 'react-redux';
 import { Page } from '../Page/Page';
+import { BookmarkList } from './BookmarkList';
+import { useStyles } from './PageBookmarks.styles';
 
 export const PageBookmarks = () => {
-  const dispatch = useDispatch();
-
-  const [bookmarkList, setBookmarkList] = React.useState([]);
-
-  if (!bookmarkList || !bookmarkList.length)
-    return (<h1>No Bookmarked Solar Systems</h1>);
+  const classes = useStyles();
 
   return (
     <Page>
-      <List>
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-      </List>
+      <BookmarkList bookmarkList={[]} />
     </Page>
   )
 }

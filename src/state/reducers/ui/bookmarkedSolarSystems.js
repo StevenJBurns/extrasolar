@@ -9,7 +9,7 @@ export const bookmarkedSolarSystems = (state = initialState, action) => {
         return [...state, action.payload];
       } else {
         return [...state.filter(item => item !== action.payload)];
-      };
+      }
     case actionTypes.ui.BOOKMARKS_DELETE_ALL:
       return [];
     default:

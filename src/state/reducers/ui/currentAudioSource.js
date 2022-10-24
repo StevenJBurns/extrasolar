@@ -6,5 +6,5 @@ export const currentAudioSource = (state = null, action) => {
       return action.payload;
     default:
       return null;
-  };
+  }
 };

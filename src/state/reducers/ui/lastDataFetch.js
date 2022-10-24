@@ -9,5 +9,5 @@ export const lastDataFetch = (state = Date.now(), action) => {
       return new Date(action.payload);
     default:
       return state;
-  };
+  }
 };

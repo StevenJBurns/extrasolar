@@ -56,7 +56,7 @@ export const CanvasComponent = ({ selectedSolarSystem }) => {
         distance: (Math.random() * canvasWidth * 1.5) + 96,
         opacity: Math.random() / 2,
       });
-    };
+    }
     setStarField(_starfield);
   }, [canvasWidth]);
 
