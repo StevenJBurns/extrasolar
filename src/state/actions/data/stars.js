@@ -23,7 +23,7 @@ export const getStarsThunk = () => {
   return dispatch => {
     dispatch(getStarsBegin(true));
 
-    return fetch(urlDistinctStars, { mode: 'no-cors' })
+    return fetch(urlDistinctStars)
       .then(handleHttpErrors)
       .then(res => res.json())
       .then(data => dispatch(getStarsSuccess(data)))

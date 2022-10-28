@@ -13,7 +13,7 @@ export const planets = (state = initialState, action) => {
     case actionTypes.data.PLANETS_ASYNC_GET_SUCCESS:
       return { ...state, isFetching: false, list: [...action.payload], error: '' };
     case actionTypes.data.PLANETS_ASYNC_GET_FAILED:
-      return { ...state, isFetching: false, list: [], error: JSON.stringify(action.payload) };
+      return { ...state, isFetching: false, list: [], error: 'An API Fetch Error Occurred' };
     default:
       return state;
   }

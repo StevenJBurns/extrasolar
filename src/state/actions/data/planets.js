@@ -22,7 +22,7 @@ export const getPlanetsThunk = () => {
   return dispatch => {      
     dispatch(getPlanetsBegin(true));
 
-    return fetch(urlDistinctPlanets, { mode: 'no-cors' })
+    return fetch(urlDistinctPlanets)
       .then(handleHttpErrors)
       .then(res => res.json())
       .then(data => dispatch(getPlanetsSuccess(data)))
