@@ -36,3 +36,5 @@ export const AppSnackbar = (props: IProps): ReactNode => {
     </Snackbar>
   );
 };
+ export type { IProps };
+ 
