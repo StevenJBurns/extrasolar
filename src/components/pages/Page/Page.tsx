@@ -4,11 +4,11 @@ import { useDocumentTitle } from 'hooks/useDocumentTitle';
 import { useStyles } from './Page.styles';
 
 interface IProps {
-  title: string;
-  children: Array<ReactNode>;
+  children: NonNullable<ReactNode> & ReactNode;
+  title?: string;
 }
 
-export const Page = (props: IProps): ReactNode => {
+export const Page = (props: IProps) => {
   const classes = useStyles();
   useDocumentTitle(props.title);
 

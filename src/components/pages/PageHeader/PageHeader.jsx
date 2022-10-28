@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { NavLink, useLocation } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -14,15 +13,13 @@ import {
   Typography
 } from '@material-ui/core/';
 import MenuIcon from '@material-ui/icons/Menu';
-import { selectLastDataFetch } from 'state/selectors/selectLastDataFetchDatetime';
 import { useOnlineStatus } from 'hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
-import { formatLastFetch } from 'util/formatDate';
+// import { formatLastFetch } from 'util/formatDate';
 import './PageHeader.scss';
 
 export const PageHeader = props => {
   const { pathname } = useLocation();
-  const lastFetch = useSelector(selectLastDataFetch());
   const isOnline = useOnlineStatus();
 
   const useStyles = makeStyles(() =>
@@ -69,7 +66,7 @@ export const PageHeader = props => {
   /* for React Router NavLink active styling */
   const activeStyle = { display: 'none' };
 
-  const formattedLastFetch = formatLastFetch(lastFetch);
+  // const formattedLastFetch = formatLastFetch(lastFetch);
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
@@ -83,7 +80,7 @@ export const PageHeader = props => {
         <Grid container direction="column" style={{flexGrow: 1}}>
           <Typography className={classes.header} variant="h3" noWrap>ExtraSolar</Typography>
           <Typography className={classes.header} variant="h6" noWrap>Exoplanet Data Visualization</Typography>
-          <Typography className={classes.header} paragraph noWrap>{formattedLastFetch}</Typography>
+          {/* <Typography className={classes.header} paragraph noWrap>{formattedLastFetch}</Typography> */}
         </Grid>
         <Hidden xsDown>
           <MenuList>
