@@ -1,2 +1,1 @@
-export type { Star } from './Star';
-export type { Planet } from './Planet';
+export type { Month } from './Month';
