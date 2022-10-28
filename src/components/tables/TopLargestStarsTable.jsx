@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 })
 
-export const TopLargestStarsTable = ({data}) => {
+export const TopLargestStarsTable = () => {
   const classes = useStyles();
 
   return (
@@ -51,7 +51,7 @@ export const TopLargestStarsTable = ({data}) => {
           </TableRow>
         </TableHead>
         <TableBody >
-          {
+          {/* {
             data.map((star, index) => (
               <TableRow key={index} className={classes.body}>
                 <TableCell className={classes.body} variant='body'>{star.pl_hostname}</TableCell>
@@ -59,7 +59,7 @@ export const TopLargestStarsTable = ({data}) => {
                 <TableCell className={classes.body} variant='body'>{star.st_rad.toFixed(2)}</TableCell>
               </TableRow>
             ))
-          }
+          } */}
         </TableBody>
       </Table>
     </>
