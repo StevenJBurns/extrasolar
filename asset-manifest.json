@@ -1,29 +1,18 @@
 {
   "files": {
-    "main.css": "/extrasolar/static/css/main.932d224a.chunk.css",
-    "main.js": "/extrasolar/static/js/main.62a8ad64.chunk.js",
-    "main.js.map": "/extrasolar/static/js/main.62a8ad64.chunk.js.map",
-    "runtime-main.js": "/extrasolar/static/js/runtime-main.0738d8cd.js",
-    "runtime-main.js.map": "/extrasolar/static/js/runtime-main.0738d8cd.js.map",
-    "static/css/2.8e54585f.chunk.css": "/extrasolar/static/css/2.8e54585f.chunk.css",
-    "static/js/2.f17112d7.chunk.js": "/extrasolar/static/js/2.f17112d7.chunk.js",
-    "static/js/2.f17112d7.chunk.js.map": "/extrasolar/static/js/2.f17112d7.chunk.js.map",
+    "main.css": "/extrasolar/static/css/main.311f5509.css",
+    "main.js": "/extrasolar/static/js/main.60bceba8.js",
+    "static/media/data.ogg": "/extrasolar/static/media/data.d4c280037511c88e3fb7.ogg",
+    "static/media/home.ogg": "/extrasolar/static/media/home.742d77e778d19ec43700.ogg",
+    "static/media/about.ogg": "/extrasolar/static/media/about.f6f0245d12071391fa10.ogg",
+    "static/media/black-hole.jpg": "/extrasolar/static/media/black-hole.36cee48ebedb18efe4ea.jpg",
+    "static/media/apollo.jpg": "/extrasolar/static/media/apollo.34b7604d9903b7624a82.jpg",
     "index.html": "/extrasolar/index.html",
-    "static/css/2.8e54585f.chunk.css.map": "/extrasolar/static/css/2.8e54585f.chunk.css.map",
-    "static/css/main.932d224a.chunk.css.map": "/extrasolar/static/css/main.932d224a.chunk.css.map",
-    "static/js/2.f17112d7.chunk.js.LICENSE.txt": "/extrasolar/static/js/2.f17112d7.chunk.js.LICENSE.txt",
-    "static/media/about.ogg": "/extrasolar/static/media/about.f6f0245d.ogg",
-    "static/media/apollo.34b7604d.jpg": "/extrasolar/static/media/apollo.34b7604d.jpg",
-    "static/media/Page404.scss": "/extrasolar/static/media/black-hole.36cee48e.jpg",
-    "static/media/data.ogg": "/extrasolar/static/media/data.d4c28003.ogg",
-    "static/media/home.ogg": "/extrasolar/static/media/home.742d77e7.ogg",
-    "static/media/solarsystems.ogg": "/extrasolar/static/media/solarsystems.5ca907c2.ogg"
+    "main.311f5509.css.map": "/extrasolar/static/css/main.311f5509.css.map",
+    "main.60bceba8.js.map": "/extrasolar/static/js/main.60bceba8.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.0738d8cd.js",
-    "static/css/2.8e54585f.chunk.css",
-    "static/js/2.f17112d7.chunk.js",
-    "static/css/main.932d224a.chunk.css",
-    "static/js/main.62a8ad64.chunk.js"
+    "static/css/main.311f5509.css",
+    "static/js/main.60bceba8.js"
   ]
 }
