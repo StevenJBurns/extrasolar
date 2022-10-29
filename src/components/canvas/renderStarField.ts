@@ -7,7 +7,6 @@ export const renderStarField = (
     const h = ctx.canvas.height;
     const w = ctx.canvas.width;
   
-
     for (const star of stars) {
       /* convert each star from polar to x-y coords */
       const x = Math.cos(star.polar.theta) * star.polar.distance + (w / 2);
