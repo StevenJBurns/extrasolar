@@ -13,7 +13,7 @@ import {
   Typography
 } from '@material-ui/core/';
 import MenuIcon from '@material-ui/icons/Menu';
-import { useOnlineStatus } from 'hooks/useOnlineStatus';
+import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
 import { AudioToggleButton } from "../../ui/AudioToggleButton";
 // import { formatLastFetch } from 'util/formatDate';
 import './PageHeader.scss';

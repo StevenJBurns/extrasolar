@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import { Container } from '@material-ui/core/';
-import { useDocumentTitle } from 'hooks/useDocumentTitle';
-import { useStyles } from './Page.styles';
+import { ReactNode } from "react";
+import { Container } from "@material-ui/core/";
+import { useDocumentTitle } from "presentation/hooks/useDocumentTitle";
+import { useStyles } from "./Page.styles";
 
 interface IProps {
   children: NonNullable<ReactNode> & ReactNode;
