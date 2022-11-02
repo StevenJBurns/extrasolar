@@ -32,7 +32,7 @@ const useStyles = makeStyles({
     color: 'gainsboro',
     borderBottom: 'none',
   },
-})
+});
 
 export const TopLargestStarsTable = () => {
   const classes = useStyles();

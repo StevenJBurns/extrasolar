@@ -10,5 +10,5 @@ export const PageBookmarks = (): JSX.Element => {
     <Page>
       <BookmarkList bookmarkList={[]} />
     </Page>
-  )
-}
+  );
+};

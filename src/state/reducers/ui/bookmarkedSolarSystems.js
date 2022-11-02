@@ -15,4 +15,4 @@ export const bookmarkedSolarSystems = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};

@@ -13,6 +13,6 @@ export const renderStarField = (
       const y = Math.sin(star.polar.theta) * star.polar.distance + (h / 2);
 
       ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-      ctx.fillRect(x, y, 1, 1)
+      ctx.fillRect(x, y, 1, 1);
     }
 };

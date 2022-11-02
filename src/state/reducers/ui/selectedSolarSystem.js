@@ -12,4 +12,4 @@ export const selectedSolarSystem = (state = {}, action) => {
       return null;
   }
   return state;
-}
+};

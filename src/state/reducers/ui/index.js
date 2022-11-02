@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { isAudioMuted } from './isAudioMuted'
+import { isAudioMuted } from './isAudioMuted';
 import { currentAudioSource } from './currentAudioSource';
 import { selectedSolarSystem } from './selectedSolarSystem';
 import { bookmarkedSolarSystems } from './bookmarkedSolarSystems';
