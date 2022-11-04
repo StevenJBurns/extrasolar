@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { PageHeader, PageFooter } from '../.';
 import {
   Typography,
   Divider,
@@ -49,6 +50,7 @@ export const PageData = props => {
 
   return (
     <>
+      <PageHeader />
       { selectAllStars.isFetching && <LinearProgress /> }
       <Page {...props} classes={classes}>
         <Typography variant='h5'>DATA</Typography>
@@ -113,6 +115,7 @@ export const PageData = props => {
         <Typography variant='h6'>Largest Planet:</Typography>
         <Typography variant='h6'>Heaviest Planet:</Typography>
       </Page>
+      <PageFooter />
     </>
   );
 };

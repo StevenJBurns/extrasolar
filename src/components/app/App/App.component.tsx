@@ -7,7 +7,6 @@ import {
 // import { useDispatch } from 'react-redux';
 // import { getStarsThunk, getPlanetsThunk } from 'state/actions/data';
 // import { AppSnackbar } from '../AppSnackbar/AppSnackbar';
-import { PageHeader, PageFooter } from 'components/pages';
 import {
   PageHome,
   PageData,
@@ -16,7 +15,6 @@ import {
   PageAbout,
   Page404,
 } from 'components/pages';
-import { Canvas } from 'components/canvas';
 import './App.scss';
 
 // const HomeOGG = React.lazy(() => import('assets/audio/home.ogg'));
@@ -54,62 +52,11 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<PageHome />} />
-        <Route
-          path="/data"
-          element={
-            <>
-              <PageHeader />
-              <PageData />
-              {/* <PageData title="Data" audioSource={DataOGG} /> */}
-              <PageFooter />
-            </>
-          }
-        />
-        <Route
-          path="/systems"
-          element={
-            <>
-              <PageHeader />
-              <Canvas />
-              {/* <Canvas selectedSolarSystem={0} /> */}
-              <PageSystems selectedSolarSystem="0" />
-              {/* <PageSystems title="Solar Systems" audioSource={SystemsOGG} /> */}
-              <PageFooter />
-            </>
-          }
-        />
-        <Route
-          path="/bookmarks"
-          element={
-            <>
-              <PageHeader />
-              <PageBookmarks />
-              {/* <PageBookmarks title="Bookmarks" audioSource={AboutOGG} /> */}
-              <PageFooter />
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <PageHeader />
-              <PageAbout />
-              {/* <PageAbout title="About" audioSource={AboutOGG} /> */}
-              <PageFooter />
-            </>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <>
-              <PageHeader />
-              <Page404 title="Page Not Found" />
-              <PageFooter />
-            </>
-          }
-        />
+        <Route path="/data" element={<PageData />} />
+        <Route path="/systems" element={<PageSystems />} />
+        <Route path="/bookmarks" element={<PageBookmarks />} />
+        <Route path="/about" element={<PageAbout />} />
+        <Route path="*" element={<Page404 title="Page Not Found" />} />
       </Routes>
       {/* <AppSnackbar hasErrors={hasErrors} /> */}
     </>

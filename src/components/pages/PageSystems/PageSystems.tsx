@@ -4,11 +4,13 @@ import React from 'react';
 // import { LinearProgress } from '@material-ui/core';
 import 'react-input-range/lib/css/index.css';
 import { Page } from '../Page/Page';
+import { PageHeader, PageFooter } from '../.';
+import { Canvas } from '../../canvas';
 // import SystemsOGG from 'assets/audio/systems.ogg';
 import './PageSolarSystems.scss';
 
 interface IProps {
-  selectedSolarSystem: string;
+  selectedSolarSystem?: string;
 }
 
 export const PageSystems = (props: IProps) => {
@@ -16,38 +18,45 @@ export const PageSystems = (props: IProps) => {
   // const isFetchingStars = useSelector(state => state.data.stars.isFetching);
 
   const { selectedSolarSystem } = props;
-  
+
   // React.useEffect(() => {
   //   dispatch(changeAudioSource(SystemsOGG));
   // }, [dispatch]);
 
   return (
-    <Page {...props}>
-      {/* { isFetchingStars && <LinearProgress />} */}
-      <div id="main-solarsystems">
-        {/* <Canvas selectedSolarSystem={selectedSolarSystem} /> */}
-        <h3>SELECTED SOLAR SYSTEM: {selectedSolarSystem ? selectedSolarSystem : null}</h3>
-        <div id="div-filters">
-          <div id="div-filter-stars">
-            <h5 className="slider-label">Planet Count</h5>
-            <h5 className="slider-label">Binary Star?</h5>
-            <h5 className="slider-label">Stellar Mass</h5>
-            <h5 className="slider-label">Stellar Radius</h5>
-            <h5 className="slider-label">Stellar Temperature</h5>
-            <section id="section-container">
-            </section>
+    <>
+      <PageHeader />
+      <Canvas />
+      <Page {...props}>
+        {/* { isFetchingStars && <LinearProgress />} */}
+        <div id="main-solarsystems">
+          {/* <Canvas selectedSolarSystem={selectedSolarSystem} /> */}
+          <h3>
+            SELECTED SOLAR SYSTEM:{' '}
+            {selectedSolarSystem ? selectedSolarSystem : null}
+          </h3>
+          <div id="div-filters">
+            <div id="div-filter-stars">
+              <h5 className="slider-label">Planet Count</h5>
+              <h5 className="slider-label">Binary Star?</h5>
+              <h5 className="slider-label">Stellar Mass</h5>
+              <h5 className="slider-label">Stellar Radius</h5>
+              <h5 className="slider-label">Stellar Temperature</h5>
+              <section id="section-container"></section>
+            </div>
+            <div id="div-filter-planets">
+              <h5 className="slider-label">Planet Orbital Eccentricity</h5>
+              <h5 className="slider-label">Planetary Orbit Semi-Major Axis</h5>
+              <h5 className="slider-label">Planetary Orbit Period</h5>
+            </div>
+            <ul></ul>
           </div>
-          <div id="div-filter-planets">
-            <h5 className="slider-label">Planet Orbital Eccentricity</h5>
-            <h5 className="slider-label">Planetary Orbit Semi-Major Axis</h5>
-            <h5 className="slider-label">Planetary Orbit Period</h5>
-          </div>
-          <ul></ul>
         </div>
-      </div>
-    </Page>
+      </Page>
+      <PageFooter />
+    </>
   );
-}
+};
 
 // const mapStateToProps = state => {
 //   const { selectedSolarSystem } = state.ui;
