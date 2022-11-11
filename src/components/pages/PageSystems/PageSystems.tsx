@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import { changeAudioSource } from 'state/actions/ui';
-// import { LinearProgress } from '@material-ui/core';
+// import { LinearProgress } from '@mui/material';
 import 'react-input-range/lib/css/index.css';
 import { Page } from '../Page/Page';
 import { PageHeader, PageFooter } from '../.';

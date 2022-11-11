@@ -12,7 +12,7 @@ import {
   TableCell,
   CircularProgress,
   LinearProgress,
-} from '@material-ui/core';
+} from '@mui/material';
 import { actionTypes } from 'state/actionTypes';
 import { selectTotalStarCount } from 'state/selectors/selectTotalStarCount';
 import { selectTotalPlanetCount } from 'state/selectors/selectTotalPlanetCount';

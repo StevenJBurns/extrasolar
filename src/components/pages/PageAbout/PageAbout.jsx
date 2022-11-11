@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-import { Typography, Divider } from '@material-ui/core';
+import { Typography, Divider } from '@mui/material';
 import { Page } from '../Page/Page';
 import { PageHeader, PageFooter } from '../.';
 import { actionTypes } from 'state/actionTypes';

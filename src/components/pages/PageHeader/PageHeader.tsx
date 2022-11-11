@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/material/styles';
 import {
   AppBar,
   Hidden,
@@ -11,8 +11,8 @@ import {
   IconButton,
   Toolbar,
   Typography,
-} from '@material-ui/core/';
-import MenuIcon from '@material-ui/icons/Menu';
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
 import { AudioToggleButton } from '../../ui/AudioToggleButton';
 // import { formatLastFetch } from 'util/formatDate';

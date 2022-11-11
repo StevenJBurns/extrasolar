@@ -1,7 +1,7 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import Typography from '@mui/material/Typography';
 import { Bookmark } from '../Bookmark';
 import { useStyles } from './BookmarkList.styles';
 

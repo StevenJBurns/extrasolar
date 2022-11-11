@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
+import ListItem from '@mui/material/ListItem';
 import { useStyles } from './Bookmark.styles';
 
 export type Props = {

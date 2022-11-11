@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@mui/styles';
 import type { IProps } from './AppSnackbar';
 
 export const useStyles = makeStyles({

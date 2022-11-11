@@ -7,7 +7,7 @@ import {
   TableCell,
   Typography,
   makeStyles,
-} from '@material-ui/core';
+} from '@mui/material';
 
 const useStyles = makeStyles({
   tableTitle: {

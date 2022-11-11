@@ -1,9 +1,9 @@
 import { ReactNode, SyntheticEvent, useEffect, useState } from 'react';
-import { Snackbar, SnackbarContent } from '@material-ui/core';
+import { Snackbar, SnackbarContent } from '@mui/material';
 import { useStyles } from './AppSnackbar.styles';
 
 interface IProps {
-  hasErrors: boolean
+  hasErrors: boolean;
 }
 
 const fetchErrorString = 'An error occured fetching data';
@@ -12,12 +12,15 @@ const fetchSuccessString = 'Data successfully fetched';
 export const AppSnackbar = (props: IProps): ReactNode => {
   const classes = useStyles(props);
   const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
-  
+
   useEffect(() => {
     setIsSnackbarOpen(true);
   }, [props.hasErrors]);
 
-  const handleCloseSnackbar = (_: SyntheticEvent<HTMLElement, Event>, reason: string) => {
+  const handleCloseSnackbar = (
+    _: SyntheticEvent<HTMLElement, Event>,
+    reason: string,
+  ) => {
     if (reason === 'clickaway') return;
     setIsSnackbarOpen(false);
   };
@@ -36,5 +39,4 @@ export const AppSnackbar = (props: IProps): ReactNode => {
     </Snackbar>
   );
 };
- export type { IProps };
- 
+export type { IProps };

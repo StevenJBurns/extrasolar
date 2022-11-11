@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/material/styles';
 import HomeBackground from 'assets/images/apollo.jpg';
 
 export const useStyles = makeStyles(() => ({
