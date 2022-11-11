@@ -1,22 +1,19 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { makeStyles } from '@mui/material/styles';
-import {
-  AppBar,
-  Hidden,
-  Drawer,
-  Grid,
-  MenuList,
-  MenuItem,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import AppBar from '@mui/material/AppBar';
+import Drawer from '@mui/material/Drawer';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Hidden from '@mui/material/Hidden';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
 import { AudioToggleButton } from '../../ui/AudioToggleButton';
 // import { formatLastFetch } from 'util/formatDate';
-import './PageHeader.scss';
 
 export const PageHeader: React.FunctionComponent = () => {
   const { pathname } = useLocation();
