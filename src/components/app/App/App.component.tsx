@@ -3,10 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import {
   fetchDistinctHostStars,
   fetchAllPlanets,
+  fetchNasaData,
 } from 'services/http/fetchNasaData';
-// import { useDispatch } from 'react-redux';
-// import { getStarsThunk, getPlanetsThunk } from 'state/actions/data';
-// import { AppSnackbar } from '../AppSnackbar/AppSnackbar';
 import {
   PageHome,
   PageData,
@@ -17,35 +15,21 @@ import {
 } from 'components/pages';
 import './App.scss';
 
-// const HomeOGG = React.lazy(() => import('assets/audio/home.ogg'));
-// const DataOGG = React.lazy(() => import('assets/audio/data.ogg'));
-// const SystemsOGG = React.lazy(() => import('assets/audio/systems.ogg'));
-// const AboutOGG = React.lazy(() => import('assets/audio/about.ogg'));
-
 export const App = () => {
-  // const dispatch = useDispatch();
-  // const systems = useSelector(selectUniqueSystemIds());
-
-  // const getData = React.useCallback(() => {
-  //   dispatch(getStarsThunk());
-  //   dispatch(getPlanetsThunk());
-  // }, [dispatch]);
-
   React.useEffect(() => {
     const getStars = async () => {
-      console.log('fetching');
       const data = await fetchDistinctHostStars();
       console.log(data);
     };
 
     const getPlanets = async () => {
-      console.log('fetching');
       const data = await fetchAllPlanets();
       console.log(data);
     };
 
-    getStars();
-    getPlanets();
+    // getStars();
+    // getPlanets();
+    fetchNasaData();
   }, []);
 
   return (

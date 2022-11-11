@@ -14,4 +14,6 @@
 //   });
 // };
 
-export const mapRawDataToSolarSystems = () => {};
+export const mapNasaDataToModels = (): Array<any> => {
+  return [];
+};

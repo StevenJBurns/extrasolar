@@ -1,28 +1,33 @@
 import { NavLink } from 'react-router-dom';
 import './AppNav.scss';
 
-const setActiveStyle = ({ isActive }: { isActive: boolean}) => (
-  { color: isActive ? 'green' : 'blue' }
-);
+type NavigationPath = {
+  path: string;
+  label: string;
+};
+
+const validNavigationPaths: Array<NavigationPath> = [
+  { path: '/', label: 'HOME' },
+  { path: '/data', label: 'DATA' },
+  { path: '/systems', label: 'SOLAR SYSTEMS' },
+  { path: '/bookmarks', label: 'BOOKMARKS' },
+  { path: '/about', label: 'ABOUT' },
+];
+
+const setActiveStyle = ({ isActive }: { isActive: boolean }) => ({
+  color: isActive ? 'green' : 'blue',
+});
 
 export const AppNav = () => (
   <nav id="app-nav">
     <ul>
-      <li>
-        <NavLink to="/" style={setActiveStyle} end>HOME</NavLink>
-      </li>
-      <li>
-        <NavLink to="/data" style={setActiveStyle}>DATA</NavLink>
-      </li>
-      <li>
-        <NavLink to="/systems" style={setActiveStyle}>SOLAR SYSTEMS</NavLink>
-      </li>
-      <li>
-        <NavLink to="/bookmarks" style={setActiveStyle}>BOOKMARKS</NavLink>
-      </li>
-      <li>
-        <NavLink to="/about" style={setActiveStyle}>ABOUT</NavLink>
-      </li>
+      {validNavigationPaths.map(path => (
+        <li key={path.label}>
+          <NavLink to={path.path} style={setActiveStyle}>
+            {path.label}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   </nav>
 );
