@@ -1,5 +1,5 @@
 import { ReactNode, SyntheticEvent, useEffect, useState } from 'react';
-import { Snackbar, SnackbarContent } from '@mui/material';
+import { Snackbar, SnackbarCloseReason, SnackbarContent } from '@mui/material';
 import { useStyles } from './AppSnackbar.styles';
 
 interface IProps {
@@ -18,8 +18,8 @@ export const AppSnackbar = (props: IProps): ReactNode => {
   }, [props.hasErrors]);
 
   const handleCloseSnackbar = (
-    _: SyntheticEvent<HTMLElement, Event>,
-    reason: string,
+    event: Event | SyntheticEvent<any, Event>,
+    reason: SnackbarCloseReason,
   ) => {
     if (reason === 'clickaway') return;
     setIsSnackbarOpen(false);
