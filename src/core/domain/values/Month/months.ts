@@ -1,6 +1,6 @@
-import { Month } from 'domain/types';
+import { Month } from './Month';
 
-export const Months: Array<Month> = [
+export const months: Array<Month> = [
   { short: 'Jan', long: 'January' },
   { short: 'Feb', long: 'February' },
   { short: 'Mar', long: 'March' },

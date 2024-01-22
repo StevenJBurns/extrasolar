@@ -1,17 +1,12 @@
+import { SolarSystemParameters } from 'core/domain/entities/SolarSystem/SolarSystemParameters';
 import { Star, Planet } from '../..';
 
- interface ISolarSystem {
-  id: string,
-  stars: Array<Star>,
-  planets: Array<Planet>,
-}
-
-export class SolarSystem {
+export class SolarSystem implements SolarSystemParameters {
   #id: string;
   #stars: Array<Star> = [];
   #planets: Array<Planet> = [];
 
-  constructor(args: ISolarSystem) {
+  constructor(args: SolarSystemParameters) {
     this.#id = args.id;
     this.#stars = args.stars;
     this.#planets = args.planets;

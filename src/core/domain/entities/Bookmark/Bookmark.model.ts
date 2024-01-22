@@ -1,10 +1,14 @@
-import { IBookmark } from "domain/models/Bookmark/Bookmark.entity";
+import { IBookmark } from "core/domain/entities/Bookmark/Bookmark.entity";
 
 export class Bookmark implements IBookmark {
   #solarSystemId: string;
 
-  constructor(args: IBookmark) {
+  private constructor(args: IBookmark) {
     this.#solarSystemId = args.solarSystemId;
+  }
+
+  static create() {
+    console.log('creating bookmark...');
   }
 
   public get solarSystemId() {
