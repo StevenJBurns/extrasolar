@@ -12,15 +12,17 @@ import {
 export const App = () => {
   return (
     <>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <Container
-        maxWidth={false}
-        disableGutters
         sx={{
           flex: '1 0 auto',
           display: 'flex',
           minHeight: '100vh',
           flexDirection: 'column',
+          '& .MuiContainer-root': {
+            px: 0,
+            py: 0,
+          },
         }}
       >
         <Routes>

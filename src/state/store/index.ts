@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-import { persistedRootReducer as rootReducer } from 'state/reducers';
-import { solarSystems } from 'state/reducers/data/solarSystems';
+import { persistedRootReducer as rootReducer } from '../reducers';
+import { solarSystems } from '../reducers/data/solarSystems';
 
 const initialState = {
   // audio: {},
@@ -36,8 +36,8 @@ const initialState = {
 
 export const store = createStore(
   rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(thunk)),
+  // initialState,
+  // composeWithDevTools(applyMiddleware(thunk)),
 );
 
 export const persistor = persistStore(store);

@@ -8,17 +8,19 @@ interface IProps {
 export const StarsPieChart = (props: IProps) => {
   if (!props.starData) return null;
 
-  D3.select("#section-chart-circumbinaries").selectAll("*").remove();
+  D3.select("#section-chart-circumbinaries")
+    .selectAll("*")
+    .remove();
 
-  const { starData } = props;
+  // const { starData } = props;
   // const w = 320, h = 320, r = 120;
   // const margin = { top: 8, bottom: 8, left: 8, right: 8 };
 
-  const dataCircumbinaries = [
-    { group: "single", count: 0 },
-    { group: "binary", count: 0 },
-    { group: "undefined", count: 0 }
-  ];
+  // const dataCircumbinaries = [
+  //   { group: "single", count: 0 },
+  //   { group: "binary", count: 0 },
+  //   { group: "undefined", count: 0 }
+  // ];
 
   // if (props.starData) {
   //   starData.filter(star => !isNaN(star.pl_cbflag))

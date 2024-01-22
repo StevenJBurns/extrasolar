@@ -2,18 +2,17 @@ import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import { changeAudioSource } from 'state/actions/ui';
 // import { LinearProgress } from '@mui/material';
-import 'react-input-range/lib/css/index.css';
-import { Page } from '../Page/Page';
-import { PageHeader, PageFooter } from '../.';
+import { Page } from '../Page/Page.component';
+import { PageHeader, PageFooter } from '..';
 import { Canvas } from '../../canvas';
 // import SystemsOGG from 'assets/audio/systems.ogg';
 import './PageSolarSystems.scss';
 
-interface IProps {
+type TProps = {
   selectedSolarSystem?: string;
-}
+};
 
-export const PageSystems = (props: IProps) => {
+export const PageSystems = (props: TProps) => {
   // const dispatch = useDispatch();
   // const isFetchingStars = useSelector(state => state.data.stars.isFetching);
 

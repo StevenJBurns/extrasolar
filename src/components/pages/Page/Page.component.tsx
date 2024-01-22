@@ -1,19 +1,19 @@
 import { ReactNode } from 'react';
 import { Container } from '@mui/material';
 import { useDocumentTitle } from 'presentation/hooks/useDocumentTitle';
-import { useStyles } from './Page.styles';
+import { styles } from './Page.styles';
 
-interface IProps {
+type TProps = {
   children: NonNullable<ReactNode> & ReactNode;
   title?: string;
-}
+  css?: unknown;
+};
 
-export const Page = (props: IProps) => {
-  const classes = useStyles();
-  useDocumentTitle(props.title);
+export const Page = (props: TProps) => {
+  useDocumentTitle(props.title ?? '');
 
   return (
-    <Container component="main" maxWidth="md" classes={classes}>
+    <Container component="main" maxWidth="md" css={styles}>
       {props.children}
     </Container>
   );

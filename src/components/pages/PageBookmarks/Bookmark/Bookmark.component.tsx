@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from '@mui/material/ListItem';
-import { useStyles } from './Bookmark.styles';
+import { styles } from './Bookmark.styles';
 
 export type Props = {
   key: string;
@@ -8,7 +8,12 @@ export type Props = {
 };
 
 export const Bookmark = (props: Props) => {
-  const classes = useStyles();
-
-  return <ListItem key={props.key}>{props.bookmarkId}</ListItem>;
+  return (
+    <ListItem
+      key={props.key}
+      css={styles}
+    >
+      {props.bookmarkId}
+    </ListItem>
+  );
 };

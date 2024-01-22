@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import Drawer from '@mui/material/Drawer';
 import Grid from '@mui/material/Grid';
@@ -11,52 +10,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Hidden from '@mui/material/Hidden';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
-import { AudioToggleButton } from '../../ui/AudioToggleButton';
+// import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
+import { AudioToggleButton } from '../../ui/AudioToggleButton/AudioToggleButton';
+import { styles } from './PageHeader.styles';
 // import { formatLastFetch } from 'util/formatDate';
 
 export const PageHeader: React.FunctionComponent = () => {
   const { pathname } = useLocation();
-  const isOnline = useOnlineStatus();
-
-  const useStyles = makeStyles(() => ({
-    root: {
-      background: 'linear-gradient(290deg, goldenrod 40%, darkgoldenrod 40%)',
-    },
-    toolbar: {
-      padding: '1rem 2vw',
-      justifyContent: 'center',
-    },
-    header: {
-      margin: '0.25rem 1rem',
-      color: isOnline ? 'white' : 'darkred',
-    },
-    drawer: {
-      paper: {},
-    },
-    drawerPaper: {
-      width: '280px',
-      backgroundColor: 'darkgoldenrod',
-    },
-    menuList: {
-      backgroundColor: 'transparent',
-    },
-    menuItem: {
-      padding: 0,
-      justifyContent: 'center',
-      lineHeight: '2rem',
-    },
-    link: {
-      height: '2rem',
-      width: '8rem',
-      display: 'table-cell',
-      verticalAlign: 'middle',
-      textAlign: 'center',
-    },
-  }));
-
-  const classes = useStyles();
-
+  // const isOnline = useOnlineStatus();
   // const formattedLastFetch = formatLastFetch(lastFetch);
 
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -70,57 +31,41 @@ export const PageHeader: React.FunctionComponent = () => {
   React.useEffect(() => setIsDrawerOpen(false), [pathname]);
 
   return (
-    <AppBar position="relative" className={classes.root}>
-      <Toolbar className={classes.toolbar}>
+    <AppBar position="relative" css={styles}>
+      <Toolbar css={styles}>
         <Grid container direction="column" style={{ flexGrow: 1 }}>
-          <Typography className={classes.header} variant="h3" noWrap>
+          <Typography css={styles} variant="h3" noWrap>
             ExtraSolar
           </Typography>
-          <Typography className={classes.header} variant="h6" noWrap>
+          <Typography css={styles} variant="h6" noWrap>
             Exoplanet Data Visualization
           </Typography>
           {/* <Typography className={classes.header} paragraph noWrap>{formattedLastFetch}</Typography> */}
         </Grid>
         <Hidden xsDown>
           <MenuList>
-            <MenuItem className={classes.menuItem}>
-              <NavLink to="/" className={classes.link} style={setActiveStyle}>
+            <MenuItem css={styles}>
+              <NavLink to="/" css={styles} style={setActiveStyle}>
                 Home
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/data"
-                className={classes.link}
-                style={setActiveStyle}
-              >
+            <MenuItem css={styles}>
+              <NavLink to="/data" css={styles} style={setActiveStyle}>
                 Data
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/systems"
-                className={classes.link}
-                style={setActiveStyle}
-              >
+            <MenuItem css={styles}>
+              <NavLink to="/systems" css={styles} style={setActiveStyle}>
                 Systems
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/bookmarks"
-                className={classes.link}
-                style={setActiveStyle}
-              >
+            <MenuItem css={styles}>
+              <NavLink to="/bookmarks" css={styles} style={setActiveStyle}>
                 Bookmarks
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/about"
-                className={classes.link}
-                style={setActiveStyle}
-              >
+            <MenuItem css={styles}>
+              <NavLink to="/about" css={styles} style={setActiveStyle}>
                 About
               </NavLink>
             </MenuItem>
@@ -139,13 +84,12 @@ export const PageHeader: React.FunctionComponent = () => {
         </Hidden>
       </Toolbar>
       <Drawer
-        className={classes.drawer}
-        classes={{ paper: classes.drawerPaper }}
+        css={styles}
         onClose={() => setIsDrawerOpen(false)}
         variant="temporary"
         open={isDrawerOpen}
       >
-        <MenuList className={classes.menuList}>
+        <MenuList css={styles}>
           <NavLink to="/">
             <MenuItem>HOME</MenuItem>
           </NavLink>

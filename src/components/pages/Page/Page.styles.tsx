@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
 export const styles = css`
-  root: {
-    color: '#DDDDDD',
-  }
-`;
+root: {
+  marginTop: '2rem',
+  color: '#DDD'
+}`;

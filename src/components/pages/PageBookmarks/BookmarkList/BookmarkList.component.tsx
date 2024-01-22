@@ -3,22 +3,20 @@ import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import { Bookmark } from '../Bookmark';
-import { useStyles } from './BookmarkList.styles';
+import { styles } from './BookmarkList.styles';
 
-export type Props = {
-  bookmarkList: Array<string> | [];
+export type TProps = {
+  bookmarkList: Array<string> | [],
 };
 
-export const BookmarkList = (props: Props) => {
-  const classes = useStyles();
-
+export const BookmarkList = (props: TProps) => {
   if (!props.bookmarkList.length)
     return (
       <Box flex={1} justifyContent="center" textAlign="center" color="#00dd00">
-        <Typography variant="h4" className={classes.root}>
+        <Typography variant="h4" css={styles}>
           No Bookmarked Solar Systems
         </Typography>
-        <Typography variant="h6" className={classes.root}>
+        <Typography variant="h6" css={styles}>
           Add solar systems to your bookmark list on the Systems Page
         </Typography>
       </Box>
