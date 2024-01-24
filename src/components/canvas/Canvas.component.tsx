@@ -1,16 +1,16 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { useViewModel } from './Canvas.viewmodel';
 import { styles } from './Canvas.styles';
 
 export const Canvas = () => {
-  const [canvasWidth, setCanvasWidth] = React.useState(window.innerWidth);
+  const [canvasWidth, setCanvasWidth] = useState(window.innerWidth);
   const canvasRef = useViewModel();
 
   const handleResize = (): void => setCanvasWidth(window.innerWidth);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('resize', handleResize, true);
-    
+
     /* clean up */
     return () => window.removeEventListener('resize', handleResize, true);
   }, []);

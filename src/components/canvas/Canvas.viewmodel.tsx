@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import { IStarField } from '.';
 import { renderStarField } from './renderStarField';
 
@@ -9,7 +9,7 @@ function draw(ctx: CanvasRenderingContext2D): void {
 }
 
 export const useViewModel = () => {
-  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const starfield: IStarField = { stars: [] };
 
   if (!starfield.stars.length) {
@@ -29,7 +29,7 @@ export const useViewModel = () => {
       }));
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (canvasRef.current) {
       const context = canvasRef.current.getContext('2d');
       let nextFrame: number;
@@ -53,7 +53,7 @@ export const useViewModel = () => {
       /* clean up */
       return () => cancelAnimationFrame(nextFrame);
     }
-  }, [draw]);
+  }, [starfield.stars]);
 
   return canvasRef;
 };
