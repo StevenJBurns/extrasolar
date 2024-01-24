@@ -1,18 +1,16 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Container } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
+import { Container } from '@mui/material';
 import { actionTypes } from '../../../state/actions';
-import { PageFooter } from '../PageFooter/PageFooter.component';
-import { styles } from './PageHome.styles';
+import { HomeHeader } from './HomeHeader/HomeHeader.component';
+import { HomeFooter } from './HomeFooter/HomeFooter.component';
+import { HomeNav } from './HomeNav/HomeNav.component';
 
 import HomeBackground from 'assets/images/apollo.jpg';
 import HomeOGG from 'assets/audio/home.ogg';
 
 export const PageHome = () => {
   const dispatch = useDispatch();
-  const isOnline = useOnlineStatus();
 
   useEffect(() => {
     dispatch({
@@ -40,29 +38,9 @@ export const PageHome = () => {
           color: '#DDD',
         }}
       >
-        <header
-          style={{ margin: '2rem', color: isOnline ? 'white' : 'darkred' }}
-        >
-          <h1>ExtraSolar</h1>
-          <h2>Exoplanet Data Visualization</h2>
-        </header>
-        <nav style={{ flex: '1 0 auto' }}>
-          <ul>
-            <li>
-              <Link to="./data">DATA</Link>
-            </li>
-            <li>
-              <Link to="./systems">SOLAR SYSTEMS</Link>
-            </li>
-            <li>
-              <Link to="./bookmarks">BOOKMARKS</Link>
-            </li>
-            <li>
-              <Link to="./about">ABOUT</Link>
-            </li>
-          </ul>
-        </nav>
-        <PageFooter />
+        <HomeHeader />
+        <HomeNav />
+        <HomeFooter />
       </Container>
     </>
   );
