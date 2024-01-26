@@ -1,25 +1,47 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useViewModel } from './Canvas.viewmodel';
-import { styles } from './Canvas.styles';
+import { Box } from '@mui/material';
 
 export const Canvas = () => {
-  const [canvasWidth, setCanvasWidth] = useState(window.innerWidth);
   const canvasRef = useViewModel();
 
-  const handleResize = (): void => setCanvasWidth(window.innerWidth);
-
   useEffect(() => {
-    window.addEventListener('resize', handleResize, true);
+    if (!canvasRef) return;
 
-    /* clean up */
-    return () => window.removeEventListener('resize', handleResize, true);
-  }, []);
+    const canvas = canvasRef;
+    const observer = new ResizeObserver(() => {
+      if (!canvas.current) return;
 
-  const canvasHeight = canvasWidth <= 800 ? canvasWidth / 2 : 400;
+      canvas.current.width = canvas.current.clientWidth;
+      canvas.current.height = canvas.current.clientHeight;
+    });
+
+    if (canvasRef.current)
+      observer.observe(canvasRef.current as HTMLCanvasElement);
+
+    return () => {
+      if (canvas.current)
+        observer.unobserve(canvas.current as HTMLCanvasElement);
+    };
+  }, [canvasRef]);
 
   return (
-    <div css={styles}>
-      <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} />
-    </div>
+    <Box
+      width="100%"
+      height="100%"
+      position="absolute"
+      overflow="hidden"
+      zIndex={-1}
+    >
+      <canvas
+        ref={canvasRef}
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          display: 'block',
+        }}
+      />
+    </Box>
   );
 };

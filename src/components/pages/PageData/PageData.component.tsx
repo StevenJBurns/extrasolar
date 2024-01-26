@@ -45,8 +45,46 @@ export const PageData = (props: TProps) => {
     <>
       <PageHeader />
       {/* {selectAllStars.isFetching && <LinearProgress />} */}
-      <Page {...props} css={styles}>
-        <Typography variant="h5">DATA</Typography>
+      <Page {...props}>
+        <Typography variant="h4">Data</Typography>
+        <Divider sx={{ bgcolor: '#7d7d7d', mb: 2 }} />
+        <Typography paragraph align="justify">
+          Since 1992, over 3,500&nbsp;
+          <a href="https://en.wikipedia.org/wiki/Exoplanet">
+            extrasolar planets
+          </a>
+          &nbsp; have been observed by various means. Less than two dozen have
+          been&nbsp;
+          <a href="https://en.wikipedia.org/wiki/List_of_directly_imaged_exoplanets">
+            directly imaged
+          </a>
+          &nbsp; but several thousand more have been catalogued by non-visual
+          means. If complete, that data lends itself to creating an abstract
+          picture of what these distant solar systems look like.
+        </Typography>
+        <Typography paragraph align="justify">
+          The data in this project comes directly from NASA and IPAC at Caltech,
+          the majority of which was collected by the&nbsp;
+          <a href="https://en.wikipedia.org/wiki/Kepler_(spacecraft)">
+            Kepler and K2
+          </a>
+          &nbsp; missions since being launched in 2009. NASA maintains a list of
+          over 5,000 potential stellar candidates for future observations.
+        </Typography>
+        <Typography paragraph align="justify">
+          Scientists estimate there are roughly 100 billion exoplanets in our
+          galaxy alone. Further extrapolation predicts there are 10 billion
+          earth size planets, and of those 1 billion may lie in its host
+          star&apos;s&nbsp;
+          <a href="https://en.wikipedia.org/wiki/Circumstellar_habitable_zone">
+            habitable zone
+          </a>
+          .
+        </Typography>
+        <Typography align="justify" paragraph>
+          Browse the project to see visual plots of the solar systems with valid
+          data...
+        </Typography>
         <Typography paragraph align="justify">
           The available data from NASA comes from a SQL table view that combines
           star and planet data together. While this allows for compact and

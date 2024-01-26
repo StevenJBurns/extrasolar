@@ -3,7 +3,7 @@ import { IStarField } from '.';
 import { renderStarField } from './renderStarField';
 
 function draw(ctx: CanvasRenderingContext2D): void {
-  /* wipe the canvas between re-draws */
+  /* wipes the canvas between re-draws */
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
@@ -42,7 +42,7 @@ export const useViewModel = () => {
 
         /* update each star.theta before the next render */
         for (const star of starfield.stars) {
-          star.polar.theta -= 0.001 * star.opacity;
+          star.polar.theta += 0.0025 * star.opacity;
         }
 
         nextFrame = window.requestAnimationFrame(render);

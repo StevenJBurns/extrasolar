@@ -1,39 +1,32 @@
-import React from 'react';
+// import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import { changeAudioSource } from 'state/actions/ui';
 // import { LinearProgress } from '@mui/material';
-import { Page } from '../Page/Page.component';
+// import { Page } from '../Page/Page.component';
 import { PageHeader, PageFooter } from '..';
 import { Canvas } from '../../canvas';
+import { Box, Typography } from '@mui/material';
 // import SystemsOGG from 'assets/audio/systems.ogg';
-import './PageSolarSystems.scss';
 
-type TProps = {
-  selectedSolarSystem?: string;
-};
-
-export const PageSystems = (props: TProps) => {
-  // const dispatch = useDispatch();
-  // const isFetchingStars = useSelector(state => state.data.stars.isFetching);
-
-  const { selectedSolarSystem } = props;
-
-  // React.useEffect(() => {
-  //   dispatch(changeAudioSource(SystemsOGG));
-  // }, [dispatch]);
-
-  return (
-    <>
-      <PageHeader />
+export const PageSystems = () => (
+  <>
+    <Box sx={{ position: 'static' }}>
       <Canvas />
-      <Page {...props}>
-        {/* { isFetchingStars && <LinearProgress />} */}
+      <PageHeader />
+      <Box position={'absolute'} zIndex={1} color={'azure'}>
+        <Typography variant="body2">Planet Count</Typography>
+        <Typography variant="body2">Binary Star?</Typography>
+        <Typography variant="body2">Stellar Mass</Typography>
+        <Typography variant="body2">Stellar Radius</Typography>
+        <Typography variant="body2">Stellar Temperature</Typography>
+        <PageFooter />
+      </Box>
+    </Box>
+    {/* <Page {...props}>
+        { isFetchingStars && <LinearProgress />}
         <div id="main-solarsystems">
-          {/* <Canvas selectedSolarSystem={selectedSolarSystem} /> */}
-          <h3>
-            SELECTED SOLAR SYSTEM:{' '}
-            {selectedSolarSystem ? selectedSolarSystem : null}
-          </h3>
+          <Canvas selectedSolarSystem={selectedSolarSystem} />
+          <h3>{`SELECTED SOLAR SYSTEM: ${selectedSolarSystem ?? null}`}</h3>
           <div id="div-filters">
             <div id="div-filter-stars">
               <h5 className="slider-label">Planet Count</h5>
@@ -51,21 +44,6 @@ export const PageSystems = (props: TProps) => {
             <ul></ul>
           </div>
         </div>
-      </Page>
-      <PageFooter />
-    </>
-  );
-};
-
-// const mapStateToProps = state => {
-//   const { selectedSolarSystem } = state.ui;
-//   const { stars, planets } = state.data;
-//   return { stars, planets, selectedSolarSystem };
-// };
-
-// const mapDispatchToProps = dispatch => ({
-//   changeSelectedSystem: newSystem => dispatch(changeSelectedSolarSystem(newSystem)),
-//   changeAudioSource: audioSource => dispatch(changeAudioSource(audioSource))
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(PageSolarSystems);
+      </Page> */}
+  </>
+);
