@@ -1,133 +1,72 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  AppBar,
-  Hidden,
-  Drawer,
-  Grid,
-  MenuList,
-  MenuItem,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@material-ui/core/';
-import MenuIcon from '@material-ui/icons/Menu';
-import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
-import { AudioToggleButton } from '../../ui/AudioToggleButton';
+import AppBar from '@mui/material/AppBar';
+import Drawer from '@mui/material/Drawer';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Hidden from '@mui/material/Hidden';
+import MenuIcon from '@mui/icons-material/Menu';
+// import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
+import { AudioToggleButton } from '../../ui/AudioToggleButton/AudioToggleButton';
+import { List, Stack } from '@mui/material';
 // import { formatLastFetch } from 'util/formatDate';
-import './PageHeader.scss';
 
 export const PageHeader: React.FunctionComponent = () => {
   const { pathname } = useLocation();
-  const isOnline = useOnlineStatus();
-
-  const useStyles = makeStyles(() => ({
-    root: {
-      background: 'linear-gradient(290deg, goldenrod 40%, darkgoldenrod 40%)',
-    },
-    toolbar: {
-      padding: '1rem 2vw',
-      justifyContent: 'center',
-    },
-    header: {
-      margin: '0.25rem 1rem',
-      color: isOnline ? 'white' : 'darkred',
-    },
-    drawer: {
-      paper: {},
-    },
-    drawerPaper: {
-      width: '280px',
-      backgroundColor: 'darkgoldenrod',
-    },
-    menuList: {
-      backgroundColor: 'transparent',
-    },
-    menuItem: {
-      padding: 0,
-      justifyContent: 'center',
-      lineHeight: '2rem',
-    },
-    link: {
-      height: '2rem',
-      width: '8rem',
-      display: 'table-cell',
-      verticalAlign: 'middle',
-      textAlign: 'center',
-    },
-  }));
-
-  const classes = useStyles();
-
+  // const isOnline = useOnlineStatus();
   // const formattedLastFetch = formatLastFetch(lastFetch);
 
-  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleHamburgerClick = () => setIsDrawerOpen(!isDrawerOpen);
 
   const setActiveStyle = ({ isActive }: { isActive: boolean }) => ({
-    display: isActive ? 'none' : undefined,
+    display: isActive ? 'hidden' : undefined,
   });
 
-  React.useEffect(() => setIsDrawerOpen(false), [pathname]);
+  useEffect(() => setIsDrawerOpen(false), [pathname]);
 
   return (
-    <AppBar position="relative" className={classes.root}>
-      <Toolbar className={classes.toolbar}>
+    <AppBar
+      sx={{ color: 'azure', backgroundColor: '#1F1F1F', position: 'static' }}
+    >
+      <Toolbar>
         <Grid container direction="column" style={{ flexGrow: 1 }}>
-          <Typography className={classes.header} variant="h3" noWrap>
-            ExtraSolar
-          </Typography>
-          <Typography className={classes.header} variant="h6" noWrap>
-            Exoplanet Data Visualization
-          </Typography>
+          <Typography variant="h5">ExtraSolar</Typography>
           {/* <Typography className={classes.header} paragraph noWrap>{formattedLastFetch}</Typography> */}
         </Grid>
-        <Hidden xsDown>
-          <MenuList>
-            <MenuItem className={classes.menuItem}>
-              <NavLink to="/" className={classes.link} style={setActiveStyle}>
-                Home
+        <Hidden smDown>
+          <List component={Stack} direction="row">
+            <MenuItem>
+              <NavLink to="/" style={setActiveStyle}>
+                <Typography>HOME</Typography>
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/data"
-                className={classes.link}
-                style={setActiveStyle}
-              >
-                Data
+            <MenuItem>
+              <NavLink to="/data" style={setActiveStyle}>
+                DATA
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/systems"
-                className={classes.link}
-                style={setActiveStyle}
-              >
-                Systems
+            <MenuItem>
+              <NavLink to="/systems" style={setActiveStyle}>
+                SYSTEMS
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/bookmarks"
-                className={classes.link}
-                style={setActiveStyle}
-              >
-                Bookmarks
+            <MenuItem>
+              <NavLink to="/bookmarks" style={setActiveStyle}>
+                BOOKMARKS
               </NavLink>
             </MenuItem>
-            <MenuItem className={classes.menuItem}>
-              <NavLink
-                to="/about"
-                className={classes.link}
-                style={setActiveStyle}
-              >
-                About
+            <MenuItem>
+              <NavLink to="/about" style={setActiveStyle}>
+                ABOUT
               </NavLink>
             </MenuItem>
-          </MenuList>
+          </List>
         </Hidden>
         <Hidden xsDown>
           <AudioToggleButton />
@@ -142,13 +81,17 @@ export const PageHeader: React.FunctionComponent = () => {
         </Hidden>
       </Toolbar>
       <Drawer
-        className={classes.drawer}
-        classes={{ paper: classes.drawerPaper }}
         onClose={() => setIsDrawerOpen(false)}
         variant="temporary"
         open={isDrawerOpen}
+        PaperProps={{
+          sx: {
+            minWidth: '90%',
+            backgroundColor: '#3d3d3d',
+          },
+        }}
       >
-        <MenuList className={classes.menuList}>
+        <MenuList>
           <NavLink to="/">
             <MenuItem>HOME</MenuItem>
           </NavLink>

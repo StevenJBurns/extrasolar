@@ -1,4 +1,4 @@
-import { Page } from '../Page/Page';
+import { Page } from '../Page/Page.component';
 import { PageHeader, PageFooter } from '../.';
 import "assets/images/black-hole.jpg";
 import "./Page404.scss";

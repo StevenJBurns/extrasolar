@@ -1,4 +1,4 @@
-import { Months } from 'constants/months';
+import { months } from 'core/domain/values/Month/months';
 
 export const addLeadingZero = (n: number): string => (n <= 9 ? '0' : '') + n;
 
@@ -6,7 +6,7 @@ export const formatLastFetch = (lastFetch: string): string => {
   const date: Date = new Date(lastFetch);
 
   const day = addLeadingZero(date.getDate());
-  const month = Months[date.getMonth()].short;
+  const month = months[date.getMonth()].short;
   const year = date.getFullYear();
   const hour = addLeadingZero(date.getHours());
   const min = addLeadingZero(date.getMinutes());

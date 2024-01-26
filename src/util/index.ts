@@ -1,1 +1,1 @@
-export { mapNasaDataToModels } from './mapRawDataToSolarSystems';
+export { mapNasaDataToModels } from '../external/adapters/mapRawDataToSolarSystems';
