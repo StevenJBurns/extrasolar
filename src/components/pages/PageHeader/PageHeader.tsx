@@ -12,7 +12,7 @@ import Hidden from '@mui/material/Hidden';
 import MenuIcon from '@mui/icons-material/Menu';
 // import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
 import { AudioToggleButton } from '../../ui/AudioToggleButton/AudioToggleButton';
-import { List, Stack } from '@mui/material';
+import { List, ListItem, Stack } from '@mui/material';
 // import { formatLastFetch } from 'util/formatDate';
 
 export const PageHeader: React.FunctionComponent = () => {
@@ -25,7 +25,7 @@ export const PageHeader: React.FunctionComponent = () => {
   const handleHamburgerClick = () => setIsDrawerOpen(!isDrawerOpen);
 
   const setActiveStyle = ({ isActive }: { isActive: boolean }) => ({
-    display: isActive ? 'hidden' : undefined,
+    color: isActive ? 'lime' : undefined,
   });
 
   useEffect(() => setIsDrawerOpen(false), [pathname]);
@@ -40,32 +40,40 @@ export const PageHeader: React.FunctionComponent = () => {
           {/* <Typography className={classes.header} paragraph noWrap>{formattedLastFetch}</Typography> */}
         </Grid>
         <Hidden smDown>
-          <List component={Stack} direction="row">
-            <MenuItem>
+          <List
+            component={Stack}
+            direction="row"
+            sx={{
+              '& a': {
+                textDecoration: 'none',
+              },
+            }}
+          >
+            <ListItem>
               <NavLink to="/" style={setActiveStyle}>
                 <Typography>HOME</Typography>
               </NavLink>
-            </MenuItem>
-            <MenuItem>
+            </ListItem>
+            <ListItem>
               <NavLink to="/data" style={setActiveStyle}>
-                DATA
+                <Typography>DATA</Typography>
               </NavLink>
-            </MenuItem>
-            <MenuItem>
+            </ListItem>
+            <ListItem>
               <NavLink to="/systems" style={setActiveStyle}>
-                SYSTEMS
+                <Typography>SYSTEMS</Typography>
               </NavLink>
-            </MenuItem>
-            <MenuItem>
+            </ListItem>
+            <ListItem>
               <NavLink to="/bookmarks" style={setActiveStyle}>
-                BOOKMARKS
+                <Typography>BOOKMARKS</Typography>
               </NavLink>
-            </MenuItem>
-            <MenuItem>
+            </ListItem>
+            <ListItem>
               <NavLink to="/about" style={setActiveStyle}>
-                ABOUT
+                <Typography>ABOUT</Typography>
               </NavLink>
-            </MenuItem>
+            </ListItem>
           </List>
         </Hidden>
         <Hidden xsDown>
@@ -81,9 +89,9 @@ export const PageHeader: React.FunctionComponent = () => {
         </Hidden>
       </Toolbar>
       <Drawer
-        onClose={() => setIsDrawerOpen(false)}
         variant="temporary"
         open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
         PaperProps={{
           sx: {
             minWidth: '90%',
