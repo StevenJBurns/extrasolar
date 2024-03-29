@@ -1,29 +1,16 @@
-import { useEffect } from 'react';
 import { useViewModel } from './Canvas.viewmodel';
+import { TSolarSystem } from '../pages/PageSystems/PageSystems.component';
 import { Box } from '@mui/material';
 
-export const Canvas = () => {
-  const canvasRef = useViewModel();
+type TProps = {
+  systemData: TSolarSystem;
+};
 
-  useEffect(() => {
-    if (!canvasRef) return;
-
-    const canvas = canvasRef;
-    const observer = new ResizeObserver(() => {
-      if (!canvas.current) return;
-
-      canvas.current.width = canvas.current.clientWidth;
-      canvas.current.height = canvas.current.clientHeight;
-    });
-
-    if (canvasRef.current)
-      observer.observe(canvasRef.current as HTMLCanvasElement);
-
-    return () => {
-      if (canvas.current)
-        observer.unobserve(canvas.current as HTMLCanvasElement);
-    };
-  }, [canvasRef]);
+export const Canvas = (props: TProps) => {
+  const { systemData } = props;
+  const { canvasRef } = useViewModel(systemData);
+  const handleMouseOver = (e: { clientX: unknown; clientY: unknown }) =>
+    console.log(e.clientX, e.clientY);
 
   return (
     <Box
@@ -34,6 +21,7 @@ export const Canvas = () => {
       zIndex={-1}
     >
       <canvas
+        onMouseOver={handleMouseOver}
         ref={canvasRef}
         style={{
           width: '100%',

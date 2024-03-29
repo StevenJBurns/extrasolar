@@ -1,4 +1,4 @@
-export const renderSystemStar = (
+export const renderStars = (
     ctx: CanvasRenderingContext2D,
   ) => {
   const centerX = ctx.canvas.width / 2;
