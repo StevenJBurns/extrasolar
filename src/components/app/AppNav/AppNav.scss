@@ -25,7 +25,8 @@
   color: #F0F0F0;
   text-decoration: none;
   display: table-cell;
-  vertical-align: middle
+  vertical-align: middle;
+  text-decoration: none;
 }
 
 #app-nav a:hover,
@@ -38,7 +39,7 @@
 #app-nav a:link,
 #app-nav a:visited {
   height: 20px;
-  color: #F0F0F0
+  color: #F0F0F0;
 }
 
 @media screen and (max-width: 480px) {

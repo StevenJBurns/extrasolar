@@ -23,11 +23,11 @@ main {
 }
 
 a:link, a:visited {
-  color: #F0F0F0;
-  text-decoration: none;
-  transition: color 0.25s
+  color: #EEFFFF;
+  transition: color 0.25s;
+  text-decoration-color: #EEFFFF;
 }
 
 a:hover, a:active {
-  color: gold
+  color: lightgreen
 }

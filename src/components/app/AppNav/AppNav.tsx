@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { Container } from '@mui/material';
 import './AppNav.scss';
 
 type NavigationPath = {
@@ -15,11 +16,11 @@ const validNavigationPaths: Array<NavigationPath> = [
 ];
 
 const setActiveStyle = ({ isActive }: { isActive: boolean }) => ({
-  color: isActive ? 'green' : 'blue',
+  color: isActive ? 'darkgreen' : 'blue',
 });
 
 export const AppNav = () => (
-  <nav id="app-nav">
+  <Container component="nav">
     <ul>
       {validNavigationPaths.map(path => (
         <li key={path.label}>
@@ -29,5 +30,5 @@ export const AppNav = () => (
         </li>
       ))}
     </ul>
-  </nav>
+  </Container>
 );
