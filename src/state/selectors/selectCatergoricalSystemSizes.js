@@ -14,8 +14,8 @@ export const selectCategoricalSystemSizes = () => createSelector(
     for (let size of arr) {
       for (let star of stars) {
         if (star.pl_pnum === size["planetCount"]) size["count"]++;
-      };
-    };
+      }
+    }
   
     return arr;
   }

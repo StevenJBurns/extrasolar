@@ -30,14 +30,14 @@ export const getStarsThunk = () => {
       .then(() => dispatch(setLastDataFetchDatetime(Date.now())))
       .catch(error => {
         console.error(error);
-        dispatch(getStarsFailed(error))
-      })
+        dispatch(getStarsFailed(error));
+      });
       // .finally(() => {
       //   dispatch(getStarsBegin(false));
       //   dispatch(setLastDataFetchDatetime(Date.now()));
       // })
-    }
-  }
+    };
+  };
 
 /* Handle HTTP errors when Fetch API can't catch them */
 export const handleHttpErrors = response => {

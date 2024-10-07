@@ -13,6 +13,8 @@ type TProps = {
 };
 
 export const TopLargestStarsTable = (props: TProps) => {
+  const { data } = props;
+
   return (
     <>
       <Typography css={styles} variant="h6">

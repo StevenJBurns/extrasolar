@@ -30,7 +30,8 @@ export const getPlanetsThunk = () => {
       .catch(error => {
         console.error(error);
         dispatch(getPlanetsFailed(error)
-      )})
+      );
+    });
       // .finally(() => dispatch(getPlanetsBegin(false)))
     };
   };

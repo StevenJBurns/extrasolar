@@ -4,7 +4,7 @@ interface IAudioState {
   source: string,
   volume: number,
   isMuted: boolean,
-};
+}
 
 const slice = createSlice({
   name: 'audio',
