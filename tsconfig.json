@@ -25,6 +25,7 @@
       "@core/*": ["./src/core/*"],
       "@external/*": ["./src/external/*"],
       "@presentation/*": ["./src/presentation/*"],
+      "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
     }
   },
