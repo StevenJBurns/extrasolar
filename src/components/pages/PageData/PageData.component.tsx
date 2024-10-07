@@ -21,7 +21,7 @@ import { Page } from '../Page/Page.component';
 import { CategoricalPlanetCountTable } from '../../tables/CategoricalPlanetCountTable/CategoricalPlanetCountTable';
 // import { StarsPieChart } from '../../charts/StarsPieChart';
 import { TopLargestStarsTable } from '../../tables/TopLargestStarsTable/TopLargestStarsTable';
-import DataOGG from 'assets/audio/data.ogg';
+import DataOGG from '@assets/audio/data.ogg';
 import { styles } from './PageData.styles';
 
 type TProps = {

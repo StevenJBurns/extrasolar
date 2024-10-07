@@ -1,4 +1,4 @@
 declare module "*.ogg" {
-  const value: unknown;
+  const value: any;
   export default value;
-}
+};

@@ -7,7 +7,7 @@ import { store, persistor } from './state/store/';
 import { App } from './components/app';
 import './index.scss';
 
-const reactRoot = document.getElementById('react-root');
+const reactRoot = document.getElementById('react-root')!;
 
 if (reactRoot) {
   const root = createRoot(reactRoot);
@@ -15,7 +15,7 @@ if (reactRoot) {
   root.render(
     <ReduxProvider store={store}>
       <ReduxPersistGate persistor={persistor} loading={null}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
           <ThemeProvider theme={createTheme()}>
             <App />
           </ThemeProvider>
