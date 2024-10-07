@@ -12,8 +12,6 @@
       "plugin:import/recommended",
       "plugin:import/typescript"
     ],
-    "overrides": [
-    ],
     "parserOptions": {
       "parser": "@typescript-eslint/parser",
       "ecmaVersion": "latest",
