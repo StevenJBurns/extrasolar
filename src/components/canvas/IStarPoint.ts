@@ -11,8 +11,8 @@ type Polar = {
 export interface IStarPoint {
   polar: Polar;
   cartesian?: Cartestian;
-  opacity: number;
   velocity?: number;
+  opacity: number;
 
   convertRtoD?: () => number;
 }

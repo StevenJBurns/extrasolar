@@ -1,10 +1,5 @@
-import React from 'react';
+import { Container } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
-import {
-  fetchDistinctHostStars,
-  fetchAllPlanets,
-  fetchNasaData,
-} from 'services/http/fetchNasaData';
 import {
   PageHome,
   PageData,
@@ -12,37 +7,32 @@ import {
   PageBookmarks,
   PageAbout,
   Page404,
-} from 'components/pages';
-import './App.scss';
+} from '../../pages';
 
 export const App = () => {
-  React.useEffect(() => {
-    const getStars = async () => {
-      const data = await fetchDistinctHostStars();
-      console.log(data);
-    };
-
-    const getPlanets = async () => {
-      const data = await fetchAllPlanets();
-      console.log(data);
-    };
-
-    // getStars();
-    // getPlanets();
-    fetchNasaData();
-  }, []);
-
   return (
     <>
-      <Routes>
-        <Route path="/" element={<PageHome />} />
-        <Route path="/data" element={<PageData />} />
-        <Route path="/systems" element={<PageSystems />} />
-        <Route path="/bookmarks" element={<PageBookmarks />} />
-        <Route path="/about" element={<PageAbout />} />
-        <Route path="*" element={<Page404 title="Page Not Found" />} />
-      </Routes>
-      {/* <AppSnackbar hasErrors={hasErrors} /> */}
+      {/* <CssBaseline /> */}
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{
+          flex: '1 0 auto',
+          display: 'flex',
+          minHeight: '100vh',
+          flexDirection: 'column',
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<PageHome />} />
+          <Route path="/data" element={<PageData data={[]} />} />
+          <Route path="/systems" element={<PageSystems />} />
+          <Route path="/bookmarks" element={<PageBookmarks />} />
+          <Route path="/about" element={<PageAbout />} />
+          <Route path="*" element={<Page404 title="Page Not Found" />} />
+        </Routes>
+        {/* <AppSnackbar hasErrors={hasErrors} /> */}
+      </Container>
     </>
   );
 };

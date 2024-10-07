@@ -1,25 +1,35 @@
-import React from 'react';
 import { useViewModel } from './Canvas.viewmodel';
-import { useStyles } from './Canvas.styles';
+import { TSolarSystem } from '../pages/PageSystems/PageSystems.component';
+import { Box } from '@mui/material';
 
-export const Canvas = () => {
-  const [canvasWidth, setCanvasWidth] = React.useState(window.innerWidth);
-  const canvasRef = useViewModel();
-  const classes = useStyles();
+type TProps = {
+  systemData: TSolarSystem;
+};
 
-  const handleResize = (): void => setCanvasWidth(window.innerWidth);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', handleResize, true);
-    /* clean up */
-    return () => window.removeEventListener('resize', handleResize, true);
-  }, []);
-
-  const canvasHeight = canvasWidth <= 800 ? canvasWidth / 2 : 400;
+export const Canvas = (props: TProps) => {
+  const { systemData } = props;
+  const { canvasRef } = useViewModel(systemData);
+  const handleMouseOver = (e: { clientX: unknown; clientY: unknown }) =>
+    console.log(e.clientX, e.clientY);
 
   return (
-    <div className={classes.container}>
-      <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} />
-    </div>
+    <Box
+      width="100%"
+      height="100%"
+      position="absolute"
+      overflow="hidden"
+      zIndex={-1}
+    >
+      <canvas
+        onMouseOver={handleMouseOver}
+        ref={canvasRef}
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          display: 'block',
+        }}
+      />
+    </Box>
   );
 };

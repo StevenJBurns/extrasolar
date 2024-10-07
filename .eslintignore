@@ -1,0 +1,9 @@
+# Ignore linting on libraries
+node_modules
+
+# Don't run lint on dist directory
+dist/
+
+# Don't run lint under any test sub directories
+test/test
+test/coverage

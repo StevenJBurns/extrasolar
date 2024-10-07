@@ -1,1 +1,1 @@
-export { PageSystems } from './PageSystems';
+export { PageSystems } from './PageSystems.component';

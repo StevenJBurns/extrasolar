@@ -1,1 +1,1 @@
-export { Bookmark } from './Bookmark';
+export { Bookmark } from './Bookmark.component';
