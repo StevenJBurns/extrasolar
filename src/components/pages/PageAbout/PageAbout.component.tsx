@@ -21,48 +21,43 @@ export const PageAbout = () => {
         <Typography variant="h4">About</Typography>
         <Divider sx={{ bgcolor: '#7d7d7d', mb: 2 }} />
         <Typography align="justify" paragraph>
-          ExtraSolar began as my first major project as a student at&nbsp;
-          <Link href="https://www.galvanize.com/boulder">Galvanize</Link> in
-          Boulder, Colorado. The original version was just a collection of HTML
-          pages strung together with a bit of jQuery. The code and design of the
-          original were quite shoddy, but in the end I was somewhat proud just
-          to get it working.
-        </Typography>
-        <Typography align="justify" paragraph></Typography>
-        <Typography align="justify" paragraph>
-          The project has evolved as I&apos;ve learned more about software
-          development over the years. The core of the app is now written
-          in&nbsp;
-          <Link href="https://reactjs.org/">React</Link>, using&nbsp;
-          <Link href="https://redux.js.org/">Redux</Link> for state management.
-          Over time I have bolted on a slew of other components, libraries,
-          patterns, principles and best practices as well. I am, by most
-          standards, still not completely skilled in design or styling, but I
-          like to think I&apos;ve picked up a few ideas from professional UX
-          teammates and co-workers over the years. ExtraSolar and its features
-          aren&apos;t terribly complicated but it is a project I revisit often
-          to experiment.
+          ExtraSolar began as my first student project at&nbsp;
+          <Link href="https://www.galvanize.com">Galvanize</Link> in Boulder,
+          Colorado. The original version was a collection of HTML pages strung
+          together with a bit of <Link href="https://jquery.com/">jQuery</Link>.
+          The code and design were quite shoddy but in the end I was proud it
+          mostly worked.
         </Typography>
         <Typography align="justify" paragraph>
-          The original (awful) version of the app is still hosted&nbsp;
+          The first (and awful) version of the app is still hosted&nbsp;
           <Link href="http://stevenjburns-galvanize-q1-project.surge.sh">
             here
           </Link>
-          , but changes to the NASA API broke the data fetching several years
-          ago, something I may or may not fix in the future. I also keep the
-          original repository&nbsp;
+          . Several years ago, changes to the NASA API broke the data fetching
+          which is something I probably will not fix in this older version. I
+          keep the original source code repository&nbsp;
           <Link href="https://github.com/StevenJBurns/gschool-q1-project">
             here
           </Link>
-          , as both a reminder of how <em>not</em> to write code and how much
-          I&apos;ve learned.
+          , as a reminder of how how much I&apos;ve learned and how&nbsp;
+          <em>not</em> to write code.
         </Typography>
         <Typography align="justify" paragraph>
-          The current source code is located&nbsp;
+          This has become an eternal side-project I often revisit to modernize
+          and experiment. The core is now built around&nbsp;
+          <Link href="https://reactjs.org/">React</Link> and&nbsp;
+          <Link href="https://redux.js.org/">Redux</Link>, along side other
+          components, libraries, and tools. When the NASA API was updated I was
+          also compelled to create a bare-bones proxy server (source code&nbsp;
+          <Link href="https://github.com/StevenJBurns/extrasolar-proxy-server">
+            here
+          </Link>
+          ) to keep the application functional. The client&apos;s current source
+          code is located&nbsp;
           <Link href="https://github.com/StevenJBurns/extrasolar">here</Link>
-          &nbsp;and hosted straight from Github Pages.
+          &nbsp;and is hosted straight from Github Pages.
         </Typography>
-        <Divider />
+        <Divider sx={{ bgcolor: '#7d7d7d', mb: 2 }} />
       </Page>
       <PageFooter />
     </>
