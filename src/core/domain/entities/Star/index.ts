@@ -1,1 +1,1 @@
-export { Star } from './Star';
+export { Star } from './Star.class';
