@@ -13,10 +13,10 @@ import {
   CircularProgress,
   // LinearProgress,
 } from '@mui/material';
-import { actionTypes } from 'state/actionTypes';
-import { selectTotalStarCount } from 'state/selectors/selectTotalStarCount';
-import { selectTotalPlanetCount } from 'state/selectors/selectTotalPlanetCount';
-import { selectTopLargestStars } from 'state/selectors/selectTopLargestStars';
+import { actionTypes } from '../../../state/actionTypes';
+import { selectTotalStarCount } from '../../../state/selectors/selectTotalStarCount';
+import { selectTotalPlanetCount } from '../../../state/selectors/selectTotalPlanetCount';
+import { selectTopLargestStars } from '../../../state/selectors/selectTopLargestStars';
 import { Page } from '../Page/Page.component';
 import { CategoricalPlanetCountTable } from '../../tables/CategoricalPlanetCountTable/CategoricalPlanetCountTable';
 // import { StarsPieChart } from '../../charts/StarsPieChart';

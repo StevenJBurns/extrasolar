@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Container } from '@mui/material';
-import { useDocumentTitle } from 'presentation/hooks/useDocumentTitle';
+import { useDocumentTitle } from '@presentation/hooks/useDocumentTitle';
 // import { styles } from './Page.styles';
 
 type TProps = {

@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Typography, Divider, Link } from '@mui/material';
 import { Page } from '../Page/Page.component';
 import { PageHeader, PageFooter } from '..';
-import { actionTypes } from 'state/actionTypes';
-import AboutOGG from 'assets/audio/about.ogg';
+import { actionTypes } from '../../../state/actionTypes';
+import AboutOGG from '@assets/audio/about.ogg';
 // import { styles } from './PageAbout.styles';
 
 export const PageAbout = () => {

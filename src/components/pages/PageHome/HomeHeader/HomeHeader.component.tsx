@@ -1,5 +1,5 @@
 import { Container, Typography } from '@mui/material';
-import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
+import { useOnlineStatus } from '@presentation/hooks/useOnlineStatus';
 
 export const HomeHeader = () => {
   const isOnline = useOnlineStatus();

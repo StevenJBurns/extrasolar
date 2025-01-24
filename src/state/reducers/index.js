@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { data } from 'state/reducers/data';
-import { ui } from 'state/reducers/ui';
+import { data } from './data';
+import { ui } from './ui';
 
 const rootReducer = combineReducers({
   data, 

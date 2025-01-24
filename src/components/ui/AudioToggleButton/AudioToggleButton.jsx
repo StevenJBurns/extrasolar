@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { actionTypes } from 'state/actionTypes';
+import { actionTypes } from '../../../state/actionTypes';
 import { IconButton } from '@mui/material';
 import VolumeOff from '@mui/icons-material/VolumeOff';
 import VolumeUp from '@mui/icons-material/VolumeUp';

@@ -6,8 +6,8 @@ import { HomeHeader } from './HomeHeader/HomeHeader.component';
 import { HomeFooter } from './HomeFooter/HomeFooter.component';
 import { HomeNav } from './HomeNav/HomeNav.component';
 
-import HomeBackground from 'assets/images/apollo.jpg';
-import HomeOGG from 'assets/audio/home.ogg';
+import HomeBackground from '@assets/images/apollo.jpg';
+import HomeOGG from '@assets/audio/home.ogg';
 
 export const PageHome = () => {
   const dispatch = useDispatch();
