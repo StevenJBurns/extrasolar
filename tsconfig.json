@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "noEmit": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
     "target": "ES2022",
     "module": "esnext",
     "lib": [
@@ -13,6 +13,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "allowImportingTsExtensions":true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -22,11 +23,11 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "paths": {
-      "@core/*": ["./src/core/*"],
-      "@external/*": ["./src/external/*"],
-      "@presentation/*": ["./src/presentation/*"],
-      "@components/*": ["./src/components/*"],
-      "@assets/*": ["./src/assets/*"],
+      "@domain/*": ["src/domain/*"],
+      "@external/*": ["src/external/*"],
+      "@presentation/*": ["src/presentation/*"],
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/presentation/assets/*"],
     }
   },
   "include": [

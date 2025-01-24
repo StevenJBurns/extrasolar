@@ -15,9 +15,11 @@ export default defineConfig(() => {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "../"),
-        "@assets": path.resolve(__dirname, './src/assets/'),
-        '@components': path.resolve(__dirname, './src/components'),
-        "@server": path.resolve(__dirname, "../server/src"),
+        "@assets": path.resolve(__dirname, 'src/presentation/assets'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        "@domain": path.resolve(__dirname, "src/domain"),
+        "@external": path.resolve(__dirname, "src/external"),
+        "@presentation": path.resolve(__dirname, "src/presentation"),
       },
     },
     css: {
