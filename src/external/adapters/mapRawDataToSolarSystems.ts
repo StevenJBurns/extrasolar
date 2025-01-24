@@ -14,6 +14,6 @@
 //   });
 // };
 
-export const mapNasaDataToModels = (): Array<any> => {
+export const mapNasaDataToModels = (): Array<unknown> => {
   return [];
 };
