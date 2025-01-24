@@ -1,4 +1,4 @@
-import { months } from 'core/domain/values/Month/months';
+import { months } from 'domain/Month/months';
 
 export const addLeadingZero = (n: number): string => (n <= 9 ? '0' : '') + n;
 
