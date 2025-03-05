@@ -1,0 +1,13 @@
+export const months = new Map<string, string>()
+  .set('January', 'Jan')
+  .set('February', 'Feb')
+  .set('March', 'Mar')
+  .set('April', 'Apr')
+  .set('May', 'May')
+  .set('June', 'Jun')
+  .set('July', 'Jul')
+  .set('August', 'Aug')
+  .set('September', 'Sep')
+  .set('October', 'Oct')
+  .set('November', 'Nov')
+  .set('December', 'Dec');
