@@ -1,4 +1,4 @@
-import { Month } from './Month';
+import { Month } from './Month.type';
 
 export const months: Array<Month> = [
   { short: 'Jan', long: 'January' },

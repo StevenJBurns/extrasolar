@@ -1,5 +1,5 @@
-import { PlanetParameters } from 'core/domain/entities/Planet/PlanetParameters';
-import { PlanetOrbit } from 'core/domain/entities/Planet/PlanetOrbit';
+import { PlanetParameters } from '@domain/Planet/PlanetParameters';
+import { PlanetOrbit } from '@domain/Planet/PlanetOrbit';
 
 export class Planet {
   private constructor(

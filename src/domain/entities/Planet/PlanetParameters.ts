@@ -1,4 +1,4 @@
-import { PlanetOrbit } from "core/domain/entities/Planet/PlanetOrbit";
+import { PlanetOrbit } from '@domain/Planet/PlanetOrbit';
 
 export type PlanetParameters = {
   id: string,

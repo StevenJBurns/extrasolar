@@ -1,4 +1,4 @@
-import { IBookmark } from "core/domain/entities/Bookmark/Bookmark.entity";
+import { IBookmark } from "@domain/Bookmark/Bookmark.entity";
 
 export class Bookmark implements IBookmark {
   #solarSystemId: string;
