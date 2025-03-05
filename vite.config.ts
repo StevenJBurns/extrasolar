@@ -8,6 +8,7 @@ export default defineConfig(() => {
     build: {
       outDir: 'build',
     },
+    base: '/extrasolar/',
     plugins: [
       react(),
       viteTsconfigPaths(),
