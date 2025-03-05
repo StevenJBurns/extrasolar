@@ -3,7 +3,7 @@ import { useState } from 'react';
 // import { changeAudioSource } from 'state/actions/ui';
 // import { LinearProgress } from '@mui/material';
 // import { Page } from '../Page/Page.component';
-import { PageHeader } from '..';
+import { PageHeader } from '../index.ts';
 import { Canvas } from '../../canvas';
 import {
   Box,
