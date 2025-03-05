@@ -7,8 +7,6 @@ import { store, persistor } from './state/store/';
 import { App } from './components/app';
 import './index.scss';
 
-function renderReactApp() {}
-
 const reactRoot = document.getElementById('react-root')!;
 
 if (reactRoot) {
