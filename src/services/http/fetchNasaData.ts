@@ -1,4 +1,4 @@
-import { mapNasaDataToModels } from '../../util';
+// import { mapNasaDataToModels } from '../../utility/features';
 
 // const urlProxy = 'https://extrasolar-proxy-server.glitch.me:4000/get';
 // const oldUrl = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper,pl_masse,pl_rade&format=json';
