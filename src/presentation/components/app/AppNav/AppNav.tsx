@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { Container } from '@mui/material';
 import './AppNav.scss';
 
@@ -22,10 +22,10 @@ const setActiveStyle = ({ isActive }: { isActive: boolean }) => ({
 export const AppNav = () => (
   <Container component="nav">
     <ul>
-      {validNavigationPaths.map(path => (
-        <li key={path.label}>
-          <NavLink to={path.path} style={setActiveStyle}>
-            {path.label}
+      {validNavigationPaths.map(p => (
+        <li key={p.label}>
+          <NavLink to={p.path} style={setActiveStyle}>
+            {p.label}
           </NavLink>
         </li>
       ))}
