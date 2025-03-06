@@ -34,8 +34,8 @@
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "types/*",
-    "tests/setup.ts"
+    "tests/**/*",
+    "types/**/*"
   ],
   "exclude": [
     "dist",

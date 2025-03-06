@@ -6,13 +6,13 @@ import { defineConfig } from 'vite';
 export default defineConfig(() => {
   return {
     build: {
-      outDir: 'build',
+      outDir: 'dist',
     },
-    base: '/extrasolar/',
     plugins: [
       react(),
       viteTsconfigPaths(),
     ],
+    base: '/extrasolar',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "../"),
