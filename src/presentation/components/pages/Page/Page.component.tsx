@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Container } from '@mui/material';
-import { useDocumentTitle } from '@presentation/hooks/useDocumentTitle';
+// import { useDocumentTitle } from '@presentation/hooks/useDocumentTitle';
 // import { styles } from './Page.styles';
 
 type TProps = {
@@ -9,8 +9,6 @@ type TProps = {
 };
 
 export const Page = (props: TProps) => {
-  useDocumentTitle(props.title ?? '');
-
   return (
     <Container
       component="main"
