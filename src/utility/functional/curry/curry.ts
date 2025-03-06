@@ -1,7 +1,9 @@
-export const curry =
-  <T extends (...args: Array<unknown>) => unknown>(fn: T) =>
-  (...args: Array<Parameters<T>[0]>): unknown =>
-    args.length >= fn.length
-      ? fn(...(args as Array<Parameters<T>[0]>))
-      : (...moreArgs: Array<Parameters<T>[0]>) =>
-          curry(fn)(...args, ...moreArgs);
+type AnyFn = (...args: unknown[]) => unknown;
+
+export function curry<F extends AnyFn>(fn: F, arity = fn.length): unknown {
+  return function curried(...args: Array<unknown>): unknown {
+    if (args.length >= arity) return fn(...args.slice(0, arity));
+
+    return (...moreArgs: Array<unknown>) => curried(...args, ...moreArgs);
+  };
+}
