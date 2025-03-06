@@ -12,7 +12,7 @@ export default defineConfig(() => {
       react(),
       viteTsconfigPaths(),
     ],
-    base: '',
+    base: '/extrasolar/',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "../"),
