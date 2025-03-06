@@ -1,5 +1,5 @@
 import { Container, CssBaseline } from '@mui/material';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 import {
   PageHome,
   PageData,
@@ -26,7 +26,7 @@ export const App = () => {
         }}
       >
         <Routes>
-          <Route path="/" element={<PageHome />} />
+          <Route index element={<PageHome />} />
           <Route path="/data" element={<PageData data={[]} />} />
           <Route path="/systems" element={<PageSystems />} />
           <Route path="/bookmarks" element={<PageBookmarks />} />

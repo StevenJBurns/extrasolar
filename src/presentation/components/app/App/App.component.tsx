@@ -1,5 +1,5 @@
 import { Container } from '@mui/material';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 import {
   PageHome,
   PageData,
@@ -12,7 +12,6 @@ import {
 export const App = () => {
   return (
     <>
-      {/* <CssBaseline /> */}
       <Container
         maxWidth={false}
         disableGutters
@@ -24,11 +23,11 @@ export const App = () => {
         }}
       >
         <Routes>
-          <Route path="/" element={<PageHome />} />
-          <Route path="/data" element={<PageData data={[]} />} />
-          <Route path="/systems" element={<PageSystems />} />
-          <Route path="/bookmarks" element={<PageBookmarks />} />
-          <Route path="/about" element={<PageAbout />} />
+          <Route index element={<PageHome />} />
+          <Route path="data" element={<PageData data={[]} />} />
+          <Route path="systems" element={<PageSystems />} />
+          <Route path="bookmarks" element={<PageBookmarks />} />
+          <Route path="about" element={<PageAbout />} />
           <Route path="*" element={<Page404 title="Page Not Found" />} />
         </Routes>
         {/* <AppSnackbar hasErrors={hasErrors} /> */}
