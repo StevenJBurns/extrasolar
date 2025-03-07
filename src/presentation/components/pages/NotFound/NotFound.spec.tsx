@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { NotFound } from './NotFound.component';
 
-describe('<Page404 />', () => {
+describe('<NotFound />', () => {
   afterEach(cleanup);
 
   // const setup = overrides => {
