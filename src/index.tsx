@@ -15,7 +15,7 @@ if (reactRoot) {
   root.render(
     <ReduxProvider store={store}>
       <ReduxPersistGate persistor={persistor} loading={null}>
-        <BrowserRouter>
+        <BrowserRouter basename="/extrasolar">
           <ThemeProvider theme={createTheme()}>
             <App />
           </ThemeProvider>
