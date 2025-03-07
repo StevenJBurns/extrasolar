@@ -38,12 +38,8 @@
         "@emotion"
     ],
     "rules": {
-      "react/no-unknown-property": [
-        "error",
-        {
-          "ignore": ["css"]
-        }
-      ],
+      "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+      "import/no-unresolved": ["error", { "ignore": ["^@assets/"] }],
       "react/react-in-jsx-scope": "off",
       "semi": "warn"
     }
