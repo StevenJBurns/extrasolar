@@ -14,7 +14,7 @@ type ValidRoute = {
   index?: boolean;
 };
 
-export const routes: Array<ValidRoute> = [
+export const validRoutes: Array<ValidRoute> = [
   { path: '/', element: <PageHome />, index: true },
   { path: 'data', element: <PageData data={[]} /> },
   { path: 'systems', element: <PageSystems /> },
