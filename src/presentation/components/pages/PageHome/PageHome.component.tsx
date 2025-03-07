@@ -20,28 +20,26 @@ export const PageHome = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Container
-        maxWidth={false}
-        sx={{
-          flex: '1 0 auto',
-          display: 'flex',
-          minHeight: '100%',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundImage: `url(${HomeBackground})`,
-          textShadow: '0 0 24px #BBB',
-          color: '#DDD',
-        }}
-      >
-        <HomeHeader />
-        <HomeNav />
-        <HomeFooter />
-      </Container>
-    </>
+    <Container
+      maxWidth={false}
+      sx={{
+        flex: '1 0 auto',
+        display: 'flex',
+        minHeight: '100%',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${HomeBackground})`,
+        textShadow: '0 0 24px #BBB',
+        color: '#DDD',
+      }}
+    >
+      <HomeHeader />
+      <HomeNav />
+      <HomeFooter />
+    </Container>
   );
 };
