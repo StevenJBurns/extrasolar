@@ -30,7 +30,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-redux": "9.2.0",
-    "react-router": "7.2.0",
+    "react-router": "7.3.0",
     "react-transition-group": "4.4.5",
     "redux": "5.0.1",
     "redux-persist": "6.0.0"
@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "8.26.0",
     "@typescript-eslint/parser": "8.26.0",
     "@vitejs/plugin-react": "4.3.4",
-    "@vitest/ui": "^3.0.7",
+    "@vitest/ui": "3.0.8",
     "eslint": "8.57.1",
     "eslint-import-resolver-typescript": "3.8.3",
     "eslint-plugin-import": "2.31.0",
@@ -66,7 +66,7 @@
     "typescript": "5.8.2",
     "vite": "5.4.11",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.0.7"
+    "vitest": "3.0.8"
   },
   "peerDependencies": {
     "react": "18.3.1",
