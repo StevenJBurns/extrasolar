@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material';
 import { BrowserRouter } from 'react-router';
 import { store, persistor } from './presentation/state/store/';
 import { App } from './presentation/components/app';
-import './index.scss';
+import './index.css';
 
 const reactRoot = document.getElementById('react-root')!;
 
