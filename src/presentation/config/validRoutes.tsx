@@ -9,7 +9,7 @@ type ValidRoute = {
 
 export const validRoutes: Array<ValidRoute> = [
   { path: '/', element: <Pages.PageHome />, index: true },
-  { path: 'data', element: <Pages.PageData data={[]} /> },
+  { path: 'data', element: <Pages.Data data={[]} /> },
   { path: 'systems', element: <Pages.PageSystems /> },
   { path: 'bookmarks', element: <Pages.PageBookmarks /> },
   { path: 'about', element: <Pages.About /> },
