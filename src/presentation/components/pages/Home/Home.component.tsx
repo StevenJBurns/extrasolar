@@ -9,7 +9,7 @@ import { HomeNav } from './HomeNav/HomeNav.component';
 import HomeBackground from '@assets/images/apollo.jpg';
 import HomeOGG from '@assets/audio/home.ogg';
 
-export const PageHome = () => {
+export const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {

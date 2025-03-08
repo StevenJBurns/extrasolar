@@ -2,7 +2,7 @@ import { RouteProps } from 'react-router';
 import { Pages } from '../components/pages';
 
 export const validRoutes: Array<RouteProps> = [
-  { path: '/', element: <Pages.PageHome />, index: true },
+  { path: '/', element: <Pages.Home />, index: true },
   { path: 'data', element: <Pages.Data data={[]} /> },
   { path: 'systems', element: <Pages.SolarSystems /> },
   { path: 'bookmarks', element: <Pages.Bookmarks /> },
