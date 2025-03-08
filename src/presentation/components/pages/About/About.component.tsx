@@ -15,7 +15,7 @@ export const About = () => {
   }, [dispatch]);
 
   return (
-    <Container sx={containerStyles} maxWidth={false}>
+    <Container sx={containerStyles} maxWidth={false} disableGutters>
       <PageHeader />
       <Page>
         <Typography variant="h4">About</Typography>

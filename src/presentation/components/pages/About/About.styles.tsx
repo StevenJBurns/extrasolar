@@ -7,7 +7,6 @@ export const containerStyles: SxProps<Theme> = {
   justifyContent: 'center',
   alignItems: 'center',
   minHeight: '100vh',
-  padding: 2,
 };
 
 export const dividerStyles: SxProps<Theme> = {

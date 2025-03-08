@@ -3,7 +3,6 @@ import { SxProps, Theme } from '@mui/material';
 export const containerStyles: SxProps<Theme> = {
   flex: '1 0 auto',
   color: '#DFDFDF',
-  padding: { xs: 6, sm: 12 },
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
