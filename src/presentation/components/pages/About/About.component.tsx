@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Typography, Divider, Link } from '@mui/material';
-import { Page } from '../Page/Page.component';
-import { PageHeader, PageFooter } from '..';
-import { actionTypes } from '../../../state/actionTypes';
+import { Container, Typography, Divider, Link } from '@mui/material';
+import { Page } from '../Page/Page.component.tsx';
+import { PageHeader, PageFooter } from '../index.ts';
+import { actionTypes } from '../../../state/actionTypes/index.js';
+import { containerStyles, dividerStyles } from './About.styles';
 import AboutOGG from '@assets/audio/about.ogg';
-// import { styles } from './PageAbout.styles';
 
-export const PageAbout = () => {
+export const About = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,12 +15,12 @@ export const PageAbout = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Container sx={containerStyles} maxWidth={false}>
       <PageHeader />
       <Page>
         <Typography variant="h4">About</Typography>
         <Divider sx={{ bgcolor: '#7d7d7d', mb: 2 }} />
-        <Typography align="justify" paragraph>
+        <Typography align="justify" component={'p'}>
           ExtraSolar began as my first student project at&nbsp;
           <Link href="https://www.galvanize.com">Galvanize</Link> in Boulder,
           Colorado. The original version was a collection of HTML pages strung
@@ -28,7 +28,7 @@ export const PageAbout = () => {
           The code and design were quite shoddy but in the end I was proud it
           mostly worked.
         </Typography>
-        <Typography align="justify" paragraph>
+        <Typography align="justify" component={'p'}>
           The first (and awful) version of the app is still hosted&nbsp;
           <Link href="http://stevenjburns-galvanize-q1-project.surge.sh">
             here
@@ -42,7 +42,7 @@ export const PageAbout = () => {
           , as a reminder of how how much I&apos;ve learned and how&nbsp;
           <em>not</em> to write code.
         </Typography>
-        <Typography align="justify" paragraph>
+        <Typography align="justify" component={'p'}>
           This has become an eternal side-project I often revisit to modernize
           and experiment. The core is now built around&nbsp;
           <Link href="https://reactjs.org/">React</Link> and&nbsp;
@@ -57,9 +57,9 @@ export const PageAbout = () => {
           <Link href="https://github.com/StevenJBurns/extrasolar">here</Link>
           &nbsp;and is hosted straight from Github Pages.
         </Typography>
-        <Divider sx={{ bgcolor: '#7d7d7d', mb: 2 }} />
+        <Divider sx={dividerStyles} />
       </Page>
       <PageFooter />
-    </>
+    </Container>
   );
 };

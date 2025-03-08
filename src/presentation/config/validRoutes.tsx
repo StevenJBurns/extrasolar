@@ -12,6 +12,6 @@ export const validRoutes: Array<ValidRoute> = [
   { path: 'data', element: <Pages.PageData data={[]} /> },
   { path: 'systems', element: <Pages.PageSystems /> },
   { path: 'bookmarks', element: <Pages.PageBookmarks /> },
-  { path: 'about', element: <Pages.PageAbout /> },
+  { path: 'about', element: <Pages.About /> },
   { path: '*', element: <Pages.NotFound /> },
 ];
