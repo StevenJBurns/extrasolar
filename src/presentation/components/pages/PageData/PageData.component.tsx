@@ -48,7 +48,7 @@ export const PageData = (props: TProps) => {
       <Page {...props}>
         <Typography variant="h4">Data</Typography>
         <Divider sx={{ bgcolor: '#7d7d7d', mb: 2 }} />
-        <Typography paragraph align="justify">
+        <Typography component={'p'} align="justify">
           Since 1992, over 3,500&nbsp;
           <a href="https://en.wikipedia.org/wiki/Exoplanet">
             extrasolar planets
@@ -62,7 +62,7 @@ export const PageData = (props: TProps) => {
           means. If complete, that data lends itself to creating an abstract
           picture of what these distant solar systems look like.
         </Typography>
-        <Typography paragraph align="justify">
+        <Typography component={'p'} align="justify">
           The data in this project comes directly from NASA and IPAC at Caltech,
           the majority of which was collected by the&nbsp;
           <a href="https://en.wikipedia.org/wiki/Kepler_(spacecraft)">
@@ -71,7 +71,7 @@ export const PageData = (props: TProps) => {
           &nbsp; missions since being launched in 2009. NASA maintains a list of
           over 5,000 potential stellar candidates for future observations.
         </Typography>
-        <Typography paragraph align="justify">
+        <Typography component={'p'} align="justify">
           Scientists estimate there are roughly 100 billion exoplanets in our
           galaxy alone. Further extrapolation predicts there are 10 billion
           earth size planets, and of those 1 billion may lie in its host
@@ -81,18 +81,18 @@ export const PageData = (props: TProps) => {
           </a>
           .
         </Typography>
-        <Typography align="justify" paragraph>
+        <Typography component={'p'} align="justify">
           Browse the project to see visual plots of the solar systems with valid
           data...
         </Typography>
-        <Typography paragraph align="justify">
+        <Typography component={'p'} align="justify">
           The available data from NASA comes from a SQL table view that combines
           star and planet data together. While this allows for compact and
           less-effort storage, the hierarchical or relationship of planets to
           stars is lost. Those relationships are rebuilt in JavaScript files of
           these web pages.
         </Typography>
-        <Typography paragraph align="justify">
+        <Typography component={'p'} align="justify">
           Some exoplanet data is incomplete, as is the stellar data of their
           host stars. The aim of this simple web site is to visually plot and
           animate a rough estimation of the geometry and scale of these distant
@@ -100,7 +100,7 @@ export const PageData = (props: TProps) => {
           planets can not be plotted and therefore are not included in the
           snapshot of data used here.
         </Typography>
-        <Typography paragraph align="justify">
+        <Typography component={'p'} align="justify">
           In cases where it makes sense, some data can be &apos;nudged&apos; to
           a default value. For example, if the oribital eccentricity of a planet
           is unknown, the value can be set to 0.0 (a perfect circle) for
