@@ -1,4 +1,4 @@
-import { IStarPoint } from ".";
+import { IStarPoint } from "../index.ts";
 
 export const renderStarField = (
   ctx: CanvasRenderingContext2D,

@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { IStarField } from '.';
-import { renderStarField } from './renderStarField';
-import { wipeCanvas } from './wipeCanvas';
-import { TSolarSystem } from '../pages/PageSystems/PageSystems.component';
-import { PlanetSprite } from './classes/PlanetSprite';
+import { IStarField } from '../index.ts';
+import { renderStarField } from './renderStarField.ts';
+import { wipeCanvas } from './wipeCanvas.ts';
+import { SolarSystem } from '../types/SolarSystem.type.ts';
+import { PlanetSprite } from './PlanetSprite/PlanetSprite.ts';
 
-export const useViewModel = (data: TSolarSystem) => {
+export const useViewModel = (data: SolarSystem) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starfield: IStarField = { stars: [] };
   const planets: Array<PlanetSprite> = data.planets.map(
@@ -35,7 +35,7 @@ export const useViewModel = (data: TSolarSystem) => {
   }
 
   useEffect(() => {
-    if (!canvasRef) return;
+    if (!canvasRef.current) return;
 
     const canvas = canvasRef;
     const observer = new ResizeObserver(() => {
@@ -72,7 +72,7 @@ export const useViewModel = (data: TSolarSystem) => {
           const halfHeight = context.canvas.height / 2;
           const rgStar = context.createRadialGradient(0, 0, 0, 0, 0, 48);
 
-          const starClassColorMap = {
+          const starClassificationGradientMap = {
             G: {
               begin: '#FFFF99',
               stop: 'rgba(255, 255, 127, 255)',
@@ -105,9 +105,18 @@ export const useViewModel = (data: TSolarSystem) => {
 
           const primaryStar = data.stars[0];
 
-          rgStar.addColorStop(0.0, starClassColorMap[primaryStar.class].begin);
-          rgStar.addColorStop(0.1, starClassColorMap[primaryStar.class].begin);
-          rgStar.addColorStop(0.2, starClassColorMap[primaryStar.class].stop);
+          rgStar.addColorStop(
+            0.0,
+            starClassificationGradientMap[primaryStar.class].begin,
+          );
+          rgStar.addColorStop(
+            0.1,
+            starClassificationGradientMap[primaryStar.class].begin,
+          );
+          rgStar.addColorStop(
+            0.2,
+            starClassificationGradientMap[primaryStar.class].stop,
+          );
           rgStar.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
 
           context.save();

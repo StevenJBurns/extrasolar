@@ -1,4 +1,4 @@
-import { IStarPoint } from './IStarPoint';
+import { IStarPoint } from '../BackgroundPoint/IStarPoint';
 
 export interface IStarField {
   stars: Array<IStarPoint>;

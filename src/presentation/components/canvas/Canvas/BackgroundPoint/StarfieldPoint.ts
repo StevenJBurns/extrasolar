@@ -1,10 +1,10 @@
-type TPolarCoordinates = {
+type PolarCoordinates = {
   theta: number,
   distance: number,
 }
 
 export class StarfieldPoint {
-  #polar: TPolarCoordinates;
+  #polar: PolarCoordinates;
   #opacity: number;
 
   constructor() {

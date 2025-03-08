@@ -1,4 +1,4 @@
-import { StarfieldPoint } from "./StarfieldPoint";
+import { StarfieldPoint } from "../BackgroundPoint/StarfieldPoint";
 
 export class StarfieldBackground {
   #points: Array<StarfieldPoint>;
