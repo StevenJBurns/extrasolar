@@ -1,4 +1,4 @@
-import { identity } from './identity';
+import { identity } from './identity.ts';
 
 describe('identity functional utility', () => {
   it('returns the same value for a boolean', () => {
