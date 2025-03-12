@@ -1,9 +1,6 @@
-type AnyFn = (...args: unknown[]) => unknown;
-
-export function curry<F extends AnyFn>(fn: F, arity = fn.length): unknown {
-  return function curried(...args: Array<unknown>): unknown {
-    if (args.length >= arity) return fn(...args.slice(0, arity));
-
-    return (...moreArgs: Array<unknown>) => curried(...args, ...moreArgs);
-  };
-}
+export function curry<T extends any[], R>(fn: (...args: T) => R, arity = fn.length) {
+  return (...args: any[]): any => 
+    args.length >= arity 
+      ? fn(...args.slice(0, arity) as T) 
+      : (...moreArgs: any[]) => curry(fn, arity)(...args, ...moreArgs);
+};
