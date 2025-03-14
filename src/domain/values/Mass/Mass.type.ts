@@ -1,7 +1,7 @@
-import { NonZeroPositiveNumber } from '../../primitives/NonZeroPositiveNumber/NonZeroPositiveNumber.type.ts';
+import { FiniteNonZeroPositiveNumber } from '../../primitives/NonZeroPositiveNumber/FiniteNonZeroPositiveNumber.type.ts';
 import { MassUnit } from './MassUnit/MassUnit.enum.ts';
 
 export type Mass = {
-  value: NonZeroPositiveNumber,
+  value: FiniteNonZeroPositiveNumber,
   unit: MassUnit,
 };
