@@ -1,4 +1,3 @@
-import { Scalar } from "@domain/values/Scalar/Scalar.type";
-import { MassUnit } from "@domain/values/Mass/MassUnit/MassUnit.enum";
+import { Scalar } from '@domain/types/Scalar/Scalar.type';
 
-export type Mass = Scalar<MassUnit>;
+export type Mass = Scalar<number>;
