@@ -1,13 +1,13 @@
 import { DomainError } from '@domain/types/errors/DomainError/DomainError.interface';
 
 export type MassError = DomainError & {
-  type: 'MassError',
-  reason: ''
+  code: 'MassError',
+  message: ''
 };
 
 export const invalidMass = (): MassError => (
   Object.freeze({
-    type: 'MassError',
-    reason: '',
+    code: 'MassError',
+    message: '',
   } as MassError)
 );
