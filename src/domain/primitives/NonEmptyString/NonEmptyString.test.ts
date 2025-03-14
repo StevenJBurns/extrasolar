@@ -1,4 +1,4 @@
-import { NonEmptyString, createNonEmptyString, NonEmptyStringError } from './';
+import { NonEmptyString, createNonEmptyString, NonEmptyStringError } from '.';
 
 describe('NonEmptyString', () => {
   describe('createNonEmptyString', () => {
