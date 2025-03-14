@@ -1,4 +1,4 @@
-import { DomainError } from '@domain/types/DomainError/DomainError.interface';
+import { DomainError } from '@domain/types/errors/DomainError/DomainError.interface';
 
 export type NonZeroPositiveNumberError = DomainError & {
   type: 'InvalidNonZeroPositiveNumber';
