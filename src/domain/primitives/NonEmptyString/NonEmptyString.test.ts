@@ -1,40 +1,35 @@
-import { NonEmptyString, createNonEmptyString, NonEmptyStringError } from '.';
+import { createNonEmptyString } from './NonEmptyString.factory.ts';
 
 describe('NonEmptyString', () => {
   describe('createNonEmptyString', () => {
-    it('should create a valid NonEmptyString when given a non-empty string', () => {
-      const validString = 'Hello World';
-      const result: NonEmptyString = createNonEmptyString(validString);
-
-      expect(result).toBe(validString); // Ensure the string matches the input
-      // expect(result).toBeInstanceOf(String); // It should be a string (immutable)
+    it('accepts a valid non-empty string', () => {
+      const result = createNonEmptyString('Mars');
+      expect(result.type).toBe('Right');
+      expect(result.value).toBe('Mars');
     });
 
-    it('should throw a NonEmptyStringError when given an empty string', () => {
-      const invalidString = '';
-      
-      expect(() => createNonEmptyString(invalidString)).toThrow(NonEmptyStringError());
+    it('rejects an empty string', () => {
+      const result = createNonEmptyString('');
+      expect(result.type).toBe('Left');
+      expect(result.value).toEqual({
+        code: 'NonEmptyStringError',
+        message: 'String must not be empty',
+      });
     });
 
-    it('should throw a NonEmptyStringError when given a string with only spaces', () => {
-      const invalidString = '   ';
-      
-      expect(() => createNonEmptyString(invalidString)).toThrow(NonEmptyStringError());
+    it('rejects a whitespace-only string due to trim', () => {
+      const result = createNonEmptyString('   ');
+      expect(result.type).toBe('Left');
+      expect(result.value).toEqual({
+        code: 'NonEmptyStringError',
+        message: 'String must not be empty',
+      });
     });
-  });
-  describe('Immutability', () => {
-    it('should not allow mutation of NonEmptyString', () => {
-      const validString = 'Test String';
-      let nonEmptyString: NonEmptyString = createNonEmptyString(validString);
 
-      expect(() => {
-        nonEmptyString = 'New String';
-      }).toThrow();
-
-      expect(() => {
-        // @ts-expect-error: invalid mutation attempt
-        nonEmptyString[0] = 'n';
-      }).toThrow();
+    it('accepts a string with leading/trailing whitespace', () => {
+      const result = createNonEmptyString('  Sun  ');
+      expect(result.type).toBe('Right');
+      expect(result.value).toBe('  Sun  ');
     });
   });
 });

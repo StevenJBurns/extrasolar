@@ -1,12 +1,13 @@
-export const NonEmptyStringError = (message = "String must not be empty") => ({
-  name: "NonEmptyStringError",
-  message,
-});
+import { DomainError } from '../../types/errors/DomainError/DomainError.interface.ts';
 
-// export class NonEmptyStringError extends Error {
-//   constructor(message: string) {
-//     super(message);
-//     this.name = 'NonEmptyStringError';
-//     Object.setPrototypeOf(this, NonEmptyStringError.prototype);
-//   }
-// }
+export type NonEmptyStringError = DomainError & {
+  code: 'NonEmptyStringError';
+  message: 'String must not be empty';
+};
+
+export const createNonEmptyStringError = (message: NonEmptyStringError['message']): NonEmptyStringError =>
+  Object.freeze({
+    code: 'NonEmptyStringError',
+    message
+  });
+  
