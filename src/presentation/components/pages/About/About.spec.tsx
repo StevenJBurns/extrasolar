@@ -1,5 +1,4 @@
-import { cleanup, render } from '@testing-library/react';
-import { About } from './About.component';
+import { cleanup } from '@testing-library/react';
 
 describe('<About />', () => {
   afterEach(cleanup);
