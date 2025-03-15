@@ -1,9 +1,9 @@
+import { Either, Left, Right } from 'src/utility/functional/monads';
 import { FiniteNonZeroPositiveNumber } from './FiniteNonZeroPositiveNumber.type.ts';
 import {
   FiniteNonZeroPositiveNumberError,
   createFiniteNonZeroPositiveNumberError
-} from '@domain/primitives/FiniteNonZeroPositiveNumber/FiniteNonZeroPositiveNumber.error.ts';
-import { Either, Left, Right } from '../../../utility/functional/monads/Either/Either.ts';
+} from './FiniteNonZeroPositiveNumber.error.ts';
 
 export function createFiniteNonZeroPositiveNumber(
   value: number
