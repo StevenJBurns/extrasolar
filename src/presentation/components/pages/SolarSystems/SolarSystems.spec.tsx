@@ -1,5 +1,4 @@
-import { cleanup, render } from '@testing-library/react';
-import { SolarSystems } from './SolarSystems.component';
+import { cleanup } from '@testing-library/react';
 
 describe('<SolarSystems />', () => {
   afterEach(cleanup);

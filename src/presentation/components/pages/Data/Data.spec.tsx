@@ -1,5 +1,4 @@
-import { cleanup, render } from '@testing-library/react';
-import { Data } from './Data.component';
+import { cleanup } from '@testing-library/react';
 
 describe('<Data />', () => {
   afterEach(cleanup);

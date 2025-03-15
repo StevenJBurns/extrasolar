@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react';
 
-describe('<NotFound />', () => {
+describe('<Bookmarks />', () => {
   afterEach(cleanup);
 });
