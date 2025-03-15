@@ -1,4 +1,4 @@
-import { SolarSystemParameters } from 'core/domain/entities/SolarSystem/SolarSystemParameters';
+import { SolarSystemParameters } from '@domain/entities/SolarSystem/SolarSystemParameters.ts';
 import { Star, Planet } from '../..';
 
 export class SolarSystem implements SolarSystemParameters {
