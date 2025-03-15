@@ -1,4 +1,4 @@
-import { DomainError } from '@domain/types/errors/DomainError/DomainError.interface.ts';
+import { DomainError } from '@domain/types';
 
 export type FiniteNonZeroPositiveNumberError = DomainError & {
   code: 'FiniteNonZeroPositiveNumberError';

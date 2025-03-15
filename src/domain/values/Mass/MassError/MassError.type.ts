@@ -1,4 +1,4 @@
-import { DomainError } from '@domain/types/errors/DomainError/DomainError.interface';
+import { DomainError } from '@domain/types/DomainError/DomainError.interface';
 
 export type MassError = DomainError & {
   code: 'MassError',

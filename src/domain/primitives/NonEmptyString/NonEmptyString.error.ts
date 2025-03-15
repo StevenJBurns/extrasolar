@@ -1,4 +1,4 @@
-import { DomainError } from '../../types/errors/DomainError/DomainError.interface.ts';
+import { DomainError } from '@domain/types';
 
 export type NonEmptyStringError = DomainError & {
   code: 'NonEmptyStringError';

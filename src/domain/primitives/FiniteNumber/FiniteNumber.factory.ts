@@ -1,6 +1,6 @@
 import { FiniteNumber } from './FiniteNumber.type.ts';
 import { FiniteNumberError, createFiniteNumberError } from './FiniteNumber.error.ts';
-import { Either, Left, Right } from 'src/utility/functional/monads/Either/Either.ts';
+import { Either, Left, Right } from 'src/utility/functional/monads';
 
 export function createFiniteNumber(
   value: number
