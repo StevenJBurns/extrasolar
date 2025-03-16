@@ -1,4 +1,4 @@
-export type { Angle } from './Angle/Angle.type.ts';
+export type { Angle, AngleUnit, AngleErrorReason, AngleError } from './Angle/Angle.types.ts';
 export type { Mass } from './Mass/Mass.type.ts';
 export type { Temperature } from './Temperature/Temperature.value.ts';
 
