@@ -28,6 +28,7 @@
       "@presentation/*": ["src/presentation/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/presentation/assets/*"],
+      "@utility/*": ["src/utility/*"],
     }
   },
   "include": [
