@@ -1,6 +1,6 @@
 import { NonEmptyString } from './NonEmptyString.type.ts';
 import { NonEmptyStringError, createNonEmptyStringError } from "./NonEmptyString.error.ts";
-import { Either, Left, Right } from 'src/utility/functional/monads';
+import { Either, Left, Right } from '@utility/functional/monads';
 
 export function createNonEmptyString(value: string): Either<NonEmptyStringError, NonEmptyString> {
   const isNonEmptyString = value.trim().length > 0;

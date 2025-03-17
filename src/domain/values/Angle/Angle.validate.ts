@@ -1,6 +1,6 @@
 import { createAngleError } from './Angle.error.ts';
 import type { AngleUnit, AngleError } from '@domain/values';
-import { type Either, Left, Right, chainEither } from 'src/utility/functional/monads';
+import { type Either, Left, Right, chainEither } from '@utility/functional/monads';
 
 const ANGLE_UNIT_BOUNDS: Record<AngleUnit, number> = {
   degrees: 360,

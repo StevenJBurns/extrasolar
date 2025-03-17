@@ -1,4 +1,4 @@
-import { Either, Left, Right } from 'src/utility/functional/monads';
+import { Either, Left, Right } from '@utility/functional/monads';
 import { FiniteNonZeroPositiveNumber } from './FiniteNonZeroPositiveNumber.type.ts';
 import {
   FiniteNonZeroPositiveNumberError,
