@@ -1,4 +1,3 @@
-// import { Mass, MassUnit, MassError } from './Mass.types.ts';
 import { createMassError } from './Mass.error.ts';
 import { createMass } from './Mass.factory.ts';
 import { validateMass } from './Mass.validate';
@@ -37,19 +36,13 @@ describe('Mass', () => {
     it('should validate and create mass in kilograms', () => {
       const result = validateMass(1, 'kilogram');
       expect(result.type).toBe('Right');
-      if (result.type === 'Right') {
-        expect(result.value).toEqual({ value: 1, unit: 'kilogram' });
-        expect(Object.isFrozen(result.value)).toBe(true);
-      }
+      if (result.type === 'Right') expect(result.value).toBeUndefined();
     });
 
     it('should validate and create mass in earth units', () => {
       const result = validateMass(2, 'earth');
       expect(result.type).toBe('Right');
-      if (result.type === 'Right') {
-        expect(result.value).toEqual({ value: 2, unit: 'earth' });
-        expect(Object.isFrozen(result.value)).toBe(true);
-      }
+      if (result.type === 'Right') expect(result.value).toBeUndefined();
     });
 
     it('should reject NaN', () => {

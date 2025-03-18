@@ -1,14 +1,14 @@
-import { Either, Right, Left } from '@utility/functional/monads';
+import { Either, Right, Left, chainEither } from '@utility/functional/monads';
 import { createFiniteNonZeroPositiveNumber } from '@domain/primitives';
 import type { Mass, MassUnit, MassError } from './Mass.types.ts';
 import { createMassError } from './Mass.error.ts';
+import { validateMass } from './Mass.validate.ts';
 
-export const createMass = (value: number, unit: MassUnit): Either<MassError, Mass> => {
-  const finiteResult = createFiniteNonZeroPositiveNumber(value);
-  if (finiteResult.type === 'Left') {
-    return Left(createMassError('InvalidValue'));
-  }
-  return (['kilogram', 'earth', 'jupiter', 'sun'] as const).includes(unit)
-    ? Right(Object.freeze({ value: finiteResult.value, unit }))
-    : Left(createMassError('InvalidUnit'));
-};
+export const createMass = (value: number, unit: MassUnit): Either<MassError, Mass> =>
+  chainEither<MassError, void, Mass>(() => {
+    const finiteResult = createFiniteNonZeroPositiveNumber(value);
+
+    return finiteResult.type === 'Left'
+      ? Left(createMassError('InvalidValue'))
+      : Right(Object.freeze({ value: finiteResult.value, unit }));
+  })(validateMass(value, unit));
