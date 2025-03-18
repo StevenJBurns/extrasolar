@@ -1,6 +1,4 @@
-import { Temperature } from "@domain/Temperature/Temperature.value";
-import { TemperatureScale } from "@domain/Temperature/TemperatureScale";
-import { createTemperature } from "@domain/Temperature/Temperature.factory";
+import { Temperature, TemperatureScale, createTemperature } from "@domain/values";
 
 export function convertTemperature(
   temp: Temperature,
