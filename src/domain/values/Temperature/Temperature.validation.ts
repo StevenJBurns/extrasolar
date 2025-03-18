@@ -1,13 +1,16 @@
-import { Temperature } from "@domain/Temperature/Temperature.value";
-import { TemperatureScale } from "@domain/Temperature/TemperatureScale";
+import { Temperature } from "@domain/values";
 
-export function isTemperatureValid(temp: Temperature): boolean {
+export function isTemperatureValueValid(temp: Temperature): boolean {
   switch (temp.scale) {
-    case TemperatureScale.CELSIUS:
-      return temp.value >= -273.15;
-    case TemperatureScale.FAHRENHEIT:
-      return temp.value >= -459.67;
-    case TemperatureScale.KELVIN:
+    case 'Kelvin':
       return temp.value >= 0;
-  }
-}
+    case 'Celsius':
+      return temp.value >= -273.15;
+    case 'Fahrenheit':
+      return temp.value >= -459.67;
+  };
+};
+
+export function isTemperatureScaleValid(temp: Temperature): boolean {
+  return ['Kelvin', 'Celsius', 'Fahrenheit'].includes(temp.scale);
+};
