@@ -1,6 +1,17 @@
-import { TemperatureScale } from "./TemperatureScale";
+import { DomainError } from '@domain/types';
+import { FiniteNumber } from '@domain/primitives';
 
-export type Temperature = Readonly<{
-  value: number | bigint;  
-  scale: Readonly<TemperatureScale>;
-}>;
+export type TemperatureScale = "Celsius" | "Fahrenheit" | "Kelvin";
+
+export type TemperatureErrorReason = 'OutOfRange' | 'InvalidUnit'
+
+export type MassError = DomainError & {
+  code: 'TemperatureError';
+  reason: TemperatureErrorReason;
+  message: string;
+};
+
+export type Temperature = {
+  value: FiniteNumber;
+  scale: TemperatureScale;
+};
