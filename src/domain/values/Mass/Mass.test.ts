@@ -194,7 +194,7 @@ describe('Mass', () => {
         const mass = result.value;
         const converted = convertMass(mass, 'kilogram');
         expect(converted).toEqual(mass);
-        expect(converted).not.toBe(mass);
+        expect(converted).toBe(mass);
         expect(Object.isFrozen(converted)).toBe(true);
       }
     });
