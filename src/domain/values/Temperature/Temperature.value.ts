@@ -5,7 +5,7 @@ export type TemperatureScale = "Celsius" | "Fahrenheit" | "Kelvin";
 
 export type TemperatureErrorReason = 'OutOfRange' | 'InvalidUnit'
 
-export type MassError = DomainError & {
+export type TemperatureError = DomainError & {
   code: 'TemperatureError';
   reason: TemperatureErrorReason;
   message: string;
