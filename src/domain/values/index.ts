@@ -1,5 +1,5 @@
 export type { Angle, AngleUnit, AngleErrorReason, AngleError } from './Angle/Angle.types.ts';
-export type { Mass } from './Mass/Mass.type.ts';
+export type { Mass, MassUnit, MassErrorReason, MassError } from './Mass/Mass.types.ts';
 export type { Temperature } from './Temperature/Temperature.value.ts';
 
 export { createAngle } from './Angle/Angle.factory.ts';
