@@ -1,16 +1,15 @@
-import { Temperature } from '@domain/Temperature/Temperature.value';
-import { isTemperatureValid } from '@domain/Temperature/Temperature.validation';
-import { TemperatureError } from '@domain/Temperature/TemperatureError/';
+import { Temperature, TemperatureScale, TemperatureError } from '@domain/values';
+import { FiniteNumber, createFiniteNumber } from '@domain/primitives';
+import { createTemperatureError } from './Temperature.error.ts';
+import { validateTemperature } from './Temperature.validate.ts';
+import { chainEither, Left, Right } from '@utility/functional/monads';
 
-export function createTemperature(params: Temperature) {
-  const { value, scale } = params;
+export function createTemperature(value: number, scale: TemperatureScale) {
+  chainEither<TemperatureError, void, Temperature>(() => {
+    const finiteResult = createFiniteNumber(value);
 
-  if (!isTemperatureValid(params)) {
-    throw TemperatureError('Temperature Validation Error');
-  }
-
-  return Object.freeze({
-    value,
-    scale,
-  });
-}
+    return chainEither<TemperatureError, FiniteNumber, Temperature>((finiteValue: FiniteNumber) =>
+      Right(Object.freeze({ value: finiteValue, scale}))
+    )(finiteResult.type === 'Left' ? Left(createTemperatureError('OutOfRange')) : finiteResult);
+  })(validateTemperature(value, scale));
+};
