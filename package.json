@@ -8,6 +8,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "clean": "rimraf dist",
+    "format": "prettier --config config/prettier/.prettierrc.json --ignore-path config/prettier/.prettierignore --write .",
+    "format:check": "prettier --config config/prettier/.prettierrc.json --ignore-path config/prettier/.prettierignore --check .",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
