@@ -17,6 +17,7 @@ export default [
     },
     rules: {
       'prettier/prettier': 'warn',
+      'no-unused-vars': 'warn',
       ...typescriptEslintPlugin.configs.recommended.rules,
     },
   },
