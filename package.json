@@ -10,6 +10,8 @@
     "clean": "rimraf dist",
     "format": "prettier --config config/prettier/.prettierrc.json --ignore-path config/prettier/.prettierignore --write .",
     "format:check": "prettier --config config/prettier/.prettierrc.json --ignore-path config/prettier/.prettierignore --check .",
+    "lint": "eslint --config config/eslint/.eslintrc.json --ignore-path config/eslint/.eslintignore .",
+    "lint:fix": "eslint --config config/eslint/.eslintrc.json --ignore-path config/eslint/.eslintignore --fix .",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
