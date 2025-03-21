@@ -1,4 +1,5 @@
 {
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.ignorePath": "config/prettier/.prettierignore",
   "prettier.configPath": "config/prettier/.prettierrc.json",
@@ -8,5 +9,8 @@
   "eslint.ignoreUntitled": true,
   "eslint.options": {
     "configFile": "config/eslint/eslint.config.js"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
