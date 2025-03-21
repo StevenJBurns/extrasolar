@@ -1,0 +1,7 @@
+{
+  "prettier.configPath": "config/prettier/.prettierrc.json",
+  "prettier.ignorePath": "config/prettier/.prettierignore",
+  "prettier.arrowParens": "avoid",
+  "prettier.printWidth": 96,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
