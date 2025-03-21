@@ -1,7 +1,7 @@
 {
-  "prettier.configPath": "config/prettier/.prettierrc.json",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.ignorePath": "config/prettier/.prettierignore",
+  "prettier.configPath": "config/prettier/.prettierrc.json",
   "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 96,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "prettier.printWidth": 96
 }
