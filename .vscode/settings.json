@@ -3,5 +3,10 @@
   "prettier.ignorePath": "config/prettier/.prettierignore",
   "prettier.configPath": "config/prettier/.prettierrc.json",
   "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 96
+  "prettier.printWidth": 96,
+  "eslint.validate": ["javascript", "typescript"],
+  "eslint.ignoreUntitled": true,
+  "eslint.options": {
+    "configFile": "config/eslint/eslint.config.js"
+  }
 }
