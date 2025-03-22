@@ -24,7 +24,7 @@ describe('identity functional utility', () => {
   it('returns the same value for a Symbol', () => {
     const sym1 = Symbol('unique');
     const sym2 = Symbol('unique');
-    
+
     expect(identity(sym1)).toBe(sym1);
     expect(identity(sym2)).toBe(sym2);
     expect(identity(sym1)).not.toBe(sym2);

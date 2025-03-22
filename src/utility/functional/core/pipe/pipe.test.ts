@@ -8,7 +8,7 @@ describe('pipe functional utility', () => {
 
   it('works with a single function', () => {
     const square = (x: number) => x * x;
-    
+
     const result = pipe(4, square);
     expect(result).toBe(16);
   });
@@ -33,7 +33,7 @@ describe('pipe functional utility', () => {
   it('handles different return types', () => {
     const toString = (x: number) => x.toString();
     const addExclamation = (s: string) => `${s}!`;
-    
+
     const result = pipe(7, toString, addExclamation);
     expect(result).toBe('7!');
   });

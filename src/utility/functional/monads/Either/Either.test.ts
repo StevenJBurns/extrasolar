@@ -25,12 +25,13 @@ describe('Either<L, R> monad', () => {
   });
 
   it('chains Right to new Either, skips Left', () => {
-    const doubleIfPositive = (x: number): Either<string, number> => 
+    const doubleIfPositive = (x: number): Either<string, number> =>
       x > 0 ? Right(x * 2) : Left('Value must be positive');
 
     const rightResult = chainEither(doubleIfPositive)(Right(3));
     expect(rightResult).toEqual(Right(6));
 
     const leftResult = chainEither(doubleIfPositive)(Left('initial error'));
-    expect(leftResult).toEqual(Left('initial error'));  });
+    expect(leftResult).toEqual(Left('initial error'));
+  });
 });
