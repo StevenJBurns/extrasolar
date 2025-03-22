@@ -3,6 +3,7 @@
     "strict": true,
     "noEmit": true,
     "baseUrl": ".",
+    "rootDir": ".",
     "target": "ES2022",
     "module": "esnext",
     "lib": [
@@ -13,7 +14,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowImportingTsExtensions":true,
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -28,7 +29,7 @@
       "@presentation/*": ["src/presentation/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/presentation/assets/*"],
-      "@utility/*": ["src/utility/*"],
+      "@utility/*": ["src/utility/*"]
     }
   },
   "include": [
@@ -36,11 +37,13 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "tests/**/*",
-    "types/**/*"
+    "types/**/*",
+    "config/vite/vite.config.ts",
+    "vite-env.d.ts"
   ],
   "exclude": [
     "dist",
     "build",
     "node_modules"
   ]
-}
+} 
