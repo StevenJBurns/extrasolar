@@ -1,5 +1,5 @@
-import { Either, Right, Left } from 'src/utility/functional/monads';
-import { createFiniteNonZeroPositiveNumber } from '@domain/primitives';
+import { Either, Right, Left } from "@utility/functional/monads";
+import { createFiniteNonZeroPositiveNumber } from "@domain/primitives";
 import type { MassUnit, MassError } from './Mass.types.ts';
 import { createMassError } from './Mass.error.ts';
 
