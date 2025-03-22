@@ -1,1 +1,1 @@
-export { actionTypes } from "../actionTypes";
+export { actionTypes } from '../actionTypes';

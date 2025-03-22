@@ -1,12 +1,12 @@
-import { actionTypes } from "../../actionTypes";
+import { actionTypes } from '../../actionTypes';
 
-const initialState = JSON.parse(localStorage.getItem("isAudioMuted")) || true;
+const initialState = JSON.parse(localStorage.getItem('isAudioMuted')) || true;
 
 export const isAudioMuted = (state = initialState, action) => {
   if (action.type === actionTypes.ui.TOGGLE_AUDIO_MUTE) {
     let isMuted = action.payload;
 
-    localStorage.setItem("isAudioMuted", JSON.stringify(isMuted));
+    localStorage.setItem('isAudioMuted', JSON.stringify(isMuted));
 
     return isMuted;
   } else {

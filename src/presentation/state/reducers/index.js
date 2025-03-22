@@ -5,14 +5,14 @@ import { data } from './data';
 import { ui } from './ui';
 
 const rootReducer = combineReducers({
-  data, 
+  data,
   ui,
 });
 
 const persistConfig = {
   key: 'root',
   storage: storage,
-  blacklist: ['data']
+  blacklist: ['data'],
 };
 
 export const persistedRootReducer = persistReducer(persistConfig, rootReducer);
