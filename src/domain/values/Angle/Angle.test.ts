@@ -26,7 +26,9 @@ describe('Angle', () => {
       const error = createAngleError('OutOfRange');
       expect(error.code).toBe('AngleError');
       expect(error.reason).toBe('OutOfRange');
-      expect(error.message).toBe('Angle.value must be within range (0-360 degrees or 0-2π radians)');
+      expect(error.message).toBe(
+        'Angle.value must be within range (0-360 degrees or 0-2π radians)',
+      );
     });
 
     it('should create InvalidUnit error with correct message', () => {

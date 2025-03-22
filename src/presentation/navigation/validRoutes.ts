@@ -1,6 +1,6 @@
 type ValidRoute = {
-  label: string,
-  url: string,
+  label: string;
+  url: string;
 };
 
 export const validRoutes: Array<ValidRoute> = [

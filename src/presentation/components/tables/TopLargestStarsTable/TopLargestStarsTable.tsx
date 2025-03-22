@@ -1,11 +1,4 @@
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Typography,
-} from '@mui/material';
+import { Table, TableHead, TableBody, TableRow, TableCell, Typography } from '@mui/material';
 import { styles } from './TopLargestStarsTable.styles';
 
 type TProps = {

@@ -1,1 +1,1 @@
-export const solarSystems = (state = [], action) => action ? state : state;
+export const solarSystems = (state = [], action) => (action ? state : state);

@@ -6,6 +6,5 @@ export type FiniteNumberError = DomainError & {
 };
 
 export const createFiniteNumberError = (
-  message: FiniteNumberError['message'] = 'Value must be a finite number'
-): FiniteNumberError =>
-  Object.freeze({ code: 'FiniteNumberError', message });
+  message: FiniteNumberError['message'] = 'Value must be a finite number',
+): FiniteNumberError => Object.freeze({ code: 'FiniteNumberError', message });

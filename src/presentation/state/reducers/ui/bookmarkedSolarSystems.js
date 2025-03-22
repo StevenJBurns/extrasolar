@@ -1,9 +1,9 @@
-import { actionTypes } from "../../actionTypes";
+import { actionTypes } from '../../actionTypes';
 
-const initialState = JSON.parse(localStorage.getItem("bookmarks")) || [];
+const initialState = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
 export const bookmarkedSolarSystems = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case actionTypes.ui.BOOKMARKS_TOGGLE_SOLARSYSTEM:
       if (!state.includes(action.payload)) {
         return [...state, action.payload];

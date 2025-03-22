@@ -6,18 +6,18 @@
   justify-content: left;
   list-style: none;
   flex-wrap: wrap;
-  min-width: 288px
+  min-width: 288px;
 }
 
 .star-list {
   display: flex;
   flex-direction: row;
   justify-content: left;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
 .div-star-item {
   margin: 4px;
   color: black;
-  background-color: azure
+  background-color: azure;
 }

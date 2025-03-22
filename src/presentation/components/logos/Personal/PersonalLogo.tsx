@@ -17,14 +17,7 @@ export const PersonalLogo = () => (
         fill="freeze"
       />
     </circle>
-    <circle
-      cx="128"
-      cy="128"
-      r="0"
-      fill="none"
-      stroke="#2F2F2FFF"
-      strokeWidth="24"
-    >
+    <circle cx="128" cy="128" r="0" fill="none" stroke="#2F2F2FFF" strokeWidth="24">
       <animate
         attributeType="XML"
         attributeName="r"

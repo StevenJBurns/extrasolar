@@ -20,12 +20,9 @@ import { dividerStyles } from './SolarSystems.styles.ts';
 import { mockSolarSystemData } from '@presentation/data/mockSolarSystemDat.ts';
 
 export const SolarSystems = () => {
-  const [selectedSolarSystem, setSelectedSolarSystem] = useState(
-    mockSolarSystemData[0].name,
-  );
+  const [selectedSolarSystem, setSelectedSolarSystem] = useState(mockSolarSystemData[0].name);
 
-  const handleChange = (e: SelectChangeEvent<string>) =>
-    setSelectedSolarSystem(e.target.value);
+  const handleChange = (e: SelectChangeEvent<string>) => setSelectedSolarSystem(e.target.value);
 
   return (
     <>
@@ -33,9 +30,8 @@ export const SolarSystems = () => {
       <Box sx={{ position: 'static' }}>
         <Canvas
           solarSystemData={
-            mockSolarSystemData.find(
-              system => system.name === selectedSolarSystem,
-            ) ?? mockSolarSystemData[0]
+            mockSolarSystemData.find(system => system.name === selectedSolarSystem) ??
+            mockSolarSystemData[0]
           }
         />
         <Box p={2} position={'absolute'} color={'azure'} zIndex={1}>

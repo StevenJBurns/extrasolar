@@ -1,11 +1,11 @@
 type CartesianPosition = {
-  x: number,
-  y: number,
+  x: number;
+  y: number;
 };
 
 type PolarPosition = {
-  theta: number,
-  radius: number,
+  theta: number;
+  radius: number;
 };
 
 export class PlanetSprite {
@@ -13,7 +13,7 @@ export class PlanetSprite {
   #radius: number;
   #period: number;
   #polar: PolarPosition;
-  #cartesian: CartesianPosition = { x: 0, y: 0};
+  #cartesian: CartesianPosition = { x: 0, y: 0 };
   static #maxRadius: number;
 
   constructor(label: string, radius = 0, period = 0) {
@@ -54,7 +54,7 @@ export class PlanetSprite {
     const x = ctx.canvas.width / 2;
     const y = ctx.canvas.height / 2;
 
-    ctx.strokeStyle = "#909090";
+    ctx.strokeStyle = '#909090';
     ctx.beginPath();
     ctx.ellipse(x, y, radius, radius, 0, 0, 2 * Math.PI, false);
     ctx.stroke();
@@ -64,10 +64,10 @@ export class PlanetSprite {
     const centerX = ctx.canvas.clientWidth / 2;
     const centerY = ctx.canvas.clientHeight / 2;
 
-    const x = (Math.cos(this.#polar.theta) * radius); // + this.foci;
-    const y = (Math.sin(this.#polar.theta) * radius);
+    const x = Math.cos(this.#polar.theta) * radius; // + this.foci;
+    const y = Math.sin(this.#polar.theta) * radius;
 
-    ctx.fillStyle = "#00dd00";
+    ctx.fillStyle = '#00dd00';
     ctx.beginPath();
     ctx.arc(x + centerX, y + centerY, 4, 0, 2 * Math.PI, true);
     ctx.closePath();
@@ -80,8 +80,8 @@ export class PlanetSprite {
   }
 
   public update(deltaTheta: number) {
-    this.polarLocation.theta >= 2 * Math.PI ? 
-      this.polarLocation.theta = 0 : 
-      this.#polar.theta += deltaTheta;
+    this.polarLocation.theta >= 2 * Math.PI
+      ? (this.polarLocation.theta = 0)
+      : (this.#polar.theta += deltaTheta);
   }
 }

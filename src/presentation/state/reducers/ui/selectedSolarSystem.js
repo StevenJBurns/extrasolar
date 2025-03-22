@@ -1,13 +1,11 @@
-import { actionTypes } from "../../actionTypes";
+import { actionTypes } from '../../actionTypes';
 
-export const selectedSolarSystem = (state = {}, action) => {  
+export const selectedSolarSystem = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.ui.SELECTED_SOLARSYSTEM_GET:
-
-    break;
+      break;
     case actionTypes.ui.SELECTED_SOLARSYSTEM_SET:
-
-    break;
+      break;
     default:
       return null;
   }

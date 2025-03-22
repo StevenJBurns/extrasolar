@@ -23,13 +23,7 @@ export const PageFooter = () => (
               <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
             </filter>
           </defs>
-          <circle
-            cx="128"
-            cy="128"
-            r="96"
-            fill="#D0D0D0"
-            filter="url(#drop-shadow)"
-          >
+          <circle cx="128" cy="128" r="96" fill="#D0D0D0" filter="url(#drop-shadow)">
             <animate
               attributeType="XML"
               attributeName="r"
@@ -39,14 +33,7 @@ export const PageFooter = () => (
               fill="freeze"
             />
           </circle>
-          <circle
-            cx="128"
-            cy="128"
-            r="0"
-            fill="none"
-            stroke="#2F2F2FFF"
-            strokeWidth="24"
-          >
+          <circle cx="128" cy="128" r="0" fill="none" stroke="#2F2F2FFF" strokeWidth="24">
             <animate
               attributeType="XML"
               attributeName="r"

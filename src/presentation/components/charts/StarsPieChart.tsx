@@ -1,5 +1,5 @@
-import React from "react";
-import * as D3 from "d3";
+import React from 'react';
+import * as D3 from 'd3';
 
 interface IProps {
   starData: [];
@@ -8,9 +8,7 @@ interface IProps {
 export const StarsPieChart = (props: IProps) => {
   if (!props.starData) return null;
 
-  D3.select("#section-chart-circumbinaries")
-    .selectAll("*")
-    .remove();
+  D3.select('#section-chart-circumbinaries').selectAll('*').remove();
 
   // const { starData } = props;
   // const w = 320, h = 320, r = 120;
@@ -39,5 +37,5 @@ export const StarsPieChart = (props: IProps) => {
   //   });
   // }
 
-  return (<div id="div-chart-circumbinaries"></div>);
+  return <div id="div-chart-circumbinaries"></div>;
 };

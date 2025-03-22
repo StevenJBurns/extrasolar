@@ -6,8 +6,8 @@ export class Planet {
     private readonly _id: string,
     private readonly _mass: number | null,
     private readonly _radius: number | null,
-    private readonly _orbit: PlanetOrbit
-    ) {}
+    private readonly _orbit: PlanetOrbit,
+  ) {}
 
   public static create(newPlanetArgs: PlanetParameters) {
     console.log(`creating new planet: ${newPlanetArgs}`);

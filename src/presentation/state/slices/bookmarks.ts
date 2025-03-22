@@ -8,9 +8,9 @@ const slice = createSlice({
   name: 'bookmarks',
   initialState,
   reducers: {
-    addBookmark: (state, action: PayloadAction<string>) => ([ ...state, action.payload ]),
-    deleteBookmark: (state, action: PayloadAction<string>) => ([ ...state, action.payload ]),
-    clearAllBookmarks: () => ([]),
+    addBookmark: (state, action: PayloadAction<string>) => [...state, action.payload],
+    deleteBookmark: (state, action: PayloadAction<string>) => [...state, action.payload],
+    clearAllBookmarks: () => [],
   },
 });
 

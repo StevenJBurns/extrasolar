@@ -6,9 +6,9 @@ export type AngleUnit = 'degrees' | 'radians';
 export type AngleErrorReason = 'InvalidValue' | 'OutOfRange' | 'InvalidUnit' | 'UnitMismatch';
 
 export type AngleError = DomainError & {
-  code: 'AngleError',
-  reason: AngleErrorReason,
-  message: string,
+  code: 'AngleError';
+  reason: AngleErrorReason;
+  message: string;
 };
 
 export type Angle = {

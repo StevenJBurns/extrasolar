@@ -1,4 +1,4 @@
-import { actionTypes } from "../../actionTypes";
+import { actionTypes } from '../../actionTypes';
 
 /* # of milliseconds in one hour */
 // const ONE_HOUR = 60 * 60 * 1000;

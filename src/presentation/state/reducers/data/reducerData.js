@@ -1,4 +1,4 @@
-import { actionTypes } from "../../actionTypes";
+import { actionTypes } from '../../actionTypes';
 
 // export const reducerData = (state = {}, action) => {
 //   switch (action.type) {
@@ -23,4 +23,4 @@ import { actionTypes } from "../../actionTypes";
 //   };
 // };
 
-export const {};
+export {};

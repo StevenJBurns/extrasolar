@@ -8,7 +8,7 @@ const toString = (x: number) => x.toString();
 describe('compose functional utility', () => {
   test('composes functions right-to-left', () => {
     const fn = compose<number, string>(toString, double, add2);
-    expect(fn(5)).toBe("14");
+    expect(fn(5)).toBe('14');
   });
 
   test('works with homogeneous types', () => {
@@ -33,11 +33,12 @@ describe('compose functional utility', () => {
       return x.length;
     };
     const fn = compose<number, number>(badFn, add2);
-    expect(() => fn(5)).toThrow('Expected string');  });
+    expect(() => fn(5)).toThrow('Expected string');
+  });
 
   test('infers return type with explicit generics', () => {
     const fn = compose<number, string>(toString, double);
     const result: string = fn(5);
-    expect(result).toBe("10");
+    expect(result).toBe('10');
   });
 });

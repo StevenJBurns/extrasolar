@@ -1,28 +1,28 @@
 #app-nav {
   padding: 8px;
-  background-color: #4F4F4F;
-  text-shadow: 2px 2px 8px #0F0F0F
+  background-color: #4f4f4f;
+  text-shadow: 2px 2px 8px #0f0f0f;
 }
 
 #app-nav ul {
   display: flex;
   justify-content: center;
-  list-style: none
+  list-style: none;
 }
 
 #app-nav li {
   margin: 2px;
   height: 32px;
-  background: #4F4F4F;
+  background: #4f4f4f;
   text-align: center;
-  display: table
+  display: table;
 }
 
 #app-nav a {
   margin: auto;
   width: 144px;
   font-size: 16px;
-  color: #F0F0F0;
+  color: #f0f0f0;
   text-decoration: none;
   display: table-cell;
   vertical-align: middle;
@@ -31,15 +31,15 @@
 
 #app-nav a:hover,
 #app-nav a:active {
-  color: #F0F0F0;
-  background-color: #4F4F4F;
-  text-decoration: none
+  color: #f0f0f0;
+  background-color: #4f4f4f;
+  text-decoration: none;
 }
 
 #app-nav a:link,
 #app-nav a:visited {
   height: 20px;
-  color: #F0F0F0;
+  color: #f0f0f0;
 }
 
 @media screen and (max-width: 480px) {
@@ -49,6 +49,6 @@
 
   #app-nav a {
     width: 72px;
-    font-size: 10px
+    font-size: 10px;
   }
 }

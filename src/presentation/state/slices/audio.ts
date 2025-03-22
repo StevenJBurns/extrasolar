@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface IAudioState {
-  source: string,
-  volume: number,
-  isMuted: boolean,
+  source: string;
+  volume: number;
+  isMuted: boolean;
 }
 
 const slice = createSlice({

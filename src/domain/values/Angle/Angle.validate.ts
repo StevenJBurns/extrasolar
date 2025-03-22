@@ -8,7 +8,9 @@ const ANGLE_UNIT_BOUNDS: Record<AngleUnit, number> = {
 };
 
 const checkFinite = (value: number): Either<AngleError, number> =>
-  isNaN(value) || !Number.isFinite(value) ? Left(createAngleError('InvalidValue')) : Right(value);
+  isNaN(value) || !Number.isFinite(value)
+    ? Left(createAngleError('InvalidValue'))
+    : Right(value);
 
 const checkRange = (value: number, unit: AngleUnit): Either<AngleError, void> => {
   const max = ANGLE_UNIT_BOUNDS[unit];
@@ -19,8 +21,6 @@ const checkUnit = (unit: AngleUnit): Either<AngleError, AngleUnit> =>
   unit in ANGLE_UNIT_BOUNDS ? Right(unit) : Left(createAngleError('InvalidUnit'));
 
 export const validateAngle = (value: number, unit: AngleUnit): Either<AngleError, void> =>
-  chainEither(() =>
-    chainEither(() => checkRange(value, unit))(
-      checkUnit(unit)
-    )
-  )(checkFinite(value));
+  chainEither(() => chainEither(() => checkRange(value, unit))(checkUnit(unit)))(
+    checkFinite(value),
+  );

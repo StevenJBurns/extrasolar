@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
-  color: #DFDFDF
+  color: #dfdfdf;
 }
 
 #div-filters {
   display: flex;
   flex-wrap: wrap;
-  background: #7F7F7F;
-  padding: 24px
+  background: #7f7f7f;
+  padding: 24px;
 }
 
 #div-filter-stars {
@@ -27,7 +27,7 @@
 }
 
 .slider-label {
-  margin: 24px 0
+  margin: 24px 0;
 }
 
 #section-container {
@@ -38,11 +38,11 @@
 
 .div-virtual-list {
   list-style: none;
-  background-color: #3f51b5
+  background-color: #3f51b5;
 }
 
 .div-virtual-item {
   width: 90%;
   margin: auto;
-  background-color: darkgreen
+  background-color: darkgreen;
 }

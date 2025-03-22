@@ -11,9 +11,5 @@ export const fetchPlanets = () => fetch('http://localhost:4000/planets');
 // export const fetchPlanets = () => fetch(urlProxy);
 
 export const fetchNasaData = () => {
-  return Promise.all([
-    fetchStars(),
-    fetchPlanets()
-  ])
-  .catch(err => console.error(err));
+  return Promise.all([fetchStars(), fetchPlanets()]).catch(err => console.error(err));
 };

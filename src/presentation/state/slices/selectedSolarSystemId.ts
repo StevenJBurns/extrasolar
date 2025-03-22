@@ -6,8 +6,8 @@ const slice = createSlice({
   name: 'selectedSolarSystemID:',
   initialState,
   reducers: {
-    setSelectedSolarSystemID: (_, action) => (action.payload),
-    clearSelectedSolarSystemID: () => (null),
+    setSelectedSolarSystemID: (_, action) => action.payload,
+    clearSelectedSolarSystemID: () => null,
   },
 });
 

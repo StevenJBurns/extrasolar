@@ -1,7 +1,8 @@
 import { actionTypes } from '../../actionTypes';
 import { setLastDataFetchDatetime } from '../ui/lastDataFetch';
 
-const urlDistinctPlanets = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper,pl_masse,pl_rade+from+ps&format=json';
+const urlDistinctPlanets =
+  'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,pl_letter,pl_orbeccen,pl_orbsmax,pl_orbper,pl_masse,pl_rade+from+ps&format=json';
 
 export const getPlanetsBegin = status => ({
   type: actionTypes.data.PLANETS_ASYNC_GET_BEGIN,
@@ -19,7 +20,7 @@ export const getPlanetsFailed = error => ({
 });
 
 export const getPlanetsThunk = () => {
-  return dispatch => {      
+  return dispatch => {
     dispatch(getPlanetsBegin(true));
 
     return fetch(urlDistinctPlanets)
@@ -29,15 +30,14 @@ export const getPlanetsThunk = () => {
       .then(() => dispatch(setLastDataFetchDatetime(Date.now())))
       .catch(error => {
         console.error(error);
-        dispatch(getPlanetsFailed(error)
-      );
-    });
-      // .finally(() => dispatch(getPlanetsBegin(false)))
-    };
+        dispatch(getPlanetsFailed(error));
+      });
+    // .finally(() => dispatch(getPlanetsBegin(false)))
   };
-    
-  /* Handle HTTP errors when Fetch API can't catch them */
-  export const handleHttpErrors = response => {
-    if (!response.ok) throw Error(response.statusText);
-    return response;
-  };
+};
+
+/* Handle HTTP errors when Fetch API can't catch them */
+export const handleHttpErrors = response => {
+  if (!response.ok) throw Error(response.statusText);
+  return response;
+};

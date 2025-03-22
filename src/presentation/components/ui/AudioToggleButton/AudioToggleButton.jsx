@@ -12,7 +12,7 @@ export const AudioToggleButton = () => {
   const isAudioMuted = useSelector(state => state.ui.isAudioMuted);
   const audioSourceFile = useSelector(state => state.ui.currentAudioSource);
 
-  const toggleAudioMute = () => 
+  const toggleAudioMute = () =>
     dispatch({ type: actionTypes.ui.TOGGLE_AUDIO_MUTE, payload: !isAudioMuted });
 
   const buttonStyle = {
@@ -20,14 +20,16 @@ export const AudioToggleButton = () => {
     background: 'Gainsboro',
     color: isAudioMuted ? 'firebrick' : 'forestgreen',
   };
-  
+
   return (
     <div>
       <IconButton type="button" style={buttonStyle} onClick={toggleAudioMute}>
-        { isAudioMuted ? <VolumeOff fontSize="large" /> : <VolumeUp fontSize="large" /> }
+        {isAudioMuted ? <VolumeOff fontSize="large" /> : <VolumeUp fontSize="large" />}
       </IconButton>
       <audio autoPlay loop src={audioSourceFile} muted={isAudioMuted}>
-        <span>Your browser does not support the <code>audio</code> element.</span>
+        <span>
+          Your browser does not support the <code>audio</code> element.
+        </span>
       </audio>
     </div>
   );

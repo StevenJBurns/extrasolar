@@ -2,7 +2,8 @@ import { actionTypes } from '../../actionTypes';
 import { setLastDataFetchDatetime } from '../ui/lastDataFetch';
 
 // const urlDistinctStars = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,sy_snum,cb_flag,sy_pnum,st_mass,st_rad,st_teff,sy_dist+from+ps+order+by+hostname&format=json';
-const urlDistinctStars = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,sy_snum,cb_flag,sy_pnum,st_mass,st_rad,st_teff,sy_dist+from+ps+order+by+hostname&format=json';
+const urlDistinctStars =
+  'https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+hostname,sy_snum,cb_flag,sy_pnum,st_mass,st_rad,st_teff,sy_dist+from+ps+order+by+hostname&format=json';
 
 export const getStarsBegin = status => ({
   type: actionTypes.data.STARS_ASYNC_GET_BEGIN,
@@ -32,12 +33,12 @@ export const getStarsThunk = () => {
         console.error(error);
         dispatch(getStarsFailed(error));
       });
-      // .finally(() => {
-      //   dispatch(getStarsBegin(false));
-      //   dispatch(setLastDataFetchDatetime(Date.now()));
-      // })
-    };
+    // .finally(() => {
+    //   dispatch(getStarsBegin(false));
+    //   dispatch(setLastDataFetchDatetime(Date.now()));
+    // })
   };
+};
 
 /* Handle HTTP errors when Fetch API can't catch them */
 export const handleHttpErrors = response => {
