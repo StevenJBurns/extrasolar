@@ -32,8 +32,8 @@
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
+    "src/**/*.d.ts",
     "tests/**/*",
-    "types/**/*",
     "config/vite/vite.config.ts"
   ],
   "exclude": ["dist", "build", "node_modules"]
