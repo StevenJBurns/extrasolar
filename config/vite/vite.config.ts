@@ -9,6 +9,7 @@ export default defineConfig({
   base: '/extrasolar/',
   build: {
     outDir: 'dist',
+    chunkSizeWarningLimit: 1024,
   },
   plugins: [
     react(),
