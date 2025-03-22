@@ -1,8 +1,6 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.arrowParens": "avoid",
-  "prettier.printWidth": 96,
   "eslint.run": "onType",
   "eslint.format.enable": true,
   "eslint.ignoreUntitled": true,
