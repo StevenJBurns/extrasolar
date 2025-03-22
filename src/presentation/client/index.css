@@ -2,18 +2,20 @@
 
 * {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 body {
-  background: #1F1F1F;
-  font-family: Lato, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #1f1f1f;
+  font-family:
+    Lato, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 #react-root {
   display: flex;
   min-height: 100vh;
-  flex-direction: column
+  flex-direction: column;
 }
 
 main {
@@ -22,12 +24,14 @@ main {
   flex-direction: column;
 }
 
-a:link, a:visited {
-  color: #EEFFFF;
+a:link,
+a:visited {
+  color: #eeffff;
   transition: color 0.25s;
-  text-decoration-color: #EEFFFF;
+  text-decoration-color: #eeffff;
 }
 
-a:hover, a:active {
-  color: lightgreen
-} 
+a:hover,
+a:active {
+  color: lightgreen;
+}
