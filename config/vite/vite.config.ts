@@ -7,6 +7,7 @@ const projectRoot = path.resolve(__dirname, '../../');
 
 export default defineConfig({
   base: '/extrasolar/',
+  root: path.resolve(projectRoot, 'src/presentation/client'),
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 1024,
@@ -55,7 +56,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: [path.resolve(projectRoot, 'tests/setup.ts')],
-    include: [path.resolve(projectRoot, '**/*.test.{js,jsx,ts,tsx}')],
+    include: [path.resolve(projectRoot, 'src/**/*.test.{js,jsx,ts,tsx}')],
+    exclude: ['**/node_modules/**'],
     deps: {
       optimizer: {
         web: {
