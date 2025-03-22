@@ -8,9 +8,21 @@ const projectRoot = path.resolve(__dirname, '../../');
 export default defineConfig({
   base: '/extrasolar/',
   root: path.resolve(projectRoot, 'src/presentation/client'),
+  publicDir: path.resolve(projectRoot, 'src/presentation/client/public'),
   build: {
-    outDir: 'dist',
+    outDir: path.resolve(projectRoot, 'dist'),
+    emptyOutDir: true,
     chunkSizeWarningLimit: 1024,
+    rollupOptions: {
+      input: {
+        main: path.resolve(projectRoot, 'src/presentation/client/index.html'),
+      },
+    },
+  },
+  preview: {
+    port: 4173,
+    strictPort: true,
+    host: true,
   },
   plugins: [
     react(),

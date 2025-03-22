@@ -1,6 +1,6 @@
 {
   "short_name": "ExtraSolar",
-  "name": "ExtraSolar &bull; An Expolanet Visualization Tool",
+  "name": "ExtraSolar - Space Exploration Game",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,7 +9,7 @@
     }
   ],
   "display": "standalone",
-  "start_url": "./index.html",
+  "start_url": "/extrasolar/",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
