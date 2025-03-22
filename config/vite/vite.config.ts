@@ -7,9 +7,22 @@ const projectRoot = path.resolve(__dirname, '../../');
 
 export default defineConfig({
   base: '/extrasolar/',
+  root: path.resolve(projectRoot, 'src/presentation/client'),
+  publicDir: path.resolve(projectRoot, 'src/presentation/client/public'),
   build: {
-    outDir: 'dist',
+    outDir: path.resolve(projectRoot, 'build'),
+    emptyOutDir: true,
     chunkSizeWarningLimit: 1024,
+    rollupOptions: {
+      input: {
+        main: path.resolve(projectRoot, 'src/presentation/client/index.html'),
+      },
+    },
+  },
+  preview: {
+    port: 4173,
+    strictPort: true,
+    host: true,
   },
   plugins: [
     react(),
@@ -55,7 +68,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: [path.resolve(projectRoot, 'tests/setup.ts')],
-    include: [path.resolve(projectRoot, '**/*.test.{js,jsx,ts,tsx}')],
+    include: [path.resolve(projectRoot, 'src/**/*.test.{js,jsx,ts,tsx}')],
+    exclude: ['**/node_modules/**'],
     deps: {
       optimizer: {
         web: {
