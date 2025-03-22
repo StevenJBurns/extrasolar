@@ -12,7 +12,7 @@
     "format:fix": "prettier --config config/prettier/.prettierrc.json --ignore-path config/prettier/.prettierignore --write .",
     "lint:check": "eslint --config config/eslint/eslint.config.js .",
     "lint:fix": "eslint --config config/eslint/eslint.config.js --fix .",
-    "test": "vitest run --config config/vite/vite.config.ts",
+    "test:once": "vitest run --config config/vite/vite.config.ts",
     "test:watch": "vitest --config config/vite/vite.config.ts",
     "test:ui": "vitest --ui --config config/vite/vite.config.ts",
     "predeploy": "npm run build",
