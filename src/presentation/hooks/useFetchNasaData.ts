@@ -10,7 +10,7 @@ export const useFetchNasaData = () => {
   useEffect(() => {
     console.clear();
     // setPending(true);
-    
+
     // fetchNasaData().then(async (responses: [unknown, unknown]) => {
     //     if (responses) {
     //       const [starsResponse, planetsresponse] = responses;
@@ -25,7 +25,7 @@ export const useFetchNasaData = () => {
     //     setError('No error');
     //     console.log('fetch complete');
     //   });
-    }, []);
+  }, []);
 
   // return {
   //   pending,
