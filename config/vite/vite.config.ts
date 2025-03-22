@@ -8,7 +8,7 @@ const projectRoot = path.resolve(__dirname, '../../');
 export default defineConfig({
   base: '/extrasolar/',
   build: {
-    outDir: '../../dist',
+    outDir: 'dist',
   },
   plugins: [
     react(),
