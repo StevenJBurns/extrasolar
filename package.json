@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf build",
     "start": "vite --config config/vite/vite.config.ts",
     "build": "vite build --config config/vite/vite.config.ts",
     "serve": "vite preview --config config/vite/vite.config.ts",
@@ -16,7 +16,7 @@
     "test:watch": "vitest --config config/vite/vite.config.ts",
     "test:ui": "vitest --ui --config config/vite/vite.config.ts",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
