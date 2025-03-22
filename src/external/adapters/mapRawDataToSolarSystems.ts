@@ -2,7 +2,7 @@
 
 // export const mapRawDataToSolarSystems = (stars: Array<Star>, planets: Array<Planet>) => {
 //   return stars.map(star => {
-//     let filteredPlanets = planets.filter(planet => 
+//     let filteredPlanets = planets.filter(planet =>
 //         planet.hostName === star.name
 //       );
 
