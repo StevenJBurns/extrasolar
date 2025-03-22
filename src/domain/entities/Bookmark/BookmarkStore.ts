@@ -1,4 +1,4 @@
-import { IBookmark } from "./Bookmark.entity";
+import { IBookmark } from './Bookmark.entity';
 
 export interface IBookmarkStore {
   list: Array<IBookmark>;

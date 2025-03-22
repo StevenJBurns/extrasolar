@@ -1,3 +1,1 @@
-export function createSolarSystem() {
-
-}
+export function createSolarSystem() {}

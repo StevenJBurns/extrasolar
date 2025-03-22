@@ -1,4 +1,4 @@
-import { StarParameters } from "./StarParameters";
+import { StarParameters } from './StarParameters';
 
 /* mass and radius are relative to the Sun */
 export class Star {
@@ -7,7 +7,7 @@ export class Star {
   #radius: number | null;
   #temperature: number | null;
 
-  constructor(args: StarParameters ) {
+  constructor(args: StarParameters) {
     this.#id = args.id;
     this.#mass = args.mass;
     this.#radius = args.radius;
