@@ -9,10 +9,7 @@ import importPlugin from 'eslint-plugin-import';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '../../');
-const tsConfigPath = path.resolve(
-  projectRoot,
-  'config/typescript/tsconfig.json',
-);
+const tsConfigPath = path.resolve(projectRoot, 'tsconfig.json');
 
 export default [
   {
