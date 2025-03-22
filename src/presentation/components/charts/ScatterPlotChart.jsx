@@ -1,5 +1,5 @@
-import React from "react";
-import * as D3 from "d3";
+import React from 'react';
+import * as D3 from 'd3';
 
 const propTypes = {
   xData: null,
@@ -9,5 +9,5 @@ const propTypes = {
 };
 
 export const ScatterPlotChart = () => {
-  return (<div id="div-chart-"></div>);
+  return <div id="div-chart-"></div>;
 };

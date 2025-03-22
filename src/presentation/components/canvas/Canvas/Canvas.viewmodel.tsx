@@ -45,12 +45,10 @@ export const useViewModel = (data: SolarSystem) => {
       canvas.current.height = canvas.current.clientHeight;
     });
 
-    if (canvasRef.current)
-      observer.observe(canvasRef.current as HTMLCanvasElement);
+    if (canvasRef.current) observer.observe(canvasRef.current as HTMLCanvasElement);
 
     return () => {
-      if (canvas.current)
-        observer.unobserve(canvas.current as HTMLCanvasElement);
+      if (canvas.current) observer.unobserve(canvas.current as HTMLCanvasElement);
     };
   }, [canvasRef]);
 
@@ -105,18 +103,9 @@ export const useViewModel = (data: SolarSystem) => {
 
           const primaryStar = data.stars[0];
 
-          rgStar.addColorStop(
-            0.0,
-            starClassificationGradientMap[primaryStar.class].begin,
-          );
-          rgStar.addColorStop(
-            0.1,
-            starClassificationGradientMap[primaryStar.class].begin,
-          );
-          rgStar.addColorStop(
-            0.2,
-            starClassificationGradientMap[primaryStar.class].stop,
-          );
+          rgStar.addColorStop(0.0, starClassificationGradientMap[primaryStar.class].begin);
+          rgStar.addColorStop(0.1, starClassificationGradientMap[primaryStar.class].begin);
+          rgStar.addColorStop(0.2, starClassificationGradientMap[primaryStar.class].stop);
           rgStar.addColorStop(1.0, 'rgba(0, 0, 0, 0)');
 
           context.save();
@@ -134,8 +123,7 @@ export const useViewModel = (data: SolarSystem) => {
               context.canvas.height / 2,
             );
 
-            const renderRadius =
-              (p.radius / PlanetSprite.maxRadius) * canvasMaxRenderDistance;
+            const renderRadius = (p.radius / PlanetSprite.maxRadius) * canvasMaxRenderDistance;
             p.render(context, renderRadius * 0.8);
           });
         }

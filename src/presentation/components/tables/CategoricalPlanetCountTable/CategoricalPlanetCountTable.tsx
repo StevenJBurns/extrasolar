@@ -15,8 +15,8 @@ export const CategoricalPlanetCountTable = () => {
         <Table>
           <TableHead>
             <TableRow>
-            <TableCell variant="head">Planets</TableCell>
-            <TableCell variant="head"># of Systems</TableCell>
+              <TableCell variant="head">Planets</TableCell>
+              <TableCell variant="head"># of Systems</TableCell>
             </TableRow>
           </TableHead>
           <TableBody></TableBody>

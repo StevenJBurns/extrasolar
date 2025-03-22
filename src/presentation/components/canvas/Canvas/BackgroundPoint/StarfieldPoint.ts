@@ -1,7 +1,7 @@
 type PolarCoordinates = {
-  theta: number,
-  distance: number,
-}
+  theta: number;
+  distance: number;
+};
 
 export class StarfieldPoint {
   #polar: PolarCoordinates;
@@ -21,14 +21,14 @@ export class StarfieldPoint {
 
     const x = Math.cos(this.#polar.theta) * this.#polar.distance + centerX;
     const y = Math.sin(this.#polar.theta) * this.#polar.distance + centerY;
-  
+
     ctx.fillStyle = `rgba(255, 255, 255, ${this.#opacity})`;
     ctx.fillRect(x, y, 1, 1);
   }
 
   public update(deltaTheta: number) {
-    this.#polar.theta >= 2 * Math.PI ?
-      this.#polar.theta = 0 :
-      this.#polar.theta += deltaTheta;
+    this.#polar.theta >= 2 * Math.PI
+      ? (this.#polar.theta = 0)
+      : (this.#polar.theta += deltaTheta);
   }
 }

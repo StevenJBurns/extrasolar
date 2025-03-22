@@ -1,4 +1,4 @@
-  /* wipes the canvas between re-draws */
+/* wipes the canvas between re-draws */
 
 export const wipeCanvas = (ctx: CanvasRenderingContext2D) => {
   ctx.fillStyle = '#000000';

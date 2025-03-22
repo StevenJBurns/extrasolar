@@ -31,9 +31,7 @@ export const PageHeader: React.FunctionComponent = () => {
   useEffect(() => setIsDrawerOpen(false), [pathname]);
 
   return (
-    <AppBar
-      sx={{ color: 'azure', backgroundColor: '#1F1F1F', position: 'static' }}
-    >
+    <AppBar sx={{ color: 'azure', backgroundColor: '#1F1F1F', position: 'static' }}>
       <Toolbar>
         <Grid container direction="column" style={{ flexGrow: 1 }}>
           <Typography variant="h5">ExtraSolar</Typography>
@@ -80,10 +78,7 @@ export const PageHeader: React.FunctionComponent = () => {
           <AudioToggleButton />
         </Hidden>
         <Hidden smUp>
-          <IconButton
-            style={{ padding: 0, color: 'gainsboro' }}
-            onClick={handleHamburgerClick}
-          >
+          <IconButton style={{ padding: 0, color: 'gainsboro' }} onClick={handleHamburgerClick}>
             <MenuIcon fontSize="large" />
           </IconButton>
         </Hidden>

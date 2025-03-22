@@ -25,7 +25,7 @@ export const Bookmarks = props => {
     dispatch({
       type: actionTypes.ui.BOOKMARKS_TOGGLE_SOLARSYSTEM,
       payload: +e.currentTarget.id,
-    })
+    });
   };
 
   const resetFavorites = () => dispatch({ type: actionTypes.ui.BOOKMARKS_DELETE_ALL });
@@ -33,29 +33,31 @@ export const Bookmarks = props => {
   return (
     <div>
       <ul className="ul-planet-list">
-        { dataz.map(planet => (
+        {dataz.map(planet => (
           <li
             id={planet.id}
             key={planet.id}
             className="planet-item"
             onClick={e => handleBookmarkToggle(e)}
-            >
+          >
             <span>{planet.name}</span>
-            <button type="button" className="toggle-as-favorite">+</button>
+            <button type="button" className="toggle-as-favorite">
+              +
+            </button>
           </li>
-          )
-        )}
+        ))}
       </ul>
       <section>
         <h3>FAVORITES</h3>
         <div>
-          { bookmarks.map(planetId => (
+          {bookmarks.map(planetId => (
             <span key={planetId}>{dataz[planetId].name} &bull; </span>
-            )
-          )}
+          ))}
         </div>
-        <button type="button" onClick={resetFavorites}>Reset Favorites</button>
+        <button type="button" onClick={resetFavorites}>
+          Reset Favorites
+        </button>
       </section>
     </div>
-  )
+  );
 };

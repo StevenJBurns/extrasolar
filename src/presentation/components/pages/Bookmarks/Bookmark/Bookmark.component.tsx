@@ -9,10 +9,7 @@ export type Props = {
 
 export const Bookmark = (props: Props) => {
   return (
-    <ListItem
-      key={props.key}
-      css={styles}
-    >
+    <ListItem key={props.key} css={styles}>
       {props.bookmarkId}
     </ListItem>
   );

@@ -6,7 +6,7 @@ import { Bookmark } from '../Bookmark';
 import { styles } from './BookmarkList.styles';
 
 export type TProps = {
-  bookmarkList: Array<string> | [],
+  bookmarkList: Array<string> | [];
 };
 
 export const BookmarkList = (props: TProps) => {

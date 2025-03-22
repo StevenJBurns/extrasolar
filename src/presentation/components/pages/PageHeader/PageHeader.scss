@@ -1,46 +1,50 @@
 #app-header {
-    width: 100%;
-    color: #F0F0F0;
-    background-color: #2F2F2F;
-    text-shadow: 2px 2px 8px #0F0F0F;
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+  width: 100%;
+  color: #f0f0f0;
+  background-color: #2f2f2f;
+  text-shadow: 2px 2px 8px #0f0f0f;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+#app-logo {
+  height: 40px;
+  width: 40px;
+  animation: app-logo-spin infinite 20s linear;
+}
+
+#divAppTaglines {
+  flex: 1 0 100%;
+  text-align: left;
+}
+
+#button-audio {
+  padding: 4px;
+  background-color: #0f0f0f;
+}
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  #app-logo {
-    height: 40px;
-    width: 40px;
-    animation: app-logo-spin infinite 20s linear;
+  to {
+    transform: rotate(360deg);
   }
-  
-  #divAppTaglines {
-    flex: 1 0 100%;
-    text-align: left
+}
+
+@media screen and (max-width: 600px) {
+  #app-header {
+    flex-wrap: wrap;
   }
-    
-  #button-audio {
-    padding: 4px;
-    background-color: #0F0F0F
+
+  #app-header h1 {
+    font-size: 1rem;
+    text-align: center;
   }
-  
-  @keyframes app-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+
+  #app-header h4 {
+    font-size: 0.75em;
+    text-align: center;
   }
-  
-  @media screen and (max-width: 600px) {
-    #app-header {
-      flex-wrap: wrap
-    }
-  
-    #app-header h1 {
-      font-size: 1rem;
-      text-align: center
-    }
-  
-    #app-header h4 {
-      font-size: 0.75em;
-      text-align: center
-    }
-  }
+}

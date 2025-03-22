@@ -7,11 +7,9 @@ type ListItemLinkProps = {
   primary: string;
 };
 
-const Link = forwardRef<HTMLAnchorElement, RouterLinkProps>(
-  function Link(itemProps, ref) {
-    return <RouterLink ref={ref} {...itemProps} role={undefined} />;
-  },
-);
+const Link = forwardRef<HTMLAnchorElement, RouterLinkProps>(function Link(itemProps, ref) {
+  return <RouterLink ref={ref} {...itemProps} role={undefined} />;
+});
 
 const ListItemLink = (props: ListItemLinkProps) => {
   const { to, primary } = props;

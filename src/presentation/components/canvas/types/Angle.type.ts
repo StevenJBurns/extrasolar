@@ -1,4 +1,4 @@
 export type Angle = {
   value: number;
-  units: 'degrees' | 'radians',
+  units: 'degrees' | 'radians';
 };

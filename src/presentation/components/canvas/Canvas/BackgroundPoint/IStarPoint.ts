@@ -6,7 +6,7 @@ type Cartestian = {
 type Polar = {
   theta: number;
   distance: number;
-}
+};
 
 export interface IStarPoint {
   polar: Polar;

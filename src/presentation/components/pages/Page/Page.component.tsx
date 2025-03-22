@@ -10,11 +10,7 @@ type TProps = {
 
 export const Page = (props: TProps) => {
   return (
-    <Container
-      component="main"
-      maxWidth="md"
-      sx={{ mt: '2rem', p: '2rem', color: '#D0D0DF' }}
-    >
+    <Container component="main" maxWidth="md" sx={{ mt: '2rem', p: '2rem', color: '#D0D0DF' }}>
       {props.children}
     </Container>
   );
