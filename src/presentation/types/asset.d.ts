@@ -11,4 +11,4 @@ declare module '@assets/images/*' {
 declare module '@assets/audio/*' {
   const src: string;
   export default src;
-}
+} 
