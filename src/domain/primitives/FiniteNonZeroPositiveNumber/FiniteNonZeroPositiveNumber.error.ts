@@ -6,7 +6,6 @@ export type FiniteNonZeroPositiveNumberError = DomainError & {
 };
 
 export const createFiniteNonZeroPositiveNumberError = (
-  message: FiniteNonZeroPositiveNumberError['message'] = 'Value must be a finite, non-zero positive number'
+  message: FiniteNonZeroPositiveNumberError['message'] = 'Value must be a finite, non-zero positive number',
 ): FiniteNonZeroPositiveNumberError =>
   Object.freeze({ code: 'FiniteNonZeroPositiveNumberError', message });
-  
