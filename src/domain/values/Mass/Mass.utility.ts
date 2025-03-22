@@ -11,8 +11,7 @@ const MASS_CONVERSIONS: Record<MassUnit, number> = {
 export const getValue = (m: Mass): FiniteNonZeroPositiveNumber => m.value;
 export const getUnit = (m: Mass): MassUnit => m.unit;
 
-export const equals = (a: Mass, b: Mass): boolean =>
-  a.value === b.value && a.unit === b.unit;
+export const equals = (a: Mass, b: Mass): boolean => a.value === b.value && a.unit === b.unit;
 
 export const convertMass = (m: Mass, targetUnit: MassUnit): Mass => {
   if (m.unit === targetUnit) return m;

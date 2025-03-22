@@ -9,6 +9,6 @@ export const createAngle = (value: number, unit: AngleUnit): Either<AngleError, 
     const finiteResult = createFiniteNumber(value);
 
     return chainEither<AngleError, FiniteNumber, Angle>((finiteValue: FiniteNumber) =>
-      Right(Object.freeze({ value: finiteValue, unit }))
+      Right(Object.freeze({ value: finiteValue, unit })),
     )(finiteResult.type === 'Left' ? Left(createAngleError('InvalidValue')) : finiteResult);
   })(validateAngle(value, unit));

@@ -16,7 +16,7 @@ export const equals = (a: Temperature, b: Temperature): boolean =>
 
 //   const CONVERSIONS_FACTORS: Record<TemperatureScale, number> = {
 //     Kelvin: 1,
-//     Celsius: 
+//     Celsius:
 //   };
 
 //   return Object.freeze({

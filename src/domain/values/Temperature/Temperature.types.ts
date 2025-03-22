@@ -1,9 +1,9 @@
 import { DomainError } from '@domain/types';
 import { FiniteNumber } from '@domain/primitives';
 
-export type TemperatureScale = "Celsius" | "Fahrenheit" | "Kelvin";
+export type TemperatureScale = 'Celsius' | 'Fahrenheit' | 'Kelvin';
 
-export type TemperatureErrorReason = 'OutOfRange' | 'InvalidUnit'
+export type TemperatureErrorReason = 'OutOfRange' | 'InvalidUnit';
 
 export type TemperatureError = DomainError & {
   code: 'TemperatureError';

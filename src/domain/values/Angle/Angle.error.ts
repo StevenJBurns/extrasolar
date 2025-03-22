@@ -7,10 +7,9 @@ const errorMessages: Record<AngleErrorReason, string> = {
   UnitMismatch: 'Both angles must use the same unit (degrees or radians)',
 };
 
-export const createAngleError = (reason: AngleErrorReason) => (
+export const createAngleError = (reason: AngleErrorReason) =>
   Object.freeze({
     code: 'AngleError',
     reason,
     message: errorMessages[reason],
-  })
-);
+  });

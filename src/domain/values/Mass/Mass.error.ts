@@ -5,10 +5,9 @@ const errorMessages: Record<MassErrorReason, string> = {
   InvalidUnit: "Mass.unit must be 'Kilogram' | 'earth' | 'jupiter' | 'sun'",
 };
 
-export const createMassError = (reason: MassErrorReason) => (
+export const createMassError = (reason: MassErrorReason) =>
   Object.freeze({
     code: 'MassError',
     reason,
     message: errorMessages[reason],
-  })
-);
+  });
