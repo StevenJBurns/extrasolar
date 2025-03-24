@@ -13,7 +13,8 @@ describe('NonEmptyString', () => {
       expect(result.type).toBe('Left');
       expect(result.value).toEqual({
         code: 'NonEmptyStringError',
-        message: 'String must not be empty',
+        reason: 'InvalidValue',
+        message: 'NonEmptyString cannot contain an empty string',
       });
     });
 
@@ -22,7 +23,8 @@ describe('NonEmptyString', () => {
       expect(result.type).toBe('Left');
       expect(result.value).toEqual({
         code: 'NonEmptyStringError',
-        message: 'String must not be empty',
+        reason: 'InvalidValue',
+        message: 'NonEmptyString cannot contain an empty string',
       });
     });
 
