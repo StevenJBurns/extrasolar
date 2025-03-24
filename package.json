@@ -61,7 +61,7 @@
     "eslint-import-resolver-typescript": "4.2.2",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jest-dom": "5.5.0",
-    "eslint-plugin-prettier": "5.2.3",
+    "eslint-plugin-prettier": "5.2.4",
     "eslint-plugin-react": "7.37.4",
     "gh-pages": "6.3.0",
     "jsdom": "26.0.0",
