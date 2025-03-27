@@ -72,7 +72,7 @@ export default defineConfig({
     exclude: ['**/node_modules/**'],
     coverage: {
       all: true,
-      enabled: true,
+      enabled: false,
       provider: 'v8',
       skipFull: true,
       reportsDirectory: './coverage',
