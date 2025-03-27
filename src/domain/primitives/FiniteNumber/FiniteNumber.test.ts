@@ -25,7 +25,8 @@ describe('FiniteNumber', () => {
       expect(result.type).toBe('Left');
       expect(result.value).toEqual({
         code: 'FiniteNumberError',
-        message: 'Value must be a finite number',
+        reason: 'OutOfRange',
+        message: 'FiniteNumber must be a finite number',
       });
     });
 
@@ -34,7 +35,8 @@ describe('FiniteNumber', () => {
       expect(result.type).toBe('Left');
       expect(result.value).toEqual({
         code: 'FiniteNumberError',
-        message: 'Value must be a finite number',
+        reason: 'OutOfRange',
+        message: 'FiniteNumber must be a finite number',
       });
     });
   });
