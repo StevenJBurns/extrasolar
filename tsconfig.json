@@ -36,5 +36,5 @@
     "tests/**/*",
     "config/vite/vite.config.ts"
   ],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "coverage", "node_modules"]
 }

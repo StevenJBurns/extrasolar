@@ -7,12 +7,12 @@ const projectRoot = path.resolve(__dirname, '../../');
 
 export default defineConfig({
   base: '/extrasolar/',
-  root: projectRoot,
+  root: path.resolve(projectRoot, 'src/presentation/client'),
   publicDir: path.resolve(projectRoot, 'src/presentation/client/public'),
   build: {
-    outDir: path.resolve(projectRoot, 'build'),
     emptyOutDir: true,
     chunkSizeWarningLimit: 1024,
+    outDir: path.resolve(projectRoot, 'build'),
     rollupOptions: {
       input: {
         main: path.resolve(projectRoot, 'src/presentation/client/index.html'),
