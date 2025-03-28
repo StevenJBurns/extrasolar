@@ -72,10 +72,10 @@ export default defineConfig({
     exclude: ['**/node_modules/**'],
     coverage: {
       all: true,
-      enabled: false,
+      enabled: true,
       provider: 'v8',
       skipFull: true,
-      reportsDirectory: './coverage',
+      reportsDirectory: 'coverage',
       reporter: ['text', 'json', 'html'],
       include: ['src/**/*.ts', 'src/**/*.tsx'],
       exclude: [
