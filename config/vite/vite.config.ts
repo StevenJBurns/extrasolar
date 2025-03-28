@@ -7,7 +7,7 @@ const projectRoot = path.resolve(__dirname, '../../');
 
 export default defineConfig({
   base: '/extrasolar/',
-  root: path.resolve(projectRoot, 'src/presentation/client'),
+  root: projectRoot,
   publicDir: path.resolve(projectRoot, 'src/presentation/client/public'),
   build: {
     outDir: path.resolve(projectRoot, 'build'),
@@ -68,8 +68,25 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: [path.resolve(projectRoot, 'tests/setup.ts')],
-    include: [path.resolve(projectRoot, 'src/**/*.test.{js,jsx,ts,tsx}')],
+    include: ['src/**/*.test.{js,jsx,ts,tsx}'],
     exclude: ['**/node_modules/**'],
+    coverage: {
+      all: true,
+      enabled: true,
+      provider: 'v8',
+      skipFull: true,
+      reportsDirectory: 'coverage',
+      reporter: ['text', 'json', 'html'],
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
+      exclude: [
+        'src/main.tsx',
+        'src/**/*.test.ts',
+        'src/**/*.test.tsx',
+        'src/**/*.d.ts',
+        'src/**/index.ts',
+        'src/**/index.tsx',
+      ],
+    },
     deps: {
       optimizer: {
         web: {

@@ -4,9 +4,9 @@ import { Either, Left, Right } from '@utility/functional/monads';
 export function createNonEmptyString(
   value: string,
 ): Either<NonEmptyStringError, NonEmptyString> {
-  const isNonEmptyString = value.trim().length > 0;
+  const isEmpty = value === null || value === undefined || value.length === 0;
 
-  return isNonEmptyString ? Right(value as NonEmptyString) : Left(createNonEmptyStringError());
+  return isEmpty ? Left(createNonEmptyStringError()) : Right(value as NonEmptyString);
 }
 
 export function createNonEmptyStringError() {
@@ -14,5 +14,5 @@ export function createNonEmptyStringError() {
     code: 'NonEmptyStringError',
     reason: 'InvalidValue',
     message: 'NonEmptyString cannot contain an empty string',
-  }) as NonEmptyStringError;
+  } as const);
 }

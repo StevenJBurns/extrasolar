@@ -70,7 +70,8 @@ describe('Mass', () => {
     });
 
     it('should reject invalid unit', () => {
-      const result = validateMass(1, 'kg' as any);
+      const invalidUnit = 'unknown unit' as never;
+      const result = validateMass(1, invalidUnit);
       expect(result.type).toBe('Left');
       if (result.type === 'Left') {
         expect(result.value).toEqual(createMassError('InvalidUnit'));
@@ -114,7 +115,8 @@ describe('Mass', () => {
     });
 
     it('should reject invalid unit', () => {
-      const result = createMass(1, 'kg' as any);
+      const invalidUnit = 'unknown unit' as never;
+      const result = createMass(1, invalidUnit);
       expect(result.type).toBe('Left');
       if (result.type === 'Left') {
         expect(result.value).toEqual(createMassError('InvalidUnit'));
