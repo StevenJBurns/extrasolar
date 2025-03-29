@@ -68,14 +68,15 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    root: path.resolve(projectRoot),
     setupFiles: [path.resolve(projectRoot, 'tests/setup.ts')],
     include: ['src/**/*.test.{js,jsx,ts,tsx}'],
     exclude: ['**/node_modules/**'],
     coverage: {
       all: true,
-      enabled: true,
+      enabled: false,
       provider: 'v8',
-      skipFull: true,
+      skipFull: false,
       reportsDirectory: 'coverage',
       reporter: ['text', 'json', 'html'],
       include: ['src/**/*.ts', 'src/**/*.tsx'],
@@ -86,6 +87,9 @@ export default defineConfig({
         'src/**/*.d.ts',
         'src/**/index.ts',
         'src/**/index.tsx',
+        'src/domain/constants/**/*.ts',
+        'src/**/*.interface*.ts',
+        'src/**/*.type*.ts',
       ],
     },
     deps: {
