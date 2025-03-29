@@ -5,18 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Vite Debug (Chrome)",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}/src"
-    },
-    {
-      "name": "Vite Debug (Firefox)",
       "type": "firefox",
       "request": "launch",
+      "name": "Launch Firefox",
       "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}/src"
+      "webRoot": "${workspaceFolder}/src/presentation/client",
+      "pathMappings": [
+        {
+          "url": "http://localhost:5173/extrasolar/@fs/home/sjb/Github/extrasolar/src",
+          "path": "${workspaceFolder}/src"
+        },
+        {
+          "url": "http://localhost:5173/extrasolar/main.tsx",
+          "path": "${workspaceFolder}/src/presentation/client/main.tsx"
+        },
+        {
+          "url": "http://localhost:5173/main.tsx",
+          "path": "${workspaceFolder}/src/presentation/client/main.tsx"
+        }
+      ],
+      "firefoxExecutable": "/usr/bin/firefox",
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "reAttach": true
     }
   ]
 }

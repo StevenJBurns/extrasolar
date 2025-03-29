@@ -10,6 +10,7 @@ export default defineConfig({
   root: path.resolve(projectRoot, 'src/presentation/client'),
   publicDir: path.resolve(projectRoot, 'src/presentation/client/public'),
   build: {
+    sourcemap: true,
     emptyOutDir: true,
     chunkSizeWarningLimit: 1024,
     outDir: path.resolve(projectRoot, 'build'),
