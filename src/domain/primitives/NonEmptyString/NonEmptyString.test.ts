@@ -4,46 +4,63 @@ import { isNonEmptyString, toString } from './NonEmptyString.utils.ts';
 
 describe('NonEmptyString', () => {
   describe('createNonEmptyString', () => {
+    it('reject non string inputs', () => {
+      const expectedError = createNonEmptyString([]);
+
+      expect(expectedError.type).toBe('Left');
+      expect(expectedError.value).toEqual({
+        reason: 'InvalidType',
+        message: 'invalid input type',
+        values: '',
+      });
+    });
+
     it('rejects an empty string', () => {
-      const result = createNonEmptyString('');
-      expect(result.type).toBe('Left');
-      expect(result.value).toEqual({
-        code: 'NonEmptyStringError',
+      const expectedError = createNonEmptyString('');
+
+      expect(expectedError.type).toBe('Left');
+      expect(expectedError.value).toEqual({
         reason: 'InvalidValue',
-        message: 'NonEmptyString cannot contain an empty string',
+        message: 'input cannot be an empty string',
+        values: '',
       });
     });
 
     it('accepts a valid non-empty string', () => {
-      const result = createNonEmptyString('Mars');
-      expect(result.type).toBe('Right');
-      expect(result.value).toBe('Mars');
+      const expectedSuccess = createNonEmptyString('Mars');
+
+      expect(expectedSuccess.type).toBe('Right');
+      expect(expectedSuccess.value).toBe('Mars');
     });
 
     it('accepts a whitespace-only string', () => {
-      const result = createNonEmptyString('   ');
-      expect(result.type).toBe('Right');
-      expect(result.value).toBe('   ');
+      const expectedSuccess = createNonEmptyString('   ');
+
+      expect(expectedSuccess.type).toBe('Right');
+      expect(expectedSuccess.value).toBe('   ');
     });
 
     it('accepts a string with leading/trailing whitespace', () => {
-      const result = createNonEmptyString(' Sun ');
-      expect(result.type).toBe('Right');
-      expect(result.value).toBe(' Sun ');
+      const expectedSuccess = createNonEmptyString(' Sun ');
+
+      expect(expectedSuccess.type).toBe('Right');
+      expect(expectedSuccess.value).toBe(' Sun ');
     });
   });
+
   describe('createNonEmptyStringError', () => {
     it('creates an immutable error object with expected properties', () => {
-      const expectedError = createNonEmptyStringError();
+      const expectedError = createNonEmptyStringError('InvalidValue');
 
       expect(expectedError).toEqual({
-        code: 'NonEmptyStringError',
         reason: 'InvalidValue',
-        message: 'NonEmptyString cannot contain an empty string',
+        message: 'input cannot be an empty string',
+        values: '',
       });
     });
+
     it('returns an immutable object', () => {
-      const expectedError = createNonEmptyStringError();
+      const expectedError = createNonEmptyStringError('InvalidValue');
 
       expect(Object.isFrozen(expectedError)).toBe(true);
     });

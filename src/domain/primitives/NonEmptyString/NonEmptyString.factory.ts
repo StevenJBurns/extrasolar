@@ -1,18 +1,26 @@
-import { NonEmptyString, NonEmptyStringError } from './NonEmptyString.types.ts';
+import { NonEmptyString, NonEmptyStringError, ErrorReason } from './NonEmptyString.types.ts';
 import { Either, Left, Right } from '@utility/functional/monads';
 
-export function createNonEmptyString(
-  value: string,
-): Either<NonEmptyStringError, NonEmptyString> {
-  const isEmpty = value === null || value === undefined || value.length === 0;
+export function createNonEmptyStringError(reason: ErrorReason) {
+  const errorMessages: Record<ErrorReason, string> = {
+    InvalidType: 'invalid input type',
+    InvalidValue: 'input cannot be an empty string',
+  };
 
-  return isEmpty ? Left(createNonEmptyStringError()) : Right(value as NonEmptyString);
+  return Object.freeze({
+    reason,
+    message: errorMessages[reason],
+    values: '',
+  } as const);
 }
 
-export function createNonEmptyStringError() {
-  return Object.freeze({
-    code: 'NonEmptyStringError',
-    reason: 'InvalidValue',
-    message: 'NonEmptyString cannot contain an empty string',
-  } as const);
+export function createNonEmptyString(
+  input: unknown,
+): Either<NonEmptyStringError, NonEmptyString> {
+  if (typeof input !== 'string') return Left(createNonEmptyStringError('InvalidType'));
+
+  if (input === null || input === undefined || input.length === 0)
+    return Left(createNonEmptyStringError('InvalidValue'));
+
+  return Right(input as NonEmptyString);
 }
