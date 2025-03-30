@@ -8,9 +8,9 @@ describe('NonEmptyString', () => {
       const result = createNonEmptyString('');
       expect(result.type).toBe('Left');
       expect(result.value).toEqual({
-        code: 'NonEmptyStringError',
         reason: 'InvalidValue',
-        message: 'NonEmptyString cannot contain an empty string',
+        message: 'input cannot be an empty string',
+        values: '',
       });
     });
 
@@ -34,16 +34,16 @@ describe('NonEmptyString', () => {
   });
   describe('createNonEmptyStringError', () => {
     it('creates an immutable error object with expected properties', () => {
-      const expectedError = createNonEmptyStringError();
+      const expectedError = createNonEmptyStringError('InvalidValue');
 
       expect(expectedError).toEqual({
-        code: 'NonEmptyStringError',
         reason: 'InvalidValue',
-        message: 'NonEmptyString cannot contain an empty string',
+        message: 'input cannot be an empty string',
+        values: '',
       });
     });
     it('returns an immutable object', () => {
-      const expectedError = createNonEmptyStringError();
+      const expectedError = createNonEmptyStringError('InvalidValue');
 
       expect(Object.isFrozen(expectedError)).toBe(true);
     });
