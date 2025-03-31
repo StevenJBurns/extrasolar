@@ -56,8 +56,8 @@
     "@typescript-eslint/eslint-plugin": "8.28.0",
     "@typescript-eslint/parser": "8.28.0",
     "@vitejs/plugin-react": "4.3.4",
-    "@vitest/coverage-v8": "3.0.9",
-    "@vitest/ui": "3.0.9",
+    "@vitest/coverage-v8": "3.1.1",
+    "@vitest/ui": "3.1.1",
     "eslint": "9.23.0",
     "eslint-config-prettier": "10.1.1",
     "eslint-import-resolver-typescript": "4.3.1",
@@ -71,9 +71,9 @@
     "rimraf": "6.0.1",
     "sass-embedded": "1.86.0",
     "typescript": "5.8.2",
-    "vite": "6.2.3",
+    "vite": "6.2.4",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.0.9"
+    "vitest": "3.1.1"
   },
   "homepage": "https://stevenjburns.github.io/extrasolar/",
   "proxy": "http://localhost:5173",
