@@ -1,3 +1,3 @@
-export function pipe<T, R>(value: T, ...fns: Array<(x: any) => any>): R {
-  return fns.reduce((acc, fn) => fn(acc), value) as unknown as R;
+export function pipe<T>(value: T, ...fns: Array<(x: T) => T>) {
+  return fns.reduce((acc, fn) => fn(acc), value);
 }

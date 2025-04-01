@@ -80,8 +80,8 @@ export class PlanetSprite {
   }
 
   public update(deltaTheta: number) {
-    this.polarLocation.theta >= 2 * Math.PI
-      ? (this.polarLocation.theta = 0)
-      : (this.#polar.theta += deltaTheta);
+    if (this.polarLocation.theta >= 2 * Math.PI) this.polarLocation.theta = 0;
+
+    this.#polar.theta += deltaTheta;
   }
 }
