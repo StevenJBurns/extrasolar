@@ -5,9 +5,9 @@ type Nothing = { type: typeof NOTHING };
 type Just<T> = { type: typeof JUST; value: T };
 type Maybe<T> = Just<T> | Nothing;
 
-const Nothing = () => Object.freeze({ type: 'Nothing' } as const);
+const Nothing = () => Object.freeze({ type: NOTHING } as const);
 
-const Just = <T>(value: T) => Object.freeze({ type: 'Just', value } as const);
+const Just = <T>(value: T) => Object.freeze({ type: JUST, value } as const);
 
 const map =
   <T, U>(fn: (t: T) => U) =>
