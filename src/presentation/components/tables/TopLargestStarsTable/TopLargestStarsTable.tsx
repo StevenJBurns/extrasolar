@@ -1,13 +1,7 @@
 import { Table, TableHead, TableBody, TableRow, TableCell, Typography } from '@mui/material';
 import { styles } from './TopLargestStarsTable.styles';
 
-type TProps = {
-  data: Array<unknown>;
-};
-
-export const TopLargestStarsTable = (props: TProps) => {
-  const { data } = props;
-
+export const TopLargestStarsTable = () => {
   return (
     <>
       <Typography css={styles} variant="h6">

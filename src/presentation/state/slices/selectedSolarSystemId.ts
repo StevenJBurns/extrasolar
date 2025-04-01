@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: string | null = null;
 
@@ -14,5 +14,3 @@ const slice = createSlice({
 export const { setSelectedSolarSystemID, clearSelectedSolarSystemID } = slice.actions;
 
 export default slice.reducer;
-
-export {};

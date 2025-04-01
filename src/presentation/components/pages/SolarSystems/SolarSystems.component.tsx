@@ -14,7 +14,7 @@ import {
   SelectChangeEvent,
   Typography,
 } from '@mui/material';
-import SolarSystemsPageSoundFile from 'assets/audio/systems.ogg';
+// import SolarSystemsPageSoundFile from 'assets/audio/systems.ogg';
 import { dividerStyles } from './SolarSystems.styles.ts';
 
 import { mockSolarSystemData } from '@presentation/data/mockSolarSystemDat.ts';

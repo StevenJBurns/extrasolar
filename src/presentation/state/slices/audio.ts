@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface IAudioState {
+export type IAudioState = {
   source: string;
   volume: number;
   isMuted: boolean;
-}
+};
 
 const slice = createSlice({
   name: 'audio',
