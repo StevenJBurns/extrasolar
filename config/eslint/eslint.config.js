@@ -5,7 +5,7 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import typescriptEslintParser from '@typescript-eslint/parser';
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
-import prettierConfig from '../../config/prettier/.prettierrc.json' with { type: 'json' };
+import prettierConfig from '../prettier/.prettierrc.json' with { type: 'json' };
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '../../');
@@ -13,8 +13,16 @@ const tsConfigPath = path.resolve(projectRoot, 'tsconfig.json');
 
 export default [
   {
-    files: ['**/*.ts', '**/*.tsx'],
-    ignores: ['node_modules/', 'coverage/', 'dist/', 'build/', 'config/vite/vite-env.d.ts'],
+    ignores: [
+      '**/node_modules/**',
+      '**/coverage/**',
+      '**/dist/**',
+      '**/build/**',
+      'config/vite/vite-env.d.ts',
+    ],
+  },
+  {
+    files: ['src/**/*.ts', 'src/**/*.tsx'],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
