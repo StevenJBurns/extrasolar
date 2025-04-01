@@ -13,9 +13,7 @@ describe('Maybe Monad', () => {
 
     it('is immutable', () => {
       const just = Just(42);
-      expect(() => {
-        (just as any).value = 99;
-      }).toThrow();
+      expect(Object.isFrozen(just)).toBe(true);
     });
   });
 
@@ -28,9 +26,7 @@ describe('Maybe Monad', () => {
 
     it('is immutable', () => {
       const nothing = Nothing();
-      expect(() => {
-        (nothing as any).type = JUST;
-      }).toThrow();
+      expect(Object.isFrozen(nothing)).toBe(true);
     });
   });
 
