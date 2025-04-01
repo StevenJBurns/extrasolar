@@ -1,4 +1,4 @@
-import { Angle } from '@domain/values';
+import { Angle, AngleUnit } from '@domain/values';
 import { createAngle } from './Angle.factory.ts';
 import { createAngleError } from './Angle.error.ts';
 import { getValue, getUnit, equals, convertAngle } from './Angle.utility.ts';
@@ -80,7 +80,7 @@ describe('Angle', () => {
     });
 
     it('should reject invalid unit', () => {
-      const result = validateAngle(90, 'invalid' as any);
+      const result = validateAngle(90, 'invalid' as AngleUnit);
       expect(result.type).toBe('Left');
       if (result.type === 'Left') {
         expect(result.value).toEqual(createAngleError('InvalidUnit'));
@@ -156,7 +156,7 @@ describe('Angle', () => {
     });
 
     it('should reject invalid unit', () => {
-      const result = createAngle(90, 'invalid' as any);
+      const result = createAngle(90, 'invalid' as AngleUnit);
       expect(result.type).toBe('Left');
       if (result.type === 'Left') {
         expect(result.value).toEqual(createAngleError('InvalidUnit'));
