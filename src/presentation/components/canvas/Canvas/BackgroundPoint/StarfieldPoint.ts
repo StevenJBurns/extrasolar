@@ -27,8 +27,8 @@ export class StarfieldPoint {
   }
 
   public update(deltaTheta: number) {
-    this.#polar.theta >= 2 * Math.PI
-      ? (this.#polar.theta = 0)
-      : (this.#polar.theta += deltaTheta);
+    if (this.#polar.theta >= 2 * Math.PI) this.#polar.theta = 0;
+
+    this.#polar.theta += deltaTheta;
   }
 }
