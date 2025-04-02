@@ -19,8 +19,7 @@ export function createNonEmptyString(
 ): Either<NonEmptyStringError, NonEmptyString> {
   if (typeof input !== 'string') return Left(createNonEmptyStringError('InvalidType'));
 
-  if (input === null || input === undefined || input.length === 0)
-    return Left(createNonEmptyStringError('InvalidValue'));
-
-  return Right(input as NonEmptyString);
+  return input === null || input === undefined || input.length === 0
+    ? Left(createNonEmptyStringError('InvalidValue'))
+    : Right(input as NonEmptyString);
 }
