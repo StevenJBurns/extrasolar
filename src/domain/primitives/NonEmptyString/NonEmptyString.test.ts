@@ -49,7 +49,7 @@ describe('NonEmptyString', () => {
   });
 
   describe('createNonEmptyStringError', () => {
-    it('creates an immutable error object with expected properties', () => {
+    it('creates an error object with expected properties', () => {
       const expectedError = createNonEmptyStringError('InvalidValue');
 
       expect(expectedError).toEqual({
