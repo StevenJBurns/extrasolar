@@ -1,4 +1,4 @@
-import { PositiveNumber } from '@domain/primitives/PositiveNumber/PositiveNumber.types';
+import { PositiveNumber } from './PositiveNumber.types.ts';
 import { createPositiveNumber, createPositiveNumberError } from './PositiveNumber.factory.ts';
 import { isPositiveNumber, toNumber } from './PositiveNumber.utils.ts';
 
@@ -10,7 +10,7 @@ describe('PositiveNumber', () => {
       expect(expectedError.type).toBe('Left');
       expect(expectedError.value).toEqual({
         reason: 'InvalidValue',
-        message: '',
+        message: 'input value cannot be NaN',
         values: '',
       });
     });
@@ -20,7 +20,7 @@ describe('PositiveNumber', () => {
       expect(expectedError.type).toBe('Left');
       expect(expectedError.value).toEqual({
         reason: 'OutOfRange',
-        message: '',
+        message: 'input value must be a non-zero positive number',
         values: '',
       });
     });
@@ -30,16 +30,16 @@ describe('PositiveNumber', () => {
       expect(expectedError.type).toBe('Left');
       expect(expectedError.value).toEqual({
         reason: 'OutOfRange',
-        message: '',
+        message: 'input value must be a non-zero positive number',
         values: '',
       });
     });
     it('rejects -Infinity', () => {
-      const result = createPositiveNumber(-Infinity);
-      expect(result.type).toBe('Left');
-      expect(result.value).toEqual({
+      const expectedError = createPositiveNumber(-Infinity);
+      expect(expectedError.type).toBe('Left');
+      expect(expectedError.value).toEqual({
         reason: 'OutOfRange',
-        message: '',
+        message: 'input value must be a non-zero positive number',
         values: '',
       });
     });
@@ -62,7 +62,11 @@ describe('PositiveNumber', () => {
   describe('createPositiveNumberError', () => {
     it('returns an error object with expected properties', () => {
       const error = createPositiveNumberError('OutOfRange');
-      expect(error).toEqual({ reason: 'OutOfRange', message: '', values: '' });
+      expect(error).toEqual({
+        reason: 'OutOfRange',
+        message: 'input value must be a non-zero positive number',
+        values: '',
+      });
     });
     it('returns an immutable error object', () => {
       const error = createPositiveNumberError('InvalidValue');
