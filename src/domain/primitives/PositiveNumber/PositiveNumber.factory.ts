@@ -1,11 +1,11 @@
-import type { PositiveNumber, PositiveNumberError, ErrorReason } from './PositiveNumber.types';
+import { PositiveNumber, PositiveNumberError, ErrorReason } from './types';
 import { Either, Left, Right } from '@utility/functional/monads';
 
 export function createPositiveNumberError(reason: ErrorReason) {
   const errorReasons: Record<ErrorReason, string> = {
-    InvalidType: '',
-    InvalidValue: '',
-    OutOfRange: '',
+    InvalidType: 'input value must be a number',
+    InvalidValue: 'input value cannot be NaN',
+    OutOfRange: 'input value must be a non-zero positive number',
   };
 
   return Object.freeze({
