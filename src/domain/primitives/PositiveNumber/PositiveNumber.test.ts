@@ -4,6 +4,16 @@ import { isPositiveNumber, toNumber } from './PositiveNumber.utils.ts';
 
 describe('PositiveNumber', () => {
   describe('createPositiveNumber', () => {
+    it('rejects non number inputs', () => {
+      const expectedError = createPositiveNumber('bad input');
+
+      expect(expectedError.type).toBe('Left');
+      expect(expectedError.value).toEqual({
+        reason: 'InvalidType',
+        message: 'input value must be a number',
+        values: '',
+      });
+    });
     it('rejects NaN', () => {
       const expectedError = createPositiveNumber(NaN);
 
