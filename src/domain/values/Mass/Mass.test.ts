@@ -101,26 +101,27 @@ describe('Mass', () => {
     it('should reject Infinity', () => {
       const result = createMass(Infinity, 'kilogram');
       expect(result.type).toBe('Left');
-      if (result.type === 'Left') {
-        expect(result.value).toEqual(createMassError('InvalidValue'));
-      }
+      expect(result.value).toEqual(createMassError('InvalidValue'));
     });
 
     it('should reject zero', () => {
       const result = createMass(0, 'earth');
       expect(result.type).toBe('Left');
-      if (result.type === 'Left') {
-        expect(result.value).toEqual(createMassError('InvalidValue'));
-      }
+      expect(result.value).toEqual(createMassError('InvalidValue'));
     });
 
     it('should reject invalid unit', () => {
       const invalidUnit = 'unknown unit' as never;
       const result = createMass(1, invalidUnit);
       expect(result.type).toBe('Left');
-      if (result.type === 'Left') {
-        expect(result.value).toEqual(createMassError('InvalidUnit'));
-      }
+      expect(result.value).toEqual(createMassError('InvalidUnit'));
+    });
+
+    it('should reject invalid input types', () => {
+      const invalidInput = 'invalid input type as string' as never;
+      const result = createMass(invalidInput, 'kilogram');
+      expect(result.type).toBe('Left');
+      expect(result.value).toEqual(createMassError('InvalidValue'));
     });
   });
 
