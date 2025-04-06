@@ -1,4 +1,6 @@
-export type { NonEmptyString } from './NonEmptyString/NonEmptyString.types.ts';
+export { NonEmptyString } from './NonEmptyString/NonEmptyString.module.ts';
+export { TrimmedString } from './TrimmedString/TrimmedString.module.ts';
+
 export type { FiniteNonZeroPositiveNumber } from './FiniteNonZeroPositiveNumber/FiniteNonZeroPositiveNumber.type.ts';
 export type { FiniteNumber } from './FiniteNumber/FiniteNumber.types.ts';
 export type { NormalizedValue } from './NormalizedValue/NormalizedValue.types.ts';

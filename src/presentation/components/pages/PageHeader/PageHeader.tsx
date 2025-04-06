@@ -13,7 +13,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 // import { useOnlineStatus } from 'presentation/hooks/useOnlineStatus';
 import { AudioToggleButton } from '../../ui/AudioToggleButton/AudioToggleButton';
 import { List, ListItem, Stack } from '@mui/material';
-// import { formatLastFetch } from 'util/formatDate';
 
 export const PageHeader: React.FunctionComponent = () => {
   const { pathname } = useLocation();

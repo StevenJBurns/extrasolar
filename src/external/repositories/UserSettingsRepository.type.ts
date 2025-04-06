@@ -3,7 +3,7 @@ type UserSettings = {
   audioVolume: number;
 };
 
-export interface UserSettingsRepository {
+export type UserSettingsRepository = {
   save(): void;
   fetch(): UserSettings;
-}
+};
