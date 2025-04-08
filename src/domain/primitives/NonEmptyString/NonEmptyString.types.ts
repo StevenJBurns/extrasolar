@@ -4,4 +4,4 @@ export type ErrorReason = 'InvalidType' | 'InvalidValue';
 
 export type NonEmptyStringError = DomainError<ErrorReason>;
 
-export type NonEmptyString = Brand<string, 'NonEmptyString'>;
+export type NonEmptyString = Brand<'NonEmptyString', string>;
