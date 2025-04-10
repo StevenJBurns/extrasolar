@@ -12,15 +12,15 @@ const errorMessageLookup: Record<ErrorReason, (context: unknown) => string> = {
 
 function createError(reason: ErrorReason, value: unknown) {
   return Left({
-    reason: 'Integer',
+    type: 'Integer',
+    reason,
     message: errorMessageLookup[reason](value),
-    context: [value],
   } as const);
 }
 
 function createInteger(inputValue: number): Either<IntegerError, Integer> {
   const reason: ErrorReason =
-    isNaN(inputValue) || inputValue === Infinity ? 'OutOfBounds' : 'InvalidInput';
+    inputValue === Infinity || inputValue === -Infinity ? 'OutOfBounds' : 'InvalidInput';
 
   return Number.isInteger(inputValue)
     ? Right(inputValue as Integer)
