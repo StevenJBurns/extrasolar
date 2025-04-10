@@ -1,5 +1,5 @@
-export type DomainError<Reason extends string = string, Context = unknown> = {
-  reason: Reason;
+export type DomainError<T> = {
+  type: T;
+  reason: string;
   message: string;
-  context: Context;
 };
