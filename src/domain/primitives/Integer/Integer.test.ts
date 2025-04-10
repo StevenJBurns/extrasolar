@@ -2,35 +2,51 @@ import { Integer } from './Integer.ts';
 
 describe('Integer', () => {
   describe('create', () => {
-    it('accepts an integer', () => {
-      expect(Integer.create(-4).type).toBe('Right');
-      expect(Integer.create(0).type).toBe('Right');
-      expect(Integer.create(4).type).toBe('Right');
+    it('accepts valid integers', () => {
+      [-4, 0, 4].forEach(i => {
+        expect(Integer.create(i)).toEqual({
+          type: 'Right',
+          value: i,
+        });
+      });
     });
     it('rejects floats', () => {
-      expect(Integer.create(4.44).type).toBe('Left');
-      expect(Integer.create(-4.44).type).toBe('Left');
+      [-4.44, 4.44].forEach(i => {
+        expect(Integer.create(i).type).toBe('Left');
+        expect(Integer.create(i).value).toEqual({
+          message: `input value is not an integer. received: ${i}`,
+          reason: 'InvalidInput',
+          type: 'Integer',
+        });
+      });
     });
-    it('rejects Infinity and NaN', () => {
-      expect(Integer.create(Infinity).type).toBe('Left');
-      expect(Integer.create(-Infinity).type).toBe('Left');
+    it('rejects -Infinity and Infinity', () => {
+      [-Infinity, Infinity].forEach(i => {
+        expect(Integer.create(i).type).toBe('Left');
+        expect(Integer.create(i).value).toEqual({
+          type: 'Integer',
+          message: `input value is out of bounds. received: ${i}`,
+          reason: 'OutOfBounds',
+        });
+      });
+    });
+    it('rejects NaN', () => {
       expect(Integer.create(NaN).type).toBe('Left');
+      expect(Integer.create(NaN).value).toEqual({
+        type: 'Integer',
+        message: 'input value is not an integer. received: NaN',
+        reason: 'InvalidInput',
+      });
     });
   });
   describe('isInteger', () => {
-    it('returns true for an integer', () => {
-      expect(Integer.isInteger(-4)).toBe(true);
-      expect(Integer.isInteger(0)).toBe(true);
-      expect(Integer.isInteger(4)).toBe(true);
+    it('returns true for valid integers', () => {
+      [-4, 0, 4].forEach(i => expect(Integer.isInteger(i)).toBe(true));
     });
-    it('returns false for floats', () => {
-      expect(Integer.isInteger(4.44)).toBe(false);
-      expect(Integer.isInteger(-4.44)).toBe(false);
-    });
-    it('returns false for Infinity and NaN', () => {
-      expect(Integer.isInteger(Infinity)).toBe(false);
-      expect(Integer.isInteger(-Infinity)).toBe(false);
-      expect(Integer.isInteger(NaN)).toBe(false);
+    it('returns false for floats, -Infinity, Infinity and NaN', () => {
+      [-4.44, 4.44, -Infinity, Infinity, NaN].forEach(i =>
+        expect(Integer.isInteger(i)).toBe(false),
+      );
     });
   });
 });
