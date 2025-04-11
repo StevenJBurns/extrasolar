@@ -1,6 +1,7 @@
 export { NonEmptyString } from './NonEmptyString/NonEmptyString.module.ts';
 export { TrimmedString } from './TrimmedString/TrimmedString.module.ts';
 export { FiniteNumber } from './FiniteNumber/FiniteNumber.ts';
+export { PositiveNumber } from './PositiveNumber/PositiveNumber.ts';
 export { Integer } from './Integer/Integer.ts';
 
 export type { FiniteNonZeroPositiveNumber } from './FiniteNonZeroPositiveNumber/FiniteNonZeroPositiveNumber.type.ts';
