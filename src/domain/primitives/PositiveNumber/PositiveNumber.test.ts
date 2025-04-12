@@ -1,105 +1,75 @@
-import { PositiveNumber } from './PositiveNumber.types.ts';
-import { createPositiveNumber, createPositiveNumberError } from './PositiveNumber.factory.ts';
-import { isPositiveNumber, toNumber } from './PositiveNumber.utils.ts';
+import { PositiveNumber } from './PositiveNumber.ts';
 
 describe('PositiveNumber', () => {
-  describe('createPositiveNumber', () => {
-    it('rejects non number inputs', () => {
-      const expectedError = createPositiveNumber('bad input');
-
-      expect(expectedError.type).toBe('Left');
-      expect(expectedError.value).toEqual({
-        reason: 'InvalidType',
-        message: 'input value must be a number',
-        values: '',
-      });
-    });
+  describe('create', () => {
     it('rejects NaN', () => {
-      const expectedError = createPositiveNumber(NaN);
+      const expectedError = PositiveNumber.create(NaN);
 
       expect(expectedError.type).toBe('Left');
       expect(expectedError.value).toEqual({
-        reason: 'InvalidValue',
-        message: 'input value cannot be NaN',
-        values: '',
+        type: 'PositiveNumberError',
+        reason: 'InvalidInputValue',
+        message: 'input value is not a positive number. received: NaN',
       });
     });
     it('rejects zero', () => {
-      const expectedError = createPositiveNumber(0);
+      const expectedError = PositiveNumber.create(0);
 
       expect(expectedError.type).toBe('Left');
       expect(expectedError.value).toEqual({
-        reason: 'OutOfRange',
-        message: 'input value must be a non-zero positive number',
-        values: '',
+        type: 'PositiveNumberError',
+        reason: 'InvalidInputValue',
+        message: 'input value is not a positive number. received: 0',
       });
     });
     it('rejects negative numbers', () => {
-      const expectedError = createPositiveNumber(-4);
+      const expectedError = PositiveNumber.create(-4);
 
       expect(expectedError.type).toBe('Left');
       expect(expectedError.value).toEqual({
-        reason: 'OutOfRange',
-        message: 'input value must be a non-zero positive number',
-        values: '',
+        type: 'PositiveNumberError',
+        reason: 'InvalidInputValue',
+        message: 'input value is not a positive number. received: -4',
       });
     });
-    it('rejects -Infinity', () => {
-      const expectedError = createPositiveNumber(-Infinity);
-      expect(expectedError.type).toBe('Left');
-      expect(expectedError.value).toEqual({
-        reason: 'OutOfRange',
-        message: 'input value must be a non-zero positive number',
-        values: '',
+    it('rejects -Infinity and Infinity', () => {
+      [-Infinity, Infinity].forEach(i => {
+        const expectedError = PositiveNumber.create(i);
+        expect(expectedError.type).toBe('Left');
+        expect(expectedError.value).toEqual({
+          type: 'PositiveNumberError',
+          reason: 'OutOfRange',
+          message: `input value is out of bounds. received: ${i}`,
+        });
       });
-    });
-    it('accepts Infinity', () => {
-      const result = createPositiveNumber(Infinity);
-      expect(result.type).toBe('Right');
-      expect(result.value).toBe(Infinity);
-      expect(Object.isFrozen(result.value)).toBe(true);
     });
     it('accepts positive numbers', () => {
-      const result = createPositiveNumber(4);
+      const result = PositiveNumber.create(4);
       expect(result.type).toBe('Right');
       expect(result.value).toBe(4);
     });
     it('returns an immutable object', () => {
-      const result = createPositiveNumber(4);
+      const result = PositiveNumber.create(4);
       expect(Object.isFrozen(result)).toBe(true);
-    });
-  });
-  describe('createPositiveNumberError', () => {
-    it('returns an error object with expected properties', () => {
-      const error = createPositiveNumberError('OutOfRange');
-      expect(error).toEqual({
-        reason: 'OutOfRange',
-        message: 'input value must be a non-zero positive number',
-        values: '',
-      });
-    });
-    it('returns an immutable error object', () => {
-      const error = createPositiveNumberError('InvalidValue');
-      expect(Object.isFrozen(error)).toBe(true);
     });
   });
   describe('utility functions', () => {
     describe('isPositiveNumber', () => {
-      it('returns true as expected', () => {
-        expect(isPositiveNumber(4 as number)).toBe(true);
+      it('returns true for valid positive numbers', () => {
+        expect(PositiveNumber.isPositiveNumber(4)).toBe(true);
       });
-      it('returns false as expected', () => {
-        expect(isPositiveNumber(-Infinity as number)).toBe(false);
-        expect(isPositiveNumber(NaN as number)).toBe(false);
-        expect(isPositiveNumber(-4 as number)).toBe(false);
-        expect(isPositiveNumber(0 as number)).toBe(false);
+      it('returns false for invalid number inputs', () => {
+        [NaN, -Infinity, Infinity, -444, -4.44, 0].forEach(i => {
+          console.log(i);
+          expect(PositiveNumber.isPositiveNumber(i as number)).toBe(false);
+        });
       });
     });
     describe('toNumber', () => {
-      it('returns a valid input as a native number', () => {
-        const result = toNumber(4 as PositiveNumber);
-        expect(typeof result === 'number');
-        expect(result).toEqual(4);
+      it('returns a native number when given a PositiveNumber input', () => {
+        const result = PositiveNumber.create(4);
+        if (result.type === 'Left') return;
+        expect(PositiveNumber.toNumber(result.value)).toEqual(4);
       });
     });
   });
