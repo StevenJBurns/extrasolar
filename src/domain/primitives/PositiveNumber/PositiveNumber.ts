@@ -1,7 +1,7 @@
 import { Brand, DomainError } from '@domain/types';
 import { Either, Left, Right } from '@utility/functional/monads';
 
-type PositiveNumber = Brand<'PositiveNumber', number>;
+type PositiveNumberType = Brand<'PositiveNumber', number>;
 type PositiveNumberError = DomainError<'PositiveNumberError'>;
 type ErrorReason = 'InvalidInputValue' | 'OutOfRange';
 
@@ -18,18 +18,22 @@ function createError(reason: ErrorReason, value: unknown) {
   } as const);
 }
 
-function createPositiveNumber(inputValue: number): Either<PositiveNumberError, PositiveNumber> {
+function createPositiveNumber(
+  inputValue: number,
+): Either<PositiveNumberError, PositiveNumberType> {
   if (Number.isNaN(inputValue)) return createError('InvalidInputValue', inputValue);
   if (!isFinite(inputValue)) return createError('OutOfRange', inputValue);
   if (inputValue <= 0) return createError('InvalidInputValue', inputValue);
 
-  return Right(inputValue as PositiveNumber);
+  return Right(inputValue as PositiveNumberType);
 }
 
-const isPositiveNumber = (inputValue: number): inputValue is PositiveNumber =>
+const isPositiveNumber = (inputValue: number): inputValue is PositiveNumberType =>
   isFinite(inputValue) && inputValue > 0;
 
-const toNumber = (inputValue: PositiveNumber): number => inputValue as number;
+const toNumber = (inputValue: PositiveNumberType): number => inputValue as number;
+
+export type PositiveNumber = PositiveNumberType;
 
 export const PositiveNumber = {
   create: createPositiveNumber,
