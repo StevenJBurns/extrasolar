@@ -46,7 +46,7 @@ export default [
       ...typescriptEslintPlugin.configs.recommended.rules,
       ...eslintConfigPrettier.rules,
       '@typescript-eslint/no-unused-vars': 'warn',
-      'import/no-unresolved': 'off',
+      'import/no-unresolved': 'warn',
     },
     settings: {
       'import/resolver': {
