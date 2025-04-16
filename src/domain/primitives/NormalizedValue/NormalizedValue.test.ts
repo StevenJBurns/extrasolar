@@ -27,7 +27,7 @@ describe('createNormalizedValue', () => {
 
     expect(error.type).toEqual('Left');
     expect(error.value).toEqual({
-      code: 'NormalizedValueError',
+      type: 'NormalizedValueError',
       reason: 'Infinite',
       message: 'NormalizedValue must be a finite number',
     });
@@ -38,7 +38,7 @@ describe('createNormalizedValue', () => {
 
     expect(error.type).toBe('Left');
     expect(error.value).toEqual({
-      code: 'NormalizedValueError',
+      type: 'NormalizedValueError',
       reason: 'Infinite',
       message: 'NormalizedValue must be a finite number',
     });
@@ -49,7 +49,7 @@ describe('createNormalizedValue', () => {
 
     expect(error.type).toBe('Left');
     expect(error.value).toEqual({
-      code: 'NormalizedValueError',
+      type: 'NormalizedValueError',
       reason: 'NaN',
       message: 'NormalizedValue must not be NaN',
     });
@@ -60,7 +60,7 @@ describe('createNormalizedValue', () => {
 
     expect(error.type).toBe('Left');
     expect(error.value).toEqual({
-      code: 'NormalizedValueError',
+      type: 'NormalizedValueError',
       reason: 'OutOfRange',
       message: 'NormalizedValue must be a number between 0 and 1, inclusive',
     });
@@ -71,7 +71,7 @@ describe('createNormalizedValue', () => {
 
     expect(error.type).toBe('Left');
     expect(error.value).toEqual({
-      code: 'NormalizedValueError',
+      type: 'NormalizedValueError',
       reason: 'OutOfRange',
       message: 'NormalizedValue must be a number between 0 and 1, inclusive',
     });

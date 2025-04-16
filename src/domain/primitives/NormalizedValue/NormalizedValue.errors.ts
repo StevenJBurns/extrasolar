@@ -1,14 +1,14 @@
-import { NormalizedValueError, NormalizedValueErrorReasons } from './NormalizedValue.types.ts';
+import { NormalizedValueError, ErrorReasons } from './NormalizedValue.types.ts';
 
-const errorReasons: Record<NormalizedValueErrorReasons, string> = {
+const errorReasons: Record<ErrorReasons, string> = {
   OutOfRange: 'NormalizedValue must be a number between 0 and 1, inclusive',
   Infinite: 'NormalizedValue must be a finite number',
   NaN: 'NormalizedValue must not be NaN',
 };
 
-export const createNormalizedValueError = (reason: NormalizedValueErrorReasons) =>
+export const createNormalizedValueError = (reason: ErrorReasons) =>
   Object.freeze({
-    code: 'NormalizedValueError',
+    type: 'NormalizedValueError',
     reason,
     message: errorReasons[reason],
   } as NormalizedValueError);
