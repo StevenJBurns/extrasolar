@@ -1,96 +1,82 @@
-import { NonEmptyString } from './NonEmptyString.types.ts';
-import { createNonEmptyString, createNonEmptyStringError } from './NonEmptyString.factory.ts';
-import { isNonEmptyString, toString } from './NonEmptyString.utils.ts';
+import { NonEmptyString } from './NonEmptyString.ts';
+
+const { create, isNonEmptyString, toString } = NonEmptyString;
 
 describe('NonEmptyString', () => {
-  describe('createNonEmptyString', () => {
-    it('reject non string inputs', () => {
-      const expectedError = createNonEmptyString([]);
+  describe('create', () => {
+    it('rejects non string inputs', () => {
+      [null, undefined, NaN, [], {}, () => {}].forEach(input => {
+        const { type, value } = create(input as unknown as string);
 
-      expect(expectedError.type).toBe('Left');
-      expect(expectedError.value).toEqual({
-        reason: 'InvalidType',
-        message: 'invalid input type',
-        values: '',
+        expect(type).toBe('Left');
+        expect(value).toEqual({
+          type: 'NonEmptyStringError',
+          reason: 'InvalidInputType',
+          message: 'input must be a string',
+        });
       });
     });
 
     it('rejects an empty string', () => {
-      const expectedError = createNonEmptyString('');
+      const { type, value } = create('');
 
-      expect(expectedError.type).toBe('Left');
-      expect(expectedError.value).toEqual({
-        reason: 'InvalidValue',
-        message: 'input cannot be an empty string',
-        values: '',
+      expect(type).toBe('Left');
+      expect(value).toEqual({
+        type: 'NonEmptyStringError',
+        reason: 'InvalidInputValue',
+        message: 'input string cannot be empty',
       });
     });
 
-    it('accepts a valid non-empty string', () => {
-      const expectedSuccess = createNonEmptyString('Mars');
+    it('accepts a non-empty native string', () => {
+      const { type, value } = create('Test String');
 
-      expect(expectedSuccess.type).toBe('Right');
-      expect(expectedSuccess.value).toBe('Mars');
+      expect(type).toBe('Right');
+      expect(value).toBe('Test String');
     });
 
-    it('accepts a whitespace-only string', () => {
-      const expectedSuccess = createNonEmptyString('   ');
+    it('accepts a whitespace-only native string', () => {
+      const { type, value } = create('   ');
 
-      expect(expectedSuccess.type).toBe('Right');
-      expect(expectedSuccess.value).toBe('   ');
+      expect(type).toBe('Right');
+      expect(value).toBe('   ');
     });
 
     it('accepts a string with leading/trailing whitespace', () => {
-      const expectedSuccess = createNonEmptyString(' Sun ');
+      const { type, value } = create(' Test String ');
 
-      expect(expectedSuccess.type).toBe('Right');
-      expect(expectedSuccess.value).toBe(' Sun ');
-    });
-  });
-
-  describe('createNonEmptyStringError', () => {
-    it('creates an error object with expected properties', () => {
-      const expectedError = createNonEmptyStringError('InvalidValue');
-
-      expect(expectedError).toEqual({
-        reason: 'InvalidValue',
-        message: 'input cannot be an empty string',
-        values: '',
-      });
+      expect(type).toBe('Right');
+      expect(value).toBe(' Test String ');
     });
 
     it('returns an immutable object', () => {
-      const expectedError = createNonEmptyStringError('InvalidValue');
+      const expected = create('InvalidValue');
 
-      expect(Object.isFrozen(expectedError)).toBe(true);
+      expect(Object.isFrozen(expected)).toBe(true);
     });
   });
-  describe('utility functions', () => {
-    describe('isNonEmptyString', () => {
-      it('returns true for strings', () => {
-        expect(isNonEmptyString('Saturn')).toBe(true);
-      });
 
-      it('returns false for empty strings', () => {
-        expect(isNonEmptyString('')).toBe(false);
-      });
+  describe('isNonEmptyString', () => {
+    it('returns true for strings', () => {
+      expect(isNonEmptyString('Test String')).toBe(true);
+    });
 
-      it('returns false for non-string types', () => {
-        expect(isNonEmptyString(undefined)).toBe(false);
-        expect(isNonEmptyString(null)).toBe(false);
-        expect(isNonEmptyString(true)).toBe(false);
-        expect(isNonEmptyString(42)).toBe(false);
-        expect(isNonEmptyString([])).toBe(false);
-        expect(isNonEmptyString({})).toBe(false);
+    it('returns false for empty strings', () => {
+      expect(isNonEmptyString('')).toBe(false);
+    });
+
+    it('returns false for non-string types', () => {
+      [undefined, null, true, false, 4, [], {}, () => {}].forEach(input => {
+        expect(isNonEmptyString(input)).toBe(false);
       });
     });
-    describe('toString', () => {
-      it('returns the original value as a native string', () => {
-        const result = toString('Jupiter' as NonEmptyString);
+  });
+  describe('toString', () => {
+    it('returns the original value as a native string', () => {
+      const result = toString('Test String' as NonEmptyString);
 
-        expect(result).toEqual('Jupiter');
-        expect(typeof result).toBe('string');
-      });
+      expect(result).toEqual('Test String');
+      expect(typeof result).toBe('string');
     });
   });
 });

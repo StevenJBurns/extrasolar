@@ -1,7 +1,7 @@
 import { Brand, DomainError } from '@domain/types';
 import { Either, Left, Right } from '@utility/functional/monads';
 
-type Integer = Brand<'Integer', number>;
+type IntegerType = Brand<'Integer', number>;
 type IntegerError = DomainError<'Integer'>;
 type ErrorReason = 'InvalidInput' | 'OutOfBounds';
 
@@ -26,6 +26,8 @@ function createInteger(inputValue: number): Either<IntegerError, Integer> {
     ? Right(inputValue as Integer)
     : createError(reason, inputValue);
 }
+
+export type Integer = IntegerType;
 
 export const Integer = {
   create: createInteger,

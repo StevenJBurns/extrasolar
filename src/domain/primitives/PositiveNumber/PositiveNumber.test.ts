@@ -60,7 +60,6 @@ describe('PositiveNumber', () => {
       });
       it('returns false for invalid number inputs', () => {
         [NaN, -Infinity, Infinity, -444, -4.44, 0].forEach(i => {
-          console.log(i);
           expect(PositiveNumber.isPositiveNumber(i as number)).toBe(false);
         });
       });
