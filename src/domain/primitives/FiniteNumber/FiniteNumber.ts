@@ -1,7 +1,7 @@
 import { Brand, DomainError } from '@domain/types';
 import { Either, Left, Right } from '@utility/functional/monads';
 
-type FiniteNumberType = Brand<'FiniteNumber', number>;
+export type FiniteNumber = Brand<'FiniteNumber', number>;
 type FiniteNumberError = DomainError<'FiniteNumberError'>;
 type ErrorReason = 'InvalidInput' | 'OutOfBounds';
 
@@ -18,15 +18,13 @@ function createError(reason: ErrorReason, value: unknown) {
   } as const);
 }
 
-function createFiniteNumber(inputValue: number): Either<FiniteNumberError, FiniteNumberType> {
+function createFiniteNumber(inputValue: number): Either<FiniteNumberError, FiniteNumber> {
   const reason: ErrorReason = isNaN(inputValue) ? 'InvalidInput' : 'OutOfBounds';
 
   return Number.isFinite(inputValue)
-    ? Right(inputValue as FiniteNumberType)
+    ? Right(inputValue as FiniteNumber)
     : createError(reason, inputValue);
 }
-
-export type FiniteNumber = FiniteNumberType;
 
 export const FiniteNumber = {
   create: createFiniteNumber,

@@ -1,4 +1,4 @@
-import { Star } from '@domain/entities/Star/Star.types.ts';
+import { Star } from '@domain/entities/Star/Star.ts';
 import { Planet } from '@domain/entities/Planet/Planet.types.ts';
 
 export type SolarSystem = {

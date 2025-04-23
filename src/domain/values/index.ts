@@ -8,5 +8,4 @@ export type {
 } from './Temperature/Temperature.types.ts';
 
 export { createAngle } from './Angle/Angle.factory.ts';
-export { createMass } from './Mass/Mass.factory.ts';
 export { createTemperature } from './Temperature/Temperature.factory.ts';
